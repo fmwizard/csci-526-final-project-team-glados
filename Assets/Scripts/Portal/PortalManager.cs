@@ -5,10 +5,12 @@ public class PortalManager : MonoBehaviour
 {
     [Header("Portal Settings")]
     [SerializeField] private GameObject portalPrefab;
+    [SerializeField] private GameObject mirrorPrefab;
     [SerializeField] private LayerMask portalPlacementMask;
     [SerializeField] private float minPortalDistance = 1f;
 
     private List<Portal> activePortals = new List<Portal>();
+    private GameObject activeMirror;
     private Camera mainCamera;
     private PlayerController player;
 
@@ -20,10 +22,10 @@ public class PortalManager : MonoBehaviour
 
     private void Update()
     {
-        HandlePortalCreation();
+        HandleGunCreation();
     }
 
-    private void HandlePortalCreation()
+    private void HandleGunCreation()
     {
         // Left click for blue portal
         if (Input.GetMouseButtonDown(0))
@@ -35,14 +37,63 @@ public class PortalManager : MonoBehaviour
         {
             CreatePortal(PortalType.Orange);
         }
+        // E click for mirror
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            CreateMirror();
+        }
+    }
+
+    private RaycastHit2D GetGunRaycastHit()
+    {
+        Vector2 startPosition = player.intermediatePosition;
+        Vector2 endPosition = player.endingPosition;
+        Vector2 direction = (endPosition - startPosition).normalized;
+        return Physics2D.Raycast(startPosition, direction, Mathf.Infinity, portalPlacementMask);
+    }
+
+    private void CreateMirror()
+    {
+        RaycastHit2D hit = GetGunRaycastHit();
+        if (hit.collider != null)
+        {
+            // Check if we can place a mirror here
+            if (!IsValidMirrorPosition(hit.point))
+                return;
+            // Remove existing mirror if it exists
+            RemoveMirror();
+            // Create new mirror
+            Vector2 normal = hit.normal;
+            float mirrorRotation = Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg + 90f;
+            GameObject mirrorObj = Instantiate(mirrorPrefab, hit.point, Quaternion.Euler(0, 0, mirrorRotation));
+            activeMirror = mirrorObj;
+        }
+    }
+    private bool IsValidMirrorPosition(Vector2 position)
+    {
+        // Check distance from other mirrors
+        if (activeMirror != null)
+        {
+            if (Vector2.Distance(position, activeMirror.transform.position) < minPortalDistance)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    private void RemoveMirror()
+    {
+        if (activeMirror != null)
+        {
+            Destroy(activeMirror);
+            activeMirror = null;
+        }
     }
 
     private void CreatePortal(PortalType type)
     {
-        Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-        Vector2 playerPosition = player.transform.position;
-        Vector2 direction = (mousePosition - playerPosition).normalized;
-        RaycastHit2D hit = Physics2D.Raycast(playerPosition, direction, Mathf.Infinity, portalPlacementMask);
+        RaycastHit2D hit = GetGunRaycastHit();
         if (hit.collider != null)
         {
             // Check if we can place a portal here

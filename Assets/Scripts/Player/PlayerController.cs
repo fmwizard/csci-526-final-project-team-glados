@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEditor;
 
 
 public class PlayerController : MonoBehaviour
@@ -27,6 +28,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private float currentVelocityMagnitude;
     private bool isLineVisible;
+    public Vector2 endingPosition { get; set; }
+    public Vector2 intermediatePosition { get; set; }
     public bool fromPortal;
     public LineRenderer lineRenderer;
 
@@ -95,7 +98,8 @@ public class PlayerController : MonoBehaviour
             lineRenderer.enabled = isLineVisible;
         }
         
-        if (isLineVisible)
+        // Due to the added mirror functionality, we need to get the ending position of the line even if the line is not visible
+        // if (isLineVisible)
         {
             Vector2 start = transform.position;
             Vector2 direction = (Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position).normalized;
@@ -138,7 +142,8 @@ public class PlayerController : MonoBehaviour
                     break; // Hit something other than a mirror, stop tracing
                 }
             }
-
+            endingPosition = linePositions[^1];
+            intermediatePosition = linePositions[^2];
             lineRenderer.positionCount = linePositions.Count;
             lineRenderer.SetPositions(linePositions.ToArray());
         }
