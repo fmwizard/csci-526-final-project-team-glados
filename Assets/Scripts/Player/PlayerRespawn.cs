@@ -44,7 +44,7 @@ public class PlayerRespawn : MonoBehaviour
         }
     }
 
-    void Respawn()
+    public void Respawn()
     {
         transform.position = startPosition;
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
