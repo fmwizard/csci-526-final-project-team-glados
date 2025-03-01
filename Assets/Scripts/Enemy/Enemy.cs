@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if (!IsGrounded())
         {
@@ -93,7 +93,7 @@ public class Enemy : MonoBehaviour
         return hit.collider != null;
     }
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         currentHealth -= damage;
 
@@ -106,7 +106,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private System.Collections.IEnumerator DamageFlash()
+    protected System.Collections.IEnumerator DamageFlash()
     {
         if (spriteRenderer != null)
         {
@@ -117,7 +117,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Die()
+    protected void Die()
     {
         onDeath?.Invoke();
         
