@@ -7,7 +7,7 @@ public class LaserController : MonoBehaviour
     public Transform laserOrigin;
     public LineRenderer lineRenderer;
     public bool isOn = true;
-    private float maxShootingDistance = 50f;
+    [SerializeField]private float maxShootingDistance = 25f;
 
     // Laser angle and oscillation
     private float startingAngle;
@@ -15,11 +15,12 @@ public class LaserController : MonoBehaviour
     public float oscillationSpeed = 0.5f;
     public float oscillationAngle = 45f;
 
+    private PlayerRespawn playerRespawn;
     [SerializeField] private LayerMask mirrorLayer;
 
     void Awake()
     {
-        
+        playerRespawn = FindObjectOfType<PlayerRespawn>();
         if (lineRenderer == null)
         {
             lineRenderer = GetComponent<LineRenderer>();
@@ -30,6 +31,9 @@ public class LaserController : MonoBehaviour
             lineRenderer.startColor = Color.red;
             lineRenderer.endColor = Color.red;
             lineRenderer.sortingOrder = 100;
+
+            // Set corner vertices to 2 to make the line renderer look smoother
+            lineRenderer.numCornerVertices = 2;
         }
         if(laserOrigin == null)
         {
@@ -78,12 +82,16 @@ public class LaserController : MonoBehaviour
                 linePositions.Add(hit.point);
                 if(hit.collider.CompareTag("Player"))
                 {
-                    // Insert outcome
+                    playerRespawn.Respawn();
                     break;
                 }
                 else if (hit.collider.CompareTag("Hostility"))
                 {
-                    // Insert outcome
+                    Enemy enemy = hit.collider.GetComponent<Enemy>();
+                    if(enemy != null)
+                    {
+                        enemy.TakeDamage(100);
+                    }
                     break;
                 }
                 else if (((1 << hit.collider.gameObject.layer) & mirrorLayer) != 0)
