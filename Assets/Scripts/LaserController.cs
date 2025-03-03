@@ -85,9 +85,10 @@ public class LaserController : MonoBehaviour
                     playerRespawn.Respawn();
                     break;
                 }
-                else if (hit.collider.CompareTag("Hostility"))
+                else if (hit.collider.CompareTag("Hostility") || 
+                (hit.collider.GetComponent<HeadTrigger>() != null))
                 {
-                    Enemy enemy = hit.collider.GetComponent<Enemy>();
+                    Enemy enemy = hit.collider.GetComponentInParent<Enemy>();
                     if(enemy != null)
                     {
                         enemy.TakeDamage(100);
