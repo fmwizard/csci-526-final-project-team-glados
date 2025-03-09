@@ -57,16 +57,22 @@ public class PortalManager : MonoBehaviour
         RaycastHit2D hit = GetGunRaycastHit();
         if (hit.collider != null)
         {
-            if(player.isReflected)
+            if (player.isReflected)
             {
                 //Debug.Log("Tried to make a mirror through reflection");
                 return;
             }
+
+            if (hit.transform.CompareTag("NoPortalSurface"))
+                return;
+
             // Check if we can place a mirror here
             if (!IsValidMirrorPosition(hit.point))
                 return;
+
             // Remove existing mirror if it exists
             RemoveMirror();
+
             // Create new mirror
             Vector2 normal = hit.normal;
             float mirrorRotation = Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg + 90f;
