@@ -19,6 +19,7 @@ public class Level0CompleteUI : MonoBehaviour
     {
         PlayerStats.IncreaseRetryCount();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        FirebaseManager.instance.UpdateRetryCount(0);
     }
 
     public void GoToMainMenu()
@@ -28,7 +29,8 @@ public class Level0CompleteUI : MonoBehaviour
 
     public void NextLevel()
     {
-        PlayerStats.IncreaseNextCount();
+        PlayerStats.levelNumber = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        FirebaseManager.instance.LogLevelStart(1);
     }
 }

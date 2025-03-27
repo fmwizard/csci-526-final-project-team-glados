@@ -6,12 +6,14 @@ public class PortalManager : MonoBehaviour
     [Header("Portal Settings")]
     [SerializeField] private GameObject portalPrefab;
     [SerializeField] private GameObject mirrorPrefab;
+    [SerializeField] private GameObject cagePrefab;
     [SerializeField] private LayerMask portalPlacementMask;
     [SerializeField] private LayerMask mirrorPlacementMask;
     [SerializeField] private float minPortalDistance = 1f;
 
     private List<Portal> activePortals = new List<Portal>();
     private GameObject activeMirror;
+    private GameObject activeCage;
     private Camera mainCamera;
     private PlayerController player;
 
@@ -19,6 +21,7 @@ public class PortalManager : MonoBehaviour
     {
         mainCamera = Camera.main;
         player = FindObjectOfType<PlayerController>();
+        activeCage = null;
     }
 
     private void Update()
@@ -49,6 +52,19 @@ public class PortalManager : MonoBehaviour
         {
             CreateMirror();
         }
+        // C click for cage
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            CreateCage();
+        }
+        // R click to remove mirror
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            if (activeCage != null)
+            {
+                activeCage.GetComponent<Cage>().Release();
+            }
+        }
     }
 
     private RaycastHit2D GetGunRaycastHit(LayerMask layerMask)
@@ -59,6 +75,33 @@ public class PortalManager : MonoBehaviour
         return Physics2D.Raycast(startPosition, direction, Mathf.Infinity, layerMask);
     }
 
+    private void CreateCage()
+    {
+        RaycastHit2D hit = GetGunRaycastHit(portalPlacementMask);
+        if (hit.collider != null)
+        {
+            if (hit.transform.CompareTag("NoPortalSurface"))
+                return;
+
+            // Create new cage
+            Vector2 normal = hit.normal;
+            float cageRotation = Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg + 90f;
+            if (activeCage == null)
+            {
+                GameObject cageObj = Instantiate(cagePrefab, hit.point, Quaternion.Euler(0, 0, cageRotation));
+                cageObj.AddComponent<Cage>();
+                activeCage = cageObj;
+            }
+            else
+            {
+                // Move existing cage
+                activeCage.transform.position = hit.point;
+                activeCage.transform.rotation = Quaternion.Euler(0, 0, cageRotation);
+            }
+            activeCage.GetComponent<Cage>().normal = normal;
+            
+        }
+    }
     private void CreateMirror()
     {
         RaycastHit2D hit = GetGunRaycastHit(mirrorPlacementMask);
@@ -98,6 +141,14 @@ public class PortalManager : MonoBehaviour
                 return false;
             }
         }
+
+        // Check if the mirror is within main camera's view
+        Vector3 viewportPoint = mainCamera.WorldToViewportPoint(position);
+        if (viewportPoint.x < 0 || viewportPoint.x > 1 || viewportPoint.y < 0 || viewportPoint.y > 1 || viewportPoint.z < 0)
+        {
+            return false;
+        }
+
         return true;
     }
 
@@ -151,6 +202,15 @@ public class PortalManager : MonoBehaviour
                 return false;
             }
         }
+
+        // Check if the portal is within main camera's view
+        // or is reflected by the mirro and showed in previewCamera
+        Vector3 viewportPoint = mainCamera.WorldToViewportPoint(position);
+        if (!player.isReflected && (viewportPoint.x < 0 || viewportPoint.x > 1 || viewportPoint.y < 0 || viewportPoint.y > 1 || viewportPoint.z < 0))
+        {
+            return false;
+        }
+
         return true;
     }
 

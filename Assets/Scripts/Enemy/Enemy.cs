@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float patrolDistance = 5f;
     [SerializeField] private float groundCheckDistance = 1f;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private float fallThreshold = -10f;
 
     [Header("Events")]
     public UnityEvent onDeath;
@@ -42,6 +43,10 @@ public class Enemy : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (transform.position.y < fallThreshold)
+        {
+            TakeDamage(maxHealth);
+        }
         if (!IsGrounded())
         {
             // Don't move if we're not on ground
@@ -105,6 +110,11 @@ public class Enemy : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public static bool IsTallEnemy(GameObject enemy)
+    {
+        return enemy.GetComponent<Renderer>().bounds.size.y > 3f;
     }
 
     protected IEnumerator DamageFlash()

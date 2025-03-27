@@ -6,6 +6,7 @@ public class HeadTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (GetComponentInParent<EnemyController>() != null) return;
         if (collision.CompareTag("Player"))
         {
             float damage = collision.GetComponent<PlayerController>().GetCurrentVelocityMagnitude();
@@ -17,19 +18,38 @@ public class HeadTrigger : MonoBehaviour
         else if (collision.CompareTag("Box")) 
         {
             Enemy enemy = transform.parent.GetComponent<Enemy>();
-
+            Rigidbody2D boxRb = collision.GetComponent<Rigidbody2D>();
             // Instantly kill RedEnemy
-            if (enemy is RedEnemy) 
+
+            if (boxRb != null)
             {
-                Debug.Log("RedEnemy hit on head by box! Instantly killing.");
-                // High damage ensures instant kill
-                enemy.TakeDamage(9999f);
-            }
-            // Normal enemy takes normal damage
-            else 
-            {
-                float damage = collision.GetComponent<Rigidbody2D>().velocity.magnitude;
-                enemy.TakeDamage(damage);
+                float boxSpeed = boxRb.velocity.magnitude;
+                float requiredSpeed = 7f;
+                float normalspeed = 1f;
+
+                Debug.Log("Box speed: " + boxSpeed);
+
+                // Only kill RedEnemy if the Box is moving fast enough
+                if (enemy is RedEnemy) 
+                {
+                    if (boxSpeed >= requiredSpeed) 
+                    {
+                        Debug.Log("RedEnemy hit on head by high-speed box! Instantly dying.");
+                        enemy.TakeDamage(9999f);
+                    }
+                    else if (boxSpeed >= normalspeed) {
+                        Debug.Log("Box hit detected! counting as one hit");
+                        enemy.TakeDamage(1);
+                    }
+                    else
+                    {
+                        Debug.Log("Box hit RedEnemy but was too slow!");
+                    }
+                }
+                else
+                {
+                    enemy.TakeDamage(1f);
+                }
             }
         }
     }

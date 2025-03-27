@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3407522799349290252}
   m_Layer: 0
   m_Name: RedEnemy
-  m_TagString: Untagged
+  m_TagString: RedEnemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  fallThreshold: -10
   onDeath:
     m_PersistentCalls:
       m_Calls: []

@@ -19,6 +19,7 @@ public class Level1CompleteUI : MonoBehaviour
     {
         PlayerStats.IncreaseRetryCount();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        FirebaseManager.instance.UpdateDeathCount(1);
     }
 
     public void GoToMainMenu()

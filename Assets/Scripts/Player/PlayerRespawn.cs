@@ -35,7 +35,7 @@ public class PlayerRespawn : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         // Debug.Log("Collision detected with: " + collision.gameObject.name);
-        if (collision.gameObject.CompareTag("Hostility"))
+        if (collision.gameObject.CompareTag("Hostility") && collision.gameObject.layer != LayerMask.NameToLayer("Companion") )
         {
             if (collision.gameObject.GetComponent<HeadTrigger>() == null)
             {
@@ -46,8 +46,12 @@ public class PlayerRespawn : MonoBehaviour
 
     public void Respawn()
     {
-        PlayerStats.IncreaseDeathCount();
-        
+        if (FirebaseManager.instance != null)
+        {
+            PlayerStats.IncreaseDeathCount();
+            FirebaseManager.instance.UpdateDeathCount(PlayerStats.levelNumber);
+        }
+
         transform.position = startPosition;
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         if (rb != null)
@@ -60,6 +64,14 @@ public class PlayerRespawn : MonoBehaviour
         if(portalManager != null)
         {
             portalManager.RemovePortals();
+        }
+
+        EnemyController enemyController = FindObjectOfType<EnemyController>(true);
+        if(enemyController != null)
+        {
+            Enemy enemy = enemyController.GetComponent<Enemy>();
+            enemy.gameObject.SetActive(true);
+            enemy.TakeDamage(9999f);
         }
 
         MainCamera cameraScript = Camera.main.GetComponent<MainCamera>();

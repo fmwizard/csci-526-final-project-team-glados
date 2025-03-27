@@ -3,9 +3,10 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public static string playerID;
+    public static int levelNumber = 0;
     public static int deathCount = 0;
     public static int retryCount = 0;
-    public static int nextCount = 0;
+
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -23,11 +24,6 @@ public class PlayerStats : MonoBehaviour
     public static void IncreaseRetryCount()
     {
         retryCount++;
-    }
-
-    public static void IncreaseNextCount()
-    {
-        nextCount++;
     }
 
     public static void ResetStats()

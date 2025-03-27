@@ -7,6 +7,7 @@ public class BodyTrigger : MonoBehaviour
     // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.CompareTag("Player"))
         {
             Debug.Log("Player touched RedEnemy's body! Respawn");

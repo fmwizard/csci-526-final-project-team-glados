@@ -55,27 +55,41 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
-    // Logs Level Completion with all player stats
-    public void LogLevelCompletion(int levelNumber, float completionTime, int deaths, int retries, bool completed)
+    public void LogLevelStart(int levelNumber)
     {
         string playerID = PlayerStats.playerID;
         string path = $"levelCompletion/{playerID}/level_{levelNumber}";
 
-        string json = $"{{\"completionTime\": \"{(completed ? completionTime.ToString() : "N/A")}\", \"deaths\": {PlayerStats.deathCount}, \"retries\": {PlayerStats.retryCount}, \"completed\": {completed.ToString().ToLower()}}}";
+        string json = $"{{\"completionTime\": \"N/A\", \"deaths\": 0, \"retries\": 0, \"completed\": false}}";
         SendData(path, json);
-
-        PlayerStats.ResetStats();
     }
 
-    // Logs if a player quits mid-level
-    public void LogIncompleteSession()
+    public void UpdateDeathCount(int levelNumber)
     {
         string playerID = PlayerStats.playerID;
-        string path = $"levelCompletion/{playerID}/level_0/1";
+        string path = $"levelCompletion/{playerID}/level_{levelNumber}";
 
         string json = $"{{\"completionTime\": \"N/A\", \"deaths\": {PlayerStats.deathCount}, \"retries\": {PlayerStats.retryCount}, \"completed\": false}}";
         SendData(path, json);
+    }
 
-        PlayerStats.ResetStats(); 
+    public void UpdateRetryCount(int levelNumber)
+    {
+        string playerID = PlayerStats.playerID;
+        string path = $"levelCompletion/{playerID}/level_{levelNumber}";
+
+        string json = $"{{\"completionTime\": \"N/A\", \"deaths\": {PlayerStats.deathCount}, \"retries\": {PlayerStats.retryCount}, \"completed\": false}}";
+        SendData(path, json);
+    }
+
+    public void UpdateLevelCompletion(int levelNumber, float completionTime, int deaths, int retries)
+    {
+        string playerID = PlayerStats.playerID;
+        string path = $"levelCompletion/{playerID}/level_{levelNumber}";
+
+        string json = $"{{\"completionTime\": \"{completionTime}\", \"deaths\": {PlayerStats.deathCount}, \"retries\": {PlayerStats.retryCount}, \"completed\": true}}";
+        SendData(path, json);
+
+        PlayerStats.ResetStats();
     }
 }
