@@ -1,20 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] public float speed;
     [SerializeField] public float minX;
     [SerializeField] public float maxX;
+    [SerializeField] public float rotationSpeed;
 
     private Vector3 direction = Vector3.right;
 
     void Update()
     {
         transform.position += direction * speed * Time.deltaTime;
+        transform.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
         if (transform.position.x >= maxX)
         {
             direction = Vector3.left;
@@ -27,30 +27,17 @@ public class MovingPlatform : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Portal"))
+        if (collision.gameObject.CompareTag("Portal") || collision.gameObject.CompareTag("Mirror"))
         {
             collision.transform.parent = transform;
         }
     }
 
-    void OnTriggerStay2D(Collider2D collision)
-    {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("Mirror"))
-        {   
-            if (collision.transform.parent == null)
-            {
-                collision.transform.position += direction * speed * Time.deltaTime;
-            }
-        }
-    }
-
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Mirror"))
         {
             collision.transform.position += direction * speed * Time.deltaTime;
         }
-
     }
-
 }

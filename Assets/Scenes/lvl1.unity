@@ -4639,7 +4639,7 @@ GameObject:
   - component: {fileID: 1506315796}
   - component: {fileID: 1506315798}
   - component: {fileID: 1506315797}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: Celling (2)
   m_TagString: NoPortalSurface
   m_Icon: {fileID: 0}
