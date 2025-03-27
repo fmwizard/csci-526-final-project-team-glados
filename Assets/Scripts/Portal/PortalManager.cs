@@ -141,6 +141,14 @@ public class PortalManager : MonoBehaviour
                 return false;
             }
         }
+
+        // Check if the mirror is within main camera's view
+        Vector3 viewportPoint = mainCamera.WorldToViewportPoint(position);
+        if (viewportPoint.x < 0 || viewportPoint.x > 1 || viewportPoint.y < 0 || viewportPoint.y > 1 || viewportPoint.z < 0)
+        {
+            return false;
+        }
+
         return true;
     }
 
@@ -194,6 +202,15 @@ public class PortalManager : MonoBehaviour
                 return false;
             }
         }
+
+        // Check if the portal is within main camera's view
+        // or is reflected by the mirro and showed in previewCamera
+        Vector3 viewportPoint = mainCamera.WorldToViewportPoint(position);
+        if (!player.isReflected && (viewportPoint.x < 0 || viewportPoint.x > 1 || viewportPoint.y < 0 || viewportPoint.y > 1 || viewportPoint.z < 0))
+        {
+            return false;
+        }
+
         return true;
     }
 
