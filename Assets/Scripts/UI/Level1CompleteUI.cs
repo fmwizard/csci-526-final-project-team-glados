@@ -11,7 +11,7 @@ public class Level1CompleteUI : MonoBehaviour
         float finalTime = PlayerPrefs.GetFloat("FinalTime", 0f);
         int minutes = Mathf.FloorToInt(finalTime / 60);
         int seconds = Mathf.FloorToInt(finalTime % 60);
-        timeText1.text = "Time:\n" + string.Format("{0:00}:{1:00}", minutes, seconds);
+        timeText1.text = "Victory? Maybe.\nSpeedrun-worthy? Doubt it.\n\nTime:\n" + string.Format("{0:00}:{1:00}", minutes, seconds);
         Debug.Log("Loaded Final Time: " + finalTime);
     }
 
