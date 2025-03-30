@@ -4898,6 +4898,9 @@ MonoBehaviour:
   portalLayer:
     serializedVersion: 2
     m_Bits: 1216
+  trapLayer:
+    serializedVersion: 2
+    m_Bits: 8192
   interactKey: 101
   boxLayer:
     serializedVersion: 2
@@ -6562,10 +6565,10 @@ MonoBehaviour:
   cagePrefab: {fileID: 486952396}
   portalPlacementMask:
     serializedVersion: 2
-    m_Bits: 1216
+    m_Bits: 9408
   mirrorPlacementMask:
     serializedVersion: 2
-    m_Bits: 1472
+    m_Bits: 9664
   minPortalDistance: 1
 --- !u!4 &2097476303
 Transform:
@@ -6735,6 +6738,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 305561035}
     m_Modifications:
+    - target: {fileID: 4041669041016564390, guid: 0a7e16d8fa5f4405bbbb2e657d5cf33d, type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 7089124302923106820, guid: 0a7e16d8fa5f4405bbbb2e657d5cf33d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.88

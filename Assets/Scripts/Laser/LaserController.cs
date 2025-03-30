@@ -153,6 +153,7 @@ public class LaserController : MonoBehaviour
             
             if (LineSegmentsIntersect(lineStart, lineEnd, laserSegmentStart, laserSegmentEnd))
             {
+                PlayerController.instance.intersectionPoint = GetIntersectionPoint(lineStart, lineEnd, laserSegmentStart, laserSegmentEnd);
                 return true;
             }
         }
@@ -177,5 +178,29 @@ public class LaserController : MonoBehaviour
         
         // Check if intersection point is on both line segments
         return ua >= 0f && ua <= 1f && ub >= 0f && ub <= 1f;
+    }
+
+    // Helper method to get the intersection point of two line segments
+    public Vector2 GetIntersectionPoint(Vector2 a1, Vector2 a2, Vector2 b1, Vector2 b2)
+    {
+        // Line AB represented as a1 + t * (a2 - a1)
+        // Line CD represented as b1 + s * (b2 - b1)
+        
+        float denominator = (b2.y - b1.y) * (a2.x - a1.x) - (b2.x - b1.x) * (a2.y - a1.y);
+        
+        // Lines are parallel or collinear
+        if (Mathf.Approximately(denominator, 0f))
+            return Vector2.zero;
+            
+        float ua = ((b2.x - b1.x) * (a1.y - b1.y) - (b2.y - b1.y) * (a1.x - b1.x)) / denominator;
+        float ub = ((a2.x - a1.x) * (a1.y - b1.y) - (a2.y - a1.y) * (a1.x - b1.x)) / denominator;
+        
+        // Check if intersection point is on both line segments
+        if (ua >= 0f && ua <= 1f && ub >= 0f && ub <= 1f)
+        {
+            return new Vector2(a1.x + ua * (a2.x - a1.x), a1.y + ua * (a2.y - a1.y));
+        }
+        
+        return Vector2.zero;
     }
 }
