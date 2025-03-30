@@ -4793,6 +4793,9 @@ MonoBehaviour:
   portalLayer:
     serializedVersion: 2
     m_Bits: 1216
+  trapLayer:
+    serializedVersion: 2
+    m_Bits: 8192
   interactKey: 101
   boxLayer:
     serializedVersion: 2
@@ -6516,10 +6519,10 @@ MonoBehaviour:
   cagePrefab: {fileID: 1836601659}
   portalPlacementMask:
     serializedVersion: 2
-    m_Bits: 1216
+    m_Bits: 9408
   mirrorPlacementMask:
     serializedVersion: 2
-    m_Bits: 1472
+    m_Bits: 9664
   minPortalDistance: 1
 --- !u!4 &2097476303
 Transform:

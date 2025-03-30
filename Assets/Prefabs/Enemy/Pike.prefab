@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7089124302923106820}
   - component: {fileID: 7741529836889575119}
   - component: {fileID: 2768906032751775166}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Pike
   m_TagString: Trap
   m_Icon: {fileID: 0}

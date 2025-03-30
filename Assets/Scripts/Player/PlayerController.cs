@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask portalLayer;
+    [SerializeField] private LayerMask trapLayer;
 
     [Header("Interaction Settings")]
     [SerializeField] private KeyCode interactKey = KeyCode.E;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private LayerMask enemyLayer;
     [SerializeField] private float interactionRange = 2f;
 
+    public static PlayerController instance;
     private Rigidbody2D rb;
     private bool isGrounded;
     private float horizontalInput;
@@ -32,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 intermediatePosition { get; set; }
     public bool fromPortal;
     public LineRenderer lineRenderer;
+    public Vector2 intersectionPoint { get; set; }
     public bool isReflected = false;
 
     // public int maxReflections = 5;
@@ -39,6 +42,14 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         fromPortal = false;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -164,7 +175,7 @@ public class PlayerController : MonoBehaviour
 
             while (remainingDistance > 0)
             {
-                RaycastHit2D hit = Physics2D.Raycast(start, direction, remainingDistance, portalLayer | mirrorLayer);
+                RaycastHit2D hit = Physics2D.Raycast(start, direction, remainingDistance, portalLayer | mirrorLayer | trapLayer);
                 
                 if (hit.collider == null)
                 {
@@ -186,6 +197,10 @@ public class PlayerController : MonoBehaviour
                 {
                     break; // Hit something other than a mirror, stop tracing
                 }
+            }
+            if (AimLineIntersectsWithLaser())
+            {
+                linePositions[^1] = intersectionPoint;
             }
             endingPosition = linePositions[^1];
             intermediatePosition = linePositions[^2];
