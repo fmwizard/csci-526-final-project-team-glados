@@ -11,15 +11,15 @@ public class Level2CompleteUI : MonoBehaviour
         float finalTime = PlayerPrefs.GetFloat("FinalTime", 0f);
         int minutes = Mathf.FloorToInt(finalTime / 60);
         int seconds = Mathf.FloorToInt(finalTime % 60);
-        timeText2.text = "Time:\n" + string.Format("{0:00}:{1:00}", minutes, seconds);
+        timeText2.text = "Victory? Maybe.\nSpeedrun-Worthy? Doubt It.\n\nTime: " + string.Format("{0:00}:{1:00}", minutes, seconds);
         Debug.Log("Loaded Final Time: " + finalTime);
     }
 
     public void RetryLevel()
     {
         PlayerStats.IncreaseRetryCount();
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        SceneManager.LoadScene("lvl2");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        // SceneManager.LoadScene("lvl2");
         FirebaseManager.instance.UpdateRetryCount(2);
     }
 

@@ -24,8 +24,8 @@ public class MainMenuController : MonoBehaviour
         FirebaseManager.instance.LogLevelStart(2);
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
+    // public void QuitGame()
+    // {
+    //     Application.Quit();
+    // }
 }

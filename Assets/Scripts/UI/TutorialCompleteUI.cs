@@ -11,17 +11,17 @@ public class TutorialCompleteUI : MonoBehaviour
         float finalTime = PlayerPrefs.GetFloat("FinalTime", 0f);
         int minutes = Mathf.FloorToInt(finalTime / 60);
         int seconds = Mathf.FloorToInt(finalTime % 60);
-        timeText0.text = "Not bad, Not bad.\nBut Can you survive the real challenge!!!\n\nTime:\n" + string.Format("{0:00}:{1:00}", minutes, seconds);
+        timeText0.text = "Nice Moves!\nYou’ve Mastered The Basics.!\n\nTime: " + string.Format("{0:00}:{1:00}", minutes, seconds);
         Debug.Log("Loaded Final Time: " + finalTime);
     }
 
-    public void RetryLevel()
-    {
-        PlayerStats.IncreaseRetryCount();
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        SceneManager.LoadScene("tutorial");
-        FirebaseManager.instance.UpdateRetryCount(0);
-    }
+    // public void RetryLevel()
+    // {
+    //     PlayerStats.IncreaseRetryCount();
+    //     //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+    //     SceneManager.LoadScene("tutorial");
+    //     FirebaseManager.instance.UpdateRetryCount(0);
+    // }
 
     public void GoToMainMenu()
     {
