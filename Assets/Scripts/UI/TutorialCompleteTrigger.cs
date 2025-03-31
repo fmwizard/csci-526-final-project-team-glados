@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Level0CompleteTrigger : MonoBehaviour
+public class TutorialCompleteTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -22,7 +22,7 @@ public class Level0CompleteTrigger : MonoBehaviour
                 FirebaseManager.instance.UpdateLevelCompletion(0, completionTime, deaths, retries);
             }
 
-            SceneManager.LoadScene("Level0Complete");
+            SceneManager.LoadScene("TutorialComplete");
         }
     }
 }
