@@ -5,12 +5,12 @@ using UnityEngine;
 public class Cage : MonoBehaviour
 {
     private bool isCaptured;
-    private GameObject capturedObject;
     private float lastReleaseTime;
     private float releaseCooldown = 0.5f;
     private Color enemyColor = new Color(0.58f, 0.16f, 0.9f);
     private Color companionColor = new Color(0.9f, 0.4f, 0.15f);
     public Vector2 normal { get; set; }
+    public GameObject capturedObject;
     // Start is called before the first frame update
     void Start()
     {
