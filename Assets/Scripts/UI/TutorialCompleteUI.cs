@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class Level0CompleteUI : MonoBehaviour
+public class TutorialCompleteUI : MonoBehaviour
 {
     public TextMeshProUGUI timeText0;
 
@@ -18,7 +18,8 @@ public class Level0CompleteUI : MonoBehaviour
     public void RetryLevel()
     {
         PlayerStats.IncreaseRetryCount();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("tutorial");
         FirebaseManager.instance.UpdateRetryCount(0);
     }
 
@@ -30,7 +31,8 @@ public class Level0CompleteUI : MonoBehaviour
     public void NextLevel()
     {
         PlayerStats.levelNumber = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("lvl1");
         FirebaseManager.instance.LogLevelStart(1);
     }
 }
