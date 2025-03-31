@@ -3,13 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
-    public void LoadBaseLevel()
+    public void LoadTutorialLevel()
     {
-        SceneManager.LoadScene("lvl0");
+        SceneManager.LoadScene("tutorial");
         PlayerStats.levelNumber = 0;
         FirebaseManager.instance.LogLevelStart(0);
     }
-
+    
     public void LoadLevel1()
     {
         SceneManager.LoadScene("lvl1");
@@ -17,8 +17,15 @@ public class MainMenuController : MonoBehaviour
         FirebaseManager.instance.LogLevelStart(1);
     }
 
-    public void QuitGame()
+    public void LoadLevel2()
     {
-        Application.Quit();
+        SceneManager.LoadScene("lvl2");
+        PlayerStats.levelNumber = 2;
+        FirebaseManager.instance.LogLevelStart(2);
     }
+
+    // public void QuitGame()
+    // {
+    //     Application.Quit();
+    // }
 }
