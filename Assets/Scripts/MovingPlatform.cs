@@ -35,7 +35,7 @@ public class MovingPlatform : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Mirror"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box") || collision.gameObject.CompareTag("Mirror") || collision.gameObject.CompareTag("Hostility") || collision.gameObject.CompareTag("RedEnemy"))
         {
             collision.transform.position += direction * speed * Time.deltaTime;
         }
