@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MainCamera : MonoBehaviour
 {
@@ -30,7 +31,14 @@ public class MainCamera : MonoBehaviour
     void Update()
     {
         GameObject allyObject = portalManager.GetCageCapturedObject();
-        if (allyObject != null)
+        if (allyObject == null)
+        {
+            UpdatePlayerView();
+            return;
+        }
+
+        float distance = Vector3.Distance(player.position, allyObject.transform.position);
+        if (distance < 20f)
         {
             UpdateAllyView(allyObject.transform);
         }
@@ -38,20 +46,27 @@ public class MainCamera : MonoBehaviour
         {
             UpdatePlayerView();
         }
-
     }
 
     private void UpdateAllyView(Transform ally)
     {
-        // Compute the midpoint between player and ally
-        Vector3 midpoint = (player.position + ally.position) / 2f;
-
         // Compute the required zoom based on the distance
+        Vector3 midpoint = (player.position + ally.position) / 2f;
         float distance = Vector3.Distance(player.position, ally.position);
         float newZoom = Mathf.Max(defaultOrthographicSize, distance / zoomFactor);
 
         // Smoothly interpolate camera position and zoom
-        transform.position = Vector3.Lerp(transform.position, new Vector3(midpoint.x, midpoint.y, transform.position.z), Time.deltaTime * smoothSpeed);
+        float positionY = transform.position.y;
+        if (player.position.y - transform.position.y > playerOffsetY && transform.position.y < cameraMaxY)
+        {
+            positionY = player.position.y - playerOffsetY;
+        }
+        else if (transform.position.y - player.position.y > playerOffsetY && transform.position.y > cameraMinY)
+        {
+            positionY = player.position.y + playerOffsetY;
+        }
+
+        transform.position = Vector3.Lerp(transform.position, new Vector3(midpoint.x, positionY, transform.position.z), Time.deltaTime * smoothSpeed);
         mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, newZoom, Time.deltaTime * smoothSpeed);
 
         // Adjust TimeCanvas scale to match camera zoom
@@ -61,7 +76,7 @@ public class MainCamera : MonoBehaviour
 
     private void UpdatePlayerView()
     {
-        mainCamera.orthographicSize = defaultOrthographicSize;
+        //mainCamera.orthographicSize = defaultOrthographicSize;
         timeCanvasRT.localScale = new Vector3(1f, 1f, 1f);
         float positionX = transform.position.x;
         float positionY = transform.position.y;
@@ -84,7 +99,10 @@ public class MainCamera : MonoBehaviour
             positionY = player.position.y + playerOffsetY;
         }
 
+        // Adjust PositionY high enough to avoid seeing blue background underneath
+        positionY = Mathf.Max(positionY, 0f);
         transform.position = new Vector3(positionX, positionY, transform.position.z);
+        mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, defaultOrthographicSize, Time.deltaTime * smoothSpeed);
     }
 
     public void ResetPlayer(Transform respawnedPlayer)
