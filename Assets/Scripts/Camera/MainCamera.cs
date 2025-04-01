@@ -101,6 +101,7 @@ public class MainCamera : MonoBehaviour
 
         // Adjust PositionY high enough to avoid seeing blue background underneath
         positionY = Mathf.Max(positionY, 0f);
+        positionX = Mathf.Max(positionX, cameraMinX);
         transform.position = new Vector3(positionX, positionY, transform.position.z);
         mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, defaultOrthographicSize, Time.deltaTime * smoothSpeed);
     }
