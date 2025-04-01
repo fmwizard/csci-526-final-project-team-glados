@@ -55,7 +55,8 @@ public class Cage : MonoBehaviour
 
     private bool IsCapturedObject(GameObject obj)
     {
-        return obj.CompareTag("Box") || (obj.CompareTag("Hostility") && !Enemy.IsTallEnemy(obj));
+        //return obj.CompareTag("Box") || (obj.CompareTag("Hostility") && !Enemy.IsTallEnemy(obj));
+        return obj.CompareTag("Hostility") && !Enemy.IsTallEnemy(obj);
     }
     public void Release()
     {
