@@ -245,6 +245,21 @@ public class PortalManager : MonoBehaviour
         activePortals.Clear();
     }
 
+    public GameObject GetCageCapturedObject()
+    {
+        if (activeCage == null)
+        {
+            return null;
+        }
+
+        Cage cage = activeCage.GetComponent<Cage>();
+        if (cage == null)
+        {
+            return null;
+        }
+
+        return cage.capturedObject;
+    }
 }
 
 public enum PortalType
