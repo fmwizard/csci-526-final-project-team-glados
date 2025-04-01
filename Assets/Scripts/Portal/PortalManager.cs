@@ -94,6 +94,8 @@ public class PortalManager : MonoBehaviour
             }
             else
             {
+                activeCage.transform.parent = null; // Workaround for re-positioning from a moving platform
+
                 // Move existing cage
                 activeCage.transform.position = hit.point;
                 activeCage.transform.rotation = Quaternion.Euler(0, 0, cageRotation);
