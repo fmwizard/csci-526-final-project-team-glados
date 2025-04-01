@@ -1690,7 +1690,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1553681768}
-  cameraMinX: -5
+  cameraMinX: -8
   cameraMaxX: 50
   cameraMinY: 0
   cameraMaxY: 10
