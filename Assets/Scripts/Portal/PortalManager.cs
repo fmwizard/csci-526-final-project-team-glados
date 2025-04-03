@@ -165,6 +165,8 @@ public class PortalManager : MonoBehaviour
 
     private void CreatePortal(PortalType type)
     {
+        if (Time.timeScale == 0f) return;
+
         RaycastHit2D hit = GetGunRaycastHit(portalPlacementMask);
         if (hit.collider != null)
         {
