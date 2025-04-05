@@ -78,7 +78,58 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             jumpPressed = true;
+
+            if (FirebaseManager.instance != null)
+            {
+                Vector2 pos = transform.position;
+                float time = Time.timeSinceLevelLoad;
+                int level = PlayerStats.levelNumber;
+
+                JumpEventData jumpData = new JumpEventData(pos, time);
+                FirebaseManager.instance.LogTestDatabyPOST("jumps", jumpData, level);
+            }
         }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Vector2 pos = transform.position;
+            float time = Time.timeSinceLevelLoad;
+            int level = PlayerStats.levelNumber;
+
+            MirrorUseEvent mirrorData = new MirrorUseEvent(pos, time);
+            FirebaseManager.instance.LogTestDatabyPOST("mirror", mirrorData, level);
+        }
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Vector2 pos = transform.position;
+            float time = Time.timeSinceLevelLoad;
+            int level = PlayerStats.levelNumber;
+
+            CatchUseEvent catchData = new CatchUseEvent(pos, time);
+            FirebaseManager.instance.LogTestDatabyPOST("catch_ally", catchData, level);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Vector2 pos = transform.position;
+            float time = Time.timeSinceLevelLoad;
+            int level = PlayerStats.levelNumber;
+
+            ReleaseUseEvent releaseData = new ReleaseUseEvent(pos, time);
+            FirebaseManager.instance.LogTestDatabyPOST("release_ally", releaseData, level);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            Vector2 pos = transform.position;
+            float time = Time.timeSinceLevelLoad;
+            int level = PlayerStats.levelNumber;
+
+            LOSUseEvent LOSData = new LOSUseEvent(pos, time);
+            FirebaseManager.instance.LogTestDatabyPOST("toggle_LOS", LOSData, level);
+        }
+        
 
         // Ground check
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);

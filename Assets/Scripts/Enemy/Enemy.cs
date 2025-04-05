@@ -45,6 +45,12 @@ public class Enemy : MonoBehaviour
     {
         if (transform.position.y < fallThreshold)
         {
+            if (FirebaseManager.instance != null)
+            {
+                Vector2 pos = transform.position;
+                int level = PlayerStats.levelNumber;
+                FirebaseManager.instance.LogEnemyKill("Fall", pos, level);
+            }
             TakeDamage(maxHealth);
         }
         if (!IsGrounded())

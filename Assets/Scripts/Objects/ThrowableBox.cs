@@ -96,7 +96,20 @@ public class ThrowableBox : MonoBehaviour
             HeadTrigger headTrigger = collision.gameObject.GetComponent<HeadTrigger>();
             if (headTrigger != null)
             {
-                headTrigger.transform.parent.GetComponent<Enemy>().TakeDamage(damage);
+                // headTrigger.transform.parent.GetComponent<Enemy>().TakeDamage(damage);
+                Enemy enemy = headTrigger.transform.parent.GetComponent<Enemy>();
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(damage);
+
+                    // Firebase logging
+                    if (FirebaseManager.instance != null)
+                    {
+                        Vector2 pos = enemy.transform.position;
+                        int level = PlayerStats.levelNumber;
+                        FirebaseManager.instance.LogEnemyKill("Box", pos, level);
+                    }
+                }
             }
         }
         else if (collision.gameObject.CompareTag("Player"))

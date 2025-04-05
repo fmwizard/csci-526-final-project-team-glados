@@ -110,6 +110,12 @@ public class EnemyController : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(damage);
+                if (FirebaseManager.instance != null)
+                {
+                    Vector2 pos = transform.position;
+                    int level = PlayerStats.levelNumber;
+                    FirebaseManager.instance.LogEnemyKill("Ally", pos, level);
+                }
                 GetComponent<Enemy>().TakeDamage(damage);
             }
         }

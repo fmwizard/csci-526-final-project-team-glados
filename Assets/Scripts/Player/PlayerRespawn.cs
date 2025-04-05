@@ -18,6 +18,7 @@ public class PlayerRespawn : MonoBehaviour
     {
         if (transform.position.y < fallThreshold)
         {
+            LogDeath("Fall");
             Respawn();
         }
     }
@@ -25,9 +26,9 @@ public class PlayerRespawn : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         // Debug.Log("Collision detected with: " + other.gameObject.name);
-        
         if (other.CompareTag("Trap")) 
         {
+            LogDeath("Trap");
             Respawn();
         }
     }
@@ -39,10 +40,24 @@ public class PlayerRespawn : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<HeadTrigger>() == null)
             {
+                LogDeath("Enemy");
                 Respawn();
             }
         }
     }
+
+    void LogDeath(string reason)
+    {
+        if (FirebaseManager.instance != null)
+        {
+            Vector2 pos = transform.position;
+            float time = Time.timeSinceLevelLoad;
+            int level = PlayerStats.levelNumber;
+            DeathReasonData deathData = new DeathReasonData(reason, pos, time);
+            FirebaseManager.instance.LogTestDatabyPOST("deathReasons", deathData, level);
+        }
+    }
+
 
     public void Respawn()
     {

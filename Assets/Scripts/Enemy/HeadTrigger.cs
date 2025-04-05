@@ -10,6 +10,12 @@ public class HeadTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             float damage = collision.GetComponent<PlayerController>().GetCurrentVelocityMagnitude();
+            if (FirebaseManager.instance != null)
+            {
+                Vector2 pos = transform.position;
+                int level = PlayerStats.levelNumber;
+                FirebaseManager.instance.LogEnemyKill("Player", pos, level);
+            }
             transform.parent.GetComponent<Enemy>().TakeDamage(damage);
 
             Debug.Log("Player hit the enemy's head and did NOT die.");
@@ -35,6 +41,12 @@ public class HeadTrigger : MonoBehaviour
                     if (boxSpeed >= requiredSpeed) 
                     {
                         Debug.Log("RedEnemy hit on head by high-speed box! Instantly dying.");
+                        if (FirebaseManager.instance != null)
+                        {
+                            Vector2 pos = transform.position;
+                            int level = PlayerStats.levelNumber;
+                            FirebaseManager.instance.LogEnemyKill("Acclerated Box", pos, level);
+                        }
                         enemy.TakeDamage(9999f);
                     }
                     else if (boxSpeed >= normalspeed) {
@@ -48,6 +60,12 @@ public class HeadTrigger : MonoBehaviour
                 }
                 else
                 {
+                    if (FirebaseManager.instance != null)
+                    {
+                        Vector2 pos = transform.position;
+                        int level = PlayerStats.levelNumber;
+                        FirebaseManager.instance.LogEnemyKill("Box", pos, level);
+                    }
                     enemy.TakeDamage(1f);
                 }
             }

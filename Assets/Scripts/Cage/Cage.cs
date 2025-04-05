@@ -44,6 +44,12 @@ public class Cage : MonoBehaviour
             Destroy(other.gameObject);
             if (capturedObject.CompareTag("Hostility") && capturedObject.layer != LayerMask.NameToLayer("Companion"))
             {
+                if (FirebaseManager.instance != null)
+                    {
+                        Vector2 pos = transform.position;
+                        int level = PlayerStats.levelNumber;
+                        FirebaseManager.instance.LogEnemyKill("Converted to Ally", pos, level);
+                    }
                 capturedObject.AddComponent<EnemyController>();
                 capturedObject.layer = LayerMask.NameToLayer("Companion");
                 capturedObject.GetComponent<SpriteRenderer>().color = companionColor;
