@@ -56,15 +56,19 @@ public class PortalManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.C))
         {
             CreateCage();
-        }
-        // R click to remove mirror
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            if (activeCage != null)
+            if (activeCage.GetComponent<Cage>().capturedObject != null)
             {
                 activeCage.GetComponent<Cage>().Release();
             }
         }
+        // // R click to remove mirror
+        // else if (Input.GetKeyDown(KeyCode.R))
+        // {
+        //     if (activeCage != null)
+        //     {
+        //         activeCage.GetComponent<Cage>().Release();
+        //     }
+        // }
     }
 
     private RaycastHit2D GetGunRaycastHit(LayerMask layerMask)
