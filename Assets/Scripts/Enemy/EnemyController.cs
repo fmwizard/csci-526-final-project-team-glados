@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEditor;
+using System;
 
 
 public class EnemyController : MonoBehaviour
@@ -19,6 +20,14 @@ public class EnemyController : MonoBehaviour
     private float currentVelocityMagnitude;
     private SpriteRenderer spriteRenderer;
     //public bool fromPortal;
+    public event Action OnDeathOrDisable;
+
+    private void OnDisable(){
+        OnDeathOrDisable?.Invoke();
+    }
+    private void OnDestroy(){
+        OnDeathOrDisable?.Invoke();
+    }
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,20 +41,30 @@ public class EnemyController : MonoBehaviour
 
     private void Update()
     {
-        horizontalInput = 0;
-        if (Input.GetKey(KeyCode.J))
-        {
-            horizontalInput = -1;
-        }
-        else if (Input.GetKey(KeyCode.L))
-        {
-            horizontalInput = 1;
-        }
+        
 
-        if (Input.GetKeyDown(KeyCode.I))
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             jumpPressed = true;
         }
+
+        // OLD CODE FOR IJL CONTROLS
+        //horizontalInput = 0;
+        // if (Input.GetKey(KeyCode.J))
+        // {
+        //     horizontalInput = -1;
+        // }
+        // else if (Input.GetKey(KeyCode.L))
+        // {
+        //     horizontalInput = 1;
+        // }
+
+        // if (Input.GetKeyDown(KeyCode.I))
+        // {
+        //     jumpPressed = true;
+        // }
 
         // Ground check
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);

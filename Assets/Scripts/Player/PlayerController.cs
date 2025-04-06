@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerController : MonoBehaviour
@@ -70,6 +71,15 @@ public class PlayerController : MonoBehaviour
             lineRenderer.sortingOrder = 100;
         }
     }
+
+    private void Start()
+    {
+        if(SceneManager.GetActiveScene().name == "tutorial")
+        {
+            GetComponent<LineRenderer>().enabled = false;
+        }
+    }
+    
 
     private void Update()
     {
