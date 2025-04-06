@@ -74,6 +74,12 @@ public class PlayerRespawn : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
 
+        BreakableGlassPlatform[] platforms = FindObjectsOfType<BreakableGlassPlatform>(true);
+        foreach (BreakableGlassPlatform platform in platforms)
+        {
+            platform.ResetPlatform();
+        }
+
         // Remvoe portals upon respawn for anticheating
         PortalManager portalManager = FindObjectOfType<PortalManager>();
         if(portalManager != null)

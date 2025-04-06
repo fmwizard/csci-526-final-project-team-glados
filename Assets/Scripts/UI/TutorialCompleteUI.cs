@@ -11,7 +11,7 @@ public class TutorialCompleteUI : MonoBehaviour
         float finalTime = PlayerPrefs.GetFloat("FinalTime", 0f);
         int minutes = Mathf.FloorToInt(finalTime / 60);
         int seconds = Mathf.FloorToInt(finalTime % 60);
-        timeText0.text = "Nice Moves!\nYou’ve Mastered The Basics.!\n\nTime: " + string.Format("{0:00}:{1:00}", minutes, seconds);
+        timeText0.text = "Nice Moves!\nYou’ve Mastered The Basics.\n\nTime: " + string.Format("{0:00}:{1:00}", minutes, seconds);
         Debug.Log("Loaded Final Time: " + finalTime);
     }
 

@@ -10,6 +10,16 @@ public class BreakableGlassPlatform : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Collider2D platformCollider;
     private bool isBreaking = false;
+    private bool isBroken = false;
+
+    private Vector3 originalPosition;
+    private Quaternion originalRotation;
+
+    void Awake()
+    {
+        originalPosition = transform.position;
+        originalRotation = transform.rotation;
+    }
 
     void Start()
     {
@@ -19,8 +29,7 @@ public class BreakableGlassPlatform : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Check if the player or a box touches the platform
-        if ((collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box")) && !isBreaking)
+        if ((collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Box")) && !isBreaking && !isBroken)
         {
             StartCoroutine(BlinkAndBreak());
         }
@@ -33,12 +42,25 @@ public class BreakableGlassPlatform : MonoBehaviour
 
         while (elapsedTime < blinkDuration)
         {
-            spriteRenderer.enabled = !spriteRenderer.enabled; // Toggle visibility
+            spriteRenderer.enabled = !spriteRenderer.enabled;
             yield return new WaitForSeconds(blinkInterval);
             elapsedTime += blinkInterval;
         }
 
-        // Fully disappear
-        Destroy(gameObject);
+        spriteRenderer.enabled = false;
+        platformCollider.enabled = false;
+        isBroken = true;
+        isBreaking = false;
+    }
+
+    public void ResetPlatform()
+    {
+        transform.position = originalPosition;
+        transform.rotation = originalRotation;
+
+        spriteRenderer.enabled = true;
+        platformCollider.enabled = true;
+        isBreaking = false;
+        isBroken = false;
     }
 }
