@@ -106,8 +106,10 @@ public class PlayerController : MonoBehaviour
             float time = Time.timeSinceLevelLoad;
             int level = PlayerStats.levelNumber;
 
-            MirrorUseEvent mirrorData = new MirrorUseEvent(pos, time);
-            FirebaseManager.instance.LogTestDatabyPOST("mirror", mirrorData, level);
+            if (FirebaseManager.instance != null) {
+                MirrorUseEvent mirrorData = new MirrorUseEvent(pos, time);
+                FirebaseManager.instance.LogTestDatabyPOST("mirror", mirrorData, level);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.C))
@@ -117,7 +119,9 @@ public class PlayerController : MonoBehaviour
             int level = PlayerStats.levelNumber;
 
             CatchUseEvent catchData = new CatchUseEvent(pos, time);
-            FirebaseManager.instance.LogTestDatabyPOST("catch_ally", catchData, level);
+            if (FirebaseManager.instance != null) {
+                FirebaseManager.instance.LogTestDatabyPOST("catch_ally", catchData, level);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -127,7 +131,9 @@ public class PlayerController : MonoBehaviour
             int level = PlayerStats.levelNumber;
 
             ReleaseUseEvent releaseData = new ReleaseUseEvent(pos, time);
-            FirebaseManager.instance.LogTestDatabyPOST("release_ally", releaseData, level);
+            if (FirebaseManager.instance != null) {
+                FirebaseManager.instance.LogTestDatabyPOST("release_ally", releaseData, level);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.F))

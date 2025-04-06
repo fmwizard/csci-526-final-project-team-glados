@@ -5,20 +5,21 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     //public GameObject player;
-    public PlayerController player;
+    public GameObject playerObject;
     private EnemyController currentEnemy;
 
     private bool controllingPlayer = true;
+    private PlayerController playerController;
 
     void Start()
     {
-        //playerController = playerObject.GetComponent<PlayerController>();
-        player.enabled = true;
+        playerController = playerObject.GetComponent<PlayerController>();
+        playerController.enabled = true;
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             ToggleControl();
         }
@@ -59,22 +60,23 @@ public class PlayerManager : MonoBehaviour
         {
             if (currentEnemy != null && currentEnemy.gameObject.activeInHierarchy)
             {
-                player.enabled = false;
+                playerController.enabled = false;
                 currentEnemy.enabled = true;
                 controllingPlayer = false;
             }
         }
         else
         {
-            if (player != null)
+            if (playerController != null)
             {
                 if (currentEnemy != null)
                     currentEnemy.enabled = false;
 
-                player.enabled = true;
+                playerController.enabled = true;
                 controllingPlayer = true;
             }
         }
+        Debug.Log($"Shift Toggle. controllingPlayer: {controllingPlayer}. currentEnemy: {currentEnemy}");
     }
     // [SerializeField] private GameObject playerObject;
     // [SerializeField] private GameObject enemyObject;

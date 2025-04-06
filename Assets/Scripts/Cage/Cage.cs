@@ -9,13 +9,15 @@ public class Cage : MonoBehaviour
     private float releaseCooldown = 0.5f;
     private Color enemyColor = new Color(0.58f, 0.16f, 0.9f);
     private Color companionColor = new Color(0.9f, 0.4f, 0.15f);
+    private PlayerManager playerManager;
     public Vector2 normal { get; set; }
     public GameObject capturedObject;
     // Start is called before the first frame update
     void Start()
     {
+        playerManager = FindObjectOfType<PlayerManager>();
         isCaptured = false;
-        capturedObject = null;   
+        capturedObject = null;
     }
 
     // Update is called once per frame
@@ -51,7 +53,7 @@ public class Cage : MonoBehaviour
                         FirebaseManager.instance.LogEnemyKill("Converted to Ally", pos, level);
                     }
                 EnemyController newController = capturedObject.AddComponent<EnemyController>();
-                FindObjectOfType<PlayerManager>().SetCurrentEnemy(newController);
+                playerManager.SetCurrentEnemy(newController);
                 capturedObject.layer = LayerMask.NameToLayer("Companion");
                 capturedObject.GetComponent<SpriteRenderer>().color = companionColor;
             }
@@ -72,6 +74,7 @@ public class Cage : MonoBehaviour
         capturedObject.transform.position = transform.position;
         capturedObject.SetActive(true);
         isCaptured = false;
+        playerManager.SetCurrentEnemy(capturedObject.GetComponent<EnemyController>());
     }
     
 }
