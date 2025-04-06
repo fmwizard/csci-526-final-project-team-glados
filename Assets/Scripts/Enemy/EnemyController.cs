@@ -109,14 +109,8 @@ public class EnemyController : MonoBehaviour
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage);
-                if (FirebaseManager.instance != null)
-                {
-                    Vector2 pos = transform.position;
-                    int level = PlayerStats.levelNumber;
-                    FirebaseManager.instance.LogEnemyKill("Ally", pos, level);
-                }
-                GetComponent<Enemy>().TakeDamage(damage);
+                enemy.TakeDamage(damage, collision.gameObject);
+                GetComponent<Enemy>().TakeDamage(damage, collision.gameObject);
             }
         }
         

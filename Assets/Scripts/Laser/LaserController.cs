@@ -122,13 +122,7 @@ public class LaserController : MonoBehaviour
                     Enemy enemy = hit.collider.GetComponentInParent<Enemy>();
                     if(enemy != null)
                     {
-                        enemy.TakeDamage(100);
-                        if (FirebaseManager.instance != null)
-                        {
-                            Vector2 pos = hit.collider.transform.position;
-                            int level = PlayerStats.levelNumber;
-                            FirebaseManager.instance.LogEnemyKill("Laser", pos, level);
-                        }
+                        enemy.TakeDamage(100, this.gameObject);
                     }
                     break;
                 }

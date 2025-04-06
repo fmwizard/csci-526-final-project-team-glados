@@ -45,12 +45,6 @@ public class Enemy : MonoBehaviour
     {
         if (transform.position.y < fallThreshold)
         {
-            if (FirebaseManager.instance != null)
-            {
-                Vector2 pos = transform.position;
-                int level = PlayerStats.levelNumber;
-                FirebaseManager.instance.LogEnemyKill("Fall", pos, level);
-            }
             TakeDamage(maxHealth);
         }
         if (!IsGrounded())
@@ -105,12 +99,33 @@ public class Enemy : MonoBehaviour
         return hit.collider != null;
     }
 
-    public virtual void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage, GameObject damageSource = null)
     {
         currentHealth -= damage;
 
         // Visual feedback
         StartCoroutine(DamageFlash());
+
+        if (FirebaseManager.instance != null)
+        {
+            Vector2 pos = transform.position;
+            int level = PlayerStats.levelNumber;
+            if (damageSource == null) {
+                FirebaseManager.instance.LogEnemyKill("Fall", pos, level);
+            } else if (damageSource.CompareTag("Player")) {
+                FirebaseManager.instance.LogEnemyKill("Player", pos, level);
+            } else if (damageSource.CompareTag("Hostility")) {
+                if (damageSource != this.gameObject) {
+                    FirebaseManager.instance.LogEnemyKill("Ally", pos, level);
+                }
+            } else if (damageSource.CompareTag("Laser")) {
+                FirebaseManager.instance.LogEnemyKill("Laser", pos, level);
+            } else if (damage >= 9999f) {
+                FirebaseManager.instance.LogEnemyKill("Acclerated Box", pos, level);
+            } else {
+                FirebaseManager.instance.LogEnemyKill("Box", pos, level);
+            }
+        }
 
         if (currentHealth <= 0)
         {
