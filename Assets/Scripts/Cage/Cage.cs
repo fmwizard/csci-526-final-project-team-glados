@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Cage : MonoBehaviour
@@ -45,14 +46,26 @@ public class Cage : MonoBehaviour
             if (capturedObject.CompareTag("Hostility") && capturedObject.layer != LayerMask.NameToLayer("Companion"))
             {
                 if (FirebaseManager.instance != null)
-                    {
-                        Vector2 pos = transform.position;
-                        int level = PlayerStats.levelNumber;
-                        FirebaseManager.instance.LogEnemyKill("Converted to Ally", pos, level);
-                    }
+                {
+                    Vector2 pos = transform.position;
+                    int level = PlayerStats.levelNumber;
+                    FirebaseManager.instance.LogEnemyKill("Converted to Ally", pos, level);
+                }
                 capturedObject.AddComponent<EnemyController>();
                 capturedObject.layer = LayerMask.NameToLayer("Companion");
                 capturedObject.GetComponent<SpriteRenderer>().color = companionColor;
+
+                Transform angryFace = capturedObject.transform.Find("AngryFace");
+                if (angryFace != null)
+                {
+                    Destroy(angryFace.gameObject);
+                }
+
+                var happyFacePrefab = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Enemy/HappyFace.prefab", typeof(GameObject));
+                GameObject happyFace = Instantiate(happyFacePrefab, Vector3.zero, Quaternion.identity) as GameObject;
+                happyFace.transform.SetParent(capturedObject.transform);
+                happyFace.transform.localPosition = Vector3.zero;
+                happyFace.transform.localRotation = Quaternion.identity;
             }
             capturedObject.SetActive(false);
             isCaptured = true;
