@@ -177,6 +177,13 @@ public class PortalManager : MonoBehaviour
             if (hit.transform.CompareTag("NoPortalSurface"))
                 return;
 
+            if (hit.transform.CompareTag("Trap") || hit.transform.gameObject.layer == LayerMask.NameToLayer("Trap"))
+                return;
+
+            RaycastHit2D belowHit = Physics2D.Raycast(hit.point + Vector2.down * 0.1f, Vector2.down, 0.2f, portalPlacementMask);
+            if (belowHit.collider != null && (belowHit.collider.CompareTag("Trap") || belowHit.collider.gameObject.layer == LayerMask.NameToLayer("Trap")))
+                return;
+
             // Check if we can place a portal here
             if (!IsValidPortalPosition(hit.point))
                 return;

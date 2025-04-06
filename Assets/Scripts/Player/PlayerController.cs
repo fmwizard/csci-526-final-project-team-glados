@@ -96,8 +96,10 @@ public class PlayerController : MonoBehaviour
             float time = Time.timeSinceLevelLoad;
             int level = PlayerStats.levelNumber;
 
-            MirrorUseEvent mirrorData = new MirrorUseEvent(pos, time);
-            FirebaseManager.instance.LogTestDataByPOST("mirror", mirrorData, level);
+            if (FirebaseManager.instance != null) {
+                MirrorUseEvent mirrorData = new MirrorUseEvent(pos, time);
+                FirebaseManager.instance.LogTestDataByPOST("mirror", mirrorData, level);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.C))
