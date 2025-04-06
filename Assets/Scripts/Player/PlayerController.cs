@@ -109,7 +109,9 @@ public class PlayerController : MonoBehaviour
             int level = PlayerStats.levelNumber;
 
             CatchUseEvent catchData = new CatchUseEvent(pos, time);
-            FirebaseManager.instance.LogTestDataByPOST("catch_ally", catchData, level);
+            if (FirebaseManager.instance != null) {
+                FirebaseManager.instance.LogTestDataByPOST("catch_ally", catchData, level);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -119,7 +121,9 @@ public class PlayerController : MonoBehaviour
             int level = PlayerStats.levelNumber;
 
             ReleaseUseEvent releaseData = new ReleaseUseEvent(pos, time);
-            FirebaseManager.instance.LogTestDataByPOST("release_ally", releaseData, level);
+            if (FirebaseManager.instance != null) {
+                FirebaseManager.instance.LogTestDataByPOST("release_ally", releaseData, level);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.F))

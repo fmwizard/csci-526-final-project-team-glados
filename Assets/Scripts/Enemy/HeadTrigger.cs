@@ -12,6 +12,12 @@ public class HeadTrigger : MonoBehaviour
             float damage = collision.GetComponent<PlayerController>().GetCurrentVelocityMagnitude();
             transform.parent.GetComponent<Enemy>().TakeDamage(damage, collision.gameObject);
             Debug.Log("Player hit the enemy's head and did NOT die.");
+
+            Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 6f);
+            }
         }
         // Kill RedEnemy instantly if hit by Box
         else if (collision.CompareTag("Box")) 
