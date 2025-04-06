@@ -1,6 +1,21 @@
 using UnityEngine;
 
 [System.Serializable]
+public class KeyPressData
+{
+    public float x;
+    public float y;
+    public float time;
+
+    public KeyPressData(Vector2 position, float time)
+    {
+        x = position.x;
+        y = position.y;
+        this.time = time;
+    }
+}
+
+[System.Serializable]
 public class JumpEventData
 {
     public float posX;
@@ -107,5 +122,26 @@ public class EnemyKillData
         posX = position.x;
         posY = position.y;
         timestamp = time;
+    }
+}
+
+[System.Serializable]
+public class PortalTraversalData
+{
+    public string objectType;
+    public float fromX;
+    public float fromY;
+    public float toX;
+    public float toY;
+    public float timestamp;
+
+    public PortalTraversalData(string objectType, Vector2 from, Vector2 to, float timestamp)
+    {
+        this.objectType = objectType;
+        this.fromX = from.x;
+        this.fromY = from.y;
+        this.toX = to.x;
+        this.toY = to.y;
+        this.timestamp = timestamp;
     }
 }

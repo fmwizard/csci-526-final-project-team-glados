@@ -35,12 +35,24 @@ public class RedEnemy : Enemy
             spriteRenderer.color = secondColorAfterHit;
         }
         else if (hitCount >= 3) {
-            if (FirebaseManager.instance != null)
-            {
-                Vector2 pos = transform.position;
-                int level = PlayerStats.levelNumber;
-                FirebaseManager.instance.LogEnemyKill("Box", pos, level);
-            }
+            // if (collision.CompareTag("Box")){
+            //     if (FirebaseManager.instance != null)
+            //     {
+            //         Vector2 pos = transform.position;
+            //         int level = PlayerStats.levelNumber;
+            //         FirebaseManager.instance.LogEnemyKill("Box", pos, level);
+            //     }
+            // }
+
+            // if (collision.CompareTag("Player")){
+            //     if (FirebaseManager.instance != null)
+            //     {
+            //         Vector2 pos = transform.position;
+            //         int level = PlayerStats.levelNumber;
+            //         FirebaseManager.instance.LogEnemyKill("Player", pos, level);
+            //     }
+            // }
+
             Die();
             return;
         }

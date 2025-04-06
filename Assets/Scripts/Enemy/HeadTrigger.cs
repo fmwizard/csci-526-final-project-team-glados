@@ -60,12 +60,6 @@ public class HeadTrigger : MonoBehaviour
                 }
                 else
                 {
-                    if (FirebaseManager.instance != null)
-                    {
-                        Vector2 pos = transform.position;
-                        int level = PlayerStats.levelNumber;
-                        FirebaseManager.instance.LogEnemyKill("Box", pos, level);
-                    }
                     enemy.TakeDamage(1f);
                 }
             }

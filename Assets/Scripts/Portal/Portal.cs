@@ -73,6 +73,20 @@ public class Portal : MonoBehaviour
             PlayerController player = other.GetComponent<PlayerController>();
             player.fromPortal = true;
         }
+
+        if (FirebaseManager.instance != null)
+        {
+            string objectType = "Unknown";
+            if (other.CompareTag("Player")) objectType = "Player";
+            else if (other.CompareTag("Box")) objectType = "Box";
+            else if (other.CompareTag("Hostility")) objectType = "Enemy";
+
+            Vector2 from = transform.position;
+            Vector2 to = linkedPortal.transform.position;
+            int level = PlayerStats.levelNumber;
+
+            FirebaseManager.instance.LogPortalTraversal(objectType, from, to, level);
+        }
         // Update teleport cooldown
         lastTeleportTime = Time.time;
         linkedPortal.lastTeleportTime = Time.time;

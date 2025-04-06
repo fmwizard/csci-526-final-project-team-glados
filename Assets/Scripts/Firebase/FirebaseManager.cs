@@ -7,8 +7,7 @@ public class FirebaseManager : MonoBehaviour
 {
     private string databaseURL = "https://portalmario-cs526-default-rtdb.firebaseio.com/";
     public static FirebaseManager instance;
-    public bool enableLogging = false;
-    public bool allowLoggingInEditor = true; // Test-only flag
+    public bool allowLoggingInEditor = true; 
 
     void Awake()
     {
@@ -92,24 +91,18 @@ public class FirebaseManager : MonoBehaviour
     public void LogLevelStart(int levelNumber)
     {
         string playerID = PlayerStats.playerID;
-        string path = $"testCompletion/{playerID}/level_{levelNumber}";
+        int attemptNumber = PlayerStats.retryCount + 1;
+        string path = $"testCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
         string json = $"{{\"completionTime\": \"N/A\", \"deaths\": 0, \"retries\": 0, \"completed\": false}}";
         SendDatabyPUT(path, json);
     }
 
-    public void LogTestDatabyPOST(string key, object data, int levelNumber)
-    {
-        string playerID = PlayerStats.playerID;
-        string path = $"test/{playerID}/level_{levelNumber}/{key}";
-        string json = JsonUtility.ToJson(data);
-        SendDatabyPOST(path, json);
-    }
-
     public void UpdateDeathCount(int levelNumber)
     {
         string playerID = PlayerStats.playerID;
-        string path = $"testCompletion/{playerID}/level_{levelNumber}";
+        int attemptNumber = PlayerStats.retryCount + 1;
+        string path = $"testCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
         string json = $"{{\"completionTime\": \"N/A\", \"deaths\": {PlayerStats.deathCount}, \"retries\": {PlayerStats.retryCount}, \"completed\": false}}";
         SendDatabyPUT(path, json);
@@ -118,7 +111,8 @@ public class FirebaseManager : MonoBehaviour
     public void UpdateRetryCount(int levelNumber)
     {
         string playerID = PlayerStats.playerID;
-        string path = $"testCompletion/{playerID}/level_{levelNumber}";
+        int attemptNumber = PlayerStats.retryCount + 1;
+        string path = $"testCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
         string json = $"{{\"completionTime\": \"N/A\", \"deaths\": {PlayerStats.deathCount}, \"retries\": {PlayerStats.retryCount}, \"completed\": false}}";
         SendDatabyPUT(path, json);
@@ -127,7 +121,8 @@ public class FirebaseManager : MonoBehaviour
     public void UpdateLevelCompletion(int levelNumber, float completionTime, int deaths, int retries)
     {
         string playerID = PlayerStats.playerID;
-        string path = $"testCompletion/{playerID}/level_{levelNumber}";
+        int attemptNumber = PlayerStats.retryCount + 1;
+        string path = $"testCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
         string json = $"{{\"completionTime\": \"{completionTime}\", \"deaths\": {PlayerStats.deathCount}, \"retries\": {PlayerStats.retryCount}, \"completed\": true}}";
         SendDatabyPUT(path, json);
@@ -135,29 +130,30 @@ public class FirebaseManager : MonoBehaviour
         PlayerStats.ResetStats();
     }
 
-    // For spacebar press logging
-    [System.Serializable]
-    public class KeyPressData
+    public void LogTestDataByPOST(string key, object data, int levelNumber)
     {
-        public float x;
-        public float y;
-        public float time;
-    }
-
-    public void LogKeyPress(Vector2 position, float time, int level)
-    {
-        KeyPressData data = new KeyPressData {
-            x = position.x,
-            y = position.y,
-            time = time,
-        };
-
-        LogTestDatabyPOST("keyPresses", data, level);
+        string playerID = PlayerStats.playerID;
+        int attemptNumber = PlayerStats.retryCount + 1;
+        string path = $"test/{playerID}/level_{levelNumber}/attempt_{attemptNumber}/{key}";
+        string json = JsonUtility.ToJson(data);
+        SendDatabyPOST(path, json);
     }
 
     public void LogEnemyKill(string reason, Vector2 position, int level)
     {
         EnemyKillData data = new EnemyKillData(reason, position, Time.timeSinceLevelLoad);
-        LogTestDatabyPOST("enemy_kills", data, level);
+        LogTestDataByPOST("enemy_kills", data, level);
+    }
+
+    public void LogKeyPress(Vector2 position, float time, int level)
+    {
+        KeyPressData data = new KeyPressData(position, time);
+        LogTestDataByPOST("keyPresses", data, level);
+    }
+
+    public void LogPortalTraversal(string objectType, Vector2 from, Vector2 to, int level)
+    {
+        PortalTraversalData data = new PortalTraversalData(objectType, from, to, Time.timeSinceLevelLoad);
+        LogTestDataByPOST("portal_usage", data, level);
     }
 }

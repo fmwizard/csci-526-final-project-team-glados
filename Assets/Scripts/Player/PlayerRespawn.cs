@@ -54,7 +54,7 @@ public class PlayerRespawn : MonoBehaviour
             float time = Time.timeSinceLevelLoad;
             int level = PlayerStats.levelNumber;
             DeathReasonData deathData = new DeathReasonData(reason, pos, time);
-            FirebaseManager.instance.LogTestDatabyPOST("deathReasons", deathData, level);
+            FirebaseManager.instance.LogTestDataByPOST("deathReasons", deathData, level);
         }
     }
 

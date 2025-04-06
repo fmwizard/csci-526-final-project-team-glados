@@ -106,7 +106,7 @@ public class LaserController : MonoBehaviour
                         string reason = "Laser";
 
                         DeathReasonData deathData = new DeathReasonData(reason, pos, time);
-                        FirebaseManager.instance.LogTestDatabyPOST("deathReasons", deathData, level);
+                        FirebaseManager.instance.LogTestDataByPOST("deathReasons", deathData, level);
                     }
 
                     playerRespawn.Respawn();
@@ -125,7 +125,7 @@ public class LaserController : MonoBehaviour
                         enemy.TakeDamage(100);
                         if (FirebaseManager.instance != null)
                         {
-                            Vector2 pos = transform.position;
+                            Vector2 pos = hit.collider.transform.position;
                             int level = PlayerStats.levelNumber;
                             FirebaseManager.instance.LogEnemyKill("Laser", pos, level);
                         }

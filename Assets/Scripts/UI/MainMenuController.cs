@@ -3,17 +3,22 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
+    private string playerID;
+
     void Start()
     {
+        playerID = PlayerStats.playerID;
         InitializeControlsAnalytics();
     }
 
     private void InitializeControlsAnalytics()
     {
-        string playerID = PlayerStats.playerID;
         string path = $"test/{playerID}/MainMenu/controlsViewed";
         string json = "{\"opened\": false}";
-        FirebaseManager.instance.SendDatabyPUT(path, json);
+        if (FirebaseManager.instance != null)
+        {
+            FirebaseManager.instance.SendDatabyPUT(path, json);
+        }    
     }
 
     public void LoadTutorialLevel()
@@ -42,17 +47,16 @@ public class MainMenuController : MonoBehaviour
 
     public void OnControlsButtonClicked()
     {
-        string playerID = PlayerStats.playerID;
         string path = $"test/{playerID}/MainMenu/controlsViewed";
         string json = "{\"opened\": true}";
-        FirebaseManager.instance.SendDatabyPUT(path, json);
-
-        // Show controls panel or scene if needed
+        if (FirebaseManager.instance != null)
+        {
+            FirebaseManager.instance.SendDatabyPUT(path, json);
+        }
     }
 
     private void LogMainMenuChoice(string choice)
     {
-        string playerID = PlayerStats.playerID;
         string path = $"test/{playerID}/MainMenu/selectedOption";
         string json = $"{{\"choice\": \"{choice}\", \"timestamp\": {Time.time}}}";
         FirebaseManager.instance.SendDatabyPUT(path, json);
