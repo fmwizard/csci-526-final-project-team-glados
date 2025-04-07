@@ -90,9 +90,19 @@ public class PlayerRespawn : MonoBehaviour
         EnemyController enemyController = FindObjectOfType<EnemyController>(true);
         if(enemyController != null)
         {
-            Enemy enemy = enemyController.GetComponent<Enemy>();
-            enemy.gameObject.SetActive(true);
-            enemy.TakeDamage(9999f);
+            // Enemy enemy = enemyController.GetComponent<Enemy>();
+            // enemy.gameObject.SetActive(true);
+            // enemy.TakeDamage(9999f);
+
+            // return to cage
+            GameObject captured = portalManager.GetCageCapturedObject();
+            if (captured != null)
+            {
+                portalManager.SetCageCapturedObject(captured);
+                Destroy(captured);
+                portalManager.GetCageCapturedObject().SetActive(false);
+                portalManager.GetActiveCage().SetIsCaptured(true);
+            }
         }
 
         MainCamera cameraScript = Camera.main.GetComponent<MainCamera>();

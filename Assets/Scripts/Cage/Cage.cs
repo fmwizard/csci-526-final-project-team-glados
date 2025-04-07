@@ -110,4 +110,8 @@ public class Cage : MonoBehaviour
         }
     }
     
+    public void SetIsCaptured(bool value)
+    {
+        isCaptured = value;
+    }
 }
