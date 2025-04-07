@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
 
     // public int maxReflections = 5;
     [SerializeField] private LayerMask mirrorLayer;
-    public PlayerManager playerManager;
+    private PlayerManager playerManager;
 
     private void Awake()
     {
@@ -55,6 +55,7 @@ public class PlayerController : MonoBehaviour
         fromPortal = false;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerManager = FindObjectOfType<PlayerManager>();
         if (!groundCheck)
         {
             groundCheck = transform;
@@ -81,17 +82,16 @@ public class PlayerController : MonoBehaviour
             GetComponent<LineRenderer>().enabled = false;
         }
     }
-    
 
     private void Update()
     {
-        if(playerManager.controllingPlayer)
-        {    // Get movement input
+        if (playerManager.controllingPlayer)
+        {
+            // Get movement input
             horizontalInput = Input.GetAxisRaw("Horizontal");
-            if (Input.GetButtonDown("Jump"))
+            if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
             {
                 jumpPressed = true;
-
                 if (FirebaseManager.instance != null)
                 {
                     Vector2 pos = transform.position;
@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
                     int level = PlayerStats.levelNumber;
 
                     JumpEventData jumpData = new JumpEventData(pos, time);
-                    FirebaseManager.instance.LogTestDatabyPOST("jumps", jumpData, level);
+                    FirebaseManager.instance.LogTestDataByPOST("jumps", jumpData, level);
                 }
             }
 
@@ -109,9 +109,10 @@ public class PlayerController : MonoBehaviour
                 float time = Time.timeSinceLevelLoad;
                 int level = PlayerStats.levelNumber;
 
-                if (FirebaseManager.instance != null) {
+                if (FirebaseManager.instance != null)
+                {
                     MirrorUseEvent mirrorData = new MirrorUseEvent(pos, time);
-                    FirebaseManager.instance.LogTestDatabyPOST("mirror", mirrorData, level);
+                    FirebaseManager.instance.LogTestDataByPOST("mirror", mirrorData, level);
                 }
             }
 
@@ -121,21 +122,10 @@ public class PlayerController : MonoBehaviour
                 float time = Time.timeSinceLevelLoad;
                 int level = PlayerStats.levelNumber;
 
-                CatchUseEvent catchData = new CatchUseEvent(pos, time);
-                if (FirebaseManager.instance != null) {
-                    FirebaseManager.instance.LogTestDatabyPOST("catch_ally", catchData, level);
-                }
-            }
-
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                Vector2 pos = transform.position;
-                float time = Time.timeSinceLevelLoad;
-                int level = PlayerStats.levelNumber;
-
-                ReleaseUseEvent releaseData = new ReleaseUseEvent(pos, time);
-                if (FirebaseManager.instance != null) {
-                    FirebaseManager.instance.LogTestDatabyPOST("release_ally", releaseData, level);
+                if (FirebaseManager.instance != null)
+                {
+                    AllyUseEvent Data = new AllyUseEvent(pos, time);
+                    FirebaseManager.instance.LogTestDataByPOST("ally", Data, level);
                 }
             }
 
@@ -145,10 +135,12 @@ public class PlayerController : MonoBehaviour
                 float time = Time.timeSinceLevelLoad;
                 int level = PlayerStats.levelNumber;
 
-                LOSUseEvent LOSData = new LOSUseEvent(pos, time);
-                FirebaseManager.instance.LogTestDatabyPOST("toggle_LOS", LOSData, level);
+                if (FirebaseManager.instance != null)
+                {
+                    LOSUseEvent LOSData = new LOSUseEvent(pos, time);
+                    FirebaseManager.instance.LogTestDataByPOST("toggle_LOS", LOSData, level);
+                }
             }
-            
 
             // Ground check
             isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -181,10 +173,10 @@ public class PlayerController : MonoBehaviour
                 lineRenderer.enabled = isLineVisible;
             }
         }
-        
+
         DrawLineOfSight();
-        
     }
+
     // private void OnCollisionEnter2D(Collision2D collision)
     // {
     //     if (((1 << collision.gameObject.layer) & enemyLayer) != 0)

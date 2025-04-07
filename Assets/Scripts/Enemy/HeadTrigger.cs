@@ -10,15 +10,14 @@ public class HeadTrigger : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             float damage = collision.GetComponent<PlayerController>().GetCurrentVelocityMagnitude();
-            if (FirebaseManager.instance != null)
-            {
-                Vector2 pos = transform.position;
-                int level = PlayerStats.levelNumber;
-                FirebaseManager.instance.LogEnemyKill("Player", pos, level);
-            }
-            transform.parent.GetComponent<Enemy>().TakeDamage(damage);
-
+            transform.parent.GetComponent<Enemy>().TakeDamage(damage, collision.gameObject);
             Debug.Log("Player hit the enemy's head and did NOT die.");
+
+            Rigidbody2D rb = collision.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 6f);
+            }
         }
         // Kill RedEnemy instantly if hit by Box
         else if (collision.CompareTag("Box")) 
@@ -41,17 +40,11 @@ public class HeadTrigger : MonoBehaviour
                     if (boxSpeed >= requiredSpeed) 
                     {
                         Debug.Log("RedEnemy hit on head by high-speed box! Instantly dying.");
-                        if (FirebaseManager.instance != null)
-                        {
-                            Vector2 pos = transform.position;
-                            int level = PlayerStats.levelNumber;
-                            FirebaseManager.instance.LogEnemyKill("Acclerated Box", pos, level);
-                        }
-                        enemy.TakeDamage(9999f);
+                        enemy.TakeDamage(9999f, collision.gameObject);
                     }
                     else if (boxSpeed >= normalspeed) {
                         Debug.Log("Box hit detected! counting as one hit");
-                        enemy.TakeDamage(1);
+                        enemy.TakeDamage(1, collision.gameObject);
                     }
                     else
                     {
@@ -60,13 +53,7 @@ public class HeadTrigger : MonoBehaviour
                 }
                 else
                 {
-                    if (FirebaseManager.instance != null)
-                    {
-                        Vector2 pos = transform.position;
-                        int level = PlayerStats.levelNumber;
-                        FirebaseManager.instance.LogEnemyKill("Box", pos, level);
-                    }
-                    enemy.TakeDamage(1f);
+                    enemy.TakeDamage(1f, collision.gameObject);
                 }
             }
         }

@@ -56,15 +56,19 @@ public class PortalManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.C))
         {
             CreateCage();
-        }
-        // R click to remove mirror
-        else if (Input.GetKeyDown(KeyCode.R))
-        {
-            if (activeCage != null)
+            if (activeCage.GetComponent<Cage>().capturedObject != null)
             {
                 activeCage.GetComponent<Cage>().Release();
             }
         }
+        // // R click to remove mirror
+        // else if (Input.GetKeyDown(KeyCode.R))
+        // {
+        //     if (activeCage != null)
+        //     {
+        //         activeCage.GetComponent<Cage>().Release();
+        //     }
+        // }
     }
 
     private RaycastHit2D GetGunRaycastHit(LayerMask layerMask)
@@ -171,6 +175,13 @@ public class PortalManager : MonoBehaviour
         if (hit.collider != null)
         {
             if (hit.transform.CompareTag("NoPortalSurface"))
+                return;
+
+            if (hit.transform.CompareTag("Trap") || hit.transform.gameObject.layer == LayerMask.NameToLayer("Trap"))
+                return;
+
+            RaycastHit2D belowHit = Physics2D.Raycast(hit.point + Vector2.down * 0.1f, Vector2.down, 0.2f, portalPlacementMask);
+            if (belowHit.collider != null && (belowHit.collider.CompareTag("Trap") || belowHit.collider.gameObject.layer == LayerMask.NameToLayer("Trap")))
                 return;
 
             // Check if we can place a portal here

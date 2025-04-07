@@ -15,7 +15,38 @@ public class RedEnemy : Enemy
         base.Update();
     }
     
-    public override void TakeDamage(float damage) {
+
+    public override void TakeDamage(float damage, GameObject damageSource = null) {
+        if (FirebaseManager.instance != null)
+        {
+            Vector2 pos = transform.position;
+            int level = PlayerStats.levelNumber;
+            if (damageSource == null) 
+            {
+                FirebaseManager.instance.LogEnemyKill("Fall", pos, level);
+            } 
+            else if (damageSource.CompareTag("Player")) 
+            {
+                FirebaseManager.instance.LogEnemyKill($"Player #{hitCount + 1}", pos, level);
+            } 
+            else if (damageSource.CompareTag("Hostility") && damageSource != this.gameObject) 
+            {
+                FirebaseManager.instance.LogEnemyKill($"Ally #{hitCount + 1}", pos, level);
+            } 
+            else if (damageSource.CompareTag("Laser")) 
+            {
+                FirebaseManager.instance.LogEnemyKill("Laser", pos, level);
+            } 
+            else if (damage >= 9999f) 
+            {
+                FirebaseManager.instance.LogEnemyKill("Acclerated Box", pos, level);
+            } 
+            else 
+            {
+                FirebaseManager.instance.LogEnemyKill($"Box  #{hitCount + 1}", pos, level);
+            }
+        }
+
         // Check if damage is coming from a Box
         if (damage >= 9999f) 
         {
@@ -35,12 +66,6 @@ public class RedEnemy : Enemy
             spriteRenderer.color = secondColorAfterHit;
         }
         else if (hitCount >= 3) {
-            if (FirebaseManager.instance != null)
-            {
-                Vector2 pos = transform.position;
-                int level = PlayerStats.levelNumber;
-                FirebaseManager.instance.LogEnemyKill("Box", pos, level);
-            }
             Die();
             return;
         }
@@ -63,5 +88,9 @@ public class RedEnemy : Enemy
 
             Debug.Log("Player touched RedEnemy's body! Respawn");
         }
+    }
+
+    public void SetHitCount(int count) {
+        hitCount = count;
     }
 }

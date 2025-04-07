@@ -100,15 +100,7 @@ public class ThrowableBox : MonoBehaviour
                 Enemy enemy = headTrigger.transform.parent.GetComponent<Enemy>();
                 if (enemy != null)
                 {
-                    enemy.TakeDamage(damage);
-
-                    // Firebase logging
-                    if (FirebaseManager.instance != null)
-                    {
-                        Vector2 pos = enemy.transform.position;
-                        int level = PlayerStats.levelNumber;
-                        FirebaseManager.instance.LogEnemyKill("Box", pos, level);
-                    }
+                    enemy.TakeDamage(damage, collision.gameObject);
                 }
             }
         }

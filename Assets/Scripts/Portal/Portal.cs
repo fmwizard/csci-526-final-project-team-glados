@@ -14,6 +14,10 @@ public class Portal : MonoBehaviour
     private float lastTeleportTime;
     private Vector2 portalNormal;
 
+    private Vector2 previousFromPortal, previousToPortal;
+    private int previousVelocity = 0;
+    private int duplicationCount = 0, limitCount = 3;
+
     public PortalType Type => type;
     public Portal LinkedPortal
     {
@@ -72,6 +76,35 @@ public class Portal : MonoBehaviour
         {
             PlayerController player = other.GetComponent<PlayerController>();
             player.fromPortal = true;
+        }
+
+        if (FirebaseManager.instance != null)
+        {
+            string objectType = "Unknown";
+            if (other.CompareTag("Player")) objectType = "Player";
+            else if (other.CompareTag("Box")) objectType = "Box";
+            else if (other.CompareTag("Hostility")) objectType = "Enemy";
+
+            Vector2 from = transform.position;
+            Vector2 to = linkedPortal.transform.position;
+            int level = PlayerStats.levelNumber;
+            int velocity = (int)rb.velocity.magnitude;
+
+            if (from.Equals(previousFromPortal) && to.Equals(previousToPortal) && previousVelocity == velocity)
+            {
+                duplicationCount++;
+            } else {
+                duplicationCount = 0;
+            }
+
+            if (duplicationCount < limitCount)
+            {
+                FirebaseManager.instance.LogPortalTraversal(objectType, from, to, velocity, level);
+            }
+            
+            previousFromPortal = from;
+            previousToPortal = to;
+            previousVelocity = velocity;
         }
         // Update teleport cooldown
         lastTeleportTime = Time.time;

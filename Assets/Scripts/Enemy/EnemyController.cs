@@ -12,7 +12,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 1.5f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
-
+    private int initHitCount = 2;
     private Rigidbody2D rb;
     private bool isGrounded;
     private float horizontalInput;
@@ -53,7 +53,7 @@ public class EnemyController : MonoBehaviour
         }
 
         // OLD CODE FOR IJL CONTROLS
-        //horizontalInput = 0;
+        // horizontalInput = 0;
         // if (Input.GetKey(KeyCode.J))
         // {
         //     horizontalInput = -1;
@@ -79,6 +79,7 @@ public class EnemyController : MonoBehaviour
         
         currentVelocityMagnitude = rb.velocity.magnitude;
     }
+
     // private void OnCollisionEnter2D(Collision2D collision)
     // {
     //     if (((1 << collision.gameObject.layer) & enemyLayer) != 0)
@@ -123,26 +124,30 @@ public class EnemyController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        float damage = 999f;
         if (collision.gameObject.CompareTag("Hostility"))
         {
-            float damage = 9999f;
             // Try to apply damage to enemy
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy != null)
             {
-                enemy.TakeDamage(damage);
-                if (FirebaseManager.instance != null)
-                {
-                    Vector2 pos = transform.position;
-                    int level = PlayerStats.levelNumber;
-                    FirebaseManager.instance.LogEnemyKill("Ally", pos, level);
-                }
-                GetComponent<Enemy>().TakeDamage(damage);
+                enemy.TakeDamage(damage, collision.gameObject);
+                GetComponent<Enemy>().TakeDamage(damage, collision.gameObject);
+            }
+        }
+        else if (collision.gameObject.CompareTag("RedEnemy"))
+        {
+            RedEnemy redEnemy = collision.gameObject.GetComponent<RedEnemy>();
+            if (redEnemy != null)
+            {
+                redEnemy.SetHitCount(initHitCount - 1);
+                redEnemy.TakeDamage(damage, collision.gameObject);
+                GetComponent<Enemy>().TakeDamage(damage, collision.gameObject);
             }
         }
 
         // Check to see if the player is riding to make it stick
-        // if(collision.gameObject.CompareTag("Player"))
+        // if (collision.gameObject.CompareTag("Player"))
         // {
         //     //Vector2 pointOfContact = collision.contacts[0].point;
         //     float allyTop = GetComponent<Collider2D>().bounds.max.y;
@@ -153,7 +158,6 @@ public class EnemyController : MonoBehaviour
         //         collision.transform.SetParent(transform);
         //     }
         // }
-        
     }
 
     void OnCollisionStay2D(Collision2D collision)
@@ -164,7 +168,7 @@ public class EnemyController : MonoBehaviour
             // float allyTop = GetComponent<Collider2D>().bounds.max.y;
             // float playerBottom = collision.collider.bounds.min.y;
 
-            // if(playerBottom >= allyTop - 0.1f)
+            // if (playerBottom >= allyTop - 0.1f)
             // {
             //     collision.transform.SetParent(transform);
             //     // Vector2 enemyPosition = transform.position;
@@ -185,7 +189,7 @@ public class EnemyController : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        // if(collision.gameObject.CompareTag("Player") && collision.transform.parent == transform)
+        // if (collision.gameObject.CompareTag("Player") && collision.transform.parent == transform)
         // {
         //     collision.transform.SetParent(null);
         // }

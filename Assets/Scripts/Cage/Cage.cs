@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Cage : MonoBehaviour
@@ -47,15 +48,30 @@ public class Cage : MonoBehaviour
             if (capturedObject.CompareTag("Hostility") && capturedObject.layer != LayerMask.NameToLayer("Companion"))
             {
                 if (FirebaseManager.instance != null)
-                    {
-                        Vector2 pos = transform.position;
-                        int level = PlayerStats.levelNumber;
-                        FirebaseManager.instance.LogEnemyKill("Converted to Ally", pos, level);
-                    }
+                {
+                    Vector2 pos = transform.position;
+                    int level = PlayerStats.levelNumber;
+                    FirebaseManager.instance.LogEnemyKill("Converted to Ally", pos, level);
+                }
+
                 EnemyController newController = capturedObject.AddComponent<EnemyController>();
                 playerManager.SetCurrentEnemy(newController);
                 capturedObject.layer = LayerMask.NameToLayer("Companion");
                 capturedObject.GetComponent<SpriteRenderer>().color = companionColor;
+
+                Transform angryFace = capturedObject.transform.Find("AngryFace");
+                Quaternion faceRotation = Quaternion.identity;
+                if (angryFace != null)
+                {
+                    faceRotation = angryFace.transform.rotation;
+                    Destroy(angryFace.gameObject);
+                }
+
+                GameObject happyFacePrefab = Resources.Load<GameObject>("Sprites/HappyFace");
+                GameObject happyFace = Instantiate(happyFacePrefab, Vector3.zero, Quaternion.identity);
+                happyFace.transform.SetParent(capturedObject.transform);
+                happyFace.transform.localPosition = Vector3.zero;
+                happyFace.transform.localRotation = faceRotation;
             }
             capturedObject.SetActive(false);
             isCaptured = true;

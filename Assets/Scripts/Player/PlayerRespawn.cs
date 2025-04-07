@@ -54,7 +54,7 @@ public class PlayerRespawn : MonoBehaviour
             float time = Time.timeSinceLevelLoad;
             int level = PlayerStats.levelNumber;
             DeathReasonData deathData = new DeathReasonData(reason, pos, time);
-            FirebaseManager.instance.LogTestDatabyPOST("deathReasons", deathData, level);
+            FirebaseManager.instance.LogTestDataByPOST("deathReasons", deathData, level);
         }
     }
 
@@ -72,6 +72,12 @@ public class PlayerRespawn : MonoBehaviour
         if (rb != null)
         {
             rb.velocity = Vector2.zero;
+        }
+
+        BreakableGlassPlatform[] platforms = FindObjectsOfType<BreakableGlassPlatform>(true);
+        foreach (BreakableGlassPlatform platform in platforms)
+        {
+            platform.ResetPlatform();
         }
 
         // Remvoe portals upon respawn for anticheating
