@@ -21,6 +21,7 @@ public class EnemyController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     //public bool fromPortal;
     public event Action OnDeathOrDisable;
+    
 
     private void OnDisable(){
         OnDeathOrDisable?.Invoke();
@@ -159,22 +160,45 @@ public class EnemyController : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            //Vector2 pointOfContact = collision.contacts[0].point;
-            float allyTop = GetComponent<Collider2D>().bounds.max.y;
-            float playerBottom = collision.collider.bounds.min.y;
+            // //Vector2 pointOfContact = collision.contacts[0].point;
+            // float allyTop = GetComponent<Collider2D>().bounds.max.y;
+            // float playerBottom = collision.collider.bounds.min.y;
 
-            if(playerBottom >= allyTop - 0.1f)
+            // if(playerBottom >= allyTop - 0.1f)
+            // {
+            //     collision.transform.SetParent(transform);
+            //     // Vector2 enemyPosition = transform.position;
+            //     // Vector2 playerOffset = new Vector2(0, allyTop - playerBottom);
+            //     // collision.transform.position = enemyPosition + playerOffset;
+
+
+            // }
+            Collider2D playerCollider = collision.gameObject.GetComponent<Collider2D>();
+            if(playerCollider != null)
             {
-                collision.transform.SetParent(transform);
+                PhysicsMaterial2D extremeStickyMaterial = new PhysicsMaterial2D("ExtremeStickyMaterial");
+                extremeStickyMaterial.friction = 100f;
+                playerCollider.sharedMaterial = extremeStickyMaterial;
             }
         }
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        if(collision.gameObject.CompareTag("Player") && collision.transform.parent == transform)
+        // if(collision.gameObject.CompareTag("Player") && collision.transform.parent == transform)
+        // {
+        //     collision.transform.SetParent(null);
+        // }
+
+        if(collision.gameObject.CompareTag("Player"))
         {
-            collision.transform.SetParent(null);
+            Collider2D playerCollider = collision.gameObject.GetComponent<Collider2D>();
+            if(playerCollider != null)
+            {
+                PhysicsMaterial2D activeMaterial = new PhysicsMaterial2D("ActiveMaterial");
+                activeMaterial.friction = 0f;
+                playerCollider.sharedMaterial = activeMaterial;
+            }
         }
     }
 

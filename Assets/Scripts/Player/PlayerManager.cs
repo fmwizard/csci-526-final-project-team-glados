@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class PlayerManager : MonoBehaviour
     public PhysicsMaterial2D activeMaterial;
     public PhysicsMaterial2D inactiveMaterial;
     private Collider2D playerCollider;
+    public GameObject popupText;
+    private bool hasShownPopupText = false;
 
     void Start()
     {
@@ -23,6 +26,10 @@ public class PlayerManager : MonoBehaviour
 
         playerController.enabled = true;
         // playerRenderer.material = activeMaterial;
+        if (popupText != null)
+        {
+            popupText.SetActive(false);
+        }
     }
 
     void Update()
@@ -31,6 +38,11 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             ToggleControl();
+
+            if(SceneManager.GetActiveScene().name == "allyTutorial" && popupText != null)
+            {
+                popupText.SetActive(false);
+            }
         }
     }
 
@@ -49,6 +61,12 @@ public class PlayerManager : MonoBehaviour
         {
             currentEnemy.OnDeathOrDisable += OnEnemyLost;
             currentEnemy.enabled = false;
+
+            if(SceneManager.GetActiveScene().name == "allyTutorial" && !hasShownPopupText && popupText != null)
+            {
+                popupText.SetActive(true);
+                hasShownPopupText = true;
+            }
 
             // If we were already controlling an enemy, switch back to player first
             if (!controllingPlayer)
