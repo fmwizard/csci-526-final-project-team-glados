@@ -25,8 +25,8 @@ if data:
 
 df = pd.DataFrame(rows)
 
-with pd.ExcelWriter("Analytics/GameAnalytics.xlsx") as writer:
+with pd.ExcelWriter("Analytics/Alpha/Alpha_Details.xlsx") as writer:
     df[df["Level"] == "level_0"].to_excel(writer, sheet_name="Level 0", index=False)
     df[df["Level"] == "level_1"].to_excel(writer, sheet_name="Level 1", index=False)
 
-print("Data saved to Analytics/GameAnalytics.xlsx")
+print("Data saved to Analytics/Alpha/Alpha_Details.xlsx")
