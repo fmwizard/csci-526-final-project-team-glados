@@ -75,7 +75,7 @@ public class PlayerController : MonoBehaviour
     {
         // Get movement input
         horizontalInput = Input.GetAxisRaw("Horizontal");
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
         {
             jumpPressed = true;
 
