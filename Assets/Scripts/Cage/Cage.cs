@@ -87,7 +87,7 @@ public class Cage : MonoBehaviour
     {
         if (!isCaptured || capturedObject == null) return;
         lastReleaseTime = Time.time;
-        capturedObject.transform.position = transform.position;
+        capturedObject.transform.position = transform.position + new Vector3(normal.x, normal.y, 0) * 1f;
         capturedObject.SetActive(true);
         isCaptured = false;
         playerManager.SetCurrentEnemy(capturedObject.GetComponent<EnemyController>());
