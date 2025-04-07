@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerController : MonoBehaviour
@@ -39,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
     // public int maxReflections = 5;
     [SerializeField] private LayerMask mirrorLayer;
+    private PlayerManager playerManager;
 
     private void Awake()
     {
@@ -53,6 +55,7 @@ public class PlayerController : MonoBehaviour
         fromPortal = false;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerManager = FindObjectOfType<PlayerManager>();
         if (!groundCheck)
         {
             groundCheck = transform;
@@ -71,92 +74,109 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        // Disable line of sight in tutorial before shooting is introduced
+        if(SceneManager.GetActiveScene().name == "tutorial")
+        {
+            GetComponent<LineRenderer>().enabled = false;
+        }
+    }
+
     private void Update()
     {
-        // Get movement input
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
+        if (playerManager.controllingPlayer)
         {
-            jumpPressed = true;
+            // Get movement input
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
+            {
+                jumpPressed = true;
+                if (FirebaseManager.instance != null)
+                {
+                    Vector2 pos = transform.position;
+                    float time = Time.timeSinceLevelLoad;
+                    int level = PlayerStats.levelNumber;
 
-            if (FirebaseManager.instance != null)
+                    JumpEventData jumpData = new JumpEventData(pos, time);
+                    FirebaseManager.instance.LogTestDataByPOST("jumps", jumpData, level);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 Vector2 pos = transform.position;
                 float time = Time.timeSinceLevelLoad;
                 int level = PlayerStats.levelNumber;
 
-                JumpEventData jumpData = new JumpEventData(pos, time);
-                FirebaseManager.instance.LogTestDataByPOST("jumps", jumpData, level);
+                if (FirebaseManager.instance != null)
+                {
+                    MirrorUseEvent mirrorData = new MirrorUseEvent(pos, time);
+                    FirebaseManager.instance.LogTestDataByPOST("mirror", mirrorData, level);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                Vector2 pos = transform.position;
+                float time = Time.timeSinceLevelLoad;
+                int level = PlayerStats.levelNumber;
+
+                if (FirebaseManager.instance != null)
+                {
+                    AllyUseEvent Data = new AllyUseEvent(pos, time);
+                    FirebaseManager.instance.LogTestDataByPOST("ally", Data, level);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Vector2 pos = transform.position;
+                float time = Time.timeSinceLevelLoad;
+                int level = PlayerStats.levelNumber;
+
+                if (FirebaseManager.instance != null)
+                {
+                    LOSUseEvent LOSData = new LOSUseEvent(pos, time);
+                    FirebaseManager.instance.LogTestDataByPOST("toggle_LOS", LOSData, level);
+                }
+            }
+
+            // Ground check
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+
+            // Handle box interaction
+            // if (Input.GetKeyDown(interactKey))
+            // {
+            //     if (heldBox == null)
+            //     {
+            //         TryPickupBox();
+            //     }
+            //     else
+            //     {
+            //         DropBox();
+            //     }
+            // }
+
+            // Flip sprite based on movement direction
+            if (horizontalInput != 0)
+            {
+                spriteRenderer.flipX = horizontalInput < 0;
+            }
+            
+            currentVelocityMagnitude = rb.velocity.magnitude;
+
+            // Draw line
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                isLineVisible = !isLineVisible;
+                lineRenderer.enabled = isLineVisible;
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Vector2 pos = transform.position;
-            float time = Time.timeSinceLevelLoad;
-            int level = PlayerStats.levelNumber;
-
-            if (FirebaseManager.instance != null) {
-                MirrorUseEvent mirrorData = new MirrorUseEvent(pos, time);
-                FirebaseManager.instance.LogTestDataByPOST("mirror", mirrorData, level);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Vector2 pos = transform.position;
-            float time = Time.timeSinceLevelLoad;
-            int level = PlayerStats.levelNumber;
-
-            AllyUseEvent Data = new AllyUseEvent(pos, time);
-            FirebaseManager.instance.LogTestDataByPOST("ally", Data, level);
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            Vector2 pos = transform.position;
-            float time = Time.timeSinceLevelLoad;
-            int level = PlayerStats.levelNumber;
-
-            LOSUseEvent LOSData = new LOSUseEvent(pos, time);
-            FirebaseManager.instance.LogTestDataByPOST("toggle_LOS", LOSData, level);
-        }
-        
-
-        // Ground check
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-
-        // Handle box interaction
-        // if (Input.GetKeyDown(interactKey))
-        // {
-        //     if (heldBox == null)
-        //     {
-        //         TryPickupBox();
-        //     }
-        //     else
-        //     {
-        //         DropBox();
-        //     }
-        // }
-
-        // Flip sprite based on movement direction
-        if (horizontalInput != 0)
-        {
-            spriteRenderer.flipX = horizontalInput < 0;
-        }
-        
-        currentVelocityMagnitude = rb.velocity.magnitude;
-
-        // Draw line
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            isLineVisible = !isLineVisible;
-            lineRenderer.enabled = isLineVisible;
-        }
-        
         DrawLineOfSight();
-        
     }
+
     // private void OnCollisionEnter2D(Collision2D collision)
     // {
     //     if (((1 << collision.gameObject.layer) & enemyLayer) != 0)

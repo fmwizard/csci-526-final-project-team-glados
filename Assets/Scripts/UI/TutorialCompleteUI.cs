@@ -34,6 +34,9 @@ public class TutorialCompleteUI : MonoBehaviour
         PlayerStats.ResetStats();
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         SceneManager.LoadScene("lvl1");
-        FirebaseManager.instance.LogLevelStart(1);
+        if (FirebaseManager.instance != null)
+        {
+            FirebaseManager.instance.LogLevelStart(1);
+        }
     }
 }

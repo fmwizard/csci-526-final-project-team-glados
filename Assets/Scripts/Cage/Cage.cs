@@ -10,13 +10,15 @@ public class Cage : MonoBehaviour
     private float releaseCooldown = 0.5f;
     private Color enemyColor = new Color(0.58f, 0.16f, 0.9f);
     private Color companionColor = new Color(0.9f, 0.4f, 0.15f);
+    private PlayerManager playerManager;
     public Vector2 normal { get; set; }
     public GameObject capturedObject;
     // Start is called before the first frame update
     void Start()
     {
+        playerManager = FindObjectOfType<PlayerManager>();
         isCaptured = false;
-        capturedObject = null;   
+        capturedObject = null;
     }
 
     // Update is called once per frame
@@ -51,13 +53,17 @@ public class Cage : MonoBehaviour
                     int level = PlayerStats.levelNumber;
                     FirebaseManager.instance.LogEnemyKill("Converted to Ally", pos, level);
                 }
-                capturedObject.AddComponent<EnemyController>();
+
+                EnemyController newController = capturedObject.AddComponent<EnemyController>();
+                playerManager.SetCurrentEnemy(newController);
                 capturedObject.layer = LayerMask.NameToLayer("Companion");
                 capturedObject.GetComponent<SpriteRenderer>().color = companionColor;
 
                 Transform angryFace = capturedObject.transform.Find("AngryFace");
+                Quaternion faceRotation = Quaternion.identity;
                 if (angryFace != null)
                 {
+                    faceRotation = angryFace.transform.rotation;
                     Destroy(angryFace.gameObject);
                 }
 
@@ -65,7 +71,7 @@ public class Cage : MonoBehaviour
                 GameObject happyFace = Instantiate(happyFacePrefab, Vector3.zero, Quaternion.identity);
                 happyFace.transform.SetParent(capturedObject.transform);
                 happyFace.transform.localPosition = Vector3.zero;
-                happyFace.transform.localRotation = Quaternion.identity;
+                happyFace.transform.localRotation = faceRotation;
             }
             capturedObject.SetActive(false);
             isCaptured = true;
@@ -84,6 +90,7 @@ public class Cage : MonoBehaviour
         capturedObject.transform.position = transform.position;
         capturedObject.SetActive(true);
         isCaptured = false;
+        playerManager.SetCurrentEnemy(capturedObject.GetComponent<EnemyController>());
     }
     
 }
