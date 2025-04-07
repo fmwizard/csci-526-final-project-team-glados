@@ -61,8 +61,8 @@ public class Cage : MonoBehaviour
                     Destroy(angryFace.gameObject);
                 }
 
-                var happyFacePrefab = AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Enemy/HappyFace.prefab", typeof(GameObject));
-                GameObject happyFace = Instantiate(happyFacePrefab, Vector3.zero, Quaternion.identity) as GameObject;
+                GameObject happyFacePrefab = Resources.Load<GameObject>("Sprites/HappyFace");
+                GameObject happyFace = Instantiate(happyFacePrefab, Vector3.zero, Quaternion.identity);
                 happyFace.transform.SetParent(capturedObject.transform);
                 happyFace.transform.localPosition = Vector3.zero;
                 happyFace.transform.localRotation = Quaternion.identity;
