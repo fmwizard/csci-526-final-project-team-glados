@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
 {
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float jumpForce = 7f;
+    [SerializeField] private float jumpForce = 12f;
     [SerializeField] private float groundCheckRadius = 1.5f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
@@ -30,6 +30,7 @@ public class EnemyController : MonoBehaviour
     }
     private void Awake()
     {
+        this.enabled = false;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (!groundCheck)
@@ -138,7 +139,43 @@ public class EnemyController : MonoBehaviour
                 GetComponent<Enemy>().TakeDamage(damage);
             }
         }
+
+        // Check to see if the player is riding to make it stick
+        // if(collision.gameObject.CompareTag("Player"))
+        // {
+        //     //Vector2 pointOfContact = collision.contacts[0].point;
+        //     float allyTop = GetComponent<Collider2D>().bounds.max.y;
+        //     float playerBottom = collision.collider.bounds.min.y;
+
+        //     if(playerBottom >= allyTop - 0.1f)
+        //     {
+        //         collision.transform.SetParent(transform);
+        //     }
+        // }
         
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+            //Vector2 pointOfContact = collision.contacts[0].point;
+            float allyTop = GetComponent<Collider2D>().bounds.max.y;
+            float playerBottom = collision.collider.bounds.min.y;
+
+            if(playerBottom >= allyTop - 0.1f)
+            {
+                collision.transform.SetParent(transform);
+            }
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if(collision.gameObject.CompareTag("Player") && collision.transform.parent == transform)
+        {
+            collision.transform.SetParent(null);
+        }
     }
 
 }

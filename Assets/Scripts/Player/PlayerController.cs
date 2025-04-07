@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
 
     // public int maxReflections = 5;
     [SerializeField] private LayerMask mirrorLayer;
+    public PlayerManager playerManager;
 
     private void Awake()
     {
@@ -74,6 +75,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        // Disable line of sight in tutorial before shooting is introduced
         if(SceneManager.GetActiveScene().name == "tutorial")
         {
             GetComponent<LineRenderer>().enabled = false;
@@ -83,99 +85,101 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        // Get movement input
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        if (Input.GetButtonDown("Jump"))
-        {
-            jumpPressed = true;
+        if(playerManager.controllingPlayer)
+        {    // Get movement input
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            if (Input.GetButtonDown("Jump"))
+            {
+                jumpPressed = true;
 
-            if (FirebaseManager.instance != null)
+                if (FirebaseManager.instance != null)
+                {
+                    Vector2 pos = transform.position;
+                    float time = Time.timeSinceLevelLoad;
+                    int level = PlayerStats.levelNumber;
+
+                    JumpEventData jumpData = new JumpEventData(pos, time);
+                    FirebaseManager.instance.LogTestDatabyPOST("jumps", jumpData, level);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 Vector2 pos = transform.position;
                 float time = Time.timeSinceLevelLoad;
                 int level = PlayerStats.levelNumber;
 
-                JumpEventData jumpData = new JumpEventData(pos, time);
-                FirebaseManager.instance.LogTestDatabyPOST("jumps", jumpData, level);
+                if (FirebaseManager.instance != null) {
+                    MirrorUseEvent mirrorData = new MirrorUseEvent(pos, time);
+                    FirebaseManager.instance.LogTestDatabyPOST("mirror", mirrorData, level);
+                }
             }
-        }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            Vector2 pos = transform.position;
-            float time = Time.timeSinceLevelLoad;
-            int level = PlayerStats.levelNumber;
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                Vector2 pos = transform.position;
+                float time = Time.timeSinceLevelLoad;
+                int level = PlayerStats.levelNumber;
 
-            if (FirebaseManager.instance != null) {
-                MirrorUseEvent mirrorData = new MirrorUseEvent(pos, time);
-                FirebaseManager.instance.LogTestDatabyPOST("mirror", mirrorData, level);
+                CatchUseEvent catchData = new CatchUseEvent(pos, time);
+                if (FirebaseManager.instance != null) {
+                    FirebaseManager.instance.LogTestDatabyPOST("catch_ally", catchData, level);
+                }
             }
-        }
 
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            Vector2 pos = transform.position;
-            float time = Time.timeSinceLevelLoad;
-            int level = PlayerStats.levelNumber;
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                Vector2 pos = transform.position;
+                float time = Time.timeSinceLevelLoad;
+                int level = PlayerStats.levelNumber;
 
-            CatchUseEvent catchData = new CatchUseEvent(pos, time);
-            if (FirebaseManager.instance != null) {
-                FirebaseManager.instance.LogTestDatabyPOST("catch_ally", catchData, level);
+                ReleaseUseEvent releaseData = new ReleaseUseEvent(pos, time);
+                if (FirebaseManager.instance != null) {
+                    FirebaseManager.instance.LogTestDatabyPOST("release_ally", releaseData, level);
+                }
             }
-        }
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Vector2 pos = transform.position;
-            float time = Time.timeSinceLevelLoad;
-            int level = PlayerStats.levelNumber;
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                Vector2 pos = transform.position;
+                float time = Time.timeSinceLevelLoad;
+                int level = PlayerStats.levelNumber;
 
-            ReleaseUseEvent releaseData = new ReleaseUseEvent(pos, time);
-            if (FirebaseManager.instance != null) {
-                FirebaseManager.instance.LogTestDatabyPOST("release_ally", releaseData, level);
+                LOSUseEvent LOSData = new LOSUseEvent(pos, time);
+                FirebaseManager.instance.LogTestDatabyPOST("toggle_LOS", LOSData, level);
             }
-        }
+            
 
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            Vector2 pos = transform.position;
-            float time = Time.timeSinceLevelLoad;
-            int level = PlayerStats.levelNumber;
+            // Ground check
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-            LOSUseEvent LOSData = new LOSUseEvent(pos, time);
-            FirebaseManager.instance.LogTestDatabyPOST("toggle_LOS", LOSData, level);
-        }
-        
+            // Handle box interaction
+            // if (Input.GetKeyDown(interactKey))
+            // {
+            //     if (heldBox == null)
+            //     {
+            //         TryPickupBox();
+            //     }
+            //     else
+            //     {
+            //         DropBox();
+            //     }
+            // }
 
-        // Ground check
-        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+            // Flip sprite based on movement direction
+            if (horizontalInput != 0)
+            {
+                spriteRenderer.flipX = horizontalInput < 0;
+            }
+            
+            currentVelocityMagnitude = rb.velocity.magnitude;
 
-        // Handle box interaction
-        // if (Input.GetKeyDown(interactKey))
-        // {
-        //     if (heldBox == null)
-        //     {
-        //         TryPickupBox();
-        //     }
-        //     else
-        //     {
-        //         DropBox();
-        //     }
-        // }
-
-        // Flip sprite based on movement direction
-        if (horizontalInput != 0)
-        {
-            spriteRenderer.flipX = horizontalInput < 0;
-        }
-        
-        currentVelocityMagnitude = rb.velocity.magnitude;
-
-        // Draw line
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            isLineVisible = !isLineVisible;
-            lineRenderer.enabled = isLineVisible;
+            // Draw line
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                isLineVisible = !isLineVisible;
+                lineRenderer.enabled = isLineVisible;
+            }
         }
         
         DrawLineOfSight();

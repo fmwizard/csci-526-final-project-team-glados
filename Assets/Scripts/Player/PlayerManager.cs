@@ -4,22 +4,31 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    //public GameObject player;
-    public GameObject playerObject;
+    public GameObject player;
     private EnemyController currentEnemy;
 
-    private bool controllingPlayer = true;
+    public bool controllingPlayer = true;
     private PlayerController playerController;
+    
+    public PhysicsMaterial2D activeMaterial;
+    public PhysicsMaterial2D inactiveMaterial;
+    private Collider2D playerCollider;
 
     void Start()
     {
-        playerController = playerObject.GetComponent<PlayerController>();
+        // Get playercontroller script attached to player
+        playerController = player.GetComponent<PlayerController>();
+        playerCollider = player.GetComponent<Collider2D>();
+        // Probably won't need: playerCollider.sharedMaterial = activeMaterial;
+
         playerController.enabled = true;
+        // playerRenderer.material = activeMaterial;
     }
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        // Toggle control if left shift is pressed
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             ToggleControl();
         }
@@ -27,9 +36,11 @@ public class PlayerManager : MonoBehaviour
 
     public void SetCurrentEnemy(EnemyController newEnemy)
     {
+        // Changes control of enemy
         if (currentEnemy != null)
         {
             currentEnemy.OnDeathOrDisable -= OnEnemyLost;
+            currentEnemy.enabled = false;
         }
 
         currentEnemy = newEnemy;
@@ -37,6 +48,7 @@ public class PlayerManager : MonoBehaviour
         if (currentEnemy != null)
         {
             currentEnemy.OnDeathOrDisable += OnEnemyLost;
+            currentEnemy.enabled = false;
 
             // If we were already controlling an enemy, switch back to player first
             if (!controllingPlayer)
@@ -61,6 +73,8 @@ public class PlayerManager : MonoBehaviour
             if (currentEnemy != null && currentEnemy.gameObject.activeInHierarchy)
             {
                 playerController.enabled = false;
+                playerCollider.sharedMaterial = inactiveMaterial;
+                playerController.lineRenderer.enabled = false;
                 currentEnemy.enabled = true;
                 controllingPlayer = false;
             }
@@ -73,61 +87,11 @@ public class PlayerManager : MonoBehaviour
                     currentEnemy.enabled = false;
 
                 playerController.enabled = true;
+                playerCollider.sharedMaterial = activeMaterial;
+                playerController.lineRenderer.enabled = true;
                 controllingPlayer = true;
             }
         }
-        Debug.Log($"Shift Toggle. controllingPlayer: {controllingPlayer}. currentEnemy: {currentEnemy}");
+        //Debug.Log($"Shift Toggle. controllingPlayer: {controllingPlayer}. currentEnemy: {currentEnemy}");
     }
-    // [SerializeField] private GameObject playerObject;
-    // [SerializeField] private GameObject enemyObject;
-    // private PlayerController playerController;
-    // private EnemyController enemyController;
-
-    // private bool controllingPlayer = true;
-    // // Start is called before the first frame update
-    // void Start()
-    // {
-    //     playerController = playerObject.GetComponent<PlayerController>();
-    //     enemyController = enemyObject.GetComponent<EnemyController>();
-    //     if(playerController == null || enemyController == null){
-    //         Debug.LogError("Player or enemy controller isn't assigned");
-    //         return;
-    //     }
-
-    //     EnablePlayerControl();
-    // }
-
-    // // Update is called once per frame
-    // void Update()
-    // {
-    //     if (Input.GetKeyDown(KeyCode.LeftShift))
-    //     {
-    //         //controllingPlayer = !controllingPlayer;
-    //         if(!controllingPlayer){ // Enemy is not live therefore don't switch
-    //             controllingPlayer = true;
-    //             EnablePlayerControl();
-    //         }
-    //         else if (enemyObject != null && enemyObject.activeInHierarchy)
-    //         {
-    //             controllingPlayer = false;
-    //             EnableEnemyControl();
-    //         }
-    //         else{
-    //             Debug.Log("Enemy unavailable, player remains in control");
-    //         }
-    //     }
-    // }
-
-    // void EnablePlayerControl()
-    // {
-    //     playerController.enabled = true;
-    //     enemyController.enabled = false;
-    // }
-
-    // void EnableEnemyControl()
-    // {
-    //     playerController.enabled = false;
-    //     enemyController.enabled = true;
-    // }
-
 }
