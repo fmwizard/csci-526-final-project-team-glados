@@ -15,6 +15,7 @@ public class RedEnemy : Enemy
         base.Update();
     }
     
+
     public override void TakeDamage(float damage, GameObject damageSource = null) {
         if (FirebaseManager.instance != null)
         {
@@ -87,5 +88,9 @@ public class RedEnemy : Enemy
 
             Debug.Log("Player touched RedEnemy's body! Respawn");
         }
+    }
+
+    public void SetHitCount(int count) {
+        hitCount = count;
     }
 }

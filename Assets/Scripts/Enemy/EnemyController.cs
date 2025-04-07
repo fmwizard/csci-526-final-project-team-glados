@@ -11,7 +11,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private float groundCheckRadius = 1.5f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
-
+    private int initHitCount = 2;
     private Rigidbody2D rb;
     private bool isGrounded;
     private float horizontalInput;
@@ -102,9 +102,9 @@ public class EnemyController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        float damage = 999f;
         if (collision.gameObject.CompareTag("Hostility"))
         {
-            float damage = 9999f;
             // Try to apply damage to enemy
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             if (enemy != null)
@@ -113,7 +113,16 @@ public class EnemyController : MonoBehaviour
                 GetComponent<Enemy>().TakeDamage(damage, collision.gameObject);
             }
         }
-        
+        else if (collision.gameObject.CompareTag("RedEnemy"))
+        {
+            RedEnemy redEnemy = collision.gameObject.GetComponent<RedEnemy>();
+            if (redEnemy != null)
+            {
+                redEnemy.SetHitCount(initHitCount - 1);
+                redEnemy.TakeDamage(damage, collision.gameObject);
+                GetComponent<Enemy>().TakeDamage(damage, collision.gameObject);
+            }
+        }
     }
 
 }
