@@ -13,6 +13,7 @@ public class Cage : MonoBehaviour
     private PlayerManager playerManager;
     public Vector2 normal { get; set; }
     public GameObject capturedObject;
+    public int enemyReleaseCount = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +39,15 @@ public class Cage : MonoBehaviour
                 Destroy(capturedObject.GetComponent<EnemyController>());
                 capturedObject.layer = LayerMask.NameToLayer("Default");
                 capturedObject.GetComponent<SpriteRenderer>().color = enemyColor;
+
+                //PROBABLY SWITCH FACES HERE
+
+                // Make ally turned enemy get enemy movements again
+                Enemy enemyAIControls = capturedObject.GetComponent<Enemy>();
+                if(enemyAIControls != null)
+                {
+                    enemyAIControls.enabled = true;
+                }
             }
         }
         if (IsCapturedObject(other.gameObject))
@@ -90,7 +100,14 @@ public class Cage : MonoBehaviour
         capturedObject.transform.position = transform.position + new Vector3(normal.x, normal.y, 0) * 1f;
         capturedObject.SetActive(true);
         isCaptured = false;
+        enemyReleaseCount++;
         playerManager.SetCurrentEnemy(capturedObject.GetComponent<EnemyController>());
+        // Remove enemy AI controls (patrol and speed)
+        Enemy enemyAIControls = capturedObject.GetComponent<Enemy>();
+        if(enemyAIControls != null)
+        {
+            enemyAIControls.enabled = false;
+        }
     }
     
 }
