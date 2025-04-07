@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PauseButtonHandler : MonoBehaviour
 {
-     public GameObject pauseMenuCanvas;
+    public GameObject pauseMenuCanvas;
     private PlayerController playerController;
 
 
@@ -73,6 +73,7 @@ public class PauseButtonHandler : MonoBehaviour
 
     public void LoadMainMenu()
     {
+        PlayerStats.levelCompleted = PlayerStats.levelNumber;
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu"); 
     }

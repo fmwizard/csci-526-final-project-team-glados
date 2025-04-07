@@ -26,6 +26,15 @@ public class MainMenuController : MonoBehaviour
         LogMainMenuChoice("Tutorial");
         SceneManager.LoadScene("tutorial");
         PlayerStats.levelNumber = 0;
+        if (PlayerStats.levelNumber == PlayerStats.levelCompleted)
+        {
+            PlayerStats.deathCount = 0;
+            PlayerStats.retryCount++;
+        }
+        else
+        {
+            PlayerStats.ResetStats();
+        }
         FirebaseManager.instance.LogLevelStart(0);
     }
 
@@ -34,6 +43,15 @@ public class MainMenuController : MonoBehaviour
         LogMainMenuChoice("Level 1");
         SceneManager.LoadScene("lvl1");
         PlayerStats.levelNumber = 1;
+                if (PlayerStats.levelNumber == PlayerStats.levelCompleted)
+        {
+            PlayerStats.deathCount = 0;
+            PlayerStats.retryCount++;
+        }
+        else
+        {
+            PlayerStats.ResetStats();
+        }
         FirebaseManager.instance.LogLevelStart(1);
     }
 
@@ -42,6 +60,15 @@ public class MainMenuController : MonoBehaviour
         LogMainMenuChoice("Level 2");
         SceneManager.LoadScene("lvl2");
         PlayerStats.levelNumber = 2;
+                if (PlayerStats.levelNumber == PlayerStats.levelCompleted)
+        {
+            PlayerStats.deathCount = 0;
+            PlayerStats.retryCount++;
+        }
+        else
+        {
+            PlayerStats.ResetStats();
+        }
         FirebaseManager.instance.LogLevelStart(2);
     }
 
@@ -59,6 +86,6 @@ public class MainMenuController : MonoBehaviour
     {
         string path = $"test/{playerID}/MainMenu/selectedOption";
         string json = $"{{\"choice\": \"{choice}\", \"timestamp\": {Time.time}}}";
-        FirebaseManager.instance.SendDatabyPUT(path, json);
+        FirebaseManager.instance.SendDatabyPOST(path, json);
     }
 }
