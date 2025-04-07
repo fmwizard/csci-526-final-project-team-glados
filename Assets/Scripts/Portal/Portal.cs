@@ -84,8 +84,9 @@ public class Portal : MonoBehaviour
             Vector2 from = transform.position;
             Vector2 to = linkedPortal.transform.position;
             int level = PlayerStats.levelNumber;
+            float velocity = rb.velocity.magnitude;
 
-            FirebaseManager.instance.LogPortalTraversal(objectType, from, to, level);
+            FirebaseManager.instance.LogPortalTraversal(objectType, from, to, velocity, level);
         }
         // Update teleport cooldown
         lastTeleportTime = Time.time;

@@ -119,8 +119,9 @@ public class PortalTraversalData
     public float toX;
     public float toY;
     public float timestamp;
+    public float velocity;
 
-    public PortalTraversalData(string objectType, Vector2 from, Vector2 to, float timestamp)
+    public PortalTraversalData(string objectType, Vector2 from, Vector2 to, float velocity, float timestamp)
     {
         this.objectType = objectType;
         this.fromX = from.x;
@@ -128,5 +129,6 @@ public class PortalTraversalData
         this.toX = to.x;
         this.toY = to.y;
         this.timestamp = timestamp;
+        this.velocity = velocity;
     }
 }

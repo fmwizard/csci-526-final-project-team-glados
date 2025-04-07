@@ -149,9 +149,9 @@ public class FirebaseManager : MonoBehaviour
         LogTestDataByPOST("keyPresses", data, level);
     }
 
-    public void LogPortalTraversal(string objectType, Vector2 from, Vector2 to, int level)
+    public void LogPortalTraversal(string objectType, Vector2 from, Vector2 to, float velocity,int level)
     {
-        PortalTraversalData data = new PortalTraversalData(objectType, from, to, Time.timeSinceLevelLoad);
+        PortalTraversalData data = new PortalTraversalData(objectType, from, to, velocity, Time.timeSinceLevelLoad);
         LogTestDataByPOST("portal_usage", data, level);
     }
 }
