@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 
-public class TutorialCompleteUI : MonoBehaviour
+public class AllyTutorialCompleteUI : MonoBehaviour
 {
     public TextMeshProUGUI timeText0;
 
@@ -11,7 +11,7 @@ public class TutorialCompleteUI : MonoBehaviour
         float finalTime = PlayerPrefs.GetFloat("FinalTime", 0f);
         int minutes = Mathf.FloorToInt(finalTime / 60);
         int seconds = Mathf.FloorToInt(finalTime % 60);
-        timeText0.text = "Nice Moves!\nYou’ve Mastered The Basics.\n\nTime: " + string.Format("{0:00}:{1:00}", minutes, seconds);
+        timeText0.text = "You got it! Are you ready for the real deal?\n\nTime: " + string.Format("{0:00}:{1:00}", minutes, seconds);
         Debug.Log("Loaded Final Time: " + finalTime);
     }
 
@@ -30,13 +30,13 @@ public class TutorialCompleteUI : MonoBehaviour
 
     public void NextLevel()
     {
-        PlayerStats.levelNumber = 0;
+        PlayerStats.levelNumber = 1;
         PlayerStats.ResetStats();
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene("allyTutorial");
+        SceneManager.LoadScene("lvl1");
         if (FirebaseManager.instance != null)
         {
-            FirebaseManager.instance.LogLevelStart(0);
+            FirebaseManager.instance.LogLevelStart(1);
         }
     }
 }

@@ -7716,7 +7716,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2146369372}
   - component: {fileID: 2146369370}
-  - component: {fileID: 2146369369}
+  - component: {fileID: 2146369373}
   m_Layer: 0
   m_Name: LevelEndTrigger
   m_TagString: Untagged
@@ -7724,18 +7724,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2146369369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2146369368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f63f5d937415647f583c2de6edd9b3b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &2146369370
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7796,6 +7784,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2146369373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2146369368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62e7c7604d6654affa8cca6cada6915e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1601901353052602840
 PrefabInstance:
   m_ObjectHideFlags: 0

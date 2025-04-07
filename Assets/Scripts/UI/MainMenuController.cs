@@ -21,10 +21,24 @@ public class MainMenuController : MonoBehaviour
         }    
     }
 
+    public void LoadTutorialMenu()
+    {
+        LogMainMenuChoice("Tutorial Menu");
+        SceneManager.LoadScene("TutorialMenu");
+    }
+
     public void LoadTutorialLevel()
     {
         LogMainMenuChoice("Tutorial");
         SceneManager.LoadScene("tutorial");
+        PlayerStats.levelNumber = -1;
+        FirebaseManager.instance.LogLevelStart(-1);
+    }
+
+    public void LoadAllyTutorialLevel()
+    {
+        LogMainMenuChoice("Ally Tutorial");
+        SceneManager.LoadScene("allyTutorial");
         PlayerStats.levelNumber = 0;
         FirebaseManager.instance.LogLevelStart(0);
     }
@@ -43,6 +57,11 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("lvl2");
         PlayerStats.levelNumber = 2;
         FirebaseManager.instance.LogLevelStart(2);
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void OnControlsButtonClicked()
