@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
 {
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private float jumpForce = 12f;
+    [SerializeField] private float jumpForce = 7f;
     [SerializeField] private float groundCheckRadius = 1.5f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
@@ -181,7 +181,7 @@ public class EnemyController : MonoBehaviour
             if(playerCollider != null)
             {
                 PhysicsMaterial2D extremeStickyMaterial = new PhysicsMaterial2D("ExtremeStickyMaterial");
-                extremeStickyMaterial.friction = 100f;
+                extremeStickyMaterial.friction = 50f;
                 playerCollider.sharedMaterial = extremeStickyMaterial;
             }
         }
