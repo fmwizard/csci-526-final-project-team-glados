@@ -108,22 +108,8 @@ public class PlayerController : MonoBehaviour
             float time = Time.timeSinceLevelLoad;
             int level = PlayerStats.levelNumber;
 
-            CatchUseEvent catchData = new CatchUseEvent(pos, time);
-            if (FirebaseManager.instance != null) {
-                FirebaseManager.instance.LogTestDataByPOST("catch_ally", catchData, level);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            Vector2 pos = transform.position;
-            float time = Time.timeSinceLevelLoad;
-            int level = PlayerStats.levelNumber;
-
-            ReleaseUseEvent releaseData = new ReleaseUseEvent(pos, time);
-            if (FirebaseManager.instance != null) {
-                FirebaseManager.instance.LogTestDataByPOST("release_ally", releaseData, level);
-            }
+            AllyUseEvent Data = new AllyUseEvent(pos, time);
+            FirebaseManager.instance.LogTestDataByPOST("ally", Data, level);
         }
 
         if (Input.GetKeyDown(KeyCode.F))

@@ -46,28 +46,13 @@ public class MirrorUseEvent
 }
 
 [System.Serializable]
-public class CatchUseEvent
+public class AllyUseEvent
 {
     public float posX;
     public float posY;
     public float timestamp;
 
-    public CatchUseEvent(Vector2 position, float time)
-    {
-        posX = position.x;
-        posY = position.y;
-        timestamp = time;
-    }
-}
-
-[System.Serializable]
-public class ReleaseUseEvent
-{
-    public float posX;
-    public float posY;
-    public float timestamp;
-
-    public ReleaseUseEvent(Vector2 position, float time)
+    public AllyUseEvent(Vector2 position, float time)
     {
         posX = position.x;
         posY = position.y;

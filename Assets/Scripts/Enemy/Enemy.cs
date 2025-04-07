@@ -110,19 +110,31 @@ public class Enemy : MonoBehaviour
         {
             Vector2 pos = transform.position;
             int level = PlayerStats.levelNumber;
-            if (damageSource == null) {
+            if (damageSource == null) 
+            {
                 FirebaseManager.instance.LogEnemyKill("Fall", pos, level);
-            } else if (damageSource.CompareTag("Player")) {
+            } 
+            else if (damageSource.CompareTag("Player")) 
+            {
                 FirebaseManager.instance.LogEnemyKill("Player", pos, level);
-            } else if (damageSource.CompareTag("Hostility")) {
-                if (damageSource != this.gameObject) {
+            } 
+            else if (damageSource.CompareTag("Hostility")) 
+            {
+                if (damageSource != this.gameObject) 
+                {
                     FirebaseManager.instance.LogEnemyKill("Ally", pos, level);
                 }
-            } else if (damageSource.CompareTag("Laser")) {
+            } 
+            else if (damageSource.CompareTag("Laser")) 
+            {
                 FirebaseManager.instance.LogEnemyKill("Laser", pos, level);
-            } else if (damage >= 9999f) {
+            } 
+            else if (damage >= 9999f) 
+            {
                 FirebaseManager.instance.LogEnemyKill("Acclerated Box", pos, level);
-            } else {
+            } 
+            else 
+            {
                 FirebaseManager.instance.LogEnemyKill("Box", pos, level);
             }
         }
