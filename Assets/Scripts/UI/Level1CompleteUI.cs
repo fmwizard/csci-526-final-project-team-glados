@@ -18,6 +18,7 @@ public class Level1CompleteUI : MonoBehaviour
     public void RetryLevel()
     {
         PlayerStats.IncreaseRetryCount();
+        PlayerStats.deathCount = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         // SceneManager.LoadScene("lvl1");
         FirebaseManager.instance.UpdateRetryCount(1); // Update lvl1 retry count
