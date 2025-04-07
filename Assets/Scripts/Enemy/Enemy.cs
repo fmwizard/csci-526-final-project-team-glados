@@ -1,5 +1,7 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.Events;
 
 public class Enemy : MonoBehaviour
@@ -117,25 +119,28 @@ public class Enemy : MonoBehaviour
             else if (damageSource.CompareTag("Player")) 
             {
                 FirebaseManager.instance.LogEnemyKill("Player", pos, level);
-            } 
-            else if (damageSource.CompareTag("Hostility")) 
+            }
+            else if (damageSource.CompareTag("Box") && damage >= 9999f) 
+            {
+                FirebaseManager.instance.LogEnemyKill("Acclerated Box", pos, level);
+            }  
+            else if (damageSource.CompareTag("Box")) 
             {
                 if (damageSource != this.gameObject) 
                 {
-                    FirebaseManager.instance.LogEnemyKill("Ally", pos, level);
+                    FirebaseManager.instance.LogEnemyKill("Box", pos, level);
                 }
             } 
             else if (damageSource.CompareTag("Laser")) 
             {
                 FirebaseManager.instance.LogEnemyKill("Laser", pos, level);
-            } 
-            else if (damage >= 9999f) 
+            }
+            else if (damageSource.CompareTag("Hostility") && damageSource == this.gameObject)
             {
-                FirebaseManager.instance.LogEnemyKill("Acclerated Box", pos, level);
             } 
-            else 
+            else
             {
-                FirebaseManager.instance.LogEnemyKill("Box", pos, level);
+                FirebaseManager.instance.LogEnemyKill("Ally", pos, level);
             }
         }
 

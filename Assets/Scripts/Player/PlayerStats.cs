@@ -4,6 +4,7 @@ public class PlayerStats : MonoBehaviour
 {
     public static string playerID;
     public static int levelNumber = 0;
+    public static int levelCompleted = -10;
     public static int deathCount = 0;
     public static int retryCount = 0;
 

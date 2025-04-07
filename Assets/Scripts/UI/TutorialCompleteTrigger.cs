@@ -21,6 +21,7 @@ public class TutorialCompleteTrigger : MonoBehaviour
             {
                 FirebaseManager.instance.UpdateLevelCompletion(-1, completionTime, deaths, retries);
             }
+            PlayerStats.levelCompleted = 0;
 
             SceneManager.LoadScene("TutorialComplete");
         }

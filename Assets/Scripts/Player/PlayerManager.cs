@@ -61,8 +61,10 @@ public class PlayerManager : MonoBehaviour
         {
             currentEnemy.OnDeathOrDisable += OnEnemyLost;
             currentEnemy.enabled = false;
+            
+            Cage cage = FindObjectOfType<Cage>();
 
-            if(SceneManager.GetActiveScene().name == "allyTutorial" && !hasShownPopupText && popupText != null)
+            if(SceneManager.GetActiveScene().name == "allyTutorial" && !hasShownPopupText && popupText != null && cage.enemyReleaseCount == 1)
             {
                 popupText.SetActive(true);
                 hasShownPopupText = true;

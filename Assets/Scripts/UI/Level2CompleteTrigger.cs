@@ -21,6 +21,7 @@ public class Level2CompleteTrigger : MonoBehaviour
             {
                 FirebaseManager.instance.UpdateLevelCompletion(2, completionTime, deaths, retries);
             }
+            PlayerStats.levelCompleted = 2;
 
             SceneManager.LoadScene("Level2Complete");
         }

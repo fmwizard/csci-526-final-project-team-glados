@@ -29,21 +29,21 @@ public class RedEnemy : Enemy
             {
                 FirebaseManager.instance.LogEnemyKill($"Player #{hitCount + 1}", pos, level);
             } 
-            else if (damageSource.CompareTag("Hostility") && damageSource != this.gameObject) 
+            else if (damageSource.CompareTag("Box") && damage >= 9999f) 
             {
-                FirebaseManager.instance.LogEnemyKill($"Ally #{hitCount + 1}", pos, level);
+                FirebaseManager.instance.LogEnemyKill("Acclerated Box", pos, level);
+            } 
+            else if (damageSource.CompareTag("Box") && damageSource != this.gameObject) 
+            {
+                FirebaseManager.instance.LogEnemyKill($"Box #{hitCount + 1}", pos, level);
             } 
             else if (damageSource.CompareTag("Laser")) 
             {
                 FirebaseManager.instance.LogEnemyKill("Laser", pos, level);
-            } 
-            else if (damage >= 9999f) 
-            {
-                FirebaseManager.instance.LogEnemyKill("Acclerated Box", pos, level);
-            } 
+            }
             else 
             {
-                FirebaseManager.instance.LogEnemyKill($"Box  #{hitCount + 1}", pos, level);
+                FirebaseManager.instance.LogEnemyKill($"Ally  #{hitCount + 1}", pos, level);
             }
         }
 
