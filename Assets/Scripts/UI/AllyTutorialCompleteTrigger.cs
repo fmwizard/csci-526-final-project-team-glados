@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TutorialCompleteTrigger : MonoBehaviour
+public class AllyTutorialComplete : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -19,11 +19,10 @@ public class TutorialCompleteTrigger : MonoBehaviour
 
             if (FirebaseManager.instance != null)
             {
-                FirebaseManager.instance.UpdateLevelCompletion(-1, completionTime, deaths, retries);
+                FirebaseManager.instance.UpdateLevelCompletion(0, completionTime, deaths, retries);
             }
-            PlayerStats.levelCompleted = 0;
 
-            SceneManager.LoadScene("TutorialComplete");
+            SceneManager.LoadScene("AllyTutorialComplete");
         }
     }
 }
