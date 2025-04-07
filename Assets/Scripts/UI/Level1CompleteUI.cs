@@ -31,6 +31,7 @@ public class Level1CompleteUI : MonoBehaviour
     public void NextLevel()
     {
         PlayerStats.levelNumber = 2; // Next level: 2
+        PlayerStats.ResetStats();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         // SceneManager.LoadScene("lvl2");
         FirebaseManager.instance.LogLevelStart(2);

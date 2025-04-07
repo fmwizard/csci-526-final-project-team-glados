@@ -126,8 +126,6 @@ public class FirebaseManager : MonoBehaviour
 
         string json = $"{{\"completionTime\": \"{completionTime}\", \"deaths\": {PlayerStats.deathCount}, \"retries\": {PlayerStats.retryCount}, \"completed\": true}}";
         SendDatabyPUT(path, json);
-
-        PlayerStats.ResetStats();
     }
 
     public void LogTestDataByPOST(string key, object data, int levelNumber)
