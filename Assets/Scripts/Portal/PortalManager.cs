@@ -260,6 +260,22 @@ public class PortalManager : MonoBehaviour
         activePortals.Clear();
     }
 
+    public Cage GetActiveCage()
+    {
+        if (activeCage == null)
+        {
+            return null;
+        }
+
+        Cage cage = activeCage.GetComponent<Cage>();
+        if (cage == null)
+        {
+            return null;
+        }
+
+        return cage;
+    }
+
     public GameObject GetCageCapturedObject()
     {
         if (activeCage == null)
@@ -274,6 +290,22 @@ public class PortalManager : MonoBehaviour
         }
 
         return cage.capturedObject;
+    }
+
+    public void SetCageCapturedObject(GameObject capturedObject)
+    {
+        if (activeCage == null)
+        {
+            return;
+        }
+
+        Cage cage = activeCage.GetComponent<Cage>();
+        if (cage == null)
+        {
+            return;
+        }
+
+        cage.capturedObject = Instantiate(capturedObject);
     }
 }
 
