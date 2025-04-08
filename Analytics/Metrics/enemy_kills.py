@@ -35,9 +35,16 @@ def parse_data(directory: str):
     return df
 
 
+def process_data(df: pd.DataFrame) -> pd.DataFrame:
+    df = df[~df['reason'].str.contains(r'#1|#2', na=False)]
+    df.loc[:, 'reason'] = df['reason'].str.replace('#3', '3 times', regex=False)
+    return df
+
+
 def plot_reason_counts(df):
     # Group and count number of kills per level per reason
     reason_counts = df.groupby(['level', 'reason']).size().unstack(fill_value=0)
+    reasons = df['reason'].unique()
 
     # Plotting
     ax = reason_counts.plot(kind='bar', figsize=(12, 6))
@@ -46,7 +53,12 @@ def plot_reason_counts(df):
     plt.ylabel('Number of Enemy Kills')
     plt.title('Enemy Kill Reasons per Level')
     plt.xticks(rotation=0)
-    plt.legend(title='Reason')
+    plt.legend(
+        loc='upper center',
+        bbox_to_anchor=(0.5, -0.15),
+        ncol=len(reasons),
+        title='Reason'
+    )
     plt.tight_layout()
     plt.show()
 
@@ -114,6 +126,7 @@ def plot_lvl2_kill_positions(df: pd.DataFrame):
 if __name__ == "__main__":
     data_directory = "../Analytics/Beta_Details"
     df = parse_data(data_directory)
+    df = process_data(df)
 
     # print(df.head())
     plot_reason_counts(df)
