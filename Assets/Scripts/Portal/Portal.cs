@@ -1,6 +1,5 @@
 using Unity.Mathematics;
 using UnityEngine;
-using System.Collections.Generic;
 
 public class Portal : MonoBehaviour
 {
@@ -17,10 +16,7 @@ public class Portal : MonoBehaviour
 
     private Vector2 previousFromPortal, previousToPortal;
     private int previousVelocity = 0;
-
-    private List<PortalTraversalData> portalLogBuffer = new List<PortalTraversalData>();
-    private const int maxBuffer = 10;
-    private const int finalLogsToKeep = 5;
+    private int duplicationCount = 0, limitCount = 3;
 
     public PortalType Type => type;
     public Portal LinkedPortal
@@ -101,36 +97,15 @@ public class Portal : MonoBehaviour
                 duplicationCount = 0;
             }
 
-    private void LogPortalAnalyticsIfNeeded(string objectType, Vector2 from, Vector2 to, int velocity, int level)
-    {
-        PortalTraversalData newEntry = new PortalTraversalData(objectType, from, to, velocity, Time.timeSinceLevelLoad);
-
-        if (from.Equals(previousFromPortal) && to.Equals(previousToPortal) && previousVelocity == velocity)
-        {
-            if (portalLogBuffer.Count < maxBuffer)
-                portalLogBuffer.Add(newEntry);
-        }
-        else
-        {
-            int count = portalLogBuffer.Count;
-            for (int i = Mathf.Max(0, count - finalLogsToKeep); i < count; i++)
+            if (duplicationCount < limitCount)
             {
-                var entry = portalLogBuffer[i];
-                FirebaseManager.instance.LogPortalTraversal(entry.objectType,
-                                                            new Vector2(entry.fromX, entry.fromY),
-                                                            new Vector2(entry.toX, entry.toY),
-                                                            entry.velocity,
-                                                            level);
+                FirebaseManager.instance.LogPortalTraversal(objectType, from, to, velocity, level);
             }
-
-            portalLogBuffer.Clear();
-            portalLogBuffer.Add(newEntry);
+            
+            previousFromPortal = from;
+            previousToPortal = to;
+            previousVelocity = velocity;
         }
-
-        previousFromPortal = from;
-        previousToPortal = to;
-        previousVelocity = velocity;
-
         // Update teleport cooldown
         lastTeleportTime = Time.time;
         linkedPortal.lastTeleportTime = Time.time;
