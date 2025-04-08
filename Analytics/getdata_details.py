@@ -7,6 +7,7 @@ EXPORT_DIR = "Analytics/Beta_Details"
 
 SECTIONS = [
     ("MainMenu", "MainMenu"),
+    ("level_-1", "level_-1"),
     ("level_0", "level_0"),
     ("level_1", "level_1"),
     ("level_2", "level_2")
@@ -19,9 +20,6 @@ def fetch_all_test_data():
     response = requests.get(url)
     if response.status_code == 200:
         return response.json()
-    else:
-        print(f"Error {response.status_code}: {response.text}")
-        return None
 
 def export_by_section(data):
     for firebase_key, filename in SECTIONS:
@@ -41,6 +39,3 @@ if __name__ == "__main__":
     data = fetch_all_test_data()
     if data:
         export_by_section(data)
-        print("\nAll data exported successfully!")
-    else:
-        print("No data found.")

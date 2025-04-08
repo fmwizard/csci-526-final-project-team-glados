@@ -6,6 +6,7 @@ FIREBASE_BASE_URL = "https://portalmario-cs526-default-rtdb.firebaseio.com"
 EXPORT_DIR = "Analytics/Beta_Overview"
 
 SECTIONS = [
+    ("level_-1", "level_-1"),
     ("level_0", "level_0"),
     ("level_1", "level_1"),
     ("level_2", "level_2"),
