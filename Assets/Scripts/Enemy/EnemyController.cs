@@ -83,6 +83,13 @@ public class EnemyController : MonoBehaviour
         }
         
         currentVelocityMagnitude = rb.velocity.magnitude;
+
+        // If the ally falls out of the scene either down or up if regular or ceiling enemy
+        if(transform.position.y < -10f || transform.position.y > 20f)
+        {
+            OnDeathOrDisable?.Invoke();
+            this.enabled = false;
+        }
     }
 
     // private void OnCollisionEnter2D(Collision2D collision)
