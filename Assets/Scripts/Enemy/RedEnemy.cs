@@ -23,27 +23,27 @@ public class RedEnemy : Enemy
             int level = PlayerStats.levelNumber;
             if (damageSource == null) 
             {
-                FirebaseManager.instance.LogEnemyKill("Fall", pos, level);
+                FirebaseManager.instance.LogEnemyKill("Fall", pos, level, "RedEnemy");
             } 
             else if (damageSource.CompareTag("Player")) 
             {
-                FirebaseManager.instance.LogEnemyKill($"Player #{hitCount + 1}", pos, level);
+                FirebaseManager.instance.LogEnemyKill($"Player #{hitCount + 1}", pos, level, "RedEnemy");
             } 
             else if (damageSource.CompareTag("Box") && damage >= 9999f) 
             {
-                FirebaseManager.instance.LogEnemyKill("Acclerated Box", pos, level);
+                FirebaseManager.instance.LogEnemyKill("Acclerated Box", pos, level, "RedEnemy");
             } 
             else if (damageSource.CompareTag("Box") && damageSource != this.gameObject) 
             {
-                FirebaseManager.instance.LogEnemyKill($"Box #{hitCount + 1}", pos, level);
+                FirebaseManager.instance.LogEnemyKill($"Box #{hitCount + 1}", pos, level, "RedEnemy");
             } 
             else if (damageSource.CompareTag("Laser")) 
             {
-                FirebaseManager.instance.LogEnemyKill("Laser", pos, level);
+                FirebaseManager.instance.LogEnemyKill("Laser", pos, level, "RedEnemy");
             }
             else 
             {
-                FirebaseManager.instance.LogEnemyKill($"Ally  #{hitCount + 1}", pos, level);
+                FirebaseManager.instance.LogEnemyKill($"Ally  #{hitCount + 1}", pos, level, "RedEnemy");
             }
         }
 

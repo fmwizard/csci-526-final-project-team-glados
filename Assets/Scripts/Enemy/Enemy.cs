@@ -114,33 +114,34 @@ public class Enemy : MonoBehaviour
             int level = PlayerStats.levelNumber;
             if (damageSource == null) 
             {
-                FirebaseManager.instance.LogEnemyKill("Fall", pos, level);
+                FirebaseManager.instance.LogEnemyKill("Fall", pos, level, "PurpleEnemy");
             } 
             else if (damageSource.CompareTag("Player")) 
             {
-                FirebaseManager.instance.LogEnemyKill("Player", pos, level);
+                FirebaseManager.instance.LogEnemyKill("Player", pos, level, "PurpleEnemy");
             }
             else if (damageSource.CompareTag("Box") && damage >= 9999f) 
             {
-                FirebaseManager.instance.LogEnemyKill("Acclerated Box", pos, level);
+                FirebaseManager.instance.LogEnemyKill("Acclerated Box", pos, level, "PurpleEnemy");
             }  
             else if (damageSource.CompareTag("Box")) 
             {
                 if (damageSource != this.gameObject) 
                 {
-                    FirebaseManager.instance.LogEnemyKill("Box", pos, level);
+                    FirebaseManager.instance.LogEnemyKill("Box", pos, level, "PurpleEnemy");
                 }
             } 
             else if (damageSource.CompareTag("Laser")) 
             {
-                FirebaseManager.instance.LogEnemyKill("Laser", pos, level);
+                FirebaseManager.instance.LogEnemyKill("Laser", pos, level, "PurpleEnemy");
             }
             else if (damageSource.CompareTag("Hostility") && damageSource == this.gameObject)
             {
+                FirebaseManager.instance.LogEnemyKill("Ally Killed", pos, level, "Ally");
             } 
             else
             {
-                FirebaseManager.instance.LogEnemyKill("Ally", pos, level);
+                FirebaseManager.instance.LogEnemyKill("Ally", pos, level, "PurpleEnemy");
             }
         }
 

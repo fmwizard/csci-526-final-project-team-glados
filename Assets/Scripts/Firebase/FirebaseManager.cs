@@ -137,9 +137,9 @@ public class FirebaseManager : MonoBehaviour
         SendDatabyPOST(path, json);
     }
 
-    public void LogEnemyKill(string reason, Vector2 position, int level)
+    public void LogEnemyKill(string reason, Vector2 position, int level, string enemyType)
     {
-        EnemyKillData data = new EnemyKillData(reason, position, Time.timeSinceLevelLoad);
+        EnemyKillData data = new EnemyKillData(reason, position, Time.timeSinceLevelLoad, enemyType);
         LogTestDataByPOST("enemy_kills", data, level);
     }
 

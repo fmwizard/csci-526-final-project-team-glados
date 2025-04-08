@@ -61,7 +61,7 @@ public class Cage : MonoBehaviour
                 {
                     Vector2 pos = transform.position;
                     int level = PlayerStats.levelNumber;
-                    FirebaseManager.instance.LogEnemyKill("Converted to Ally", pos, level);
+                    FirebaseManager.instance.LogEnemyKill("Converted to Ally", pos, level, "PurpleEnemy");
                 }
 
                 EnemyController newController = capturedObject.AddComponent<EnemyController>();

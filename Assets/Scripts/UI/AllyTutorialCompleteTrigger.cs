@@ -21,6 +21,7 @@ public class AllyTutorialComplete : MonoBehaviour
             {
                 FirebaseManager.instance.UpdateLevelCompletion(0, completionTime, deaths, retries);
             }
+            PlayerStats.levelCompleted = 0;
 
             SceneManager.LoadScene("AllyTutorialComplete");
         }

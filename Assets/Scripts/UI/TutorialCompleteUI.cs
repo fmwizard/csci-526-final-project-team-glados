@@ -15,13 +15,14 @@ public class TutorialCompleteUI : MonoBehaviour
         Debug.Log("Loaded Final Time: " + finalTime);
     }
 
-    // public void RetryLevel()
-    // {
-    //     PlayerStats.IncreaseRetryCount();
-    //     //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-    //     SceneManager.LoadScene("tutorial");
-    //     FirebaseManager.instance.UpdateRetryCount(0);
-    // }
+    public void RetryLevel()
+    {
+        PlayerStats.IncreaseRetryCount();
+        PlayerStats.deathCount = 0;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene("tutorial");
+        FirebaseManager.instance.UpdateRetryCount(-1);
+    }
 
     public void GoToMainMenu()
     {

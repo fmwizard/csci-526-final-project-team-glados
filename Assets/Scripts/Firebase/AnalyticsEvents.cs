@@ -100,13 +100,15 @@ public class EnemyKillData
     public float posX;
     public float posY;
     public float timestamp;
+    public string enemyType;
 
-    public EnemyKillData(string reason, Vector2 position, float time)
+    public EnemyKillData(string reason, Vector2 position, float time, string enemyType)
     {
         this.reason = reason;
         posX = position.x;
         posY = position.y;
         timestamp = time;
+        this.enemyType = enemyType;
     }
 }
 
