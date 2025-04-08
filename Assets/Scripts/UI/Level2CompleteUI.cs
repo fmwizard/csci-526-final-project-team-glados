@@ -17,10 +17,10 @@ public class Level2CompleteUI : MonoBehaviour
 
     public void RetryLevel()
     {
+        PlayerStats.levelNumber = 2;
         PlayerStats.IncreaseRetryCount();
-        PlayerStats.deathCount = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        // SceneManager.LoadScene("lvl2");
+        PlayerStats.ResetDeathCount(2);
+        SceneManager.LoadScene("lvl2");        // SceneManager.LoadScene("lvl2");
         FirebaseManager.instance.UpdateRetryCount(2);
     }
 

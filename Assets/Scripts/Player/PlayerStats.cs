@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
@@ -5,9 +6,8 @@ public class PlayerStats : MonoBehaviour
     public static string playerID;
     public static int levelNumber = 0;
     public static int levelCompleted = -10;
-    public static int deathCount = 0;
-    public static int retryCount = 0;
-
+    public static Dictionary<int, int> retryCounts = new Dictionary<int, int>();
+    public static Dictionary<int, int> deathCounts = new Dictionary<int, int>();
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -17,19 +17,41 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+
+    public static void ResetDeathCount(int level)
+    {
+        deathCounts[level] = 0;
+    }
+
     public static void IncreaseDeathCount()
     {
-        deathCount++;
+        if (!deathCounts.ContainsKey(levelNumber))
+            deathCounts[levelNumber] = 0;
+
+        deathCounts[levelNumber]++;
     }
 
     public static void IncreaseRetryCount()
     {
-        retryCount++;
+        if (!retryCounts.ContainsKey(levelNumber))
+            retryCounts[levelNumber] = 0;
+
+        retryCounts[levelNumber]++;
+    }
+
+    public static int GetRetryCount(int level)
+    {
+        return retryCounts.ContainsKey(level) ? retryCounts[level] : 0;
+    }
+
+    public static int GetDeathCount(int level)
+    {
+        return deathCounts.ContainsKey(level) ? deathCounts[level] : 0;
     }
 
     public static void ResetStats()
     {
-        deathCount = 0;
-        retryCount = 0;
+        retryCounts.Clear();
+        deathCounts.Clear();
     }
 }

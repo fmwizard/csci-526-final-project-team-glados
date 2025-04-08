@@ -17,8 +17,9 @@ public class TutorialCompleteUI : MonoBehaviour
 
     public void RetryLevel()
     {
+        PlayerStats.levelNumber = -1;
         PlayerStats.IncreaseRetryCount();
-        PlayerStats.deathCount = 0;
+        PlayerStats.ResetDeathCount(-1);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         SceneManager.LoadScene("tutorial");
         FirebaseManager.instance.UpdateRetryCount(-1);

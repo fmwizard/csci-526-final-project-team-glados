@@ -14,8 +14,8 @@ public class Level2CompleteTrigger : MonoBehaviour
             }
 
             float completionTime = timer != null ? timer.GetTime() : 0f;
-            int deaths = PlayerStats.deathCount;
-            int retries = PlayerStats.retryCount;
+            int deaths = PlayerStats.GetDeathCount(2);
+            int retries = PlayerStats.GetRetryCount(2);
 
             if (FirebaseManager.instance != null)
             {

@@ -17,8 +17,10 @@ public class AllyTutorialCompleteUI : MonoBehaviour
 
     public void RetryLevel()
     {
+        PlayerStats.levelNumber = 0;
         PlayerStats.IncreaseRetryCount();
-        PlayerStats.deathCount = 0;
+        PlayerStats.ResetDeathCount(0);
+
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         SceneManager.LoadScene("allyTutorial");
         FirebaseManager.instance.UpdateRetryCount(0);
