@@ -88,8 +88,15 @@ public class PlayerController : MonoBehaviour
         if (playerManager.controllingPlayer)
         {
             // Get movement input
-            horizontalInput = Input.GetAxisRaw("Horizontal");
-            if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
+            // horizontalInput = Input.GetAxisRaw("Horizontal");
+            horizontalInput = 0f;
+            if (Input.GetKey(KeyCode.A))
+                horizontalInput = -1f;
+            else if (Input.GetKey(KeyCode.D))
+                horizontalInput = 1f;
+
+            // if (Input.GetButtonDown("Jump") || Input.GetKeyDown(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.Space))
             {
                 jumpPressed = true;
                 if (FirebaseManager.instance != null)

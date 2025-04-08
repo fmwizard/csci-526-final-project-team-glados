@@ -40,7 +40,22 @@ public class Cage : MonoBehaviour
                 capturedObject.layer = LayerMask.NameToLayer("Default");
                 capturedObject.GetComponent<SpriteRenderer>().color = enemyColor;
 
-                //PROBABLY SWITCH FACES HERE
+                // REMOVE happy face
+                Transform happyFace = capturedObject.transform.Find("HappyFace(Clone)");
+                if (happyFace != null)
+                {
+                    Destroy(happyFace.gameObject);
+                }
+
+                // ADD back angry face
+                GameObject angryFacePrefab = Resources.Load<GameObject>("Sprites/AngryFace");
+                if (angryFacePrefab != null)
+                {
+                    GameObject angryFace = Instantiate(angryFacePrefab, Vector3.zero, Quaternion.identity);
+                    angryFace.transform.SetParent(capturedObject.transform);
+                    angryFace.transform.localPosition = Vector3.zero;
+                    angryFace.transform.localRotation = Quaternion.identity;
+                }
 
                 // Make ally turned enemy get enemy movements again
                 Enemy enemyAIControls = capturedObject.GetComponent<Enemy>();

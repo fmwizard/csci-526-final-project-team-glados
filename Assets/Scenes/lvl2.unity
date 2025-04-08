@@ -3381,7 +3381,7 @@ GameObject:
   - component: {fileID: 546452089}
   - component: {fileID: 546452088}
   m_Layer: 10
-  m_Name: Celling (4)
+  m_Name: NoPortalCeiling (2)
   m_TagString: NoPortalSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3525,7 +3525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7862903213643475564, guid: 1fafa8d2898423f4ab69dd3d064badd1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7862903213643475564, guid: 1fafa8d2898423f4ab69dd3d064badd1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3537,7 +3537,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7862903213643475564, guid: 1fafa8d2898423f4ab69dd3d064badd1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7862903213643475564, guid: 1fafa8d2898423f4ab69dd3d064badd1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3549,7 +3549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7862903213643475564, guid: 1fafa8d2898423f4ab69dd3d064badd1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4010,7 +4010,7 @@ GameObject:
   - component: {fileID: 727640038}
   - component: {fileID: 727640037}
   m_Layer: 6
-  m_Name: Celling (5)
+  m_Name: NoPortalCeiling (3)
   m_TagString: NoPortalSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4116,7 +4116,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 8
+  m_SortingOrder: 9
   m_Sprite: {fileID: 7482667652216324306, guid: d6c497f24777a1e4fa5a07eda79aeef2, type: 3}
   m_Color: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
   m_FlipX: 0
@@ -4154,7 +4154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7862903213643475564, guid: 1fafa8d2898423f4ab69dd3d064badd1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7862903213643475564, guid: 1fafa8d2898423f4ab69dd3d064badd1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4166,7 +4166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7862903213643475564, guid: 1fafa8d2898423f4ab69dd3d064badd1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7862903213643475564, guid: 1fafa8d2898423f4ab69dd3d064badd1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4178,7 +4178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7862903213643475564, guid: 1fafa8d2898423f4ab69dd3d064badd1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5631,7 +5631,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1221349367}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 46.67, y: 11.07, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5821,8 +5821,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1638060074}
-  - {fileID: 1221349368}
   - {fileID: 1966024099}
+  - {fileID: 1221349368}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1266262897
@@ -6175,7 +6175,7 @@ GameObject:
   - component: {fileID: 1323130712}
   - component: {fileID: 1323130711}
   m_Layer: 10
-  m_Name: Celling (3)
+  m_Name: NoPortalCeiling (1)
   m_TagString: NoPortalSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6989,7 +6989,7 @@ GameObject:
   - component: {fileID: 1506315798}
   - component: {fileID: 1506315797}
   m_Layer: 6
-  m_Name: Celling (2)
+  m_Name: NoPortalCeiling
   m_TagString: NoPortalSurface
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7741,7 +7741,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1638060073}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 28.5, y: 3.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10061,7 +10061,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966024098}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 31.52, y: 3.36, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10319,7 +10319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7862903213643475564, guid: 1fafa8d2898423f4ab69dd3d064badd1, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7862903213643475564, guid: 1fafa8d2898423f4ab69dd3d064badd1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -10331,7 +10331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7862903213643475564, guid: 1fafa8d2898423f4ab69dd3d064badd1, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7862903213643475564, guid: 1fafa8d2898423f4ab69dd3d064badd1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10343,7 +10343,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7862903213643475564, guid: 1fafa8d2898423f4ab69dd3d064badd1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

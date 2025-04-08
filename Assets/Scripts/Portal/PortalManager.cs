@@ -87,6 +87,9 @@ public class PortalManager : MonoBehaviour
             if (hit.transform.CompareTag("NoPortalSurface"))
                 return;
 
+            if (hit.transform.CompareTag("Trap") || hit.transform.gameObject.layer == LayerMask.NameToLayer("Trap"))
+                return;
+
             // Create new cage
             Vector2 normal = hit.normal;
             float cageRotation = Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg + 90f;
