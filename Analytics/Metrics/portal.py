@@ -15,8 +15,8 @@ def parse_level_data(directory: str):
         with open(file_path, 'r') as f:
             data = json.load(f)
         for session_key, session_values in data.items():
-            for _, attempt_values in session_values.items():
-                attempt_num = int("attempt_1".split("_")[1])
+            for attempt_key, attempt_values in session_values.items():
+                attempt_num = int(attempt_key.split("_")[1])
                 portal_usage = attempt_values.get("portal_usage", {})
                 for _, usage in portal_usage.items():
                     row = {
@@ -67,7 +67,7 @@ def plot_portal_usage(df: pd.DataFrame):
     # Set the labels and title
     plt.xlabel('Level')
     plt.ylabel('Teleportation Count')
-    plt.title('Teleportation Count per Level')
+    plt.title('Teleportation Count')
     
     # Display the plot
     plt.xticks(rotation=0)  # Make x-axis labels horizontal
@@ -84,7 +84,7 @@ def plot_teleportation_types_by_usage(df):
     ax = teleportation_counts.plot(kind='bar', figsize=(12, 6), color=['blue', 'orange', 'green'])
     plt.xlabel('Level')
     plt.ylabel('Teleportation Count')
-    plt.title('Unique Teleportation Count per Level and Object Type')
+    plt.title('Teleportation Count of Object Types')
     ax.legend(teleportation_counts.columns, title="Object Type")
     plt.xticks(rotation=0)  # Make x-axis labels horizontal
     plt.tight_layout()
@@ -99,8 +99,8 @@ def plot_teleportation_types_by_level_with_acceleration(df):
     # Plotting the stacked bar chart
     ax = teleportation_counts.plot(kind='bar', stacked=True, figsize=(12, 6), color=['skyblue', 'orange'])
     plt.xlabel('Level')
-    plt.ylabel('Unique Teleportation Count')
-    plt.title('Teleportation Count per Level (Normal vs Accelerated)')
+    plt.ylabel('Teleportation Count')
+    plt.title('Teleportation Count (Normal vs Accelerated)')
     ax.legend(teleportation_counts.columns, title="Teleportation Type")
     
     # Display the plot
