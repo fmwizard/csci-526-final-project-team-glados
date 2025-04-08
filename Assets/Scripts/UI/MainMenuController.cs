@@ -8,17 +8,6 @@ public class MainMenuController : MonoBehaviour
     void Start()
     {
         playerID = PlayerStats.playerID;
-        InitializeControlsAnalytics();
-    }
-
-    private void InitializeControlsAnalytics()
-    {
-        string path = $"test/{playerID}/MainMenu/controlsViewed";
-        string json = "{\"opened\": false}";
-        if (FirebaseManager.instance != null)
-        {
-            FirebaseManager.instance.SendDatabyPUT(path, json);
-        }    
     }
 
     public void LoadTutorialMenu()
