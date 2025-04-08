@@ -18,7 +18,7 @@ public class AllyTutorialCompleteUI : MonoBehaviour
     public void RetryLevel()
     {
         PlayerStats.levelNumber = 0;
-        PlayerStats.IncreaseRetryCount();
+        PlayerStats.IncreaseRetryCount(0);
         PlayerStats.ResetDeathCount(0);
 
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
@@ -34,7 +34,7 @@ public class AllyTutorialCompleteUI : MonoBehaviour
     public void NextLevel()
     {
         PlayerStats.levelNumber = 1;
-        PlayerStats.ResetStats();
+        PlayerStats.ResetDeathCount(1);
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         SceneManager.LoadScene("lvl1");
         if (FirebaseManager.instance != null)

@@ -32,6 +32,8 @@ public class MainMenuController : MonoBehaviour
         LogMainMenuChoice("Basic Tutorial");
         SceneManager.LoadScene("tutorial");
         PlayerStats.levelNumber = -1;
+        PlayerStats.IncreaseRetryCount(-1);
+        PlayerStats.ResetDeathCount(-1);
         FirebaseManager.instance.LogLevelStart(-1);
     }
 
@@ -40,6 +42,8 @@ public class MainMenuController : MonoBehaviour
         LogMainMenuChoice("Ally Tutorial");
         SceneManager.LoadScene("allyTutorial");
         PlayerStats.levelNumber = 0;
+        PlayerStats.IncreaseRetryCount(0);
+        PlayerStats.ResetDeathCount(0);
         FirebaseManager.instance.LogLevelStart(0);
     }
 
@@ -48,6 +52,8 @@ public class MainMenuController : MonoBehaviour
         LogMainMenuChoice("Level 1");
         SceneManager.LoadScene("lvl1");
         PlayerStats.levelNumber = 1;
+        PlayerStats.IncreaseRetryCount(1);
+        PlayerStats.ResetDeathCount(1);
         FirebaseManager.instance.LogLevelStart(1);
     }
 
@@ -56,6 +62,8 @@ public class MainMenuController : MonoBehaviour
         LogMainMenuChoice("Level 2");
         SceneManager.LoadScene("lvl2");
         PlayerStats.levelNumber = 2;
+        PlayerStats.IncreaseRetryCount(2);
+        PlayerStats.ResetDeathCount(2);
         FirebaseManager.instance.LogLevelStart(2);
     }
 

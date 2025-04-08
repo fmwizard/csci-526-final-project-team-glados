@@ -63,7 +63,7 @@ public class PlayerRespawn : MonoBehaviour
     {
         if (FirebaseManager.instance != null)
         {
-            PlayerStats.IncreaseDeathCount();
+            PlayerStats.IncreaseDeathCount(PlayerStats.levelNumber);
             FirebaseManager.instance.UpdateDeathCount(PlayerStats.levelNumber);
         }
 

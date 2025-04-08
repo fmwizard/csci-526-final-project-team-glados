@@ -91,7 +91,7 @@ public class FirebaseManager : MonoBehaviour
     public void LogLevelStart(int levelNumber)
     {
         string playerID = PlayerStats.playerID;
-        int attemptNumber = PlayerStats.GetRetryCount(levelNumber) + 1;
+        int attemptNumber = PlayerStats.GetRetryCount(levelNumber);
         string path = $"testCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
         string json = $"{{\"completionTime\": \"N/A\", \"deaths\": 0, \"retries\": 0, \"completed\": false}}";
@@ -101,11 +101,11 @@ public class FirebaseManager : MonoBehaviour
     public void UpdateDeathCount(int levelNumber)
     {
         string playerID = PlayerStats.playerID;
-        int attemptNumber = PlayerStats.GetRetryCount(levelNumber) + 1;
+        int attemptNumber = PlayerStats.GetRetryCount(levelNumber);
         string path = $"testCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
         int deaths = PlayerStats.GetDeathCount(levelNumber);
-        int retries = PlayerStats.GetRetryCount(levelNumber);
+        int retries = PlayerStats.GetRetryCount(levelNumber) - 1;
 
         string json = $"{{\"completionTime\": \"N/A\", \"deaths\": {deaths}, \"retries\": {retries}, \"completed\": false}}";
         SendDatabyPUT(path, json);
@@ -114,11 +114,11 @@ public class FirebaseManager : MonoBehaviour
     public void UpdateRetryCount(int levelNumber)
     {
         string playerID = PlayerStats.playerID;
-        int attemptNumber = PlayerStats.GetRetryCount(levelNumber) + 1;
+        int attemptNumber = PlayerStats.GetRetryCount(levelNumber);
         string path = $"testCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
         int deaths = PlayerStats.GetDeathCount(levelNumber);
-        int retries = PlayerStats.GetRetryCount(levelNumber);
+        int retries = PlayerStats.GetRetryCount(levelNumber) - 1;
 
         string json = $"{{\"completionTime\": \"N/A\", \"deaths\": {deaths}, \"retries\": {retries}, \"completed\": false}}";
         SendDatabyPUT(path, json);
@@ -127,11 +127,11 @@ public class FirebaseManager : MonoBehaviour
     public void UpdateLevelCompletion(int levelNumber, float completionTime, int deaths, int retries)
     {
         string playerID = PlayerStats.playerID;
-        int attemptNumber = PlayerStats.GetRetryCount(levelNumber) + 1;
+        int attemptNumber = PlayerStats.GetRetryCount(levelNumber);
         string path = $"testCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
         int deathCount = PlayerStats.GetDeathCount(levelNumber);
-        int retryCount = PlayerStats.GetRetryCount(levelNumber);
+        int retryCount = PlayerStats.GetRetryCount(levelNumber) - 1;
 
         string json = $"{{\"completionTime\": \"{completionTime}\", \"deaths\": {deathCount}, \"retries\": {retryCount}, \"completed\": true}}";
         SendDatabyPUT(path, json);
@@ -140,7 +140,7 @@ public class FirebaseManager : MonoBehaviour
     public void LogTestDataByPOST(string key, object data, int levelNumber)
     {
         string playerID = PlayerStats.playerID;
-        int attemptNumber = PlayerStats.GetRetryCount(levelNumber) + 1;
+        int attemptNumber = PlayerStats.GetRetryCount(levelNumber);
         string path = $"test/{playerID}/level_{levelNumber}/attempt_{attemptNumber}/{key}";
         string json = JsonUtility.ToJson(data);
         SendDatabyPOST(path, json);

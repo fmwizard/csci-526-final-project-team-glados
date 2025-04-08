@@ -5,7 +5,6 @@ public class PlayerStats : MonoBehaviour
 {
     public static string playerID;
     public static int levelNumber = 0;
-    public static int levelCompleted = -10;
     public static Dictionary<int, int> retryCounts = new Dictionary<int, int>();
     public static Dictionary<int, int> deathCounts = new Dictionary<int, int>();
     void Awake()
@@ -17,26 +16,25 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-
     public static void ResetDeathCount(int level)
     {
         deathCounts[level] = 0;
     }
 
-    public static void IncreaseDeathCount()
+    public static void IncreaseDeathCount(int level)
     {
-        if (!deathCounts.ContainsKey(levelNumber))
-            deathCounts[levelNumber] = 0;
+        if (!deathCounts.ContainsKey(level))
+            deathCounts[level] = 0;
 
-        deathCounts[levelNumber]++;
+        deathCounts[level]++;
     }
 
-    public static void IncreaseRetryCount()
+    public static void IncreaseRetryCount(int level)
     {
-        if (!retryCounts.ContainsKey(levelNumber))
-            retryCounts[levelNumber] = 0;
+        if (!retryCounts.ContainsKey(level))
+            retryCounts[level] = 0;
 
-        retryCounts[levelNumber]++;
+        retryCounts[level]++;
     }
 
     public static int GetRetryCount(int level)
@@ -47,11 +45,5 @@ public class PlayerStats : MonoBehaviour
     public static int GetDeathCount(int level)
     {
         return deathCounts.ContainsKey(level) ? deathCounts[level] : 0;
-    }
-
-    public static void ResetStats()
-    {
-        retryCounts.Clear();
-        deathCounts.Clear();
     }
 }
