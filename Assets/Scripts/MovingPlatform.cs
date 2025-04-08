@@ -27,7 +27,8 @@ public class MovingPlatform : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Portal") || collision.gameObject.CompareTag("Mirror") || collision.gameObject.CompareTag("Cage"))
+        if (collision.gameObject.CompareTag("Portal") || collision.gameObject.CompareTag("Cage")
+            || (collision.gameObject.CompareTag("Mirror") && collision.transform.parent == null))
         {
             collision.transform.parent = transform;
         }

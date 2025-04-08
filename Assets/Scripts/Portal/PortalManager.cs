@@ -133,6 +133,10 @@ public class PortalManager : MonoBehaviour
             Vector2 normal = hit.normal;
             float mirrorRotation = Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg + 90f;
             GameObject mirrorObj = Instantiate(mirrorPrefab, hit.point, Quaternion.Euler(0, 0, mirrorRotation));
+            if (hit.transform.CompareTag("Box"))
+            {
+                mirrorObj.transform.parent = hit.transform;
+            }
             activeMirror = mirrorObj;
         }
     }
