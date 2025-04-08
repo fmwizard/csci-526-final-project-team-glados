@@ -31,7 +31,7 @@ public class MainCamera : MonoBehaviour
     void Update()
     {
         GameObject allyObject = portalManager.GetCageCapturedObject();
-        if (allyObject == null)
+        if (allyObject == null || allyObject.activeSelf == false)
         {
             UpdatePlayerView();
             return;
