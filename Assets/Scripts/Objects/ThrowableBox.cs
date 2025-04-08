@@ -74,13 +74,13 @@ public class ThrowableBox : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Mirror"))
-        {
-            collision.transform.parent = transform;
-        }
-    }
+    // private void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //     if (collision.gameObject.layer == LayerMask.NameToLayer("Mirror"))
+    //     {
+    //         collision.transform.parent = transform;
+    //     }
+    // }
     private void OnCollisionStay2D(Collision2D collision)
     {
         // Check if we hit an enemy
