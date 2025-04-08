@@ -34,7 +34,10 @@ public class MainMenuController : MonoBehaviour
         PlayerStats.levelNumber = -1;
         PlayerStats.IncreaseRetryCount(-1);
         PlayerStats.ResetDeathCount(-1);
-        FirebaseManager.instance.LogLevelStart(-1);
+        if (FirebaseManager.instance != null)
+        {
+            FirebaseManager.instance.LogLevelStart(-1);
+        }
     }
 
     public void LoadAllyTutorialLevel()
@@ -44,7 +47,10 @@ public class MainMenuController : MonoBehaviour
         PlayerStats.levelNumber = 0;
         PlayerStats.IncreaseRetryCount(0);
         PlayerStats.ResetDeathCount(0);
-        FirebaseManager.instance.LogLevelStart(0);
+        if (FirebaseManager.instance != null)
+        {
+            FirebaseManager.instance.LogLevelStart(0);
+        }
     }
 
     public void LoadLevel1()
@@ -54,7 +60,10 @@ public class MainMenuController : MonoBehaviour
         PlayerStats.levelNumber = 1;
         PlayerStats.IncreaseRetryCount(1);
         PlayerStats.ResetDeathCount(1);
-        FirebaseManager.instance.LogLevelStart(1);
+        if (FirebaseManager.instance != null)
+        {
+            FirebaseManager.instance.LogLevelStart(1);
+        }
     }
 
     public void LoadLevel2()
@@ -64,7 +73,10 @@ public class MainMenuController : MonoBehaviour
         PlayerStats.levelNumber = 2;
         PlayerStats.IncreaseRetryCount(2);
         PlayerStats.ResetDeathCount(2);
-        FirebaseManager.instance.LogLevelStart(2);
+        if (FirebaseManager.instance != null)
+        {
+            FirebaseManager.instance.LogLevelStart(2);
+        }
     }
 
     public void LoadMainMenu()
@@ -86,6 +98,9 @@ public class MainMenuController : MonoBehaviour
     {
         string path = $"test/{playerID}/MainMenu/selectedOption";
         string json = $"{{\"choice\": \"{choice}\", \"timestamp\": {Time.time}}}";
-        FirebaseManager.instance.SendDatabyPOST(path, json);
+        if (FirebaseManager.instance != null)
+        {
+            FirebaseManager.instance.SendDatabyPOST(path, json);
+        }
     }
 }

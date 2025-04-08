@@ -68,7 +68,10 @@ public class PauseButtonHandler : MonoBehaviour
         PlayerStats.ResetDeathCount(PlayerStats.levelNumber);
         PlayerStats.IncreaseRetryCount(PlayerStats.levelNumber);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        FirebaseManager.instance.UpdateRetryCount(PlayerStats.levelNumber);
+        if (FirebaseManager.instance != null)
+        {
+            FirebaseManager.instance.LogLevelStart(PlayerStats.levelNumber);
+        }
     }
 
     public void LoadMainMenu()

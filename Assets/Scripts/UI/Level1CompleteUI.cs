@@ -21,7 +21,10 @@ public class Level1CompleteUI : MonoBehaviour
         PlayerStats.IncreaseRetryCount(1);
         PlayerStats.ResetDeathCount(1);
         SceneManager.LoadScene("lvl1");
-        FirebaseManager.instance.UpdateRetryCount(1);
+        if (FirebaseManager.instance != null)
+        {
+            FirebaseManager.instance.UpdateRetryCount(1);
+        }
     }
 
     public void GoToMainMenu()
@@ -32,8 +35,12 @@ public class Level1CompleteUI : MonoBehaviour
     public void NextLevel()
     {
         PlayerStats.levelNumber = 2;
+        PlayerStats.IncreaseRetryCount(2);
         PlayerStats.ResetDeathCount(2);
         SceneManager.LoadScene("lvl2");
-        FirebaseManager.instance.LogLevelStart(2);
+        if (FirebaseManager.instance != null)
+        {
+            FirebaseManager.instance.LogLevelStart(2);
+        }
     }
 }
