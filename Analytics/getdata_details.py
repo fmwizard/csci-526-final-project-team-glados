@@ -3,7 +3,7 @@ import json
 import os
 
 FIREBASE_BASE_URL = "https://portalmario-cs526-default-rtdb.firebaseio.com"
-EXPORT_DIR = "Analytics/Beta_Details"
+EXPORT_DIR = "Analytics/Beta_Data/Beta_Details"
 
 SECTIONS = [
     ("MainMenu", "MainMenu"),

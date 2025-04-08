@@ -1,0 +1,13 @@
+player_id,level,attempt,completed,completionTime,deaths,retries
+36191326-2f63-40c3-9355-74187a75bb1b,level_0,attempt_1,True,55.75215,0,0
+97ae0fa0-5637-4cf1-a408-f129a3dd094e,level_0,attempt_1,True,242.3414,2,0
+97ae0fa0-5637-4cf1-a408-f129a3dd094e,level_0,attempt_2,False,N/A,1,1
+9abf71b9-32e9-4129-995a-509aad1a61d0,level_0,attempt_1,False,N/A,0,0
+c391cebf-334c-4784-ad5c-7251c4bd0d83,level_0,attempt_1,False,N/A,1,0
+c391cebf-334c-4784-ad5c-7251c4bd0d83,level_0,attempt_2,False,N/A,1,1
+c391cebf-334c-4784-ad5c-7251c4bd0d83,level_0,attempt_3,False,N/A,1,2
+c391cebf-334c-4784-ad5c-7251c4bd0d83,level_0,attempt_4,False,N/A,0,0
+c391cebf-334c-4784-ad5c-7251c4bd0d83,level_0,attempt_5,True,33.98608,0,4
+cb13a28a-868d-4802-9405-17d289c2aecb,level_0,attempt_1,False,N/A,1,0
+e62a72a1-98a2-4c8a-887d-b625ed1a4f72,level_0,attempt_1,False,N/A,0,0
+ff5c916c-ad22-4d79-bcc9-91af109abdbe,level_0,attempt_1,True,71.20419,0,0

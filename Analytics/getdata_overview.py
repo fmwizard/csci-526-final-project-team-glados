@@ -3,7 +3,7 @@ import csv
 import os
 
 FIREBASE_BASE_URL = "https://portalmario-cs526-default-rtdb.firebaseio.com"
-EXPORT_DIR = "Analytics/Beta_Overview"
+EXPORT_DIR = "Analytics/Beta_Data/Beta_Overview"
 
 SECTIONS = [
     ("level_-1", "level_-1"),

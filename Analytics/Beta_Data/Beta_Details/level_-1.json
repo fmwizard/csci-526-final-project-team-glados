@@ -1,0 +1,371 @@
+{
+  "9abf71b9-32e9-4129-995a-509aad1a61d0": {
+    "attempt_1": {
+      "enemy_kills": {
+        "-ONKEVvwF8hPRgcfPQ6r": {
+          "enemyType": "PurpleEnemy",
+          "posX": 77.99310302734375,
+          "posY": -2.121699333190918,
+          "reason": "Player",
+          "timestamp": 15.315138816833496
+        },
+        "-ONKEWEvZ9xli1aD9osF": {
+          "enemyType": "RedEnemy",
+          "posX": 82.05043029785156,
+          "posY": -2.166224956512451,
+          "reason": "Player #1",
+          "timestamp": 16.595138549804688
+        },
+        "-ONKEWXP6UW4DkWebqON": {
+          "enemyType": "RedEnemy",
+          "posX": 82.32684326171875,
+          "posY": -2.1662395000457764,
+          "reason": "Player #2",
+          "timestamp": 17.77513885498047
+        },
+        "-ONKEWolvzYMtIqvKEXF": {
+          "enemyType": "RedEnemy",
+          "posX": 81.90289306640625,
+          "posY": -2.166224956512451,
+          "reason": "Player #3",
+          "timestamp": 18.95513916015625
+        }
+      },
+      "jumps": {
+        "-ONKESHwdRfwDoW5pOW0": {
+          "posX": -4.795591354370117,
+          "posY": -2.629216194152832,
+          "timestamp": 0.4008384048938751
+        },
+        "-ONKESw34l_3nItIYOMn": {
+          "posX": 5.929481506347656,
+          "posY": -2.634911298751831,
+          "timestamp": 3.037508010864258
+        },
+        "-ONKETMIzbYygSOKKm5G": {
+          "posX": 14.612100601196289,
+          "posY": -2.6344707012176514,
+          "timestamp": 4.781134128570557
+        },
+        "-ONKEUe2jrbcc78EqSN2": {
+          "posX": 46.589988708496094,
+          "posY": -2.5617010593414307,
+          "timestamp": 10.037307739257812
+        },
+        "-ONKEVekVU-_ZwCBL5tJ": {
+          "posX": 73.7917709350586,
+          "posY": -2.6353044509887695,
+          "timestamp": 14.219808578491211
+        },
+        "-ONKEVzZfSUc3Jzmfder": {
+          "posX": 78.08317565917969,
+          "posY": 0.9178060293197632,
+          "timestamp": 15.54593563079834
+        },
+        "-ONKEXJoVVjXOqRxumYX": {
+          "posX": 84.66996765136719,
+          "posY": -2.631718635559082,
+          "timestamp": 21.004316329956055
+        }
+      },
+      "portal_usage": {
+        "-ONKEVFFD_VLrn0RBRXO": {
+          "fromX": 59.76144027709961,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 12.515138626098633,
+          "toX": 65.30876159667969,
+          "toY": 4.076699256896973,
+          "velocity": 4.0
+        }
+      }
+    }
+  },
+  "e62a72a1-98a2-4c8a-887d-b625ed1a4f72": {
+    "attempt_1": {
+      "deathReasons": {
+        "-ONKK1GKoy-gkWwlC73f": {
+          "posX": 77.09930419921875,
+          "posY": -2.631700038909912,
+          "reason": "Enemy",
+          "timestamp": 20.792999267578125
+        },
+        "-ONKK24f7Fbg4odIqF6W": {
+          "posX": 6.6265177726745605,
+          "posY": -2.6323678493499756,
+          "reason": "Trap",
+          "timestamp": 24.21299934387207
+        }
+      },
+      "enemy_kills": {
+        "-ONKK7FLl0X1HPy62TIa": {
+          "enemyType": "PurpleEnemy",
+          "posX": 78.062255859375,
+          "posY": -2.121699333190918,
+          "reason": "Player",
+          "timestamp": 45.292999267578125
+        },
+        "-ONKK7YO93bci5y7Ynlw": {
+          "enemyType": "RedEnemy",
+          "posX": 82.30789184570312,
+          "posY": -2.1662392616271973,
+          "reason": "Player #1",
+          "timestamp": 46.572998046875
+        },
+        "-ONKK7pOE0dVMaJIR4ad": {
+          "enemyType": "RedEnemy",
+          "posX": 81.92080688476562,
+          "posY": -2.166224956512451,
+          "reason": "Player #2",
+          "timestamp": 47.75299835205078
+        },
+        "-ONKK86tHe1oGre7DIOy": {
+          "enemyType": "RedEnemy",
+          "posX": 82.45535278320312,
+          "posY": -2.166224956512451,
+          "reason": "Player #3",
+          "timestamp": 48.93299865722656
+        }
+      },
+      "jumps": {
+        "-ONKJxoj7d2zvYkv-Xah": {
+          "posX": -5.170000076293945,
+          "posY": -2.629216194152832,
+          "timestamp": 2.5859999656677246
+        },
+        "-ONKJyf6hznS6z1VK5LS": {
+          "posX": 5.380454063415527,
+          "posY": -2.631699323654175,
+          "timestamp": 6.13700008392334
+        },
+        "-ONKJz9QyCnajJWFF_5d": {
+          "posX": 14.96127700805664,
+          "posY": -2.6320555210113525,
+          "timestamp": 8.069999694824219
+        },
+        "-ONKK-SfLEr2Yk95xNXU": {
+          "posX": 46.29058837890625,
+          "posY": -2.5617010593414307,
+          "timestamp": 13.187000274658203
+        },
+        "-ONKK1QIHCkHNpSKxaSu": {
+          "posX": -5.070199489593506,
+          "posY": -2.629216194152832,
+          "timestamp": 21.43600082397461
+        },
+        "-ONKK2D14bCGP3e4D30_": {
+          "posX": -4.804319381713867,
+          "posY": -2.629216194152832,
+          "timestamp": 24.753000259399414
+        },
+        "-ONKK2iqtPJnz2iYL7SR": {
+          "posX": -6.101799488067627,
+          "posY": -2.632046699523926,
+          "timestamp": 26.785999298095703
+        },
+        "-ONKK3MiYCPMiC9buVI4": {
+          "posX": 6.121572971343994,
+          "posY": -2.633735418319702,
+          "timestamp": 29.4689998626709
+        },
+        "-ONKK3pQMkwp3Z6CIRP2": {
+          "posX": 15.602592468261719,
+          "posY": -2.63215708732605,
+          "timestamp": 31.3700008392334
+        },
+        "-ONKK55UKaC1pyXWBnPW": {
+          "posX": 46.88938903808594,
+          "posY": -2.5617010593414307,
+          "timestamp": 36.486000061035156
+        },
+        "-ONKK6z8yJULrsjK44A7": {
+          "posX": 74.72694396972656,
+          "posY": -2.6319806575775146,
+          "timestamp": 44.202999114990234
+        },
+        "-ONKK8_-WYTACkIuzAde": {
+          "posX": 85.003662109375,
+          "posY": -2.632042407989502,
+          "timestamp": 50.71900177001953
+        }
+      },
+      "portal_usage": {
+        "-ONKK0efel1fJt8m6kEc": {
+          "fromX": 59.90034484863281,
+          "fromY": -3.1366991996765137,
+          "objectType": "Player",
+          "timestamp": 18.312999725341797,
+          "toX": 64.79480743408203,
+          "toY": 4.076699256896973,
+          "velocity": 4.0
+        },
+        "-ONKK6TI1iAC9BA68GOM": {
+          "fromX": 59.65846252441406,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 42.09299850463867,
+          "toX": 64.2479248046875,
+          "toY": 4.076699256896973,
+          "velocity": 4.0
+        }
+      }
+    },
+    "attempt_2": {
+      "enemy_kills": {
+        "-ONKKESFGfpEBYtiEzFY": {
+          "enemyType": "PurpleEnemy",
+          "posX": 77.99310302734375,
+          "posY": -2.121699333190918,
+          "reason": "Player",
+          "timestamp": 18.88199806213379
+        },
+        "-ONKKEk4o7Z7F_zuHqNT": {
+          "enemyType": "RedEnemy",
+          "posX": 82.51390075683594,
+          "posY": -2.1662397384643555,
+          "reason": "Player #1",
+          "timestamp": 20.161998748779297
+        },
+        "-ONKKF1aeQQZYp2a7bt8": {
+          "enemyType": "RedEnemy",
+          "posX": 81.72129821777344,
+          "posY": -2.166224956512451,
+          "reason": "Player #2",
+          "timestamp": 21.341997146606445
+        },
+        "-ONKKFKJg-ThHsEB-ER2": {
+          "enemyType": "RedEnemy",
+          "posX": 82.64292907714844,
+          "posY": -2.166224956512451,
+          "reason": "Player #3",
+          "timestamp": 22.5419979095459
+        }
+      },
+      "jumps": {
+        "-ONKK9y22du5jtMWgjvb": {
+          "posX": -5.170000076293945,
+          "posY": -2.629216194152832,
+          "timestamp": 0.5040000081062317
+        },
+        "-ONKKArTMjSi-PeM-8sQ": {
+          "posX": 5.729124546051025,
+          "posY": -2.631699323654175,
+          "timestamp": 4.255000114440918
+        },
+        "-ONKKBL2iLCyy_DQ1Px4": {
+          "posX": 15.110345840454102,
+          "posY": -2.632256269454956,
+          "timestamp": 6.13700008392334
+        },
+        "-ONKKCca_2ehhLHoaaGq": {
+          "posX": 47.18878936767578,
+          "posY": -2.5617010593414307,
+          "timestamp": 11.420999526977539
+        },
+        "-ONKKEB6j5HR8RF_xpVl": {
+          "posX": 73.79071044921875,
+          "posY": -2.6353025436401367,
+          "timestamp": 17.78700065612793
+        },
+        "-ONKKFtC2iz1rbS3pzYM": {
+          "posX": 85.36972045898438,
+          "posY": -2.6317343711853027,
+          "timestamp": 24.586000442504883
+        }
+      },
+      "portal_usage": {
+        "-ONKKDj92xRq3Ah__Qra": {
+          "fromX": 59.67296600341797,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 15.921998023986816,
+          "toX": 64.5093002319336,
+          "toY": 4.076699256896973,
+          "velocity": 4.0
+        }
+      }
+    }
+  },
+  "ff5c916c-ad22-4d79-bcc9-91af109abdbe": {
+    "attempt_1": {
+      "enemy_kills": {
+        "-ONKIzIWrQ47EEi68d1L": {
+          "enemyType": "PurpleEnemy",
+          "posX": 77.99310302734375,
+          "posY": -2.121699333190918,
+          "reason": "Player",
+          "timestamp": 30.563695907592773
+        },
+        "-ONKJ-GakC-MJ8eAAQyP": {
+          "enemyType": "RedEnemy",
+          "posX": 81.73707580566406,
+          "posY": -2.166224956512451,
+          "reason": "Player #1",
+          "timestamp": 34.603694915771484
+        },
+        "-ONKJ-_Y2lBQilXJyjCk": {
+          "enemyType": "RedEnemy",
+          "posX": 82.63993835449219,
+          "posY": -2.1662392616271973,
+          "reason": "Player #2",
+          "timestamp": 35.783695220947266
+        },
+        "-ONKJ-qqk6xaPQrX8h0o": {
+          "enemyType": "RedEnemy",
+          "posX": 81.69987487792969,
+          "posY": -2.166224956512451,
+          "reason": "Player #3",
+          "timestamp": 36.96369552612305
+        }
+      },
+      "jumps": {
+        "-ONKIs3EIlDxjAqATcAf": {
+          "posX": -5.170000076293945,
+          "posY": -2.629216194152832,
+          "timestamp": 0.9200000166893005
+        },
+        "-ONKIssrfzxxftof6VyD": {
+          "posX": 6.007647514343262,
+          "posY": -2.631702184677124,
+          "timestamp": 4.369500160217285
+        },
+        "-ONKItRsCyzmGyIoFnJq": {
+          "posX": 15.588467597961426,
+          "posY": -2.6317145824432373,
+          "timestamp": 6.569900035858154
+        },
+        "-ONKIvtIJVh3awoEQrjD": {
+          "posX": 47.68778991699219,
+          "posY": -2.5617010593414307,
+          "timestamp": 16.55299949645996
+        },
+        "-ONKIz1CyAz30MFY6x8G": {
+          "posX": 75.6594009399414,
+          "posY": -2.631699323654175,
+          "timestamp": 29.470199584960938
+        },
+        "-ONKIzxdwub18j5nxmuG": {
+          "posX": 79.85100555419922,
+          "posY": -2.631700038909912,
+          "timestamp": 33.35309982299805
+        },
+        "-ONKJ0VI3AugHfox2nN7": {
+          "posX": 85.64370727539062,
+          "posY": -2.631699323654175,
+          "timestamp": 39.470699310302734
+        }
+      },
+      "portal_usage": {
+        "-ONKIxsa36izt_kqUCcQ": {
+          "fromX": 60.312652587890625,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 24.743696212768555,
+          "toX": 64.08258819580078,
+          "toY": 4.0766987800598145,
+          "velocity": 4.0
+        }
+      }
+    }
+  }
+}

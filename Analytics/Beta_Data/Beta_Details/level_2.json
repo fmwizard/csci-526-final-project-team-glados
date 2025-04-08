@@ -1,0 +1,2835 @@
+{
+  "2e662ea8-5d5f-447d-ba2e-1132e01410ca": {
+    "attempt_1": {
+      "deathReasons": {
+        "-ONL238qmroWREsjsiTw": {
+          "posX": 21.227567672729492,
+          "posY": -0.14634262025356293,
+          "reason": "Enemy",
+          "timestamp": 78.30179595947266
+        }
+      },
+      "jumps": {
+        "-ONL1mH_DJKrGeq2IW47": {
+          "posX": -4.0201416015625,
+          "posY": -3.828293561935425,
+          "timestamp": 5.178299903869629
+        },
+        "-ONL1nj5f5DpgYfVgmz7": {
+          "posX": -2.590458869934082,
+          "posY": -2.8132946491241455,
+          "timestamp": 11.111599922180176
+        },
+        "-ONL1o9Afc0LrDL-ygbc": {
+          "posX": 0.40355244278907776,
+          "posY": -2.6329362392425537,
+          "timestamp": 12.919899940490723
+        },
+        "-ONL1tX182i-BpbCB2n2": {
+          "posX": -2.79018235206604,
+          "posY": -2.8132944107055664,
+          "timestamp": 34.84479904174805
+        },
+        "-ONL1vTPjutk5jZCvSla": {
+          "posX": 8.522228240966797,
+          "posY": -2.631699562072754,
+          "timestamp": 42.81060028076172
+        },
+        "-ONL1xOl5HNvKKNMlbW7": {
+          "posX": 14.709835052490234,
+          "posY": -2.631699562072754,
+          "timestamp": 50.428001403808594
+        },
+        "-ONL1yHazY0gChD3OlAz": {
+          "posX": 8.921428680419922,
+          "posY": -2.631699562072754,
+          "timestamp": 54.41109848022461
+        },
+        "-ONL23pCfA_Toyk8aeGw": {
+          "posX": -4.560771465301514,
+          "posY": -3.8283023834228516,
+          "timestamp": 81.12789916992188
+        },
+        "-ONL24PrXwhELz0yPgej": {
+          "posX": 0.22964715957641602,
+          "posY": -2.631699323654175,
+          "timestamp": 83.61139678955078
+        },
+        "-ONL25R2JQkPPhQ1jZu6": {
+          "posX": -2.165585517883301,
+          "posY": -2.8132944107055664,
+          "timestamp": 87.71109771728516
+        },
+        "-ONL26UupH1N6PUIiNaX": {
+          "posX": 10.64913558959961,
+          "posY": -2.631699562072754,
+          "timestamp": 92.13619995117188
+        },
+        "-ONL2Afvmkbx-DwHHGCS": {
+          "posX": 7.156127452850342,
+          "posY": -2.631699562072754,
+          "timestamp": 108.86119842529297
+        },
+        "-ONL2J5WDqyztZVCBkwE": {
+          "posX": 18.478551864624023,
+          "posY": -2.6299333572387695,
+          "timestamp": 143.66940307617188
+        },
+        "-ONL2PGR1QR5adxD4ne1": {
+          "posX": 28.844587326049805,
+          "posY": 7.695056438446045,
+          "timestamp": 168.94410705566406
+        },
+        "-ONL2R-Xf5f01pI_r0bK": {
+          "posX": 34.233795166015625,
+          "posY": 7.684177398681641,
+          "timestamp": 176.05230712890625
+        },
+        "-ONL2V8sm_qpLk2ZL4D9": {
+          "posX": 8.087738037109375,
+          "posY": 7.628300666809082,
+          "timestamp": 193.0438995361328
+        },
+        "-ONL2ViSdElT6E8SmW5w": {
+          "posX": 6.7150092124938965,
+          "posY": 8.643242835998535,
+          "timestamp": 195.4528045654297
+        }
+      },
+      "mirror": {
+        "-ONL1n24UN34ImgC-XbN": {
+          "posX": -2.590458869934082,
+          "posY": -2.8132946491241455,
+          "timestamp": 8.278300285339355
+        },
+        "-ONL2KxNouYMU0v_2Sbt": {
+          "posX": 43.00684356689453,
+          "posY": -3.9688937664031982,
+          "timestamp": 151.28590393066406
+        }
+      },
+      "portal_usage": {
+        "-ONL1tzjVfqnTVEjv9pA": {
+          "fromX": 2.0553441047668457,
+          "fromY": -2.076000452041626,
+          "objectType": "Player",
+          "timestamp": 36.74179458618164,
+          "toX": 8.921467781066895,
+          "toY": -3.1366989612579346,
+          "velocity": 4.0
+        },
+        "-ONL22dVm4DYp-9FrdcZ": {
+          "fromX": 10.366621971130371,
+          "fromY": -3.1366987228393555,
+          "objectType": "Player",
+          "timestamp": 76.28179168701172,
+          "toX": 20.528966903686523,
+          "toY": -3.1366987228393555,
+          "velocity": 0.0
+        },
+        "-ONL22iDnDAoGZvLGPVs": {
+          "fromX": 20.528966903686523,
+          "fromY": -3.1366987228393555,
+          "objectType": "Player",
+          "timestamp": 76.66179656982422,
+          "toX": 10.366621971130371,
+          "toY": -3.1366987228393555,
+          "velocity": 6.0
+        },
+        "-ONL23295TTXl3sEiAuZ": {
+          "fromX": 10.366621971130371,
+          "fromY": -3.1366987228393555,
+          "objectType": "Player",
+          "timestamp": 78.00179290771484,
+          "toX": 20.528966903686523,
+          "toY": -3.1366987228393555,
+          "velocity": 6.0
+        },
+        "-ONL25lZ4l8uByi3E7Oj": {
+          "fromX": 8.35373306274414,
+          "fromY": -3.1366994380950928,
+          "objectType": "Box",
+          "timestamp": 89.16179656982422,
+          "toX": 2.0553438663482666,
+          "toY": -1.9693412780761719,
+          "velocity": 0.0
+        },
+        "-ONL25l_GySHYWmgWn01": {
+          "fromX": 2.0553438663482666,
+          "fromY": -1.9693412780761719,
+          "objectType": "Player",
+          "timestamp": 89.0617904663086,
+          "toX": 8.35373306274414,
+          "toY": -3.1366994380950928,
+          "velocity": 7.0
+        },
+        "-ONL2IajzJj1DK2hzy3q": {
+          "fromX": 4.0068559646606445,
+          "fromY": -2.3012893199920654,
+          "objectType": "Player",
+          "timestamp": 141.5017852783203,
+          "toX": 20.374753952026367,
+          "toY": -3.1366991996765137,
+          "velocity": 4.0
+        },
+        "-ONL2JS5jOi-2JKd7ioU": {
+          "fromX": 20.374753952026367,
+          "fromY": -3.1366991996765137,
+          "objectType": "Player",
+          "timestamp": 145.20179748535156,
+          "toX": 26.116674423217773,
+          "toY": -3.1366991996765137,
+          "velocity": 8.0
+        },
+        "-ONL2N1RgZ6aYaZEV4KM": {
+          "fromX": 41.46682357788086,
+          "fromY": -4.473893165588379,
+          "objectType": "Player",
+          "timestamp": 159.80178833007812,
+          "toX": 39.12370300292969,
+          "toY": 14.006698608398438,
+          "velocity": 4.0
+        },
+        "-ONL2TA8Wa8E3-H9gTpb": {
+          "fromX": 36.20356750488281,
+          "fromY": 7.179178237915039,
+          "objectType": "Player",
+          "timestamp": 184.92178344726562,
+          "toX": 25.240100860595703,
+          "toY": 14.006698608398438,
+          "velocity": 4.0
+        }
+      }
+    }
+  },
+  "97ae0fa0-5637-4cf1-a408-f129a3dd094e": {
+    "attempt_1": {
+      "enemy_kills": {
+        "-ONL1lApXXDHpnn8vQWI": {
+          "enemyType": "PurpleEnemy",
+          "posX": 21.510000228881836,
+          "posY": 1.3549425601959229,
+          "reason": "Laser",
+          "timestamp": 43.89189910888672
+        },
+        "-ONL1vQavRe_NuhimGyu": {
+          "enemyType": "PurpleEnemy",
+          "posX": 38.79932403564453,
+          "posY": 9.099175453186035,
+          "reason": "Box",
+          "timestamp": 85.85308837890625
+        },
+        "-ONL25YBcPQgLCWciNyD": {
+          "enemyType": "RedEnemy",
+          "posX": 5.259103775024414,
+          "posY": 8.707737922668457,
+          "reason": "Acclerated Box",
+          "timestamp": 131.37307739257812
+        }
+      },
+      "jumps": {
+        "-ONL1avbIiGfFTTn8syK": {
+          "posX": -14.341198921203613,
+          "posY": -2.631699562072754,
+          "timestamp": 1.8940999507904053
+        },
+        "-ONL1cE_jJRg8ju0myvu": {
+          "posX": -6.417006969451904,
+          "posY": -3.828293561935425,
+          "timestamp": 7.268099784851074
+        },
+        "-ONL1c_GBMODBi8O-ga7": {
+          "posX": -3.221320867538452,
+          "posY": -2.8169310092926025,
+          "timestamp": 8.936699867248535
+        },
+        "-ONL1czy9kboaI5c3Ric": {
+          "posX": 0.4712928831577301,
+          "posY": -2.6356027126312256,
+          "timestamp": 10.642499923706055
+        },
+        "-ONL1d0mddTbriwA88DP": {
+          "posX": 0.17189165949821472,
+          "posY": -1.7642532587051392,
+          "timestamp": 10.760100364685059
+        },
+        "-ONL1dQvUx3bNRVtN2V2": {
+          "posX": 1.2696959972381592,
+          "posY": -2.6331305503845215,
+          "timestamp": 12.434100151062012
+        },
+        "-ONL1d_griGHl825aDVr": {
+          "posX": 1.2519738674163818,
+          "posY": -0.5543185472488403,
+          "timestamp": 12.782500267028809
+        },
+        "-ONL1daBWD8171PX1aca": {
+          "posX": 1.0523731708526611,
+          "posY": -0.38832372426986694,
+          "timestamp": 12.814499855041504
+        },
+        "-ONL1dsjs-6WL_-W-cd8": {
+          "posX": 0.35377031564712524,
+          "posY": -2.6325864791870117,
+          "timestamp": 14.27869987487793
+        },
+        "-ONL1du7XaGeJEdavW9c": {
+          "posX": -0.04543130099773407,
+          "posY": -2.0348570346832275,
+          "timestamp": 14.367199897766113
+        },
+        "-ONL1gAM6oSon2wLFDLq": {
+          "posX": 11.709267616271973,
+          "posY": -2.631699562072754,
+          "timestamp": 23.38450050354004
+        },
+        "-ONL1gDVkbyorA1LMcN2": {
+          "posX": 11.709267616271973,
+          "posY": -1.2632638216018677,
+          "timestamp": 23.58690071105957
+        },
+        "-ONL1higiEXs1rsfASm_": {
+          "posX": 14.952313423156738,
+          "posY": -2.543217182159424,
+          "timestamp": 29.738000869750977
+        },
+        "-ONL1hj5mluDK99C2hId": {
+          "posX": 14.952313423156738,
+          "posY": -2.3874526023864746,
+          "timestamp": 29.768600463867188
+        },
+        "-ONL1jqY9fZpWG_dKudv": {
+          "posX": 12.058110237121582,
+          "posY": -2.631699562072754,
+          "timestamp": 38.44060134887695
+        },
+        "-ONL1jshl5jHnPSJq3MF": {
+          "posX": 12.856511116027832,
+          "posY": -0.31001561880111694,
+          "timestamp": 38.849998474121094
+        },
+        "-ONL1lYtorUZesG_khJB": {
+          "posX": 11.218427658081055,
+          "posY": -2.631696939468384,
+          "timestamp": 45.43170166015625
+        },
+        "-ONL1m7NAwHP5sPITVUb": {
+          "posX": 10.470568656921387,
+          "posY": -1.6552118062973022,
+          "timestamp": 48.043701171875
+        },
+        "-ONL1o8sOJnngHdaqvrs": {
+          "posX": 11.468570709228516,
+          "posY": -2.631699562072754,
+          "timestamp": 56.05929946899414
+        },
+        "-ONL1oUIYMo_XR6wU6xd": {
+          "posX": 8.773548126220703,
+          "posY": -1.6799296140670776,
+          "timestamp": 57.70560073852539
+        },
+        "-ONL1oUr5XAzjfNJFL8_": {
+          "posX": 8.57394790649414,
+          "posY": -1.728410243988037,
+          "timestamp": 57.74039840698242
+        },
+        "-ONL1pST-GBdWgEekqQb": {
+          "posX": 20.209461212158203,
+          "posY": -2.6299328804016113,
+          "timestamp": 61.40449905395508
+        },
+        "-ONL1qQCilE_bNlBgdzJ": {
+          "posX": 34.20322036743164,
+          "posY": -3.347585916519165,
+          "timestamp": 65.63420104980469
+        },
+        "-ONL1qQeRsCM41L1RY9F": {
+          "posX": 34.30302047729492,
+          "posY": -3.191821336746216,
+          "timestamp": 65.66600036621094
+        },
+        "-ONL1s3iJNFZs-eDjzQv": {
+          "posX": 40.44849395751953,
+          "posY": 11.270825386047363,
+          "timestamp": 72.11039733886719
+        },
+        "-ONL1sazcuh-ZmH0rHP0": {
+          "posX": 39.34466552734375,
+          "posY": 11.273723602294922,
+          "timestamp": 74.581298828125
+        },
+        "-ONL1uNWESbk0zksxmUV": {
+          "posX": 42.937469482421875,
+          "posY": 7.684177398681641,
+          "timestamp": 81.5739974975586
+        },
+        "-ONL1vmXk4xqui7CRvSa": {
+          "posX": 46.69642639160156,
+          "posY": 13.045825958251953,
+          "timestamp": 87.27020263671875
+        },
+        "-ONL1vq1fSoLvqjT_jTc": {
+          "posX": 46.296329498291016,
+          "posY": 13.51602840423584,
+          "timestamp": 87.33580017089844
+        },
+        "-ONL1w45XuFZi_bwdOYD": {
+          "posX": 46.38804244995117,
+          "posY": 12.329809188842773,
+          "timestamp": 88.7970962524414
+        },
+        "-ONL1wUPlyZw52PXbOoL": {
+          "posX": 32.96179962158203,
+          "posY": 8.154318809509277,
+          "timestamp": 90.48049926757812
+        },
+        "-ONL1y8WEkXGaMhIWq7z": {
+          "posX": 34.059600830078125,
+          "posY": 7.684177398681641,
+          "timestamp": 96.993896484375
+        },
+        "-ONL1y9QjEOJ_QjAdb-Y": {
+          "posX": 33.76020050048828,
+          "posY": 8.138797760009766,
+          "timestamp": 97.05339813232422
+        },
+        "-ONL1yUlTck5QiU3kqa1": {
+          "posX": 28.96979522705078,
+          "posY": 7.689116477966309,
+          "timestamp": 98.69170379638672
+        },
+        "-ONL1yusQ-0nOmHJY_YA": {
+          "posX": 34.059600830078125,
+          "posY": 7.681072235107422,
+          "timestamp": 100.4302978515625
+        },
+        "-ONL1zLuicSHwQnXli_B": {
+          "posX": 33.660400390625,
+          "posY": 7.682760715484619,
+          "timestamp": 102.22650146484375
+        },
+        "-ONL1zMP86GxT_L6hqQF": {
+          "posX": 33.46080017089844,
+          "posY": 7.990062713623047,
+          "timestamp": 102.25769805908203
+        },
+        "-ONL1zugosbdGZiLmof5": {
+          "posX": 34.858001708984375,
+          "posY": 7.683875560760498,
+          "timestamp": 104.24019622802734
+        },
+        "-ONL1zy-9y02XxFdmtMx": {
+          "posX": 33.86000061035156,
+          "posY": 9.0523099899292,
+          "timestamp": 104.45240020751953
+        },
+        "-ONL2-KYBHW5Zrw-ih_B": {
+          "posX": 33.660400390625,
+          "posY": 7.683994770050049,
+          "timestamp": 106.22989654541016
+        },
+        "-ONL2-tnJShgr_0cxyIg": {
+          "posX": 29.368995666503906,
+          "posY": 7.695053577423096,
+          "timestamp": 108.55359649658203
+        },
+        "-ONL20WbE187zurYX4L8": {
+          "posX": 33.660400390625,
+          "posY": 7.684169769287109,
+          "timestamp": 110.82610321044922
+        },
+        "-ONL20Y2SSNus2tmCmh6": {
+          "posX": 33.660400390625,
+          "posY": 8.420804977416992,
+          "timestamp": 110.91619873046875
+        },
+        "-ONL20vZU1ATx88Yy4rJ": {
+          "posX": 33.660400390625,
+          "posY": 7.683892726898193,
+          "timestamp": 112.76439666748047
+        },
+        "-ONL226_y1R8RFPJarhv": {
+          "posX": 18.348417282104492,
+          "posY": 7.7003068923950195,
+          "timestamp": 117.3541030883789
+        },
+        "-ONL226z3keOlo7amNiI": {
+          "posX": 18.24861717224121,
+          "posY": 7.856071472167969,
+          "timestamp": 117.3843002319336
+        },
+        "-ONL22TR7oq-mCCYUrZ0": {
+          "posX": 9.865407943725586,
+          "posY": 7.627888202667236,
+          "timestamp": 119.08689880371094
+        },
+        "-ONL24vMjwZ8dWMAMfqy": {
+          "posX": 9.832265853881836,
+          "posY": 7.628300666809082,
+          "timestamp": 128.85560607910156
+        },
+        "-ONL25e1tPcs2-kqwTQL": {
+          "posX": 9.33326530456543,
+          "posY": 7.628300666809082,
+          "timestamp": 132.12350463867188
+        },
+        "-ONL25gu2Ec3HdJK-yWb": {
+          "posX": 8.435064315795898,
+          "posY": 8.878711700439453,
+          "timestamp": 132.3054962158203
+        },
+        "-ONL26209-YnrkPijs5Z": {
+          "posX": 1.3486692905426025,
+          "posY": 8.622625350952148,
+          "timestamp": 133.7178955078125
+        },
+        "-ONL26IpH5IeuAdDJd6u": {
+          "posX": -2.643345832824707,
+          "posY": 7.6281352043151855,
+          "timestamp": 134.5157928466797
+        }
+      },
+      "mirror": {
+        "-ONL1co7BpZRR66n36j-": {
+          "posX": -1.7243156433105469,
+          "posY": 0.13675658404827118,
+          "timestamp": 9.608400344848633
+        },
+        "-ONL1hRV_ny3bZ1R5nt9": {
+          "posX": 14.960962295532227,
+          "posY": -2.631699562072754,
+          "timestamp": 28.57509994506836
+        },
+        "-ONL1kHjzszOyjmOjhXP": {
+          "posX": 17.28367805480957,
+          "posY": -2.489805221557617,
+          "timestamp": 40.238800048828125
+        },
+        "-ONL1luUK-oqj3m5WFDK": {
+          "posX": 9.1718168258667,
+          "posY": -1.309950828552246,
+          "timestamp": 46.87889862060547
+        },
+        "-ONL1m8HLBeOxowak5x5": {
+          "posX": 10.470568656921387,
+          "posY": -1.2005912065505981,
+          "timestamp": 48.10639953613281
+        },
+        "-ONL1mIimV7DI97K75VH": {
+          "posX": 10.470568656921387,
+          "posY": 1.3485177755355835,
+          "timestamp": 48.77199935913086
+        },
+        "-ONL1mZxmDy7cAUKH9BE": {
+          "posX": 12.36677074432373,
+          "posY": -2.6357593536376953,
+          "timestamp": 49.87620162963867
+        },
+        "-ONL1mkgtAshAtL8NpsC": {
+          "posX": 12.36677074432373,
+          "posY": -2.631700277328491,
+          "timestamp": 50.62900161743164
+        },
+        "-ONL1r-DgqvHV5IHCSLf": {
+          "posX": 43.18523025512695,
+          "posY": -3.969139575958252,
+          "timestamp": 67.7322998046875
+        }
+      },
+      "portal_usage": {
+        "-ONL1end2E8f2QbdKLGT": {
+          "fromX": 2.0553441047668457,
+          "fromY": -2.4622535705566406,
+          "objectType": "Player",
+          "timestamp": 17.73308753967285,
+          "toX": 7.6729021072387695,
+          "toY": -3.1366984844207764,
+          "velocity": 4.0
+        },
+        "-ONL1p-v_rfoBpakblyb": {
+          "fromX": 4.0068559646606445,
+          "fromY": -2.2831344604492188,
+          "objectType": "Player",
+          "timestamp": 59.55308532714844,
+          "toX": 18.912059783935547,
+          "toY": -3.1366987228393555,
+          "velocity": 4.0
+        },
+        "-ONL1q-miE_WgdjzHYwm": {
+          "fromX": 20.291845321655273,
+          "fromY": -3.1366987228393555,
+          "objectType": "Player",
+          "timestamp": 63.93308639526367,
+          "toX": 26.413196563720703,
+          "toY": -3.1366987228393555,
+          "velocity": 0.0
+        },
+        "-ONL1rPHtqAUjuEb0BK6": {
+          "fromX": 43.25314712524414,
+          "fromY": -4.473893165588379,
+          "objectType": "Player",
+          "timestamp": 69.37308502197266,
+          "toX": 41.41695785522461,
+          "toY": 14.006698608398438,
+          "velocity": 0.0
+        },
+        "-ONL1s5GLbziUMqhJnHl": {
+          "fromX": 41.41695785522461,
+          "fromY": 14.006698608398438,
+          "objectType": "Player",
+          "timestamp": 72.47308349609375,
+          "toX": 43.25314712524414,
+          "toY": -4.473893165588379,
+          "velocity": 4.0
+        },
+        "-ONL1sKTZF-T0g_BaHfc": {
+          "fromX": 43.25314712524414,
+          "fromY": -4.473893165588379,
+          "objectType": "Player",
+          "timestamp": 73.4330825805664,
+          "toX": 41.41695785522461,
+          "toY": 14.006698608398438,
+          "velocity": 5.0
+        },
+        "-ONL1st80lB_9sGlnwBp": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 75.4330825805664,
+          "toX": 43.25314712524414,
+          "toY": -4.473893165588379,
+          "velocity": 0.0
+        },
+        "-ONL1suU73zdEUlqLQit": {
+          "fromX": 43.25314712524414,
+          "fromY": -4.473893165588379,
+          "objectType": "Box",
+          "timestamp": 75.8130874633789,
+          "toX": 46.69642639160156,
+          "toY": 11.545825958251953,
+          "velocity": 3.0
+        },
+        "-ONL1t4yF8-7eC44Pl2D": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 76.55308532714844,
+          "toX": 43.25314712524414,
+          "toY": -4.473893165588379,
+          "velocity": 4.0
+        },
+        "-ONL1tKAmdcOZw8gNLLj": {
+          "fromX": 43.25314712524414,
+          "fromY": -4.473893165588379,
+          "objectType": "Box",
+          "timestamp": 77.53308868408203,
+          "toX": 46.69642639160156,
+          "toY": 11.545825958251953,
+          "velocity": 4.0
+        },
+        "-ONL1tUQQDNjkXApxOhJ": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 78.17308807373047,
+          "toX": 43.25314712524414,
+          "toY": -4.473893165588379,
+          "velocity": 4.0
+        },
+        "-ONL1tibrqDM3FFLm6ev": {
+          "fromX": 43.25314712524414,
+          "fromY": -4.473893165588379,
+          "objectType": "Box",
+          "timestamp": 79.15308380126953,
+          "toX": 46.69642639160156,
+          "toY": 11.545825958251953,
+          "velocity": 4.0
+        },
+        "-ONL1tsg5zBRtHpkt60j": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 79.79308319091797,
+          "toX": 40.9601936340332,
+          "toY": 7.179178237915039,
+          "velocity": 4.0
+        },
+        "-ONL1uBaKAgG02vtntRE": {
+          "fromX": 40.9601936340332,
+          "fromY": 7.179178237915039,
+          "objectType": "Box",
+          "timestamp": 80.77308654785156,
+          "toX": 46.69642639160156,
+          "toY": 11.545825958251953,
+          "velocity": 4.0
+        },
+        "-ONL1uGreFbuZWYHrZX7": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 81.4130859375,
+          "toX": 40.9601936340332,
+          "toY": 7.179178237915039,
+          "velocity": 4.0
+        },
+        "-ONL1uoZ_DK3ERFmV10p": {
+          "fromX": 39.80624008178711,
+          "fromY": 7.179178237915039,
+          "objectType": "Box",
+          "timestamp": 83.63308715820312,
+          "toX": 46.69642639160156,
+          "toY": 11.545825958251953,
+          "velocity": 1.0
+        },
+        "-ONL1uxVnUqYhryE91Oz": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 84.21308898925781,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 3.0
+        },
+        "-ONL1vAizPkltGB8MQdi": {
+          "fromX": 39.80624008178711,
+          "fromY": 7.179178237915039,
+          "objectType": "Box",
+          "timestamp": 85.09308624267578,
+          "toX": 46.69642639160156,
+          "toY": 11.545825958251953,
+          "velocity": 4.0
+        },
+        "-ONL1vKKI7ysubCj6FPZ": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 85.73308563232422,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 4.0
+        },
+        "-ONL1vdqsbZITBYH0pZ_": {
+          "fromX": 39.80624008178711,
+          "fromY": 7.179178237915039,
+          "objectType": "Box",
+          "timestamp": 86.71308898925781,
+          "toX": 46.69642639160156,
+          "toY": 11.545825958251953,
+          "velocity": 4.0
+        },
+        "-ONL1vhH2awKi1tkxo9L": {
+          "fromX": 39.80624008178711,
+          "fromY": 7.179178237915039,
+          "objectType": "Player",
+          "timestamp": 87.25308227539062,
+          "toX": 46.69642639160156,
+          "toY": 11.545825958251953,
+          "velocity": 4.0
+        },
+        "-ONL1vlzEk3GWrLWVpkQ": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 87.37308502197266,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 4.0
+        },
+        "-ONL1w59ufphZHai5KF7": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Player",
+          "timestamp": 88.83308410644531,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 5.0
+        },
+        "-ONL1w98VfiXH3DWFDD7": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 89.09308624267578,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 3.0
+        },
+        "-ONL1wWFjNrg4dznN6KS": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 90.59308624267578,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 3.0
+        },
+        "-ONL1wwrS0o403Tp89uS": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 92.07308197021484,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 3.0
+        },
+        "-ONL1xvZCZzvrl2gdiO4": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 96.35308837890625,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 4.0
+        },
+        "-ONL1yLh8d2LgnQsu37e": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 97.8130874633789,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 4.0
+        },
+        "-ONL1yd8LgI0ObvC8m-s": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 99.29308319091797,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 3.0
+        },
+        "-ONL1z0d2duEvnjBzGbD": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 100.8130874633789,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 4.0
+        },
+        "-ONL1zNLqdwe_dygfffx": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 102.29308319091797,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 3.0
+        },
+        "-ONL1zoaNyQOI1M4GE-T": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 103.83308410644531,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 4.0
+        },
+        "-ONL2-4H0tRskqfjqbVa": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 105.17308807373047,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 3.0
+        },
+        "-ONL2-RLahe60h-qs31L": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 106.65308380126953,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 4.0
+        },
+        "-ONL2-nS_w0XucX-a2SH": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 108.13308715820312,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 3.0
+        },
+        "-ONL20DUXkfNK532Snb3": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 109.57308197021484,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 3.0
+        },
+        "-ONL20V7W1M96FuYYu8Q": {
+          "fromX": 46.69642639160156,
+          "fromY": 11.545825958251953,
+          "objectType": "Box",
+          "timestamp": 110.99308776855469,
+          "toX": 39.80624008178711,
+          "toY": 7.179178237915039,
+          "velocity": 3.0
+        },
+        "-ONL21irsRGqKqWDav6D": {
+          "fromX": 34.00804138183594,
+          "fromY": 7.179178237915039,
+          "objectType": "Player",
+          "timestamp": 115.75308227539062,
+          "toX": 24.835067749023438,
+          "toY": 14.006698608398438,
+          "velocity": 0.0
+        },
+        "-ONL23kgoBCZkDWPOZHf": {
+          "fromX": 6.150854587554932,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 124.07308197021484,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 3.0
+        },
+        "-ONL23sHQfOsNL2MFbWb": {
+          "fromX": 6.150854587554932,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 124.83308410644531,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 8.0
+        },
+        "-ONL24--gm3UGW_3RgJn": {
+          "fromX": 6.150854587554932,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 125.3130874633789,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 10.0
+        },
+        "-ONL245b-cWTu_8uEJcc": {
+          "fromX": 6.150854587554932,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 125.73308563232422,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 12.0
+        },
+        "-ONL24BFQ9okw17tgBua": {
+          "fromX": 6.150854587554932,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 126.11308288574219,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 13.0
+        },
+        "-ONL24GmB0oHIp57U0g3": {
+          "fromX": 6.150854587554932,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 126.45308685302734,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 14.0
+        },
+        "-ONL24Lqa3jxQ-mOUDgw": {
+          "fromX": 6.150854587554932,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 126.77308654785156,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 15.0
+        },
+        "-ONL24QX_9bH1I_F5vD9": {
+          "fromX": 6.150854587554932,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 127.09308624267578,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 0.0
+        },
+        "-ONL24f-B7V84svLeyxn": {
+          "fromX": 6.150854587554932,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 128.07308959960938,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 8.0
+        },
+        "-ONL24msVdurbWAoqJ6W": {
+          "fromX": 6.150854587554932,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 128.57308959960938,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 10.0
+        },
+        "-ONL24tMeZvIOcRQ59NK": {
+          "fromX": 6.150854587554932,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 128.9930877685547,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 12.0
+        },
+        "-ONL252uJGwTPUceDY5x": {
+          "fromX": 6.150854587554932,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 129.37307739257812,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 13.0
+        },
+        "-ONL253kZzy2YIXIpHV8": {
+          "fromX": 5.058788299560547,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 129.7130889892578,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 14.0
+        },
+        "-ONL2590Ck2zQwiZnR4b": {
+          "fromX": 5.058788299560547,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 130.05308532714844,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 15.0
+        },
+        "-ONL25E7_xaZD4zreMl2": {
+          "fromX": 5.058788299560547,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 130.37307739257812,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 15.0
+        },
+        "-ONL25ITRhijIJbPGcdX": {
+          "fromX": 5.058788299560547,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 130.67308044433594,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 16.0
+        },
+        "-ONL25N9xnheUICW8Dju": {
+          "fromX": 5.058788299560547,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 130.97308349609375,
+          "toX": 6.037181377410889,
+          "toY": 14.006698608398438,
+          "velocity": 16.0
+        },
+        "-ONL25RuUNwelvU_xLVI": {
+          "fromX": 5.058788299560547,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 131.27308654785156,
+          "toX": 4.823845386505127,
+          "toY": 14.006698608398438,
+          "velocity": 17.0
+        }
+      }
+    }
+  },
+  "c391cebf-334c-4784-ad5c-7251c4bd0d83": {
+    "attempt_1": {
+      "deathReasons": {
+        "-ONL2O5MrJJ-L8KlDO6D": {
+          "posX": 44.094276428222656,
+          "posY": -10.011722564697266,
+          "reason": "Fall",
+          "timestamp": 67.03379821777344
+        }
+      },
+      "enemy_kills": {
+        "-ONL2FCnohqX6Lt9Y721": {
+          "enemyType": "PurpleEnemy",
+          "posX": 21.510000228881836,
+          "posY": 1.3549425601959229,
+          "reason": "Laser",
+          "timestamp": 30.663700103759766
+        },
+        "-ONL2I3iV9J-IwuUn-zA": {
+          "enemyType": "PurpleEnemy",
+          "posX": 24.530000686645508,
+          "posY": 1.3549425601959229,
+          "reason": "Laser",
+          "timestamp": 42.368900299072266
+        }
+      },
+      "jumps": {
+        "-ONL295igBdEqmRT858y": {
+          "posX": -1.9927443265914917,
+          "posY": -3.828293561935425,
+          "timestamp": 5.480400085449219
+        },
+        "-ONL2BizBnZXkJGGRs_6": {
+          "posX": 8.804065704345703,
+          "posY": -2.6299331188201904,
+          "timestamp": 16.31909942626953
+        },
+        "-ONL2Dhk49XgY06J0qTR": {
+          "posX": 13.8524169921875,
+          "posY": -2.631699562072754,
+          "timestamp": 24.517499923706055
+        },
+        "-ONL2EQWikRUB5rYwYc_": {
+          "posX": 8.862411499023438,
+          "posY": -2.631699562072754,
+          "timestamp": 27.50659942626953
+        },
+        "-ONL2FNkVa0Y4S4-4BKr": {
+          "posX": 6.886999130249023,
+          "posY": -1.5788019895553589,
+          "timestamp": 31.364700317382812
+        },
+        "-ONL2FjVS75aALvt-VGD": {
+          "posX": 10.105184555053711,
+          "posY": -2.631704330444336,
+          "timestamp": 32.884700775146484
+        },
+        "-ONL2G9AMDMkyM-nrgUt": {
+          "posX": 7.510044574737549,
+          "posY": -1.6228564977645874,
+          "timestamp": 34.504398345947266
+        },
+        "-ONL2G_3tYiB8s3ZNN90": {
+          "posX": 5.41423225402832,
+          "posY": -2.636155128479004,
+          "timestamp": 36.307899475097656
+        },
+        "-ONL2HNHBsD6q7k3LqrD": {
+          "posX": 16.363306045532227,
+          "posY": -2.6280412673950195,
+          "timestamp": 39.430198669433594
+        },
+        "-ONL2I4nJhMfRjpoTwkT": {
+          "posX": 14.26750373840332,
+          "posY": -2.631699562072754,
+          "timestamp": 42.46989822387695
+        },
+        "-ONL2ITN-B9k-x_YIB_B": {
+          "posX": 9.377298355102539,
+          "posY": -2.2686140537261963,
+          "timestamp": 43.989601135253906
+        },
+        "-ONL2JixCrNYzcUKBrvp": {
+          "posX": 5.5068559646606445,
+          "posY": -2.632049322128296,
+          "timestamp": 49.06629943847656
+        },
+        "-ONL2L8RcKZXllmT8BjT": {
+          "posX": 20.49863052368164,
+          "posY": -2.6317152976989746,
+          "timestamp": 54.844200134277344
+        },
+        "-ONL2L8X829jP_3BFT9Q": {
+          "posX": 20.598430633544922,
+          "posY": -2.4759507179260254,
+          "timestamp": 54.87689971923828
+        },
+        "-ONL2LZeGGnW-9sGequx": {
+          "posX": 30.07944107055664,
+          "posY": -2.6323750019073486,
+          "timestamp": 56.764400482177734
+        }
+      },
+      "mirror": {
+        "-ONL2A3r3nHncBj-QxT9": {
+          "posX": -0.47325387597084045,
+          "posY": -2.631699323654175,
+          "timestamp": 9.522500038146973
+        },
+        "-ONL2DZsoZs-ppA2kLNW": {
+          "posX": 13.8524169921875,
+          "posY": -2.631699562072754,
+          "timestamp": 23.766799926757812
+        },
+        "-ONL2HcsccOunWJ3Uw-x": {
+          "posX": 16.363306045532227,
+          "posY": -0.32770365476608276,
+          "timestamp": 40.58219909667969
+        },
+        "-ONL2IAVrO7JXBIXcMtC": {
+          "posX": 14.26750373840332,
+          "posY": -0.31001561880111694,
+          "timestamp": 42.86989974975586
+        }
+      },
+      "portal_usage": {
+        "-ONL2Aiogf7pBCyNhHCh": {
+          "fromX": 1.3721919059753418,
+          "fromY": -3.1366991996765137,
+          "objectType": "Player",
+          "timestamp": 12.260796546936035,
+          "toX": 6.70825719833374,
+          "toY": -3.1366989612579346,
+          "velocity": 4.0
+        },
+        "-ONL2Eh2PNZh95PQYOc4": {
+          "fromX": 4.0068559646606445,
+          "fromY": -0.7354589700698853,
+          "objectType": "Player",
+          "timestamp": 28.460796356201172,
+          "toX": 1.3721919059753418,
+          "toY": -3.1366991996765137,
+          "velocity": 1.0
+        },
+        "-ONL2EnXI0XuoFfPo-AM": {
+          "fromX": 1.3721919059753418,
+          "fromY": -3.1366991996765137,
+          "objectType": "Player",
+          "timestamp": 29.040796279907227,
+          "toX": 4.0068559646606445,
+          "toY": -0.7354589700698853,
+          "velocity": 3.0
+        },
+        "-ONL2JUMFUjAwFCyZBk0": {
+          "fromX": 19.99959945678711,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 48.160797119140625,
+          "toX": 4.0068559646606445,
+          "toY": -0.7354589700698853,
+          "velocity": 0.0
+        },
+        "-ONL2KPgZx6iBIuMb19f": {
+          "fromX": 19.99959945678711,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 52.02079391479492,
+          "toX": 4.0068559646606445,
+          "toY": -0.7354589700698853,
+          "velocity": 2.0
+        },
+        "-ONL2KSC_CLqQi9oc-fC": {
+          "fromX": 4.0068559646606445,
+          "fromY": -0.7354589700698853,
+          "objectType": "Player",
+          "timestamp": 52.1807975769043,
+          "toX": 19.99959945678711,
+          "toY": -3.1366989612579346,
+          "velocity": 5.0
+        },
+        "-ONL2NHjCRBus_ZL9mAI": {
+          "fromX": 41.666534423828125,
+          "fromY": -4.473893165588379,
+          "objectType": "Player",
+          "timestamp": 63.660797119140625,
+          "toX": 49.04785919189453,
+          "toY": 4.311136245727539,
+          "velocity": 0.0
+        },
+        "-ONL2N_U648OEATGcbTQ": {
+          "fromX": 41.666534423828125,
+          "fromY": -4.473893165588379,
+          "objectType": "Player",
+          "timestamp": 65.00079345703125,
+          "toX": 49.04785919189453,
+          "toY": 4.311136245727539,
+          "velocity": 0.0
+        }
+      }
+    }
+  },
+  "cb13a28a-868d-4802-9405-17d289c2aecb": {
+    "attempt_1": {
+      "ally": {
+        "-ONL5CoDEjhPbGcz7dyn": {
+          "posX": 42.764183044433594,
+          "posY": 7.684177398681641,
+          "timestamp": 211.2570037841797
+        },
+        "-ONL5DkfDe1cSZwNNA2z": {
+          "posX": 38.367759704589844,
+          "posY": 7.684184551239014,
+          "timestamp": 215.201904296875
+        },
+        "-ONL5FL39h7IvcrZcLaV": {
+          "posX": 37.768959045410156,
+          "posY": 7.684184551239014,
+          "timestamp": 221.61219787597656
+        },
+        "-ONL5FYO_zzkdpGo5T7W": {
+          "posX": 37.768959045410156,
+          "posY": 7.684184551239014,
+          "timestamp": 222.64010620117188
+        },
+        "-ONL5G0SmaC8WDZizPAy": {
+          "posX": 37.768959045410156,
+          "posY": 7.684184551239014,
+          "timestamp": 224.44590759277344
+        },
+        "-ONL5G5FplE0gF6JlVzx": {
+          "posX": 37.768959045410156,
+          "posY": 7.684184551239014,
+          "timestamp": 224.8695068359375
+        },
+        "-ONL5GAFFPbMXXGuRRPa": {
+          "posX": 37.768959045410156,
+          "posY": 7.684184551239014,
+          "timestamp": 225.1820068359375
+        },
+        "-ONL5IJfvY4Xeis9UkZT": {
+          "posX": 37.768959045410156,
+          "posY": 7.684184551239014,
+          "timestamp": 233.89129638671875
+        },
+        "-ONL5Kv-5DjDe1KcvsVD": {
+          "posX": 34.76213455200195,
+          "posY": 7.684276103973389,
+          "timestamp": 244.44090270996094
+        },
+        "-ONL5M-HrCJ9zIJHLvFM": {
+          "posX": 34.76213455200195,
+          "posY": 7.684276103973389,
+          "timestamp": 249.05259704589844
+        },
+        "-ONL5Q5d8SylpsTDd09U": {
+          "posX": 34.76213455200195,
+          "posY": 7.684276103973389,
+          "timestamp": 265.693115234375
+        },
+        "-ONL5Rq0iAk-YOa4xtG0": {
+          "posX": 34.76213455200195,
+          "posY": 7.684276103973389,
+          "timestamp": 272.8257141113281
+        },
+        "-ONL5SynB85PbMWMQrsO": {
+          "posX": 34.76213455200195,
+          "posY": 7.684276103973389,
+          "timestamp": 277.6387939453125
+        },
+        "-ONL5UJrr582hlFz4LjE": {
+          "posX": 34.76213455200195,
+          "posY": 7.684276103973389,
+          "timestamp": 282.9726867675781
+        },
+        "-ONL5UZBMMxoZUcqZaDV": {
+          "posX": 34.76213455200195,
+          "posY": 7.684276103973389,
+          "timestamp": 284.1326904296875
+        },
+        "-ONL5UjUBdrhzm0dm2YJ": {
+          "posX": 34.76213455200195,
+          "posY": 7.684276103973389,
+          "timestamp": 284.7644958496094
+        },
+        "-ONL5ZQaa8ZzF0_ArCKu": {
+          "posX": 28.144824981689453,
+          "posY": 7.695056438446045,
+          "timestamp": 303.98870849609375
+        },
+        "-ONL5h5hsgG21va3-br2": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 339.4298095703125
+        },
+        "-ONL5hY22aY51zBJ8Gp8": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 341.40240478515625
+        },
+        "-ONL5hhWx2_D2gtK_VaE": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 342.0758972167969
+        },
+        "-ONL5hokBL2v-DSJ9zVO": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 342.5273132324219
+        },
+        "-ONL5hvXOIvz4D-3TZOP": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 342.9718017578125
+        },
+        "-ONL5i091JziS8YfxWHN": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 343.33319091796875
+        },
+        "-ONL5i5xODx2F0HraZAM": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 343.70111083984375
+        },
+        "-ONL5i9IjFDUZ1efx-FY": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 343.9158020019531
+        },
+        "-ONL5iD_lqmFfgMji3IJ": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 344.1803894042969
+        },
+        "-ONL5iIy7nP1g0swiKDF": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 344.4372863769531
+        },
+        "-ONL5iM7PEwbOIh1TiFu": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 344.6803894042969
+        },
+        "-ONL5iP0yXVKFzj6E55N": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 344.9236145019531
+        },
+        "-ONL5iT5yzZSl9QotHvJ": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 345.1872863769531
+        },
+        "-ONL5idxhlKXVpY1aCEG": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 345.9372863769531
+        },
+        "-ONL5ine7uU0ImDmVbel": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 346.5552978515625
+        },
+        "-ONL5iszBHg9v3BXxljN": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 346.8768005371094
+        },
+        "-ONL5ix-0o_GAr3I15FM": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 347.16668701171875
+        },
+        "-ONL5j-s7irVz4MI8PyF": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 347.4097900390625
+        },
+        "-ONL5j4jYdCC8odo22VM": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 347.7222900390625
+        },
+        "-ONL5jXjRyY6Jd11uARA": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 349.4794006347656
+        },
+        "-ONL5jg1DsdoP1-xMD2m": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 350.0837097167969
+        },
+        "-ONL5jk4_5rInrVQUn2O": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 350.4241027832031
+        },
+        "-ONL5kUGptREGKWg-zuu": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 353.4451904296875
+        },
+        "-ONL5kbB2qoG7K1mVF3u": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 353.95208740234375
+        },
+        "-ONL5kgM2H2Nhqf85hys": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 354.2785949707031
+        },
+        "-ONL5kl6FUyoEDirm75A": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 354.59100341796875
+        },
+        "-ONL5lDSUv4PbMsj2ZuC": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 356.39691162109375
+        },
+        "-ONL5lOwtIBz68rRNPdV": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 357.19549560546875
+        },
+        "-ONL5m7tNL4b6SPuoPH3": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 359.85540771484375
+        },
+        "-ONL5mToIQyaeCZME95p": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 361.55010986328125
+        },
+        "-ONL5mWxHHNw5-KR4C_H": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 361.8140869140625
+        },
+        "-ONL5maRS0IVPAGp_PF6": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 362.08489990234375
+        },
+        "-ONL5nu4t1WFCXrVCViR": {
+          "posX": 36.060726165771484,
+          "posY": 7.684177398681641,
+          "timestamp": 367.2864990234375
+        },
+        "-ONL60e0QlCRLjE8dTWn": {
+          "posX": 34.747711181640625,
+          "posY": 7.684177398681641,
+          "timestamp": 423.59130859375
+        },
+        "-ONL612Za-w_W7r0HVtK": {
+          "posX": 34.747711181640625,
+          "posY": 7.684177398681641,
+          "timestamp": 425.3066101074219
+        },
+        "-ONL61A2RXmol9VQ0se8": {
+          "posX": 34.747711181640625,
+          "posY": 7.684177398681641,
+          "timestamp": 425.8760986328125
+        }
+      },
+      "deathReasons": {
+        "-ONL4lW6AZGclyXZ6GWF": {
+          "posX": 20.969587326049805,
+          "posY": -2.4167332649230957,
+          "reason": "Trap",
+          "timestamp": 95.40239715576172
+        },
+        "-ONL5_llottGMTLaQH8r": {
+          "posX": 28.2286319732666,
+          "posY": 10.301780700683594,
+          "reason": "Laser",
+          "timestamp": 309.4197998046875
+        },
+        "-ONL5swX4IxsbaKUQ8An": {
+          "posX": 30.089019775390625,
+          "posY": 7.8331522941589355,
+          "reason": "Laser",
+          "timestamp": 387.9834899902344
+        }
+      },
+      "enemy_kills": {
+        "-ONL4aQUNKv2yMTza8xq": {
+          "enemyType": "PurpleEnemy",
+          "posX": 21.510000228881836,
+          "posY": 1.3549425601959229,
+          "reason": "Laser",
+          "timestamp": 49.92110061645508
+        },
+        "-ONL4jOYStDk5MJjONmy": {
+          "enemyType": "PurpleEnemy",
+          "posX": 24.530000686645508,
+          "posY": 1.3549425601959229,
+          "reason": "Laser",
+          "timestamp": 86.77120208740234
+        },
+        "-ONL5CoHpnmwC7IvFTUY": {
+          "enemyType": "PurpleEnemy",
+          "posX": 39.80866622924805,
+          "posY": 10.114173889160156,
+          "reason": "Converted to Ally",
+          "timestamp": 211.26239013671875
+        }
+      },
+      "jumps": {
+        "-ONL4QbpFz1u6C0sTryo": {
+          "posX": -1.991080641746521,
+          "posY": -3.8283002376556396,
+          "timestamp": 5.652599811553955
+        },
+        "-ONL4TliEuyG4Fp4BCWU": {
+          "posX": 10.332484245300293,
+          "posY": -2.631699562072754,
+          "timestamp": 18.681699752807617
+        },
+        "-ONL4atx3Lt-Ury_2xJu": {
+          "posX": 7.137831211090088,
+          "posY": -2.631699562072754,
+          "timestamp": 51.97679901123047
+        },
+        "-ONL4gGnXtzdff1O5_KC": {
+          "posX": 7.151473522186279,
+          "posY": -2.631699562072754,
+          "timestamp": 73.9791030883789
+        },
+        "-ONL4h8sXIk9heZ_A2xY": {
+          "posX": 8.098255157470703,
+          "posY": -2.631699562072754,
+          "timestamp": 77.54889678955078
+        },
+        "-ONL4hfRkz59E96845fQ": {
+          "posX": 9.394479751586914,
+          "posY": -2.631737470626831,
+          "timestamp": 79.61859893798828
+        },
+        "-ONL4jQjy0xQoEcQfVqz": {
+          "posX": 11.934049606323242,
+          "posY": -2.631700038909912,
+          "timestamp": 86.91089630126953
+        },
+        "-ONL4jtW71M3XiOUXz2s": {
+          "posX": 8.403966903686523,
+          "posY": -2.632089138031006,
+          "timestamp": 88.85559844970703
+        },
+        "-ONL4lR3hUQ_gd0xBsk4": {
+          "posX": 19.07338523864746,
+          "posY": -2.180603504180908,
+          "timestamp": 95.02290344238281
+        },
+        "-ONL4lfF3wuFJ-aDNP25": {
+          "posX": -13.742398262023926,
+          "posY": -2.6324057579040527,
+          "timestamp": 96.16190338134766
+        },
+        "-ONL4mXe08mFnH6C3hyw": {
+          "posX": -4.061768531799316,
+          "posY": -3.828293561935425,
+          "timestamp": 99.48169708251953
+        },
+        "-ONL4pg3Jmv578yWt72P": {
+          "posX": 10.25495433807373,
+          "posY": -2.6323745250701904,
+          "timestamp": 112.5177001953125
+        },
+        "-ONL4sBvRb8cBxdzZo29": {
+          "posX": -2.5105340480804443,
+          "posY": -3.828293561935425,
+          "timestamp": 122.82430267333984
+        },
+        "-ONL52TyTlyXOx_eQ5eW": {
+          "posX": -3.2289822101593018,
+          "posY": -3.828293561935425,
+          "timestamp": 168.94009399414062
+        },
+        "-ONL54tF5zwdK6i48IOP": {
+          "posX": 19.086870193481445,
+          "posY": -2.631699800491333,
+          "timestamp": 178.63560485839844
+        },
+        "-ONL5BKGqZcdqfQ0F0HO": {
+          "posX": 47.99753189086914,
+          "posY": 12.050824165344238,
+          "timestamp": 205.16610717773438
+        },
+        "-ONL5VZW0VxDAhg8-BRj": {
+          "posX": 34.76213455200195,
+          "posY": 7.684276103973389,
+          "timestamp": 288.1745910644531
+        },
+        "-ONL5YQsWRaLnY_I97T2": {
+          "posX": 34.13283157348633,
+          "posY": 8.948723793029785,
+          "timestamp": 299.6549072265625
+        },
+        "-ONL5_YLoELFiNwGAWn1": {
+          "posX": 29.54202651977539,
+          "posY": 7.695056438446045,
+          "timestamp": 308.4684143066406
+        },
+        "-ONL5a8QlTde70KOLl0b": {
+          "posX": -13.243398666381836,
+          "posY": -2.631699562072754,
+          "timestamp": 311.0867004394531
+        },
+        "-ONL5a_31tBJ7YsA3lDF": {
+          "posX": -4.460971832275391,
+          "posY": -3.8358333110809326,
+          "timestamp": 312.8507080078125
+        },
+        "-ONL5d8nN27MjbL4ZHJZ": {
+          "posX": 19.28024673461914,
+          "posY": -2.631699562072754,
+          "timestamp": 323.3380126953125
+        },
+        "-ONL5dcWm25FglhGhPSj": {
+          "posX": 28.86105728149414,
+          "posY": -2.6320557594299316,
+          "timestamp": 325.2618103027344
+        },
+        "-ONL5pivHXdDrOAF2SQF": {
+          "posX": 34.96292495727539,
+          "posY": 7.684177398681641,
+          "timestamp": 374.7597961425781
+        },
+        "-ONL5tbJPlIzkfyW-AUb": {
+          "posX": -11.94599723815918,
+          "posY": -2.631699562072754,
+          "timestamp": 390.6711120605469
+        },
+        "-ONL5tzCu4qitfKNF84M": {
+          "posX": -3.562767744064331,
+          "posY": -3.510603904724121,
+          "timestamp": 392.3518981933594
+        },
+        "-ONL5u8lO3jBrNBv_585": {
+          "posX": -2.0074996948242188,
+          "posY": -3.828296422958374,
+          "timestamp": 393.0325927734375
+        },
+        "-ONL5vmd_uy4Gmexy226": {
+          "posX": 8.995733261108398,
+          "posY": -0.04731113463640213,
+          "timestamp": 399.6860046386719
+        },
+        "-ONL5wKTRSy6ezSEmuvA": {
+          "posX": 20.37294578552246,
+          "posY": -2.631699562072754,
+          "timestamp": 401.9638977050781
+        },
+        "-ONL5wkpkcIpJXaEorfI": {
+          "posX": 29.15535545349121,
+          "posY": -2.63382625579834,
+          "timestamp": 403.7279968261719
+        },
+        "-ONL6-DlpK-GcPImWDsg": {
+          "posX": 33.250709533691406,
+          "posY": 7.684177398681641,
+          "timestamp": 417.75738525390625
+        }
+      },
+      "mirror": {
+        "-ONL4REgAsqlEnVSnAg6": {
+          "posX": -1.0748616456985474,
+          "posY": -2.8132994174957275,
+          "timestamp": 8.312600135803223
+        },
+        "-ONL4XuI9d8viiFwFGJO": {
+          "posX": 11.14594841003418,
+          "posY": -2.631699562072754,
+          "timestamp": 35.502899169921875
+        },
+        "-ONL4_t98eXh-ivA0dni": {
+          "posX": 14.323443412780762,
+          "posY": -2.4816997051239014,
+          "timestamp": 47.587501525878906
+        },
+        "-ONL4j701-al3nE5IwuP": {
+          "posX": 15.676337242126465,
+          "posY": -2.631699562072754,
+          "timestamp": 85.52890014648438
+        },
+        "-ONL4nB3caS9CAkX1ixO": {
+          "posX": -0.4689556360244751,
+          "posY": -2.631699323654175,
+          "timestamp": 102.27369689941406
+        },
+        "-ONL4nRL0MHc1hYB6afm": {
+          "posX": -0.4689556360244751,
+          "posY": -2.4816997051239014,
+          "timestamp": 103.39820098876953
+        },
+        "-ONL57Tz5SvUmPuRPiPP": {
+          "posX": 42.56100082397461,
+          "posY": -3.9688937664031982,
+          "timestamp": 189.4075927734375
+        },
+        "-ONL59aYhGpbNyEgyjyE": {
+          "posX": 40.665771484375,
+          "posY": 11.270825386047363,
+          "timestamp": 198.1029052734375
+        },
+        "-ONL5bkuHdZ7fbCM6xRs": {
+          "posX": -1.2674235105514526,
+          "posY": -2.8132970333099365,
+          "timestamp": 317.5450134277344
+        },
+        "-ONL5enIKtyyR7i0Utih": {
+          "posX": 42.23427200317383,
+          "posY": -3.9688937664031982,
+          "timestamp": 329.9913024902344
+        },
+        "-ONL5fKsWabmZpS5nusc": {
+          "posX": 42.833072662353516,
+          "posY": -3.9688937664031982,
+          "timestamp": 332.3666076660156
+        },
+        "-ONL5uX67bj2DioD32vf": {
+          "posX": -1.4426847696304321,
+          "posY": -1.9358980655670166,
+          "timestamp": 394.4215087890625
+        },
+        "-ONL5xot6s9xci9Mz5Xp": {
+          "posX": 43.2271728515625,
+          "posY": -3.9688937664031982,
+          "timestamp": 407.9230041503906
+        }
+      },
+      "portal_usage": {
+        "-ONL4SbxrXQzM50A6rCp": {
+          "fromX": 0.7641763687133789,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 13.822396278381348,
+          "toX": 7.4382781982421875,
+          "toY": -3.1366984844207764,
+          "velocity": 1.0
+        },
+        "-ONL4Sjlf8n_AZTHzDo7": {
+          "fromX": 7.4382781982421875,
+          "fromY": -3.1366984844207764,
+          "objectType": "Player",
+          "timestamp": 14.422396659851074,
+          "toX": 0.7641763687133789,
+          "toY": -3.1366989612579346,
+          "velocity": 6.0
+        },
+        "-ONL4T2s0MEVd22F6TRI": {
+          "fromX": 0.7641763687133789,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 15.802396774291992,
+          "toX": 7.4382781982421875,
+          "toY": -3.1366984844207764,
+          "velocity": 7.0
+        },
+        "-ONL4cNDR3yx8X6bPuq3": {
+          "fromX": 5.096950531005859,
+          "fromY": -3.1366991996765137,
+          "objectType": "Box",
+          "timestamp": 57.762393951416016,
+          "toX": 7.285706520080566,
+          "toY": 4.056698322296143,
+          "velocity": 0.0
+        },
+        "-ONL4cOKRky4yL9SD8lj": {
+          "fromX": 5.096950531005859,
+          "fromY": -3.1366991996765137,
+          "objectType": "Player",
+          "timestamp": 58.14239501953125,
+          "toX": 7.285706520080566,
+          "toY": 4.056698322296143,
+          "velocity": 3.0
+        },
+        "-ONL4c_srQ_EkGknkyhV": {
+          "fromX": 5.096950531005859,
+          "fromY": -3.1366991996765137,
+          "objectType": "Player",
+          "timestamp": 58.9423942565918,
+          "toX": 7.285706520080566,
+          "toY": 4.056698322296143,
+          "velocity": 9.0
+        },
+        "-ONL4fL5NNSlhzcMxK8R": {
+          "fromX": 5.096950531005859,
+          "fromY": -3.1366991996765137,
+          "objectType": "Box",
+          "timestamp": 70.06239318847656,
+          "toX": 7.285706520080566,
+          "toY": 4.056698322296143,
+          "velocity": 0.0
+        },
+        "-ONL4oKLFjREZjp3TK5c": {
+          "fromX": 6.8617448806762695,
+          "fromY": -3.1366989612579346,
+          "objectType": "Box",
+          "timestamp": 106.88239288330078,
+          "toX": -6.24974250793457,
+          "toY": -4.3332929611206055,
+          "velocity": 0.0
+        },
+        "-ONL4oNnTrZ4Eyysqm4J": {
+          "fromX": -6.24974250793457,
+          "fromY": -4.3332929611206055,
+          "objectType": "Box",
+          "timestamp": 107.26239776611328,
+          "toX": 6.8617448806762695,
+          "toY": -3.1366989612579346,
+          "velocity": 3.0
+        },
+        "-ONL4o_t9Fg8MiV-p15S": {
+          "fromX": 6.8617448806762695,
+          "fromY": -3.1366989612579346,
+          "objectType": "Box",
+          "timestamp": 108.1023941040039,
+          "toX": -6.24974250793457,
+          "toY": -4.3332929611206055,
+          "velocity": 4.0
+        },
+        "-ONL4oijB9z810V2Y4Qr": {
+          "fromX": 0.5238547325134277,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 108.66239166259766,
+          "toX": 6.8617448806762695,
+          "toY": -3.1366989612579346,
+          "velocity": 0.0
+        },
+        "-ONL4oofafsSf9o1c46M": {
+          "fromX": 6.8617448806762695,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 109.04239654541016,
+          "toX": 0.5238547325134277,
+          "toY": -3.1366989612579346,
+          "velocity": 6.0
+        },
+        "-ONL4pA3NHQaVINuCkhH": {
+          "fromX": 0.5238547325134277,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 110.38239288330078,
+          "toX": 6.8617448806762695,
+          "toY": -3.1366989612579346,
+          "velocity": 8.0
+        },
+        "-ONL4qDnUFZ3ugxwor71": {
+          "fromX": 6.8617448806762695,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 114.64239501953125,
+          "toX": 0.5238547325134277,
+          "toY": -3.1366989612579346,
+          "velocity": 4.0
+        },
+        "-ONL4qu4zdnsUavdQq_p": {
+          "fromX": -6.0769500732421875,
+          "fromY": -4.3332929611206055,
+          "objectType": "Box",
+          "timestamp": 117.5823974609375,
+          "toX": 6.8617448806762695,
+          "toY": -3.1366989612579346,
+          "velocity": 0.0
+        },
+        "-ONL4qzttQkGRvneVbYU": {
+          "fromX": 6.8617448806762695,
+          "fromY": -3.1366989612579346,
+          "objectType": "Box",
+          "timestamp": 117.96239471435547,
+          "toX": -6.0769500732421875,
+          "toY": -4.3332929611206055,
+          "velocity": 3.0
+        },
+        "-ONL4rCQYmAl4G5NBkDo": {
+          "fromX": -6.0769500732421875,
+          "fromY": -4.3332929611206055,
+          "objectType": "Box",
+          "timestamp": 118.8023910522461,
+          "toX": 6.8617448806762695,
+          "toY": -3.1366989612579346,
+          "velocity": 4.0
+        },
+        "-ONL4rTG9xwgJhNGbcnb": {
+          "fromX": 6.8617448806762695,
+          "fromY": -3.1366989612579346,
+          "objectType": "Box",
+          "timestamp": 119.8023910522461,
+          "toX": -6.0769500732421875,
+          "toY": -4.3332929611206055,
+          "velocity": 4.0
+        },
+        "-ONL4rijJH6-67doJv_I": {
+          "fromX": -6.0769500732421875,
+          "fromY": -4.3332929611206055,
+          "objectType": "Box",
+          "timestamp": 120.88239288330078,
+          "toX": 6.8617448806762695,
+          "toY": -3.1366989612579346,
+          "velocity": 5.0
+        },
+        "-ONL4rzCat9mdcpOhIVS": {
+          "fromX": 6.8617448806762695,
+          "fromY": -3.1366989612579346,
+          "objectType": "Box",
+          "timestamp": 122.00239562988281,
+          "toX": 8.783793449401855,
+          "toY": -3.1366991996765137,
+          "velocity": 5.0
+        },
+        "-ONL4sFprTGfQtHDlukS": {
+          "fromX": 8.783793449401855,
+          "fromY": -3.1366991996765137,
+          "objectType": "Box",
+          "timestamp": 123.14239501953125,
+          "toX": 6.8617448806762695,
+          "toY": -3.1366989612579346,
+          "velocity": 5.0
+        },
+        "-ONL4sZZYOIpNLBNMVtz": {
+          "fromX": 6.8617448806762695,
+          "fromY": -3.1366989612579346,
+          "objectType": "Box",
+          "timestamp": 124.3023910522461,
+          "toX": 8.783793449401855,
+          "toY": -3.1366991996765137,
+          "velocity": 5.0
+        },
+        "-ONL4spRCENUykjnKpSp": {
+          "fromX": 8.783793449401855,
+          "fromY": -3.1366991996765137,
+          "objectType": "Box",
+          "timestamp": 125.48239135742188,
+          "toX": 6.8617448806762695,
+          "toY": -3.1366989612579346,
+          "velocity": 5.0
+        },
+        "-ONL4xqEg3L9PTifWUVe": {
+          "fromX": 7.472408294677734,
+          "fromY": -3.1366991996765137,
+          "objectType": "Box",
+          "timestamp": 145.84239196777344,
+          "toX": 0.3836768865585327,
+          "toY": 4.056698799133301,
+          "velocity": 0.0
+        },
+        "-ONL4yuyQhc2ahS1A4z_": {
+          "fromX": 0.3081681728363037,
+          "fromY": -3.1366989612579346,
+          "objectType": "Box",
+          "timestamp": 150.30239868164062,
+          "toX": 7.472408294677734,
+          "toY": -3.1366991996765137,
+          "velocity": 0.0
+        },
+        "-ONL4yzE9e-jRHKX9nMD": {
+          "fromX": 7.472408294677734,
+          "fromY": -3.1366991996765137,
+          "objectType": "Box",
+          "timestamp": 150.68238830566406,
+          "toX": 0.3081681728363037,
+          "toY": -3.1366989612579346,
+          "velocity": 3.0
+        },
+        "-ONL4zCJr7QmrENRgrxH": {
+          "fromX": 0.3081681728363037,
+          "fromY": -3.1366989612579346,
+          "objectType": "Box",
+          "timestamp": 151.52239990234375,
+          "toX": 7.472408294677734,
+          "toY": -3.1366991996765137,
+          "velocity": 4.0
+        },
+        "-ONL4zR5IZOEBDb_qkCE": {
+          "fromX": 7.472408294677734,
+          "fromY": -3.1366991996765137,
+          "objectType": "Box",
+          "timestamp": 152.52239990234375,
+          "toX": 0.3081681728363037,
+          "toY": -3.1366989612579346,
+          "velocity": 4.0
+        },
+        "-ONL4zgoYKwf_axHbnwG": {
+          "fromX": 0.3081681728363037,
+          "fromY": -3.1366989612579346,
+          "objectType": "Box",
+          "timestamp": 153.60238647460938,
+          "toX": 7.472408294677734,
+          "toY": -3.1366991996765137,
+          "velocity": 5.0
+        },
+        "-ONL4zzuHR2iv6odJXLw": {
+          "fromX": 7.472408294677734,
+          "fromY": -3.1366991996765137,
+          "objectType": "Box",
+          "timestamp": 154.72239685058594,
+          "toX": 0.3081681728363037,
+          "toY": -3.1366989612579346,
+          "velocity": 5.0
+        },
+        "-ONL5-FDvXZ5qvqcb9kG": {
+          "fromX": 0.3081681728363037,
+          "fromY": -3.1366989612579346,
+          "objectType": "Box",
+          "timestamp": 155.86239624023438,
+          "toX": 7.472408294677734,
+          "toY": -3.1366991996765137,
+          "velocity": 5.0
+        },
+        "-ONL52o4mzEt2W7V96t-": {
+          "fromX": 0.3081681728363037,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 170.2823944091797,
+          "toX": 9.406259536743164,
+          "toY": -3.1366989612579346,
+          "velocity": 5.0
+        },
+        "-ONL54-Y0SyJ0_qTflbd": {
+          "fromX": 9.406259536743164,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 175.2423858642578,
+          "toX": 0.3081681728363037,
+          "toY": -3.1366989612579346,
+          "velocity": 4.0
+        },
+        "-ONL54GM98WPaDtKYtZx": {
+          "fromX": 0.3081681728363037,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 176.36239624023438,
+          "toX": 9.406259536743164,
+          "toY": -3.1366989612579346,
+          "velocity": 5.0
+        },
+        "-ONL58YRVve2qTJhMQC7": {
+          "fromX": 42.57054901123047,
+          "fromY": -4.473893165588379,
+          "objectType": "Player",
+          "timestamp": 193.88238525390625,
+          "toX": 40.76557159423828,
+          "toY": 14.006698608398438,
+          "velocity": 0.0
+        },
+        "-ONL5AxY24x0VNeBcwcG": {
+          "fromX": 40.69449996948242,
+          "fromY": 10.765827178955078,
+          "objectType": "Player",
+          "timestamp": 203.6623992919922,
+          "toX": 49.04785919189453,
+          "toY": 11.859271049499512,
+          "velocity": 0.0
+        },
+        "-ONL5HVg7PaIW2LdzhgN": {
+          "fromX": 39.874202728271484,
+          "fromY": 10.114173889160156,
+          "objectType": "Enemy",
+          "timestamp": 230.46238708496094,
+          "toX": 40.69449996948242,
+          "toY": 10.765827178955078,
+          "velocity": 0.0
+        },
+        "-ONL5NUhgt_iRyEbxgq7": {
+          "fromX": 40.5396728515625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 255.0023956298828,
+          "toX": 40.69449996948242,
+          "toY": 10.765827178955078,
+          "velocity": 0.0
+        },
+        "-ONL5NWki_9jJByPRxEO": {
+          "fromX": 40.5396728515625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 255.2823944091797,
+          "toX": 40.69449996948242,
+          "toY": 10.765827178955078,
+          "velocity": 2.0
+        },
+        "-ONL5NYk79EyEEKwxrY8": {
+          "fromX": 40.5396728515625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 255.42239379882812,
+          "toX": 40.69449996948242,
+          "toY": 10.765827178955078,
+          "velocity": 4.0
+        },
+        "-ONL5Q6kfIM74w2iNxhQ": {
+          "fromX": 40.5396728515625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 265.7223815917969,
+          "toX": 34.997955322265625,
+          "toY": 14.006698608398438,
+          "velocity": 0.0
+        },
+        "-ONL5Q7AKDKKirRRP5jS": {
+          "fromX": 34.997955322265625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 265.88238525390625,
+          "toX": 40.5396728515625,
+          "toY": 14.006698608398438,
+          "velocity": 1.0
+        },
+        "-ONL5QC2uHtu10_HQUIF": {
+          "fromX": 40.5396728515625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 266.26239013671875,
+          "toX": 34.997955322265625,
+          "toY": 14.006698608398438,
+          "velocity": 2.0
+        },
+        "-ONL5QJx2qOa9ftCpI0f": {
+          "fromX": 34.997955322265625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 266.76239013671875,
+          "toX": 40.5396728515625,
+          "toY": 14.006698608398438,
+          "velocity": 2.0
+        },
+        "-ONL5QTNbY6ejF9l9dt_": {
+          "fromX": 40.5396728515625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 267.3623962402344,
+          "toX": 34.997955322265625,
+          "toY": 14.006698608398438,
+          "velocity": 3.0
+        },
+        "-ONL5QcuPQ1N35ttfYY0": {
+          "fromX": 34.997955322265625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 268.0423889160156,
+          "toX": 40.5396728515625,
+          "toY": 14.006698608398438,
+          "velocity": 3.0
+        },
+        "-ONL5QoTAdp8E1n3O5KW": {
+          "fromX": 40.5396728515625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 268.7823791503906,
+          "toX": 34.997955322265625,
+          "toY": 14.006698608398438,
+          "velocity": 3.0
+        },
+        "-ONL5R1UweVdqwhU0Kki": {
+          "fromX": 34.997955322265625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 269.5823974609375,
+          "toX": 40.5396728515625,
+          "toY": 14.006698608398438,
+          "velocity": 4.0
+        },
+        "-ONL5RBTJewzBjW2N_NU": {
+          "fromX": 40.5396728515625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 270.3223876953125,
+          "toX": 34.997955322265625,
+          "toY": 14.006698608398438,
+          "velocity": 4.0
+        },
+        "-ONL5Rq2E94X3dT5Wuhn": {
+          "fromX": 40.5396728515625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 272.8623962402344,
+          "toX": 34.997955322265625,
+          "toY": 14.006698608398438,
+          "velocity": 0.0
+        },
+        "-ONL5RqgJqy7Re6ADJoT": {
+          "fromX": 34.997955322265625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 273.02239990234375,
+          "toX": 40.5396728515625,
+          "toY": 14.006698608398438,
+          "velocity": 1.0
+        },
+        "-ONL5Rwf-EPs7ZhXGMnX": {
+          "fromX": 40.5396728515625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 273.40240478515625,
+          "toX": 34.997955322265625,
+          "toY": 14.006698608398438,
+          "velocity": 2.0
+        },
+        "-ONL5S3TFMuqDVa2dS7J": {
+          "fromX": 34.997955322265625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 273.90240478515625,
+          "toX": 40.5396728515625,
+          "toY": 14.006698608398438,
+          "velocity": 2.0
+        },
+        "-ONL5SEUde4KI1eTTtyz": {
+          "fromX": 40.5396728515625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 274.50238037109375,
+          "toX": 34.997955322265625,
+          "toY": 14.006698608398438,
+          "velocity": 3.0
+        },
+        "-ONL5SNTYweRMlU9s08f": {
+          "fromX": 34.997955322265625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 275.1824035644531,
+          "toX": 40.5396728515625,
+          "toY": 14.006698608398438,
+          "velocity": 3.0
+        },
+        "-ONL5WDJnLUriORezx6P": {
+          "fromX": 40.89037322998047,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 290.6824035644531,
+          "toX": 34.997955322265625,
+          "toY": 14.006698608398438,
+          "velocity": 0.0
+        },
+        "-ONL5WDmQNFwGY17e38j": {
+          "fromX": 34.997955322265625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 290.8423767089844,
+          "toX": 40.89037322998047,
+          "toY": 14.006698608398438,
+          "velocity": 1.0
+        },
+        "-ONL5WI3VdBJVcBMQqy2": {
+          "fromX": 40.89037322998047,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 291.2223815917969,
+          "toX": 34.997955322265625,
+          "toY": 14.006698608398438,
+          "velocity": 2.0
+        },
+        "-ONL5WPtr9Zpmeea_Fj0": {
+          "fromX": 34.997955322265625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 291.7223815917969,
+          "toX": 40.89037322998047,
+          "toY": 14.006698608398438,
+          "velocity": 2.0
+        },
+        "-ONL5WZFEQwPmCOXB9AD": {
+          "fromX": 40.89037322998047,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 292.3223876953125,
+          "toX": 34.997955322265625,
+          "toY": 14.006698608398438,
+          "velocity": 3.0
+        },
+        "-ONL5Wj14Y5E_l3jylYD": {
+          "fromX": 34.997955322265625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 293.00238037109375,
+          "toX": 40.89037322998047,
+          "toY": 14.006698608398438,
+          "velocity": 3.0
+        },
+        "-ONL5WuQeBP5OxisY8mx": {
+          "fromX": 40.89037322998047,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 293.7424011230469,
+          "toX": 34.997955322265625,
+          "toY": 14.006698608398438,
+          "velocity": 3.0
+        },
+        "-ONL5X7l6AnS1I3Sos34": {
+          "fromX": 34.997955322265625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 294.5423889160156,
+          "toX": 40.89037322998047,
+          "toY": 14.006698608398438,
+          "velocity": 4.0
+        },
+        "-ONL5cU9XiteVrqd9hII": {
+          "fromX": 0.6414430737495422,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 320.50238037109375,
+          "toX": 7.503830909729004,
+          "toY": -3.1366991996765137,
+          "velocity": 2.0
+        },
+        "-ONL5gKyEDbsFQjrKgSf": {
+          "fromX": 42.8684196472168,
+          "fromY": -4.473893165588379,
+          "objectType": "Player",
+          "timestamp": 336.3023986816406,
+          "toX": 39.55377197265625,
+          "toY": 14.006698608398438,
+          "velocity": 0.0
+        },
+        "-ONL5h5JBn5PO-gepOQP": {
+          "fromX": 39.55377197265625,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 339.46240234375,
+          "toX": 42.8684196472168,
+          "toY": -4.473893165588379,
+          "velocity": 0.0
+        },
+        "-ONL5skK2cLQH_q60lx4": {
+          "fromX": 33.784671783447266,
+          "fromY": 7.179178237915039,
+          "objectType": "Box",
+          "timestamp": 387.14239501953125,
+          "toX": 25.079622268676758,
+          "toY": 14.006698608398438,
+          "velocity": 0.0
+        },
+        "-ONL5vFIhG-mZ43xI9u3": {
+          "fromX": 0.929432213306427,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 397.46240234375,
+          "toX": 7.798130512237549,
+          "toY": -3.1366991996765137,
+          "velocity": 1.0
+        },
+        "-ONL5vMkm3XNtnkwXoVg": {
+          "fromX": 7.798130512237549,
+          "fromY": -3.1366991996765137,
+          "objectType": "Player",
+          "timestamp": 398.02239990234375,
+          "toX": 0.929432213306427,
+          "toY": -3.1366989612579346,
+          "velocity": 6.0
+        },
+        "-ONL5viZtWQoMc1xtV8z": {
+          "fromX": 0.929432213306427,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 399.38238525390625,
+          "toX": 7.798130512237549,
+          "toY": -3.1366991996765137,
+          "velocity": 6.0
+        },
+        "-ONL5yjcNhrcVzSOVhKv": {
+          "fromX": 43.253849029541016,
+          "fromY": -4.473893165588379,
+          "objectType": "Player",
+          "timestamp": 411.6623840332031,
+          "toX": 41.833518981933594,
+          "toY": 14.006699562072754,
+          "velocity": 0.0
+        },
+        "-ONL61k_0ET7RNY2Wx5Y": {
+          "fromX": 37.7170295715332,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 428.2223815917969,
+          "toX": 41.833518981933594,
+          "toY": 14.006699562072754,
+          "velocity": 0.0
+        },
+        "-ONL61m8sMDjsHHHjjV3": {
+          "fromX": 41.833518981933594,
+          "fromY": 14.006699562072754,
+          "objectType": "Enemy",
+          "timestamp": 428.38238525390625,
+          "toX": 37.7170295715332,
+          "toY": 14.006698608398438,
+          "velocity": 1.0
+        },
+        "-ONL61s-VJ9ozTyr9t68": {
+          "fromX": 37.7170295715332,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 428.76239013671875,
+          "toX": 41.833518981933594,
+          "toY": 14.006699562072754,
+          "velocity": 2.0
+        },
+        "-ONL620P0C7Yd1VFULbS": {
+          "fromX": 41.833518981933594,
+          "fromY": 14.006699562072754,
+          "objectType": "Enemy",
+          "timestamp": 429.26239013671875,
+          "toX": 37.7170295715332,
+          "toY": 14.006698608398438,
+          "velocity": 2.0
+        },
+        "-ONL6287jsrHWDMxQX5Z": {
+          "fromX": 37.7170295715332,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 429.8623962402344,
+          "toX": 41.833518981933594,
+          "toY": 14.006699562072754,
+          "velocity": 3.0
+        },
+        "-ONL62IkJQgRZnMVOHCJ": {
+          "fromX": 41.833518981933594,
+          "fromY": 14.006699562072754,
+          "objectType": "Enemy",
+          "timestamp": 430.5423889160156,
+          "toX": 37.7170295715332,
+          "toY": 14.006698608398438,
+          "velocity": 3.0
+        },
+        "-ONL62Uj2sm-1nvvYUYj": {
+          "fromX": 37.7170295715332,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 431.2823791503906,
+          "toX": 41.833518981933594,
+          "toY": 14.006699562072754,
+          "velocity": 3.0
+        },
+        "-ONL62g-X7OPh2xSnPOv": {
+          "fromX": 41.833518981933594,
+          "fromY": 14.006699562072754,
+          "objectType": "Enemy",
+          "timestamp": 432.0823974609375,
+          "toX": 37.7170295715332,
+          "toY": 14.006698608398438,
+          "velocity": 4.0
+        },
+        "-ONL62rkWQkbTV5r6ae3": {
+          "fromX": 37.7170295715332,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 432.8223876953125,
+          "toX": 41.833518981933594,
+          "toY": 14.006699562072754,
+          "velocity": 4.0
+        },
+        "-ONL632rcpjYC0saJ5vL": {
+          "fromX": 41.833518981933594,
+          "fromY": 14.006699562072754,
+          "objectType": "Enemy",
+          "timestamp": 433.5423889160156,
+          "toX": 37.7170295715332,
+          "toY": 14.006698608398438,
+          "velocity": 4.0
+        },
+        "-ONL63Eci89I3e1Jrtnu": {
+          "fromX": 37.7170295715332,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 434.26239013671875,
+          "toX": 41.833518981933594,
+          "toY": 14.006699562072754,
+          "velocity": 4.0
+        },
+        "-ONL63OKAJGiW41F2GbU": {
+          "fromX": 41.833518981933594,
+          "fromY": 14.006699562072754,
+          "objectType": "Enemy",
+          "timestamp": 434.9823913574219,
+          "toX": 37.7170295715332,
+          "toY": 14.006698608398438,
+          "velocity": 4.0
+        },
+        "-ONL63ZObhPBenQBIrGL": {
+          "fromX": 37.7170295715332,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 435.702392578125,
+          "toX": 41.833518981933594,
+          "toY": 14.006699562072754,
+          "velocity": 4.0
+        },
+        "-ONL64pfbD6aewjxL17W": {
+          "fromX": 38.287139892578125,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 440.6623840332031,
+          "toX": 41.833518981933594,
+          "toY": 14.006699562072754,
+          "velocity": 0.0
+        },
+        "-ONL64q0yDmqm71E-f0W": {
+          "fromX": 41.833518981933594,
+          "fromY": 14.006699562072754,
+          "objectType": "Enemy",
+          "timestamp": 440.8223876953125,
+          "toX": 38.287139892578125,
+          "toY": 14.006698608398438,
+          "velocity": 1.0
+        },
+        "-ONL64uKM3PiRtufLsMv": {
+          "fromX": 38.287139892578125,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 441.202392578125,
+          "toX": 41.833518981933594,
+          "toY": 14.006699562072754,
+          "velocity": 2.0
+        },
+        "-ONL651AaUpqqE2RZ_hx": {
+          "fromX": 41.833518981933594,
+          "fromY": 14.006699562072754,
+          "objectType": "Enemy",
+          "timestamp": 441.702392578125,
+          "toX": 38.287139892578125,
+          "toY": 14.006698608398438,
+          "velocity": 2.0
+        },
+        "-ONL65A_4YKw-imHZnCU": {
+          "fromX": 38.287139892578125,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 442.3023986816406,
+          "toX": 41.833518981933594,
+          "toY": 14.006699562072754,
+          "velocity": 3.0
+        },
+        "-ONL65LQsW2eMBzazanZ": {
+          "fromX": 41.833518981933594,
+          "fromY": 14.006699562072754,
+          "objectType": "Enemy",
+          "timestamp": 442.9823913574219,
+          "toX": 38.287139892578125,
+          "toY": 14.006698608398438,
+          "velocity": 3.0
+        },
+        "-ONL65WkLslong9u5EJc": {
+          "fromX": 38.287139892578125,
+          "fromY": 14.006698608398438,
+          "objectType": "Enemy",
+          "timestamp": 443.7223815917969,
+          "toX": 41.833518981933594,
+          "toY": 14.006699562072754,
+          "velocity": 3.0
+        }
+      }
+    }
+  },
+  "ff5c916c-ad22-4d79-bcc9-91af109abdbe": {
+    "attempt_1": {
+      "ally": {
+        "-ONKJm3ZMv9DBFDezxGu": {
+          "posX": 42.33964920043945,
+          "posY": 7.684177398681641,
+          "timestamp": 43.65230178833008
+        },
+        "-ONKJmopTy7MFyJcL-Cq": {
+          "posX": 36.7508430480957,
+          "posY": 7.684177398681641,
+          "timestamp": 46.78580093383789
+        }
+      },
+      "enemy_kills": {
+        "-ONKJgHJsEuWiAQVRt2k": {
+          "enemyType": "PurpleEnemy",
+          "posX": 24.530000686645508,
+          "posY": 1.3549425601959229,
+          "reason": "Laser",
+          "timestamp": 19.935699462890625
+        },
+        "-ONKJgORzp-58NC3aifC": {
+          "enemyType": "PurpleEnemy",
+          "posX": 21.510000228881836,
+          "posY": 1.3549425601959229,
+          "reason": "Laser",
+          "timestamp": 20.485599517822266
+        },
+        "-ONKJm3rs8eh6x68Y9vU": {
+          "enemyType": "PurpleEnemy",
+          "posX": 40.09264373779297,
+          "posY": 10.114173889160156,
+          "reason": "Converted to Ally",
+          "timestamp": 43.6575927734375
+        },
+        "-ONKJrzfbkNp_O0zo9c0": {
+          "enemyType": "RedEnemy",
+          "posX": 4.278249740600586,
+          "posY": 8.707822799682617,
+          "reason": "Player #1",
+          "timestamp": 67.91759490966797
+        },
+        "-ONKJsvFjwKBmGMYos7p": {
+          "enemyType": "RedEnemy",
+          "posX": 5.383808135986328,
+          "posY": 8.707686424255371,
+          "reason": "Box #2",
+          "timestamp": 71.79759216308594
+        },
+        "-ONKJtrdWsxHTHfQnErW": {
+          "enemyType": "RedEnemy",
+          "posX": 4.028027534484863,
+          "posY": 8.709449768066406,
+          "reason": "Acclerated Box",
+          "timestamp": 75.53759002685547
+        }
+      },
+      "jumps": {
+        "-ONKJcwgRij_6KGsinWb": {
+          "posX": -2.007689952850342,
+          "posY": -3.828293561935425,
+          "timestamp": 6.185800075531006
+        },
+        "-ONKJfItm3-9w3XtczKj": {
+          "posX": 9.360625267028809,
+          "posY": -2.631699562072754,
+          "timestamp": 15.869400024414062
+        },
+        "-ONKJhpdECVA_aE1g2lm": {
+          "posX": 16.772266387939453,
+          "posY": -2.631699562072754,
+          "timestamp": 26.318899154663086
+        },
+        "-ONKJiPjYblU7ZJ4P-t8": {
+          "posX": 20.356067657470703,
+          "posY": -2.4817020893096924,
+          "timestamp": 28.752500534057617
+        },
+        "-ONKJsNp2xNJyNl7VQJG": {
+          "posX": 6.331748962402344,
+          "posY": 7.627300262451172,
+          "timestamp": 69.51909637451172
+        },
+        "-ONKJuVPvWXoUWTf3shj": {
+          "posX": 7.229953765869141,
+          "posY": 7.628300666809082,
+          "timestamp": 78.1698989868164
+        }
+      },
+      "mirror": {
+        "-ONKJdauXUy6Za9MIyjY": {
+          "posX": -0.4449349641799927,
+          "posY": -2.631699323654175,
+          "timestamp": 8.985600471496582
+        },
+        "-ONKJgBBaVdqYb0ONNuS": {
+          "posX": 17.544235229492188,
+          "posY": -2.631699562072754,
+          "timestamp": 19.55270004272461
+        },
+        "-ONKJk7BCNs56iLQkTvl": {
+          "posX": 43.332550048828125,
+          "posY": -3.9688937664031982,
+          "timestamp": 35.61980056762695
+        }
+      },
+      "portal_usage": {
+        "-ONKJeR-qDZS1dMUC-dZ": {
+          "fromX": 0.23836317658424377,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 12.357592582702637,
+          "toX": 6.765816688537598,
+          "toY": -3.1366984844207764,
+          "velocity": 0.0
+        },
+        "-ONKJeVXlkmR86DTPWLi": {
+          "fromX": 6.765816688537598,
+          "fromY": -3.1366984844207764,
+          "objectType": "Player",
+          "timestamp": 12.737592697143555,
+          "toX": 0.23836317658424377,
+          "toY": -3.1366989612579346,
+          "velocity": 3.0
+        },
+        "-ONKJejF7W8BT1xrbjdv": {
+          "fromX": 0.23836317658424377,
+          "fromY": -3.1366989612579346,
+          "objectType": "Player",
+          "timestamp": 13.637592315673828,
+          "toX": 6.765816688537598,
+          "toY": -3.1366984844207764,
+          "velocity": 5.0
+        },
+        "-ONKJlGvpVCau-TMv8W9": {
+          "fromX": 42.49864959716797,
+          "fromY": -4.473893165588379,
+          "objectType": "Player",
+          "timestamp": 40.197593688964844,
+          "toX": 41.84064865112305,
+          "toY": 14.006697654724121,
+          "velocity": 4.0
+        },
+        "-ONKJrsjV_oH8GMt-RgG": {
+          "fromX": 7.81798791885376,
+          "fromY": 7.1233015060424805,
+          "objectType": "Player",
+          "timestamp": 67.45758819580078,
+          "toX": 5.13414192199707,
+          "toY": 14.006698608398438,
+          "velocity": 0.0
+        },
+        "-ONKJrt3A6UOF1-8glhg": {
+          "fromX": 7.81798791885376,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 67.5575942993164,
+          "toX": 5.13414192199707,
+          "toY": 14.006698608398438,
+          "velocity": 0.0
+        },
+        "-ONKJs9bqYOOb9fwszQk": {
+          "fromX": 7.81798791885376,
+          "fromY": 7.1233015060424805,
+          "objectType": "Player",
+          "timestamp": 68.6775894165039,
+          "toX": 5.13414192199707,
+          "toY": 14.006698608398438,
+          "velocity": 4.0
+        },
+        "-ONKJslgAZlVdDx4w2PB": {
+          "fromX": 4.167075157165527,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 71.1775894165039,
+          "toX": 5.13414192199707,
+          "toY": 14.006698608398438,
+          "velocity": 0.0
+        },
+        "-ONKJtkM1BcfTdozusu4": {
+          "fromX": 4.167075157165527,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 75.0575942993164,
+          "toX": 5.13414192199707,
+          "toY": 14.006698608398438,
+          "velocity": 3.0
+        },
+        "-ONKJtu23CZ9uCWfv88W": {
+          "fromX": 4.167075157165527,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 75.79759216308594,
+          "toX": 5.13414192199707,
+          "toY": 14.006698608398438,
+          "velocity": 8.0
+        },
+        "-ONKJu0g3_vKEIyTCfDz": {
+          "fromX": 4.167075157165527,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 76.277587890625,
+          "toX": 5.13414192199707,
+          "toY": 14.006698608398438,
+          "velocity": 11.0
+        },
+        "-ONKJu751C970LMNYgxF": {
+          "fromX": 4.167075157165527,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 76.6775894165039,
+          "toX": 5.13414192199707,
+          "toY": 14.006698608398438,
+          "velocity": 12.0
+        },
+        "-ONKJuD7PqFkdXI1J7wv": {
+          "fromX": 4.167075157165527,
+          "fromY": 7.1233015060424805,
+          "objectType": "Box",
+          "timestamp": 77.0575942993164,
+          "toX": 5.13414192199707,
+          "toY": 14.006698608398438,
+          "velocity": 13.0
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,0 @@
-player_id,level,attempt,completed,completionTime,deaths,retries
-002ba56a-66b5-453b-ace1-ed9a4baedf34,level_2,attempt_1,True,95.73941,1,0
-7fa2c6d7-4a20-44a5-a31f-7614b059b9da,level_2,attempt_1,False,N/A,0,0
-7fa2c6d7-4a20-44a5-a31f-7614b059b9da,level_2,attempt_2,False,N/A,4,1
-d264f175-12d8-4187-bfd4-04967f9ad24c,level_2,attempt_1,False,N/A,6,0
-d264f175-12d8-4187-bfd4-04967f9ad24c,level_2,attempt_2,False,N/A,1,1
-d264f175-12d8-4187-bfd4-04967f9ad24c,level_2,attempt_3,True,213.6048,1,2
-fa37a190-feeb-449b-af50-519941396375,level_2,attempt_1,False,N/A,4,0

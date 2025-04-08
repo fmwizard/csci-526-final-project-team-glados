@@ -1,0 +1,5 @@
+player_id,level,attempt,completed,completionTime,deaths,retries
+9abf71b9-32e9-4129-995a-509aad1a61d0,level_-1,attempt_1,True,22.59796,0,0
+e62a72a1-98a2-4c8a-887d-b625ed1a4f72,level_-1,attempt_1,True,52.3028,2,0
+e62a72a1-98a2-4c8a-887d-b625ed1a4f72,level_-1,attempt_2,True,26.17123,0,1
+ff5c916c-ad22-4d79-bcc9-91af109abdbe,level_-1,attempt_1,True,41.05343,0,0
