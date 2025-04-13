@@ -146,6 +146,7 @@ public class PlayerRespawn : MonoBehaviour
             portalManager.RemovePortals();
         }
 
+
         EnemyController enemyController = FindObjectOfType<EnemyController>(true);
         if (enemyController != null)
         {
@@ -162,6 +163,12 @@ public class PlayerRespawn : MonoBehaviour
                 portalManager.GetCageCapturedObject().SetActive(false);
                 portalManager.GetActiveCage().SetIsCaptured(true);
             }
+        }
+        
+        Cage cage = portalManager.GetActiveCage();
+        if (cage != null)
+        {
+            cage.gameObject.SetActive(false);
         }
 
         MainCamera cameraScript = Camera.main.GetComponent<MainCamera>();

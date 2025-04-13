@@ -129,6 +129,7 @@ public class PortalManager : MonoBehaviour
                 activeCage.transform.rotation = Quaternion.Euler(0, 0, cageRotation);
             }
             activeCage.GetComponent<Cage>().normal = normal;
+            activeCage.SetActive(true);
             
         }
     }
