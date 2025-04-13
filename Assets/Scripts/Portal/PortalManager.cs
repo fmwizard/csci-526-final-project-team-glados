@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class PortalManager : MonoBehaviour
 {
@@ -17,11 +18,31 @@ public class PortalManager : MonoBehaviour
     private Camera mainCamera;
     private PlayerController player;
 
+    public bool CanUsePortal { get; set; } = true;
+    public bool CanUseCage { get; set; } = true;
+    public bool CanUseMirror { get; set; } = true;
+
     private void Start()
     {
         mainCamera = Camera.main;
         player = FindObjectOfType<PlayerController>();
         activeCage = null;
+
+        if (SceneManager.GetActiveScene().name == "tutorial")
+        {
+            CanUsePortal = false;
+            CanUseCage = false;
+            CanUseMirror = false;
+        }
+        else if (SceneManager.GetActiveScene().name == "allyTutorial")
+        {
+            CanUseCage = false;
+            CanUseMirror = false;
+        }
+        else if (SceneManager.GetActiveScene().name == "lvl1")
+        {
+            CanUseMirror = false;
+        }
     }
 
     private void Update()
@@ -38,22 +59,22 @@ public class PortalManager : MonoBehaviour
             return;
         }
         // Left click for blue portal
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && CanUsePortal)
         {
             CreatePortal(PortalType.Blue);
         }
         // Right click for orange portal
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetMouseButtonDown(1) && CanUsePortal)
         {
             CreatePortal(PortalType.Orange);
         }
         // E click for mirror
-        else if (Input.GetKeyDown(KeyCode.E))
+        else if (Input.GetKeyDown(KeyCode.E) && CanUseMirror)
         {
             CreateMirror();
         }
         // C click for cage
-        else if (Input.GetKeyDown(KeyCode.C))
+        else if (Input.GetKeyDown(KeyCode.C) && CanUseCage)
         {
             CreateCage();
             if (activeCage.GetComponent<Cage>().capturedObject != null)

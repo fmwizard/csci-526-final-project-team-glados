@@ -99,8 +99,9 @@ public class MainCamera : MonoBehaviour
             positionY = player.position.y + playerOffsetY;
         }
 
-        // Adjust PositionY high enough to avoid seeing blue background underneath
-        positionY = Mathf.Max(positionY, 0f);
+        // Adjust PositionY high enough
+        float floorThreshold = player.position.y >= 7f ? 10f : 0f;
+        positionY = Mathf.Max(positionY, floorThreshold);
         positionX = Mathf.Max(positionX, cameraMinX);
         transform.position = new Vector3(positionX, positionY, transform.position.z);
         mainCamera.orthographicSize = Mathf.Lerp(mainCamera.orthographicSize, defaultOrthographicSize, Time.deltaTime * smoothSpeed);
