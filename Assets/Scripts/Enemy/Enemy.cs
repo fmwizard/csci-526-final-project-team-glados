@@ -56,7 +56,8 @@ public class Enemy : MonoBehaviour
         }
 
         // Handle patrol movement
-        Patrol();
+        if (gameObject.layer != LayerMask.NameToLayer("Companion"))
+            Patrol();
     }
 
     private void Patrol()

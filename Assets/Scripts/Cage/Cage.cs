@@ -110,7 +110,10 @@ public class Cage : MonoBehaviour
     }
     public void Release()
     {
-        if (!isCaptured || capturedObject == null) return;
+        if (!isCaptured || capturedObject == null) 
+        {
+            return;
+        }
         lastReleaseTime = Time.time;
         capturedObject.transform.position = transform.position + new Vector3(normal.x, normal.y, 0) * 1f;
         capturedObject.SetActive(true);
@@ -118,11 +121,11 @@ public class Cage : MonoBehaviour
         enemyReleaseCount++;
         playerManager.SetCurrentEnemy(capturedObject.GetComponent<EnemyController>());
         // Remove enemy AI controls (patrol and speed)
-        Enemy enemyAIControls = capturedObject.GetComponent<Enemy>();
-        if(enemyAIControls != null)
-        {
-            enemyAIControls.enabled = false;
-        }
+        // Enemy enemyAIControls = capturedObject.GetComponent<Enemy>();
+        // if(enemyAIControls != null)
+        // {
+        //     enemyAIControls.enabled = false;
+        // }
     }
     
     public void SetIsCaptured(bool value)
