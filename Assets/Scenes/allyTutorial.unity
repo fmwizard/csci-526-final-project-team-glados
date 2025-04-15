@@ -2887,7 +2887,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794692357}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -7730,11 +7730,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8612210533777484029, guid: 98e2f405e3a404031a135db2ff533a2a, type: 3}
       propertyPath: m_LocalScale.y
-      value: 15.069857
+      value: 7.3586707
       objectReference: {fileID: 0}
     - target: {fileID: 8612210533777484029, guid: 98e2f405e3a404031a135db2ff533a2a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 49.16
+      value: 45.0498
       objectReference: {fileID: 0}
     - target: {fileID: 8612210533777484029, guid: 98e2f405e3a404031a135db2ff533a2a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8336,7 +8336,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press L Shift to toggle control between player and ally
+  m_text: Press LeftShift to toggle control between player and ally
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
