@@ -1,138 +1,1606 @@
 {
-  "2e662ea8-5d5f-447d-ba2e-1132e01410ca": {
+  "03261705-6b8d-462b-adf6-2eae44157115": {
     "selectedOption": {
-      "-ONL0r5-NUQNlaS858GH": {
+      "-ONM_uQ0oigpjNrrE-jT": {
+        "choice": "Tutorial Menu",
+        "timestamp": 329.9396
+      },
+      "-ONM_uoyZaQr6EI_lDXA": {
+        "choice": "Basic Tutorial",
+        "timestamp": 331.6955
+      },
+      "-ONMaYQupVd5TYOi4Rf1": {
         "choice": "Level 1",
-        "timestamp": 4.9236
+        "timestamp": 496.0727
       }
     }
   },
-  "36191326-2f63-40c3-9355-74187a75bb1b": {
+  "0760de8f-ea31-4f7b-8273-166163bfece3": {
     "selectedOption": {
-      "-ONKEfGxAu4RNUkfXLBp": {
-        "choice": "Tutorial Menu",
-        "timestamp": 1.373431
-      },
-      "-ONKEfRQ-nIt4S36VNbW": {
-        "choice": "Ally Tutorial",
-        "timestamp": 1.905798
+      "-ONMRKQJPc6E1RiYVmny": {
+        "choice": "Level 1",
+        "timestamp": 2.8081
       }
     }
   },
-  "97ae0fa0-5637-4cf1-a408-f129a3dd094e": {
-    "controlsViewed": {
-      "opened": true
-    },
+  "0904d744-daba-4472-9804-cbcbfa685d1b": {
     "selectedOption": {
-      "-ONL-I6m8sQNy5kr9Xox": {
-        "choice": "Level 1",
-        "timestamp": 6.6487
-      },
-      "-ONL0MuAw6WSf-naKLuz": {
+      "-ONfsCfgby3D_L0Edbln": {
         "choice": "Tutorial Menu",
-        "timestamp": 249.0907
+        "timestamp": 39.7189
       },
-      "-ONL0NP6nSzF3450oTn_": {
+      "-ONfsCrB3Y6Cc8KUHUBo": {
+        "choice": "Basic Tutorial",
+        "timestamp": 40.5886
+      },
+      "-ONfsiuyv0kQu7TpmjZ0": {
+        "choice": "Level 1",
+        "timestamp": 171.5702
+      },
+      "-ONfvKIDV0T4fxeTNUh_": {
+        "choice": "Tutorial Menu",
+        "timestamp": 720.5993
+      },
+      "-ONfvKRgY8ppJDc8u3Ec": {
+        "choice": "Basic Tutorial",
+        "timestamp": 721.2519
+      }
+    }
+  },
+  "0b5dd22c-101a-4742-aa36-dba8d4744463": {
+    "selectedOption": {
+      "-ONR80_B5ZDRWKDiS9bw": {
+        "choice": "Tutorial Menu",
+        "timestamp": 3.1591
+      },
+      "-ONR819Zy5OArfaV9kQV": {
+        "choice": "Basic Tutorial",
+        "timestamp": 5.8151
+      }
+    }
+  },
+  "0e0cc751-482d-4291-90c6-bb27e777ae49": {
+    "selectedOption": {
+      "-ONMcchKVToQbbNf_Iem": {
+        "choice": "Level 1",
+        "timestamp": 1.385
+      },
+      "-ONMcjUzI9uMAsIlSKx1": {
+        "choice": "Tutorial Menu",
+        "timestamp": 27.64
+      },
+      "-ONMck0-XwCyy-Td-eKe": {
         "choice": "Ally Tutorial",
-        "timestamp": 251.3952
+        "timestamp": 29.7938
+      }
+    }
+  },
+  "0ebfc57b-d243-4ea7-8cf9-3bab9ccffb2a": {
+    "selectedOption": {
+      "-ONN7uheCiL_M854UcxS": {
+        "choice": "Tutorial Menu",
+        "timestamp": 2.0887
       },
-      "-ONL1aR23HEDn-cgfSHv": {
+      "-ONN7uoO2DEcMPh1F6Jj": {
+        "choice": "Ally Tutorial",
+        "timestamp": 2.8236
+      }
+    }
+  },
+  "10364c51-503e-4b3b-b086-726f200c615d": {
+    "selectedOption": {
+      "-ONMWXqy2Ud5c274Lep4": {
+        "choice": "Tutorial Menu",
+        "timestamp": 4.6578
+      },
+      "-ONMWY8lVCi8OuYrxVcB": {
+        "choice": "Basic Tutorial",
+        "timestamp": 6.0784
+      }
+    }
+  },
+  "13d34a6b-36b9-46ed-bf7b-71eca720c6b4": {
+    "selectedOption": {
+      "-ONMX9JLaFKNBJVKu5Nt": {
+        "choice": "Tutorial Menu",
+        "timestamp": 3.0985
+      },
+      "-ONMX9hYQcRvl2Lr6rYo": {
+        "choice": "Basic Tutorial",
+        "timestamp": 4.8927
+      }
+    }
+  },
+  "16ec27cc-397b-4a9a-b1f5-5df0e7779987": {
+    "selectedOption": {
+      "-ONjV0kRoMZeHb9GqKj4": {
         "choice": "Level 2",
-        "timestamp": 552.3484
+        "timestamp": 1.594462
       }
     }
   },
-  "9abf71b9-32e9-4129-995a-509aad1a61d0": {
+  "1df59965-14f7-4b83-9768-1f1ff51f7bd9": {
     "selectedOption": {
-      "-ONKERUf0kRLnBL2S-9j": {
+      "-ONMWrTxSbHhr_Paa2rZ": {
         "choice": "Tutorial Menu",
-        "timestamp": 0.9896137
+        "timestamp": 1.4499
       },
-      "-ONKES8SxxANq-c-5sqK": {
+      "-ONMWsvv_C5Ab2FrurN8": {
         "choice": "Basic Tutorial",
-        "timestamp": 3.521996
+        "timestamp": 7.4689
+      },
+      "-ONMXk0fqwjfwc2-ZdJE": {
+        "choice": "Level 1",
+        "timestamp": 229.1549
+      },
+      "-ONMXlECzWNCNCk1NE2x": {
+        "choice": "Tutorial Menu",
+        "timestamp": 231.6021
+      },
+      "-ONMXlbVt4kckpwVQx-V": {
+        "choice": "Ally Tutorial",
+        "timestamp": 233.081
       }
     }
   },
-  "c391cebf-334c-4784-ad5c-7251c4bd0d83": {
+  "1f3561e4-3b78-4a5d-9cc0-faf0a327355d": {
+    "selectedOption": {
+      "-ONkKcnoIflVerp8sa5P": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.3483
+      },
+      "-ONkKdQJDHjusmZiR1PU": {
+        "choice": "Basic Tutorial",
+        "timestamp": 4.0862
+      }
+    }
+  },
+  "24dd6802-53a8-4e47-b722-a7d2d219ede2": {
     "controlsViewed": {
       "opened": true
     },
     "selectedOption": {
-      "-ONL1aKl1SguBNgMb_nO": {
+      "-ONMcuUfp_dq07H1I1v4": {
         "choice": "Tutorial Menu",
-        "timestamp": 1.4755
+        "timestamp": 15.4698
       },
-      "-ONL1arqJWng4yDRjAoh": {
-        "choice": "Ally Tutorial",
-        "timestamp": 3.9833
+      "-ONMcv2JebqTfHsd4oNZ": {
+        "choice": "Basic Tutorial",
+        "timestamp": 17.7897
       },
-      "-ONL21hQyiwCd_g8UW4e": {
+      "-ONMe5t-9vOjM7jldOYd": {
         "choice": "Level 1",
-        "timestamp": 115.226
+        "timestamp": 326.4366
+      }
+    }
+  },
+  "2779a8df-b9fd-4585-b0e3-c6ad8559be27": {
+    "selectedOption": {
+      "-ONT1tpUBYdTpOoBvz9q": {
+        "choice": "Tutorial Menu",
+        "timestamp": 6.2652
       },
-      "-ONL27qW7JvWZ40lCdQH": {
+      "-ONT1uOU-NrieYwDiAkl": {
+        "choice": "Basic Tutorial",
+        "timestamp": 8.8872
+      },
+      "-ONT7HYTtbUsxQXqnMxi": {
         "choice": "Level 2",
-        "timestamp": 138.5416
+        "timestamp": 1396.853
       },
-      "-ONL2PtbFt8LndoYO8bK": {
+      "-ONT8fM-i9OLjBWG0Ebx": {
         "choice": "Tutorial Menu",
-        "timestamp": 211.6594
+        "timestamp": 1719.175
       },
-      "-ONL2QDfM0Qxc1QrIMGL": {
-        "choice": "Ally Tutorial",
-        "timestamp": 213.1658
-      },
-      "-ONL2gypzKgoNnbsI1fl": {
-        "choice": "Tutorial Menu",
-        "timestamp": 283.8588
-      },
-      "-ONL2hCXM5aPYeOyrpEi": {
-        "choice": "Ally Tutorial",
-        "timestamp": 284.9474
+      "-ONT8hAfv0LVK2OQsnRQ": {
+        "choice": "Level 1",
+        "timestamp": 1726.595
       }
     }
   },
-  "cb13a28a-868d-4802-9405-17d289c2aecb": {
+  "27c178c0-308c-412a-8b5c-262b82e1b103": {
+    "selectedOption": {
+      "-ONjSWLxamCbJm5TOYyl": {
+        "choice": "Level 2",
+        "timestamp": 0.400815
+      }
+    }
+  },
+  "2b6e1beb-c9e5-49cb-95a6-2f966b906c17": {
+    "selectedOption": {
+      "-ONjR9dwYpfr0iLBUKKc": {
+        "choice": "Level 1",
+        "timestamp": 1.510238
+      }
+    }
+  },
+  "2ec40080-ee84-4422-91f2-6bce177ffef8": {
+    "selectedOption": {
+      "-ONYJyTtTrmdfheu6hK4": {
+        "choice": "Level 1",
+        "timestamp": 1.6317
+      }
+    }
+  },
+  "33be3228-ead9-47b5-b201-df22c343975b": {
+    "selectedOption": {
+      "-ONMcfidZEiYOQnCdtxc": {
+        "choice": "Tutorial Menu",
+        "timestamp": 2.0394
+      },
+      "-ONMcgGJslzueJ1j-alx": {
+        "choice": "Basic Tutorial",
+        "timestamp": 4.3955
+      }
+    }
+  },
+  "351979e7-6867-478b-b0c1-d7fec4e9ca3a": {
     "controlsViewed": {
       "opened": true
     },
     "selectedOption": {
-      "-ONL3uPRsd-sNX2U-3iv": {
+      "-ONMXKOs7gT8oAIC5jzG": {
+        "choice": "Tutorial Menu",
+        "timestamp": 9.7883
+      },
+      "-ONMXRjmaj4Kw2-h-Pcj": {
+        "choice": "Tutorial Menu",
+        "timestamp": 39.9111
+      },
+      "-ONMXRvfTBHXElZ7aGeV": {
+        "choice": "Basic Tutorial",
+        "timestamp": 40.7139
+      }
+    }
+  },
+  "3611a890-02ce-43b5-b5e9-7018b19d3d78": {
+    "controlsViewed": {
+      "opened": true
+    },
+    "selectedOption": {
+      "-ONMdX8DbzzvF9qGKXGo": {
+        "choice": "Tutorial Menu",
+        "timestamp": 3.3332
+      },
+      "-ONMderI6-fhzj9YP_ll": {
+        "choice": "Basic Tutorial",
+        "timestamp": 39.144
+      }
+    }
+  },
+  "3d91da83-23b3-4f59-91df-0e5ccf6017e7": {
+    "controlsViewed": {
+      "opened": true
+    },
+    "selectedOption": {
+      "-ONYi-DCOdnspVqHNrj5": {
+        "choice": "Tutorial Menu",
+        "timestamp": 32.5307
+      },
+      "-ONYi-zq6iCVM9_Ho4Le": {
+        "choice": "Basic Tutorial",
+        "timestamp": 35.7182
+      },
+      "-ONYlvSJ81nCCWTExlRM": {
+        "choice": "Level 2",
+        "timestamp": 843.1329
+      },
+      "-ONYmMa0SUyppz33ygod": {
         "choice": "Level 1",
-        "timestamp": 3.2572
-      },
-      "-ONL66QmiEpNcVTFXNRO": {
+        "timestamp": 957.3806
+      }
+    }
+  },
+  "3e18f8f4-b654-4327-b729-5ae4b0c91edd": {
+    "selectedOption": {
+      "-ONMbzlSqu7nL-_BK29z": {
         "choice": "Tutorial Menu",
-        "timestamp": 577.9576
+        "timestamp": 19.468
       },
-      "-ONL69pWoVJM4BUe6G67": {
+      "-ONMc-JEvUXuYSAM0uSf": {
+        "choice": "Basic Tutorial",
+        "timestamp": 21.853
+      }
+    }
+  },
+  "3ea5c411-e6bf-466f-9682-a22ba29d44d6": {
+    "selectedOption": {
+      "-ONMdTk5oXi8LWh3pqSG": {
+        "choice": "Tutorial Menu",
+        "timestamp": 9.226
+      },
+      "-ONMdUIoiXe11ypuHzJW": {
+        "choice": "Basic Tutorial",
+        "timestamp": 11.946
+      }
+    }
+  },
+  "3f00619f-3ad6-4632-a65f-f2486cae75c8": {
+    "selectedOption": {
+      "-ONMXmjNcHAaeO2PvdXN": {
+        "choice": "Tutorial Menu",
+        "timestamp": 4.8848
+      },
+      "-ONMXn4WlSFD-plIvjCQ": {
+        "choice": "Basic Tutorial",
+        "timestamp": 6.5833
+      }
+    }
+  },
+  "42452701-737e-4881-ba8a-236ccb0c6378": {
+    "selectedOption": {
+      "-ONMYppY0RTMO4RUKX1N": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.633
+      },
+      "-ONMYq4YggENkhZx63Wk": {
+        "choice": "Basic Tutorial",
+        "timestamp": 2.789
+      },
+      "-ONMZ_kJe-2LwSPvTUYr": {
+        "choice": "Level 1",
+        "timestamp": 195.906
+      }
+    }
+  },
+  "42702413-622f-4cba-9c52-2f987a35d205": {
+    "selectedOption": {
+      "-ONmp1kwH4LjaI_qUA03": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.018261
+      },
+      "-ONmp1v4TBZnybJhzBkw": {
+        "choice": "Basic Tutorial",
+        "timestamp": 1.855829
+      }
+    }
+  },
+  "48432053-6565-4445-8385-c821e2f19c64": {
+    "controlsViewed": {
+      "opened": true
+    },
+    "selectedOption": {
+      "-ONkExFNpwOXu17NcqR5": {
+        "choice": "Tutorial Menu",
+        "timestamp": 32.0653
+      },
+      "-ONkExatmg39102Vz3NS": {
+        "choice": "Basic Tutorial",
+        "timestamp": 33.5609
+      }
+    }
+  },
+  "4a4b459f-0292-4f82-90b8-315a24446bbe": {
+    "selectedOption": {
+      "-ONhCEzpaYPV6c0Uf2Vz": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.244
+      },
+      "-ONhCFKloQgYdYaxCnbS": {
+        "choice": "Basic Tutorial",
+        "timestamp": 2.837
+      }
+    }
+  },
+  "531abb1f-9a47-4105-997e-1ff6475f27ec": {
+    "controlsViewed": {
+      "opened": true
+    },
+    "selectedOption": {
+      "-ONNoCkhwzJwWgnfoO7u": {
+        "choice": "Tutorial Menu",
+        "timestamp": 14.874
+      },
+      "-ONNoDCLqszQGZNVfGnR": {
+        "choice": "Basic Tutorial",
+        "timestamp": 17.018
+      },
+      "-ONNtgJCXfjJMv0-WhtM": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1089.097
+      },
+      "-ONNtgWIcvki8aOKQhtU": {
         "choice": "Ally Tutorial",
-        "timestamp": 591.8804
+        "timestamp": 1089.998
       }
     }
   },
-  "e62a72a1-98a2-4c8a-887d-b625ed1a4f72": {
+  "56ae5e56-4a19-4969-90a6-ce03092eef52": {
     "selectedOption": {
-      "-ONKJi1irSuqVy2Ds5qx": {
+      "-ONT0bdffyADjEOODRMo": {
         "choice": "Tutorial Menu",
-        "timestamp": 2.545
+        "timestamp": 2.587
       },
-      "-ONKJxAJypUU_9dNM-FX": {
+      "-ONT0cDCuvh4cGFihCb3": {
         "choice": "Basic Tutorial",
-        "timestamp": 12.65
+        "timestamp": 5.073
+      },
+      "-ONT3VdwzluQhN8fcqxh": {
+        "choice": "Level 2",
+        "timestamp": 333.365
+      },
+      "-ONT3ZaWm6r16ltyB_HW": {
+        "choice": "Level 2",
+        "timestamp": 348.289
       }
     }
   },
-  "ff5c916c-ad22-4d79-bcc9-91af109abdbe": {
+  "570edf6b-d294-495b-923c-115928af4eaf": {
     "selectedOption": {
-      "-ONKIrS4aYqR_wQptRVd": {
-        "choice": "Tutorial Menu",
-        "timestamp": 115.1964
+      "-ONMc9IBDwVBZ6lwxICF": {
+        "choice": "Level 1",
+        "timestamp": 3.704
       },
-      "-ONKIro-y-hg_GDhlpuG": {
+      "-ONMeYDzB5UfitomSZMD": {
+        "choice": "Level 2",
+        "timestamp": 265.595
+      }
+    }
+  },
+  "57619525-afc0-4312-8e99-4f34fbcc1b9c": {
+    "selectedOption": {
+      "-ONMbcIDriUx2T5jkOLy": {
+        "choice": "Level 1",
+        "timestamp": 9.214
+      }
+    }
+  },
+  "5a5d4aaf-adcf-49de-b834-5ddf89dcfb5e": {
+    "selectedOption": {
+      "-ONMr39t4r7Oma7yrUhd": {
+        "choice": "Tutorial Menu",
+        "timestamp": 2.073
+      },
+      "-ONMr3YgPp85m3Ys56fD": {
         "choice": "Basic Tutorial",
-        "timestamp": 116.9995
+        "timestamp": 3.94
+      },
+      "-ONMsp5MPKaYDW8R0bU1": {
+        "choice": "Level 2",
+        "timestamp": 462.16
+      }
+    }
+  },
+  "5a5ddf90-8821-4c19-b323-6c8392bc8e7a": {
+    "selectedOption": {
+      "-ONMdZSEJhW3QJB8VPBo": {
+        "choice": "Tutorial Menu",
+        "timestamp": 2.0711
+      },
+      "-ONMd_gx_72PXzZNnZ-1": {
+        "choice": "Basic Tutorial",
+        "timestamp": 7.1911
+      }
+    }
+  },
+  "5a632ae5-1ab8-4577-9569-8c286cbd13a9": {
+    "selectedOption": {
+      "-ONTBXuzDGA2jbauwkud": {
+        "choice": "Level 1",
+        "timestamp": 5.0308
+      }
+    }
+  },
+  "5e40f276-67e1-48df-ab39-bbc80352477d": {
+    "selectedOption": {
+      "-ONMgnGrT_8-Cw5Hzvho": {
+        "choice": "Level 2",
+        "timestamp": 1.1697
+      }
+    }
+  },
+  "5f568573-6b86-4e5e-a2af-644ae847ef53": {
+    "selectedOption": {
+      "-ONMQCOgvjLvL7pr82nT": {
+        "choice": "Level 1",
+        "timestamp": 1.1872
+      }
+    }
+  },
+  "6165d65d-d3ff-4790-935b-7060902f46f1": {
+    "selectedOption": {
+      "-ONQeqxUr_GJDlp66k5_": {
+        "choice": "Tutorial Menu",
+        "timestamp": 151.8922
+      },
+      "-ONQerqHppwFCj9ZvfKp": {
+        "choice": "Basic Tutorial",
+        "timestamp": 155.5318
+      },
+      "-ONQh8yzm19Jb-3n2Wtz": {
+        "choice": "Level 1",
+        "timestamp": 475.7081
+      }
+    }
+  },
+  "6a8d621e-7bd6-47e5-93e5-8489330daeed": {
+    "selectedOption": {
+      "-ONbv5vPjIAzK8JOcFT0": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.0506
+      },
+      "-ONbv67MIaE_xJMmoLmJ": {
+        "choice": "Basic Tutorial",
+        "timestamp": 2.1367
+      }
+    }
+  },
+  "6aa02fb8-6ba8-4dee-9072-0ade8af95222": {
+    "selectedOption": {
+      "-ONMfZrgAh3QLB-40Yq5": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.7963
+      },
+      "-ONMf_NJN1qwFyvglPIJ": {
+        "choice": "Basic Tutorial",
+        "timestamp": 4.0159
+      }
+    }
+  },
+  "6c6f3d7c-6e4e-4a33-ac42-835f3de88d45": {
+    "controlsViewed": {
+      "opened": true
+    },
+    "selectedOption": {
+      "-ONcO6Wv_fvj9tIjbu7Y": {
+        "choice": "Tutorial Menu",
+        "timestamp": 7.5417
+      },
+      "-ONcOC-s50CfXegL-TAx": {
+        "choice": "Basic Tutorial",
+        "timestamp": 30.0201
+      },
+      "-ONcOPCRiLKWSRtZ9Sv1": {
+        "choice": "Level 1",
+        "timestamp": 81.5428
+      }
+    }
+  },
+  "6df57efa-47cd-4037-b511-96a5a5e9cb37": {
+    "controlsViewed": {
+      "opened": true
+    },
+    "selectedOption": {
+      "-ONcVsulKWOoMoFanTtw": {
+        "choice": "Tutorial Menu",
+        "timestamp": 6.4009
+      },
+      "-ONcVtazGx1SPUy7ZRKX": {
+        "choice": "Basic Tutorial",
+        "timestamp": 9.5314
+      },
+      "-ONcX0brs__xrAPc2284": {
+        "choice": "Level 1",
+        "timestamp": 303.0243
+      },
+      "-ONcXYVjuaDv8Pfy3ElQ": {
+        "choice": "Level 1",
+        "timestamp": 440.5309
+      }
+    }
+  },
+  "7000c17c-e56a-4b1b-afc9-d20572a9948d": {
+    "selectedOption": {
+      "-ONMRkJFNN6eEYrQqMHJ": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.7898
+      },
+      "-ONMRkXRiehLD5L8UCcZ": {
+        "choice": "Basic Tutorial",
+        "timestamp": 2.86
+      }
+    }
+  },
+  "76054c73-2e71-4f10-afe6-4086bf5ce2b9": {
+    "selectedOption": {
+      "-ONMWPtHGzENzn5RDGTj": {
+        "choice": "Tutorial Menu",
+        "timestamp": 22.9509
+      },
+      "-ONMWQ3AnC0JHoFEvMSx": {
+        "choice": "Basic Tutorial",
+        "timestamp": 23.8212
+      },
+      "-ONMXAJ1bRDYZpnzDR7O": {
+        "choice": "Level 1",
+        "timestamp": 188.4198
+      }
+    }
+  },
+  "7947b035-df43-4770-a320-7474a35b62a5": {
+    "selectedOption": {
+      "-ONjV9au-DOohFNn7L7K": {
+        "choice": "Level 1",
+        "timestamp": 0.9446003
+      }
+    }
+  },
+  "79729acc-c119-43b3-833d-ba406b9d20ef": {
+    "selectedOption": {
+      "-ONOfiYJxNJXcg1eu08I": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.9465
+      },
+      "-ONOfiqkLUlga8a3-vU4": {
+        "choice": "Basic Tutorial",
+        "timestamp": 3.3644
+      },
+      "-ONOieccowTsZBa25h0s": {
+        "choice": "Level 2",
+        "timestamp": 770.3447
+      }
+    }
+  },
+  "7c6ecf02-53bb-4f5d-b69a-32a96e85f926": {
+    "selectedOption": {
+      "-ONN6XmrGifAT8UHQeX0": {
+        "choice": "Tutorial Menu",
+        "timestamp": 2.2798
+      },
+      "-ONN6YJtu90g4Ovxnz3a": {
+        "choice": "Ally Tutorial",
+        "timestamp": 4.5718
+      },
+      "-ONN9Cp7DNihxstheY50": {
+        "choice": "Tutorial Menu",
+        "timestamp": 698.3487
+      },
+      "-ONN9CwcZf99WW38oMGH": {
+        "choice": "Basic Tutorial",
+        "timestamp": 698.9869
+      },
+      "-ONN9jjr1ESW4gleIqaJ": {
+        "choice": "Level 1",
+        "timestamp": 837.275
+      },
+      "-ONNEibErJt4vktJBz_p": {
+        "choice": "Level 2",
+        "timestamp": 2142.017
+      }
+    }
+  },
+  "81a14e3b-6ad8-41ce-990e-5d0f15f3de1e": {
+    "selectedOption": {
+      "-ONMfvRlKMn0ctMvii-O": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.212
+      },
+      "-ONMfvRmd8SBKqDgxRkN": {
+        "choice": "Basic Tutorial",
+        "timestamp": 3.635
+      },
+      "-ONMgVxL27gGe1WXfvmE": {
+        "choice": "Level 2",
+        "timestamp": 52.2829
+      }
+    }
+  },
+  "82cac3df-c340-4d15-802a-40ab6a105037": {
+    "selectedOption": {
+      "-ONMcRkUKrczUV1-ZkOd": {
+        "choice": "Tutorial Menu",
+        "timestamp": 6.3533
+      },
+      "-ONMcSC5BumqZ5kVY70r": {
+        "choice": "Basic Tutorial",
+        "timestamp": 8.3747
+      },
+      "-ONMdSXilbZyEV7Ot3-z": {
+        "choice": "Level 1",
+        "timestamp": 270.9241
+      },
+      "-ONMdXMQvRL6fYfElcCv": {
+        "choice": "Level 1",
+        "timestamp": 289.1824
+      }
+    }
+  },
+  "82f381b4-eb44-458d-941a-47a6153e415d": {
+    "selectedOption": {
+      "-ONjVF-wYMewgASEbBBc": {
+        "choice": "Level 1",
+        "timestamp": 0.9015262
+      }
+    }
+  },
+  "8401b849-e18b-4886-a7c8-bef3b2404aa8": {
+    "selectedOption": {
+      "-ONjY8KXwqUE-UKKLxa0": {
+        "choice": "Level 1",
+        "timestamp": 0.766861
+      }
+    }
+  },
+  "842d26a1-0bfb-465a-9185-3c93c6b30154": {
+    "selectedOption": {
+      "-ONjR1Ur0bp8KvOJu6K1": {
+        "choice": "Level 1",
+        "timestamp": 0.3236465
+      }
+    }
+  },
+  "8e390ebb-9135-4e0b-8ed7-bf22428ed2cf": {
+    "selectedOption": {
+      "-ONdw09JGKkmnX_buyza": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.9212
+      },
+      "-ONdw19PhWPR7VSCxwPX": {
+        "choice": "Basic Tutorial",
+        "timestamp": 6.1501
+      }
+    }
+  },
+  "90a23f39-1880-4539-80a5-b84ddfc9ff86": {
+    "selectedOption": {
+      "-ONc9OulENuiwS5z6Mxd": {
+        "choice": "Level 1",
+        "timestamp": 4.723
+      }
+    }
+  },
+  "90ea30c5-f1ff-4efd-874c-656c486de20e": {
+    "selectedOption": {
+      "-ONMXTB8Zke9PP6UvFRJ": {
+        "choice": "Tutorial Menu",
+        "timestamp": 2.3325
+      },
+      "-ONMXTVQhAHjRQRCJUUA": {
+        "choice": "Basic Tutorial",
+        "timestamp": 3.6941
+      }
+    }
+  },
+  "94ca2958-0f4e-4e01-9f1f-ea459fa25270": {
+    "controlsViewed": {
+      "opened": true
+    },
+    "selectedOption": {
+      "-ONMavRvn0pplgjiSoyw": {
+        "choice": "Level 1",
+        "timestamp": 1.7102
+      },
+      "-ONMaziLFnF2hYIq698f": {
+        "choice": "Level 1",
+        "timestamp": 17.834
+      },
+      "-ONMb1ZB5aO0o0Uqy-A9": {
+        "choice": "Tutorial Menu",
+        "timestamp": 27.6918
+      },
+      "-ONMb1rSU1GL8QYk7iil": {
+        "choice": "Basic Tutorial",
+        "timestamp": 28.9625
+      },
+      "-ONMb7w2hcsL1Q3TabZO": {
+        "choice": "Tutorial Menu",
+        "timestamp": 51.9709
+      },
+      "-ONMb86lU-fNCd1SkU_4": {
+        "choice": "Ally Tutorial",
+        "timestamp": 52.7566
+      }
+    }
+  },
+  "9acc0593-d3e9-46fb-b949-a97f5d3ced5b": {
+    "selectedOption": {
+      "-ONN6BWlK3IWuZJ8GwJ4": {
+        "choice": "Level 1",
+        "timestamp": 9.1307
+      }
+    }
+  },
+  "9c2f9b72-e19e-4ab7-b894-59d249719149": {
+    "selectedOption": {
+      "-ONjXqUTFa4lNj7QfhZ0": {
+        "choice": "Tutorial Menu",
+        "timestamp": 9.567797
+      },
+      "-ONjXqihbJEp6DaESnau": {
+        "choice": "Basic Tutorial",
+        "timestamp": 10.66414
+      }
+    }
+  },
+  "9cc70a20-4a0c-496d-9c04-5bf12e54a163": {
+    "selectedOption": {
+      "-ONT3QmWyyX8F0LgGq-I": {
+        "choice": "Tutorial Menu",
+        "timestamp": 0.2397
+      },
+      "-ONT3Qu-MRdv5pBP-gbI": {
+        "choice": "Basic Tutorial",
+        "timestamp": 1.2699
+      }
+    }
+  },
+  "9edb49f4-b332-4dfb-8d2c-166758f8d290": {
+    "selectedOption": {
+      "-ONMYZyNgj-PqFzVjMmt": {
+        "choice": "Level 1",
+        "timestamp": 1.8019
+      }
+    }
+  },
+  "a4768910-917d-4191-8fb7-6ec0d17f7138": {
+    "selectedOption": {
+      "-ONMZ7nwLbfjvGuV_4rv": {
+        "choice": "Tutorial Menu",
+        "timestamp": 0.9828
+      },
+      "-ONMZ8BHRXQ0Gg8PnbtI": {
+        "choice": "Ally Tutorial",
+        "timestamp": 2.7155
+      }
+    }
+  },
+  "a4f8d054-1e3a-4f89-9596-412f8849c12b": {
+    "selectedOption": {
+      "-ONN3KTCgj0o3A_sly-K": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.1789
+      },
+      "-ONN3L0gP4ni9oE2y9vd": {
+        "choice": "Basic Tutorial",
+        "timestamp": 3.6847
+      },
+      "-ONN3hMt0Il75swt6Aef": {
+        "choice": "Level 2",
+        "timestamp": 63.0927
+      }
+    }
+  },
+  "a65f5dbb-3674-4925-9bec-8c41f45dba68": {
+    "selectedOption": {
+      "-ONkgZWIw9JCXmcC83uh": {
+        "choice": "Tutorial Menu",
+        "timestamp": 2.012
+      },
+      "-ONkg_LsMnWnf3T6fQb5": {
+        "choice": "Basic Tutorial",
+        "timestamp": 5.9306
+      }
+    }
+  },
+  "a787ea31-86d4-4ff8-8466-5f547650f272": {
+    "selectedOption": {
+      "-ONlE5rKegxafepe24eU": {
+        "choice": "Tutorial Menu",
+        "timestamp": 3.5937
+      },
+      "-ONlE676eRu67jdHn-nS": {
+        "choice": "Basic Tutorial",
+        "timestamp": 4.8308
+      },
+      "-ONlEa8_A3Sp-uVuqEes": {
+        "choice": "Level 2",
+        "timestamp": 128.8448
+      },
+      "-ONlEcpVqMkxxGtv15ps": {
+        "choice": "Tutorial Menu",
+        "timestamp": 137.271
+      },
+      "-ONlEd9jUbVnf9ET_UJs": {
+        "choice": "Basic Tutorial",
+        "timestamp": 138.6747
+      },
+      "-ONlFVDfh4SVbTLY6WuB": {
+        "choice": "Level 1",
+        "timestamp": 364.0858
+      }
+    }
+  },
+  "a9175070-5639-4bcd-88b5-1c5b843851cd": {
+    "selectedOption": {
+      "-ONYJiBtYNR8CoY_XFc9": {
+        "choice": "Tutorial Menu",
+        "timestamp": 3.2583
+      },
+      "-ONYJi_W7Sv_S-7uU1UM": {
+        "choice": "Basic Tutorial",
+        "timestamp": 4.9962
+      }
+    }
+  },
+  "aaaa92e3-d89e-4973-a355-74a458280efb": {
+    "selectedOption": {
+      "-ONMbm8Y6xFDQiF0ZTe_": {
+        "choice": "Level 2",
+        "timestamp": 1.7114
+      }
+    }
+  },
+  "aaf63ca5-b863-49ed-a695-abd938f859cd": {
+    "selectedOption": {
+      "-ONlxx-sOkZqc2tilNIe": {
+        "choice": "Tutorial Menu",
+        "timestamp": 4.4565
+      },
+      "-ONlxxCGrXbbrrcMFnyz": {
+        "choice": "Basic Tutorial",
+        "timestamp": 5.503
+      },
+      "-ONlyCcxKtqC4EBQSE38": {
+        "choice": "Level 1",
+        "timestamp": 71.0011
+      }
+    }
+  },
+  "ab58c7b6-18de-407a-9356-3f9c4e980262": {
+    "selectedOption": {
+      "-ONMbog10QGpTezbpCu4": {
+        "choice": "Level 1",
+        "timestamp": 2.8741
+      }
+    }
+  },
+  "abdcf295-6fd5-422b-b7c1-8cbef9af36b7": {
+    "selectedOption": {
+      "-ONanYQ6MEgInE6nj4tK": {
+        "choice": "Level 1",
+        "timestamp": 3.3055
+      }
+    }
+  },
+  "adb004a4-1030-4aea-b344-ece13000d925": {
+    "selectedOption": {
+      "-ONMgqbeKz_lgTVtEfuQ": {
+        "choice": "Level 1",
+        "timestamp": 1.4436
+      }
+    }
+  },
+  "b06d5417-5dc3-49ac-ac24-cf111ceb4560": {
+    "selectedOption": {
+      "-ONMf3VvBHDtx5pPTia4": {
+        "choice": "Tutorial Menu",
+        "timestamp": 4.5858
+      },
+      "-ONMf3s767DRF8vFSqSB": {
+        "choice": "Basic Tutorial",
+        "timestamp": 6.2676
+      },
+      "-ONMg2uSzNfGKWt7hn9l": {
+        "choice": "Level 1",
+        "timestamp": 264.2662
+      }
+    }
+  },
+  "b1daefa3-a980-448e-879f-3e5ae687df83": {
+    "selectedOption": {
+      "-ONMdvZWngzYjB5-hI-q": {
+        "choice": "Tutorial Menu",
+        "timestamp": 3.365
+      },
+      "-ONMdvxU_2QeVwZvFr8U": {
+        "choice": "Basic Tutorial",
+        "timestamp": 5.122
+      },
+      "-ONMegpOPR1QkcqDVCew": {
+        "choice": "Level 1",
+        "timestamp": 205.059
+      }
+    }
+  },
+  "b22fe196-5a85-4da5-8636-3b0bf7a09fee": {
+    "selectedOption": {
+      "-ONMfk9ahh2OZ39UoF3l": {
+        "choice": "Tutorial Menu",
+        "timestamp": 2.7581
+      },
+      "-ONMfkLi0zV1ZpysePG_": {
+        "choice": "Basic Tutorial",
+        "timestamp": 5.9493
+      }
+    }
+  },
+  "b3bb2426-e360-45ad-8ebb-0a9d7107804c": {
+    "selectedOption": {
+      "-ONjTpUzazaytvN7nd1W": {
+        "choice": "Level 2",
+        "timestamp": 0.9001357
+      }
+    }
+  },
+  "b64cbf48-29e8-42a9-a317-4ed2050ded76": {
+    "selectedOption": {
+      "-ONMYQFjfxgpJTFfBK3a": {
+        "choice": "Tutorial Menu",
+        "timestamp": 5.221
+      },
+      "-ONMYQZpjvD7EKRn8JBZ": {
+        "choice": "Basic Tutorial",
+        "timestamp": 6.6757
+      }
+    }
+  },
+  "b8ddcabf-2d89-4644-9308-1d61bfd01e31": {
+    "selectedOption": {
+      "-ONk9ogQkcJU3WOQzVs5": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.2336
+      },
+      "-ONk9oxzna1R_DPocPUC": {
+        "choice": "Basic Tutorial",
+        "timestamp": 2.5045
+      }
+    }
+  },
+  "bf279133-c03e-4a75-b50e-1fe5b5598640": {
+    "selectedOption": {
+      "-ONNeMmYXgf21Q0yjTIX": {
+        "choice": "Basic Tutorial",
+        "timestamp": 5.4652
+      },
+      "-ONNeMmYXgf21Q0yjTIY": {
+        "choice": "Tutorial Menu",
+        "timestamp": 3.5757
+      },
+      "-ONNep0N4Gn3XkRliV0a": {
+        "choice": "Level 1",
+        "timestamp": 123.8536
+      }
+    }
+  },
+  "c2293635-1184-4d20-8fd6-c2d463f4c69c": {
+    "selectedOption": {
+      "-ONlJtecDCgmMkJsNcsi": {
+        "choice": "Tutorial Menu",
+        "timestamp": 3.123
+      },
+      "-ONlJu9HUkdWXSPqEl3d": {
+        "choice": "Basic Tutorial",
+        "timestamp": 5.31
+      },
+      "-ONlKEth8KXGzXsbtSwG": {
+        "choice": "Level 1",
+        "timestamp": 94.061
+      }
+    }
+  },
+  "c490a4fc-94aa-441e-81f8-bcc9996124ce": {
+    "selectedOption": {
+      "-ONjXuTx9g_kOmXQHa5C": {
+        "choice": "Level 1",
+        "timestamp": 3.688875
+      }
+    }
+  },
+  "c6c6ca1b-15d1-44d2-b224-b8f2a2e4ebce": {
+    "controlsViewed": {
+      "opened": true
+    },
+    "selectedOption": {
+      "-ONMVAf9XzlYRoDi04zZ": {
+        "choice": "Tutorial Menu",
+        "timestamp": 2.3318
+      },
+      "-ONMVCGA24pKh-CFx-ft": {
+        "choice": "Basic Tutorial",
+        "timestamp": 8.9232
+      }
+    }
+  },
+  "c7b1838e-3b3a-4b4d-9b47-b04687646fb0": {
+    "controlsViewed": {
+      "opened": true
+    },
+    "selectedOption": {
+      "-ONWuoz73HU2DMF1GipU": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.2191
+      },
+      "-ONWupiIU2SQ29t1dRbU": {
+        "choice": "Basic Tutorial",
+        "timestamp": 4.5135
+      },
+      "-ONWyf-24ki_T80L9Aso": {
+        "choice": "Tutorial Menu",
+        "timestamp": 841.1153
+      },
+      "-ONWyjeoYNcIdYRWQwYX": {
+        "choice": "Level 1",
+        "timestamp": 854.867
+      },
+      "-ONWyncYvcLWMTQoUVGF": {
+        "choice": "Tutorial Menu",
+        "timestamp": 870.1408
+      },
+      "-ONWynguDVlhXMdISKNu": {
+        "choice": "Basic Tutorial",
+        "timestamp": 870.4936
+      },
+      "-ONWz3hJFY1a7kBFHSot": {
+        "choice": "Level 2",
+        "timestamp": 939.4264
+      }
+    }
+  },
+  "c8d4a669-5d23-4384-afdd-1bb433ea6bb5": {
+    "selectedOption": {
+      "-ONNoTjlhbVXWqQstw2J": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.5034
+      },
+      "-ONNoTx7JJID5wAZv_Dj": {
+        "choice": "Basic Tutorial",
+        "timestamp": 2.691
+      },
+      "-ONNoZ5crYq_SsVY5zMw": {
+        "choice": "Level 1",
+        "timestamp": 21.4853
+      }
+    }
+  },
+  "c90d513b-639a-48f0-b52b-0c47ec11fa6d": {
+    "selectedOption": {
+      "-ONjPpAh_wrE3nqQvfxP": {
+        "choice": "Tutorial Menu",
+        "timestamp": 0.7231042
+      },
+      "-ONjPpGETBlcG27SxUFe": {
+        "choice": "Basic Tutorial",
+        "timestamp": 1.232035
+      }
+    }
+  },
+  "c95b810d-25f8-4347-a8cc-d93e8e6f36dc": {
+    "selectedOption": {
+      "-ONja9gcw6I7zrV5WF3R": {
+        "choice": "Tutorial Menu",
+        "timestamp": 0.7268185
+      },
+      "-ONja9y6Hy9OSCkDp8ym": {
+        "choice": "Ally Tutorial",
+        "timestamp": 2.015681
+      }
+    }
+  },
+  "cb06f846-a2ca-4221-9786-725f5d403b1b": {
+    "selectedOption": {
+      "-ONjQtK0H7mmLXdWssmM": {
+        "choice": "Level 1",
+        "timestamp": 0.340701
+      }
+    }
+  },
+  "cb26ae86-daf5-44eb-81f3-23f7a8e5fb8a": {
+    "selectedOption": {
+      "-ONkhz29RlVHxaBNehKd": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.014
+      },
+      "-ONkhz6pgc7Xpi_pXImd": {
+        "choice": "Ally Tutorial",
+        "timestamp": 1.5543
+      },
+      "-ONkiKxq2ZR5teH_O4ZH": {
+        "choice": "Level 1",
+        "timestamp": 93.4179
+      }
+    }
+  },
+  "cd5a52de-c49b-4de6-9547-0f889294631a": {
+    "selectedOption": {
+      "-ONQwMgLcABWGWQIJ_Kr": {
+        "choice": "Level 1",
+        "timestamp": 2.3419
+      },
+      "-ONQxFf0g-BtBmGPDr7i": {
+        "choice": "Tutorial Menu",
+        "timestamp": 132.4474
+      },
+      "-ONQxGBu_yy3kF4urmhQ": {
+        "choice": "Ally Tutorial",
+        "timestamp": 134.6528
+      },
+      "-ONQyaKXLSMOgL3Gn0Z1": {
+        "choice": "Level 1",
+        "timestamp": 446.5009
+      },
+      "-ONQzevoohf8reqyplkg": {
+        "choice": "Level 1",
+        "timestamp": 598.7856
+      },
+      "-ONR-8ynrdMfIvnNgf-i": {
+        "choice": "Level 1",
+        "timestamp": 724.4416
+      },
+      "-ONR-HhoECI5KHUQ04n-": {
+        "choice": "Level 1",
+        "timestamp": 758.1622
+      },
+      "-ONR4hGzKF8voV0nVbq4": {
+        "choice": "Level 1",
+        "timestamp": 792.4382
+      }
+    }
+  },
+  "ce4cffce-9ec9-478c-bfca-83be6b518104": {
+    "selectedOption": {
+      "-ONMv2XMbzLu0NeuXRnG": {
+        "choice": "Level 1",
+        "timestamp": 1.3162
+      },
+      "-ONMvNMyNy_92Kk70ldL": {
+        "choice": "Level 2",
+        "timestamp": 85.1228
+      }
+    }
+  },
+  "ce4e7363-186a-4f0e-9244-cbee937149b6": {
+    "selectedOption": {
+      "-ONkBi_rhSwz2WWJtebm": {
+        "choice": "Level 1",
+        "timestamp": 0.9818
+      },
+      "-ONkBjkWg0OYG2vp2dyG": {
+        "choice": "Level 2",
+        "timestamp": 4.5083
+      }
+    }
+  },
+  "cfd24d34-ee76-4ed3-9177-cf21931f63ab": {
+    "selectedOption": {
+      "-ONjW81aj8uozvy8hCzR": {
+        "choice": "Tutorial Menu",
+        "timestamp": 0.2997373
+      },
+      "-ONjW8E5L109LZkw7fxY": {
+        "choice": "Basic Tutorial",
+        "timestamp": 1.115548
+      }
+    }
+  },
+  "d02b89dc-c010-409b-b27d-d9f98994a74a": {
+    "selectedOption": {
+      "-ONjQiTmQAE7A7m_ZSbL": {
+        "choice": "Level 1",
+        "timestamp": 0.4082558
+      }
+    }
+  },
+  "d22fdeab-ea25-434e-bf58-7d6b5a24f2aa": {
+    "selectedOption": {
+      "-ONfry-AZPd7zjT1_FRs": {
+        "choice": "Tutorial Menu",
+        "timestamp": 4.6564
+      },
+      "-ONfryFh4a2zOTO_QOAg": {
+        "choice": "Basic Tutorial",
+        "timestamp": 5.9447
+      }
+    }
+  },
+  "d3f85456-3c28-4637-a73c-c4681fdfef8c": {
+    "selectedOption": {
+      "-ONmlV5vEbUg22qIVDLs": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.6236
+      },
+      "-ONmlVDsoEHSq9VupXDv": {
+        "choice": "Basic Tutorial",
+        "timestamp": 2.9438
+      },
+      "-ONmpOHsAUs04FbxtmiE": {
+        "choice": "Level 1",
+        "timestamp": 229.7958
+      },
+      "-ONmsJ1vu1DQie5zQaMi": {
+        "choice": "Level 2",
+        "timestamp": 843.1286
+      }
+    }
+  },
+  "d431f6df-1e57-45c3-81e8-cf712d635f60": {
+    "selectedOption": {
+      "-ONM_-GwaQN1MIfa4_vo": {
+        "choice": "Tutorial Menu",
+        "timestamp": 3.3179
+      },
+      "-ONM_-sQmdCf6eSIbf0y": {
+        "choice": "Basic Tutorial",
+        "timestamp": 5.9386
+      }
+    }
+  },
+  "d781fd54-6fad-4316-9cc3-b7020b0d53a2": {
+    "selectedOption": {
+      "-ONkeo6Bu6u_oP4MOSkg": {
+        "choice": "Level 1",
+        "timestamp": 1.3666
+      }
+    }
+  },
+  "db07761c-7837-47fe-8eaa-cddb7cdcfa9b": {
+    "selectedOption": {
+      "-ONNT1n3LprTmRPiSfLT": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.746
+      },
+      "-ONNT4zKnu7ojuMVvGFe": {
+        "choice": "Basic Tutorial",
+        "timestamp": 4.641
+      }
+    }
+  },
+  "db7392de-7e8e-4f74-86a1-7e2f40746b46": {
+    "selectedOption": {
+      "-ONMZfYJhdTAw3uf3M8j": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.5432
+      },
+      "-ONMZfymR577vxAF4npY": {
+        "choice": "Ally Tutorial",
+        "timestamp": 3.4309
+      },
+      "-ONM_7PUtKB2Yv1mBlYB": {
+        "choice": "Tutorial Menu",
+        "timestamp": 117.4469
+      },
+      "-ONM_7bHdW9j6QKF4qQ2": {
+        "choice": "Basic Tutorial",
+        "timestamp": 118.321
+      }
+    }
+  },
+  "dc75ec5e-1d44-4d37-b758-6b9b7581416b": {
+    "selectedOption": {
+      "-ONj14bqa7Fh4kAVn1Qr": {
+        "choice": "Level 2",
+        "timestamp": 0.4918452
+      }
+    }
+  },
+  "df611b36-af70-46e2-96be-9e4e8c8d207e": {
+    "selectedOption": {
+      "-ONh__R9dgShwdbXN6jd": {
+        "choice": "Level 1",
+        "timestamp": 7.3312
+      }
+    }
+  },
+  "e01a5af1-21c0-4131-8bd7-47899fd63f9a": {
+    "selectedOption": {
+      "-ONmdFribmm4qNl38YeF": {
+        "choice": "Tutorial Menu",
+        "timestamp": 48.1541
+      },
+      "-ONmdGY7iiojRNQXNrwE": {
+        "choice": "Basic Tutorial",
+        "timestamp": 51.1749
+      },
+      "-ONmdJolL9Vu0CsriiH6": {
+        "choice": "Level 1",
+        "timestamp": 62.448
+      }
+    }
+  },
+  "e125cdba-186a-4499-823c-d132999609a0": {
+    "selectedOption": {
+      "-ONYuZZzB6UvSuoETbwV": {
+        "choice": "Level 2",
+        "timestamp": 2.2673
+      }
+    }
+  },
+  "e13eae2a-9e72-4752-bfe8-8fced2258790": {
+    "selectedOption": {
+      "-ONjTIfYpaXwZj9KrM63": {
+        "choice": "Level 2",
+        "timestamp": 0.7944187
+      }
+    }
+  },
+  "e242a01d-5a5e-4eea-a4d0-52b2d657b945": {
+    "selectedOption": {
+      "-ONaaumsw7WoiBWUcrWv": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.9748
+      },
+      "-ONaaw2cpSwUYVklGukd": {
+        "choice": "Basic Tutorial",
+        "timestamp": 7.2442
+      },
+      "-ONadWlVotFBsZyxhrR3": {
+        "choice": "Level 1",
+        "timestamp": 154.6918
+      }
+    }
+  },
+  "e6237141-a99d-45c6-9c26-788ff55ef99f": {
+    "selectedOption": {
+      "-ONMYPtaExf4GlBFmnYj": {
+        "choice": "Level 1",
+        "timestamp": 0.7728
+      }
+    }
+  },
+  "e6287e92-d81d-4bfc-9f11-69664e678a36": {
+    "selectedOption": {
+      "-ONjROS5KU6Dk6jxNGNu": {
+        "choice": "Level 1",
+        "timestamp": 0.7465015
+      }
+    }
+  },
+  "e9796185-8e24-4709-8b9e-d1382d82f9fa": {
+    "selectedOption": {
+      "-ONM_R5QlK-07laPi3Eq": {
+        "choice": "Tutorial Menu",
+        "timestamp": 4.5528
+      },
+      "-ONM_RLQOff7kmClGU46": {
+        "choice": "Basic Tutorial",
+        "timestamp": 5.7389
+      },
+      "-ONMaL_iREYsYM0mLaRJ": {
+        "choice": "Level 1",
+        "timestamp": 193.6107
+      }
+    }
+  },
+  "ea6cc638-3582-438d-8533-babe474facb2": {
+    "selectedOption": {
+      "-ONXEWsNxGcGkNHB370q": {
+        "choice": "Tutorial Menu",
+        "timestamp": 6.8408
+      },
+      "-ONXEXJjq7mmAU4avhfo": {
+        "choice": "Basic Tutorial",
+        "timestamp": 8.8607
+      }
+    }
+  },
+  "ea818968-4b32-470d-ae9b-6f20e372d2f6": {
+    "selectedOption": {
+      "-ONhiUZ5DuHG4onfVxMS": {
+        "choice": "Tutorial Menu",
+        "timestamp": 12.8295
+      },
+      "-ONhiV4OYK3RKvN4lQYi": {
+        "choice": "Basic Tutorial",
+        "timestamp": 15.536
+      },
+      "-ONhjDpBjtjz6inBCngR": {
+        "choice": "Tutorial Menu",
+        "timestamp": 206.5453
+      },
+      "-ONhjDyUSWdQZOqz_etj": {
+        "choice": "Ally Tutorial",
+        "timestamp": 207.4143
+      },
+      "-ONhjcN0tW-8BJy8SKEh": {
+        "choice": "Level 1",
+        "timestamp": 307.9767
+      }
+    }
+  },
+  "edb97566-ee7a-447e-bb01-bca9c6bb71c2": {
+    "selectedOption": {
+      "-ONMSafTw7r-1R3MEYdG": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.6469
+      },
+      "-ONMT-rGPAe4QDnXran-": {
+        "choice": "Basic Tutorial",
+        "timestamp": 89.393
+      },
+      "-ONMT2ofDxGaXflhPjlM": {
+        "choice": "Tutorial Menu",
+        "timestamp": 99.1107
+      },
+      "-ONMT2wxWVRQqHfK7ZHa": {
+        "choice": "Ally Tutorial",
+        "timestamp": 99.6801
+      },
+      "-ONMTEg6BPTzaISjLxzE": {
+        "choice": "Level 1",
+        "timestamp": 146.7661
+      }
+    }
+  },
+  "f0b1cb9d-8632-43d5-b5b9-9fd4159f8ee4": {
+    "selectedOption": {
+      "-ONjbMULqDJPMEOqlwAC": {
+        "choice": "Tutorial Menu",
+        "timestamp": 0.6881466
+      },
+      "-ONjbMai07GefaLU4CMV": {
+        "choice": "Ally Tutorial",
+        "timestamp": 1.323314
+      }
+    }
+  },
+  "f2a5b517-3f30-4ee5-a14d-f6d9f00b0749": {
+    "selectedOption": {
+      "-ONNLhxIlxfnlb5GoFZs": {
+        "choice": "Tutorial Menu",
+        "timestamp": 5.5729
+      },
+      "-ONNLoj85Equ0vtDOpq3": {
+        "choice": "Basic Tutorial",
+        "timestamp": 33.39813
+      },
+      "-ONNOjQEp_89814dkOJh": {
+        "choice": "Level 1",
+        "timestamp": 794.2516
+      }
+    }
+  },
+  "f2f1a417-6cf9-4dd6-9bc7-873bda69335f": {
+    "selectedOption": {
+      "-ONMdbrfv3QUYtRKomAY": {
+        "choice": "Level 1",
+        "timestamp": 3.4115
+      }
+    }
+  },
+  "f4db2e83-8725-4dba-b249-ca308cc281b2": {
+    "selectedOption": {
+      "-ONMfLMYa4gEVC6tYJsc": {
+        "choice": "Level 1",
+        "timestamp": 0.8412
+      }
+    }
+  },
+  "f515b948-6e64-45d0-8692-474559f0dd99": {
+    "selectedOption": {
+      "-ONM_6NGc_4haMoXo9K1": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.885
+      },
+      "-ONM_6iH31htwRS-4gWO": {
+        "choice": "Basic Tutorial",
+        "timestamp": 3.504
+      },
+      "-ONM_wS7uAHusbeeDoAr": {
+        "choice": "Tutorial Menu",
+        "timestamp": 216.1463
+      },
+      "-ONM_wbv4hEFYHwqzxu4": {
+        "choice": "Ally Tutorial",
+        "timestamp": 216.8983
+      }
+    }
+  },
+  "f559e99a-cc26-4cc1-9b00-f2a8697623ed": {
+    "selectedOption": {
+      "-ONba9_eFMEkpgmdwakC": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.9687
+      },
+      "-ONba9wCAzYPabbFmeoE": {
+        "choice": "Basic Tutorial",
+        "timestamp": 3.6894
+      }
+    }
+  },
+  "f61b40d0-d7e0-42e1-a12e-00e208c9d2e8": {
+    "selectedOption": {
+      "-ONT2xe8aYCqsLoIyVCH": {
+        "choice": "Level 1",
+        "timestamp": 4.8648
+      },
+      "-ONT333rTbGFpg7dwpH-": {
+        "choice": "Tutorial Menu",
+        "timestamp": 29.5884
+      },
+      "-ONT33Q7WT_U5oMLOGYG": {
+        "choice": "Basic Tutorial",
+        "timestamp": 31.0084
+      }
+    }
+  },
+  "f714d08f-254d-4a9c-b533-887e519f1607": {
+    "selectedOption": {
+      "-ONMXwhXoTZfuhk8BZPr": {
+        "choice": "Tutorial Menu",
+        "timestamp": 1.796
+      },
+      "-ONMXxU4q9he606uEWHR": {
+        "choice": "Basic Tutorial",
+        "timestamp": 5.2377
       }
     }
   }

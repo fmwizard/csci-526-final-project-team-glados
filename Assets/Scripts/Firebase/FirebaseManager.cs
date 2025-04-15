@@ -7,7 +7,7 @@ public class FirebaseManager : MonoBehaviour
 {
     private string databaseURL = "https://portalmario-cs526-default-rtdb.firebaseio.com/";
     public static FirebaseManager instance;
-    public bool allowLoggingInEditor = true; 
+    public bool allowLoggingInEditor = false; 
 
     void Awake()
     {

@@ -134,7 +134,7 @@ time_range_pivot = (
     .reindex(columns=time_range_order)
 )
 
-ax = time_range_pivot.plot(kind='bar', stacked=True, figsize=(12, 6), colormap='viridis')
+ax = time_range_pivot.plot(kind='bar', stacked=True, figsize=(14, 9), colormap='viridis')
 plt.title("Completion Time Buckets per Level (Stacked)")
 plt.xlabel("Level")
 plt.ylabel("Number of Players")
@@ -145,8 +145,8 @@ for i, level in enumerate(level_order):
     avg = avg_times.get(level, 0)
     exp = expected_times[level]
     total = time_range_pivot.loc[level].sum()
-    ax.text(i, total + 0.8, f"Avg: {avg:.1f}s", ha='center', fontsize=9, color='black')
-    ax.text(i, total + 1.1, f"Exp: {exp}s", ha='center', fontsize=9, color='gray')
+    ax.text(i, total + 1.6, f"Avg: {avg:.1f}s", ha='center', fontsize=9, color='black')
+    ax.text(i, total + 2.6, f"Exp: {exp}s", ha='center', fontsize=9, color='gray')
 
 plt.tight_layout()
 plt.show()

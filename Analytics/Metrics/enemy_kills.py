@@ -103,7 +103,7 @@ if __name__ == "__main__":
     df = process_data(df)
 
     plot_reason_counts(df)
-    # plot_kill_positions(df, -1, 'Analytics/Metrics/LevelDesignSS/tutorial_screenshot.png', extent=[-11, 91, -6, 7])
-    # plot_kill_positions(df, 0, 'Analytics/Metrics/LevelDesignSS/allyTutorial_screenshot.png', extent=[-11, 91, -6, 7])
+    plot_kill_positions(df, -1, 'Analytics/Metrics/LevelDesignSS/tutorial_screenshot.png', extent=[-11, 97, -6, 7])
+    plot_kill_positions(df, 0, 'Analytics/Metrics/LevelDesignSS/allyTutorial_screenshot.png', extent=[-11, 86, -6, 5])
     plot_kill_positions(df, 1, 'Analytics/Metrics/LevelDesignSS/lvl1_screenshot.png', extent=[-11, 91, -6, 7])
     plot_kill_positions(df, 2, 'Analytics/Metrics/LevelDesignSS/lvl2_screenshot.png', extent=[-18, 56, -6, 18])

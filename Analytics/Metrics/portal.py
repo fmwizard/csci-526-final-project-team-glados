@@ -162,7 +162,7 @@ if __name__ == "__main__":
     plot_teleportation_types_by_usage(df)
     plot_teleportation_types_by_level_with_acceleration(df)
 
-    # plot_portal_heatmap(df, -1, 'Analytics/Metrics/LevelDesignSS/tutorial_screenshot.png', extent=[-5, 50, -5, 10])
-    # plot_portal_heatmap(df, 0, 'Analytics/Metrics/LevelDesignSS/allyTutorial_screenshot.png', extent=[-10, 60, -5, 15])
+    plot_portal_heatmap(df, -1, 'Analytics/Metrics/LevelDesignSS/tutorial_screenshot.png', extent=[-11, 97, -6, 7])
+    plot_portal_heatmap(df, 0, 'Analytics/Metrics/LevelDesignSS/allyTutorial_screenshot.png', extent=[-11, 87, -6, 5])
     plot_portal_heatmap(df, 1, 'Analytics/Metrics/LevelDesignSS/lvl1_screenshot.png', extent=[-11, 91, -6, 7])
     plot_portal_heatmap(df, 2, 'Analytics/Metrics/LevelDesignSS/lvl2_screenshot.png', extent=[-18, 56, -6, 18])
