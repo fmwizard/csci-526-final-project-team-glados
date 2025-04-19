@@ -7,13 +7,16 @@ using TMPro;
 public class PortalGunCollectible : MonoBehaviour
 {
     public GameObject player;
-    public PopupManager popupManager;
+    public string popupText;
+    //public PopupManager popupManager;
+    private HintPopupManager hintPopupManager;
 
     private PortalManager portalManager;
 
     void Start()
     {
         portalManager = FindObjectOfType<PortalManager>();
+        hintPopupManager = FindObjectOfType<HintPopupManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -34,9 +37,13 @@ public class PortalGunCollectible : MonoBehaviour
                 portalManager.CanUseCage = true;
             }
 
-            if (popupManager != null)
+            // if (popupManager != null)
+            // {
+            //     popupManager.ShowPopupText();
+            // }
+            if (hintPopupManager != null)
             {
-                popupManager.ShowPopupText();
+                HintPopupManager.Instance.ShowHint(other.transform, popupText);
             }
 
             Destroy(gameObject);
