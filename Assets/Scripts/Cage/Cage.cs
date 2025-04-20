@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-
+using TMPro;
 public class Cage : MonoBehaviour
 {
     private bool isCaptured;
@@ -14,12 +14,19 @@ public class Cage : MonoBehaviour
     public Vector2 normal { get; set; }
     public GameObject capturedObject;
     public int enemyReleaseCount = 0;
+
+    private AllyUIManager allyUI;
+    private EnemyController currentAlly;
+   
     // Start is called before the first frame update
     void Start()
     {
         playerManager = FindObjectOfType<PlayerManager>();
         isCaptured = false;
         capturedObject = null;
+        // allyUI = FindObjectOfType<AllyUIManager>();
+        allyUI = FindObjectOfType<AllyUIManager>();
+        currentAlly = null;
     }
 
     // Update is called once per frame
@@ -68,6 +75,12 @@ public class Cage : MonoBehaviour
         if (IsCapturedObject(other.gameObject))
         {
             // Destroy the box and clone it to the cage
+            if (currentAlly != null)
+            {
+                currentAlly.OnDeathOrDisable -= HandleAllyDeath;
+                currentAlly = null;
+            }
+            
             capturedObject = Instantiate(other.gameObject);
             Destroy(other.gameObject);
             if (capturedObject.CompareTag("Hostility") && capturedObject.layer != LayerMask.NameToLayer("Companion"))
@@ -79,9 +92,25 @@ public class Cage : MonoBehaviour
                     FirebaseManager.instance.LogEnemyKill("Converted to Ally", pos, level, "PurpleEnemy");
                 }
 
+                // EnemyController newController = capturedObject.AddComponent<EnemyController>();
+
                 EnemyController newController = capturedObject.AddComponent<EnemyController>();
+
+                // — subscribe our handler so we get notified when *this* ally dies —
+                // if (currentAlly != null)
+                //     currentAlly.OnDeathOrDisable -= HandleAllyDeath;
+                currentAlly = newController;
+                currentAlly.OnDeathOrDisable += HandleAllyDeath;
+
+
                 playerManager.SetCurrentEnemy(newController);
                 capturedObject.layer = LayerMask.NameToLayer("Companion");
+
+                if (allyUI != null)
+                {
+                    allyUI.AllyCaptured();
+                }
+
                 capturedObject.GetComponent<SpriteRenderer>().color = companionColor;
 
                 Transform angryFace = capturedObject.transform.Find("AngryFace");
@@ -131,5 +160,14 @@ public class Cage : MonoBehaviour
     public void SetIsCaptured(bool value)
     {
         isCaptured = value;
+    }
+
+    private void HandleAllyDeath()
+    {
+        allyUI?.ReleaseAlly();
+        // unsubscribe so we don’t fire again
+        if (currentAlly != null)
+           currentAlly.OnDeathOrDisable -= HandleAllyDeath;
+        currentAlly = null;
     }
 }

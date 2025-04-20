@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEditor;
 using System;
 
-
 public class EnemyController : MonoBehaviour
 {
     [Header("Movement Settings")]
@@ -20,12 +19,11 @@ public class EnemyController : MonoBehaviour
     private float currentVelocityMagnitude;
     private SpriteRenderer spriteRenderer;
     //public bool fromPortal;
-    public event Action OnDeathOrDisable;
-    
+    public event Action OnDeathOrDisable;    
 
-    private void OnDisable(){
-        OnDeathOrDisable?.Invoke();
-    }
+    // private void OnDisable(){
+    //     OnDeathOrDisable?.Invoke();
+    // }
     private void OnDestroy(){
         OnDeathOrDisable?.Invoke();
     }
@@ -88,7 +86,9 @@ public class EnemyController : MonoBehaviour
         if(transform.position.y < -10f || transform.position.y > 20f)
         {
             OnDeathOrDisable?.Invoke();
-            this.enabled = false;
+            Destroy(gameObject);
+            return;
+            // this.enabled = false;
         }
     }
 
