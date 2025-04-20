@@ -157,29 +157,52 @@ public class PlayerRespawn : MonoBehaviour
         }
 
 
-        EnemyController enemyController = FindObjectOfType<EnemyController>(true);
-        if (enemyController != null)
-        {
-            // Enemy enemy = enemyController.GetComponent<Enemy>();
-            // enemy.gameObject.SetActive(true);
-            // enemy.TakeDamage(9999f);
+        // EnemyController enemyController = FindObjectOfType<EnemyController>(true);
+        // if (enemyController != null)
+        // {
+        //     // Enemy enemy = enemyController.GetComponent<Enemy>();
+        //     // enemy.gameObject.SetActive(true);
+        //     // enemy.TakeDamage(9999f);
 
-            // return to cage
-            GameObject captured = portalManager.GetCageCapturedObject();
-            if (captured != null)
-            {
-                portalManager.SetCageCapturedObject(captured);
-                Destroy(captured);
-                portalManager.GetCageCapturedObject().SetActive(false);
-                portalManager.GetActiveCage().SetIsCaptured(true);
-            }
-        }
+        //     // return to cage
+        //     GameObject captured = portalManager.GetCageCapturedObject();
+        //     if (captured != null)
+        //     {
+        //         portalManager.SetCageCapturedObject(captured);
+        //         Destroy(captured);
+        //         portalManager.GetCageCapturedObject().SetActive(false);
+        //         portalManager.GetActiveCage().SetIsCaptured(true);
+        //     }
+        // }
+        // Instead of destroying the ally, just hide it and reset the cage
+
         
+        // Cage cage = portalManager.GetActiveCage();
+        // if (cage != null)
+        // {
+        //     cage.gameObject.SetActive(false);
+        // }
+
         Cage cage = portalManager.GetActiveCage();
+        if (cage != null && cage.capturedObject != null)
+        {
+            // Detach from world, re-parent under the cage
+            cage.capturedObject.transform.SetParent(cage.transform);
+            cage.capturedObject.transform.localPosition = Vector3.zero;
+
+            // Deactivate it so it's “in the cage” again
+            cage.capturedObject.SetActive(false);
+
+            // Mark the cage as holding something
+            cage.SetIsCaptured(true);
+        }
+
+        // Finally, hide the cage itself
         if (cage != null)
         {
             cage.gameObject.SetActive(false);
         }
+
 
         MainCamera cameraScript = Camera.main.GetComponent<MainCamera>();
         if (cameraScript != null)
