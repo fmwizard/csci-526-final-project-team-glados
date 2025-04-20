@@ -42,7 +42,6 @@ public class PlayerRespawn : MonoBehaviour
         for (int i = 0; i < checkpoints.Length; i++)
         {
             flags[i] = Instantiate(flagPrefab, checkpoints[i], Quaternion.identity);
-            Debug.Log("Actual flag world position: " + flags[i].transform.position);
         }
     }
 
@@ -103,7 +102,23 @@ public class PlayerRespawn : MonoBehaviour
         Vector2 nextCheckpoint = checkpoints[nextCheckpointIndex];
         int playerFloor = transform.position.y >= 7f ? 1 : 0;
         int nextCheckpointFloor = nextCheckpoint.y >= 7f ? 1 : 0;
-        if (Mathf.Abs(transform.position.x - nextCheckpoint.x) < 0.5f && playerFloor == nextCheckpointFloor)
+        bool reachCheckpoint = false;
+        if (nextCheckpointFloor == 0)
+        {
+            if (transform.position.x - nextCheckpoint.x > 0 && playerFloor == nextCheckpointFloor)
+            {
+                reachCheckpoint = true;
+            }
+        }
+        else
+        {
+            if (transform.position.x - nextCheckpoint.x < 0 && playerFloor == nextCheckpointFloor)
+            {
+                reachCheckpoint = true;
+            }
+        }
+
+        if (reachCheckpoint)
         {
             respawnPosition = nextCheckpoint;
             Destroy(flags[nextCheckpointIndex]);
