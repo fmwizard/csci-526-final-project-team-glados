@@ -31,7 +31,7 @@ public class MainCamera : MonoBehaviour
         timeCanvasRT = transform.Find("TimeCanvas").GetComponent<RectTransform>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         GameObject allyObject = portalManager.GetCageCapturedObject();
         if (allyObject == null || allyObject.activeSelf == false)
