@@ -26,10 +26,12 @@ public class PlayerManager : MonoBehaviour
 
         playerController.enabled = true;
         // playerRenderer.material = activeMaterial;
-        if (popupText != null)
-        {
-            popupText.SetActive(false);
-        }
+        
+        // FOR OLD VERSION OF POPUP
+        // if (popupText != null)
+        // {
+        //     popupText.SetActive(false);
+        // }
     }
 
     void Update()
@@ -38,11 +40,12 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             ToggleControl();
-
-            if(SceneManager.GetActiveScene().name == "allyTutorial" && popupText != null)
-            {
-                popupText.SetActive(false);
-            }
+            
+            // FOR OLD VERSION OF POPUP
+            // if(SceneManager.GetActiveScene().name == "allyTutorial" && popupText != null)
+            // {
+            //     popupText.SetActive(false);
+            // }
         }
     }
 
@@ -64,9 +67,12 @@ public class PlayerManager : MonoBehaviour
             
             Cage cage = FindObjectOfType<Cage>();
 
+            // For explaining ally mechanic in ally tutorial
             if(SceneManager.GetActiveScene().name == "allyTutorial" && !hasShownPopupText && popupText != null && cage.enemyReleaseCount == 1)
             {
-                popupText.SetActive(true);
+                // FOR OLD VERSION OF POPUP
+                // popupText.SetActive(true);
+                HintPopupManager.Instance.ShowHint(player.transform, "Press Left Shift Button to switch control between player and ally.");
                 hasShownPopupText = true;
             }
 

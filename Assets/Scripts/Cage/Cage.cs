@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
+
 public class Cage : MonoBehaviour
 {
     private bool isCaptured;
@@ -13,7 +15,9 @@ public class Cage : MonoBehaviour
     private PlayerManager playerManager;
     public Vector2 normal { get; set; }
     public GameObject capturedObject;
+    // Below is for allytutorial
     public int enemyReleaseCount = 0;
+    private bool hasCapturedFirstEnemy = false;
 
     private AllyUIManager allyUI;
     private EnemyController currentAlly;
@@ -92,6 +96,16 @@ public class Cage : MonoBehaviour
                     FirebaseManager.instance.LogEnemyKill("Converted to Ally", pos, level, "PurpleEnemy");
                 }
 
+                // Check to see if it is allytutorial and show popup if so
+                Debug.Log("Scene name: " + SceneManager.GetActiveScene().name);
+                if(SceneManager.GetActiveScene().name == "allyTutorial" && !hasCapturedFirstEnemy)
+                {
+                    GameObject player = GameObject.FindGameObjectWithTag("Player");
+                    // Maybe include safety to check if popupmanager exists
+                    HintPopupManager.Instance.ShowHint(player.transform, "Great! You've captured your first enemy.");
+                    hasCapturedFirstEnemy = true;
+                    Debug.Log("Attempted to show release hint");
+                }
                 // EnemyController newController = capturedObject.AddComponent<EnemyController>();
 
                 EnemyController newController = capturedObject.AddComponent<EnemyController>();

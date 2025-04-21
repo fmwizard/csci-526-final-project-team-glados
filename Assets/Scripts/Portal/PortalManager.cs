@@ -39,7 +39,7 @@ public class PortalManager : MonoBehaviour
             CanUseCage = false;
             CanUseMirror = false;
         }
-        else if (SceneManager.GetActiveScene().name == "lvl1")
+        else if (SceneManager.GetActiveScene().name == "lvl1" || SceneManager.GetActiveScene().name == "lvl2")
         {
             CanUseMirror = false;
         }
