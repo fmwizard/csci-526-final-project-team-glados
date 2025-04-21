@@ -694,7 +694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4373423597481702177, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
       propertyPath: timeToShowHint
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4483197327187123605, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
       propertyPath: m_LocalScale.x
@@ -8659,7 +8659,7 @@ GameObject:
   - component: {fileID: 1764397682}
   - component: {fileID: 1764397684}
   - component: {fileID: 1764397683}
-  m_Layer: 10
+  m_Layer: 6
   m_Name: Ground (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
