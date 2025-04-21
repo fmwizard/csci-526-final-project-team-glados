@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using System.Collections.Generic;
 
 public class HintPopupManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class HintPopupManager : MonoBehaviour
 
     private GameObject currentHint;
     private Coroutine hintCoroutine;
+    private Dictionary<string,int> hintShowCounts = new Dictionary<string, int>();
 
     private void Awake()
     {
@@ -36,7 +38,7 @@ public class HintPopupManager : MonoBehaviour
         }
     }
 
-    public void ShowHint(Transform player, string hintText, Action onDismiss = null)
+    public void ShowHint(Transform player, string hintText, Action onDismiss = null, int maxTimesToShow = int.MaxValue)
     {
         
         if (popupCanvas == null || hintPrefab == null)
@@ -45,18 +47,32 @@ public class HintPopupManager : MonoBehaviour
             return;
         }
 
+        // Create a dictionary entry for text if it doesn't exist
+        if(!hintShowCounts.ContainsKey(hintText))
+        {
+            hintShowCounts[hintText] = 0;
+        }
+
+        // If it's over the max show limit, return and don't show hint
+        if(hintShowCounts[hintText] >= maxTimesToShow)
+        {
+            return;
+        }
+
+        hintShowCounts[hintText]++;
+
         // Check to see if there is an active hint already and destroy
         if(currentHint != null)
         {
             Destroy(currentHint);
-            //currentHint = null;
+            currentHint = null;
         }
         
         // Same for coroutine
         if(hintCoroutine != null)
         {
             StopCoroutine(hintCoroutine);
-            //currentHint = null;
+            currentHint = null;
         }
 
         // Instantiate UI Hint
@@ -116,8 +132,8 @@ public class HintPopupManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 Destroy(currentHint);
-                //currentHint = null;
-                //StopCoroutine(hintCoroutine);
+                currentHint = null;
+                StopCoroutine(hintCoroutine);
                 onDismiss?.Invoke(); // calls the input function if necessary
                 yield break;
             }

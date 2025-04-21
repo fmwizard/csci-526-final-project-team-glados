@@ -36,6 +36,10 @@ public class PortalGunCollectible : MonoBehaviour
             {
                 portalManager.CanUseCage = true;
             }
+            else if (SceneManager.GetActiveScene().name == "lvl2")
+            {
+                portalManager.CanUseMirror = true;
+            }
 
             // if (popupManager != null)
             // {

@@ -9,6 +9,7 @@ public class HintZone : MonoBehaviour
     public float timeToShowHint = 5f;
     public Vector3 hintOffset = new Vector3(0, 3f, 0);
     public string hintText = "Enter hint text in inspector";
+    public int maxTimesToShow = int.MaxValue;
 
     private float timeInside = 0f;
     private bool hintShown = false;
@@ -41,7 +42,7 @@ public class HintZone : MonoBehaviour
                 hintShown = true;
                 playerController = other.GetComponent<PlayerController>();
                 //ShowHint(other.transform);
-                HintPopupManager.Instance.ShowHint(other.transform, hintText, ResetHint);
+                HintPopupManager.Instance.ShowHint(other.transform, hintText, ResetHint, maxTimesToShow);
             }
 
         }
