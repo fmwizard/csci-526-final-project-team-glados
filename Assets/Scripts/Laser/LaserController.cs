@@ -114,10 +114,6 @@ public class LaserController : MonoBehaviour
                 
                 if (hit.collider.CompareTag("Hostility") || hit.collider.GetComponent<HeadTrigger>() != null)
                 {
-                    if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Companion"))
-                    {
-                        break;
-                    }
                     Enemy enemy = hit.collider.GetComponentInParent<Enemy>();
                     if(enemy != null)
                     {
