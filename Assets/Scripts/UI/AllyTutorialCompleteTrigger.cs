@@ -14,12 +14,10 @@ public class AllyTutorialComplete : MonoBehaviour
             }
 
             float completionTime = timer != null ? timer.GetTime() : 0f;
-            int deaths = PlayerStats.GetDeathCount(0);
-            int retries = PlayerStats.GetRetryCount(0);
 
             if (FirebaseManager.instance != null)
             {
-                FirebaseManager.instance.UpdateLevelCompletion(0, completionTime, deaths, retries);
+                FirebaseManager.instance.UpdateLevelCompletion(0, completionTime);
             }
 
             SceneManager.LoadScene("AllyTutorialComplete");

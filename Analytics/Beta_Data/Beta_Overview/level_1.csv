@@ -1,6 +1,6 @@
 player_id,level,attempt,completed,completionTime,deaths,retries
 03261705-6b8d-462b-adf6-2eae44157115,level_1,attempt_1,False,N/A,1,0
-0760de8f-ea31-4f7b-8273-166163bfece3,level_1,attempt_1,False,N/A,0,0
+0760de8f-ea31-4f7b-8273-166163bfece3,level_1,attempt_1,False,N/A,0,0 # No data for this run in details file
 0904d744-daba-4472-9804-cbcbfa685d1b,level_1,attempt_1,False,N/A,14,0
 0b5dd22c-101a-4742-aa36-dba8d4744463,level_1,attempt_1,False,N/A,1,0
 0e0cc751-482d-4291-90c6-bb27e777ae49,level_1,attempt_1,False,N/A,2,0
@@ -33,7 +33,7 @@ player_id,level,attempt,completed,completionTime,deaths,retries
 79729acc-c119-43b3-833d-ba406b9d20ef,level_1,attempt_1,False,N/A,10,0
 7c6ecf02-53bb-4f5d-b69a-32a96e85f926,level_1,attempt_1,True,170.9371,1,0
 82cac3df-c340-4d15-802a-40ab6a105037,level_1,attempt_1,False,N/A,0,0
-82cac3df-c340-4d15-802a-40ab6a105037,level_1,attempt_2,False,N/A,0,0
+82cac3df-c340-4d15-802a-40ab6a105037,level_1,attempt_2,False,N/A,0,1
 82cac3df-c340-4d15-802a-40ab6a105037,level_1,attempt_3,False,N/A,6,2
 82f381b4-eb44-458d-941a-47a6153e415d,level_1,attempt_1,False,N/A,1,0
 8401b849-e18b-4886-a7c8-bef3b2404aa8,level_1,attempt_1,False,N/A,2,0
@@ -43,8 +43,8 @@ player_id,level,attempt,completed,completionTime,deaths,retries
 842d26a1-0bfb-465a-9185-3c93c6b30154,level_1,attempt_1,False,N/A,2,0
 8e390ebb-9135-4e0b-8ed7-bf22428ed2cf,level_1,attempt_1,False,N/A,4,0
 90a23f39-1880-4539-80a5-b84ddfc9ff86,level_1,attempt_1,False,N/A,2,0
-94ca2958-0f4e-4e01-9f1f-ea459fa25270,level_1,attempt_1,False,N/A,0,0
-94ca2958-0f4e-4e01-9f1f-ea459fa25270,level_1,attempt_2,False,N/A,0,0
+94ca2958-0f4e-4e01-9f1f-ea459fa25270,level_1,attempt_1,False,N/A,0,0 # No data for this run in details file
+94ca2958-0f4e-4e01-9f1f-ea459fa25270,level_1,attempt_2,False,N/A,0,1
 94ca2958-0f4e-4e01-9f1f-ea459fa25270,level_1,attempt_3,False,N/A,2,2
 9acc0593-d3e9-46fb-b949-a97f5d3ced5b,level_1,attempt_1,False,N/A,2,0
 9cc70a20-4a0c-496d-9c04-5bf12e54a163,level_1,attempt_1,False,N/A,8,0
@@ -69,11 +69,11 @@ c90d513b-639a-48f0-b52b-0c47ec11fa6d,level_1,attempt_1,False,N/A,3,0
 cb06f846-a2ca-4221-9786-725f5d403b1b,level_1,attempt_1,False,N/A,3,0
 cb26ae86-daf5-44eb-81f3-23f7a8e5fb8a,level_1,attempt_1,False,N/A,3,0
 cd5a52de-c49b-4de6-9547-0f889294631a,level_1,attempt_1,False,N/A,0,0
-cd5a52de-c49b-4de6-9547-0f889294631a,level_1,attempt_2,False,N/A,0,0
+cd5a52de-c49b-4de6-9547-0f889294631a,level_1,attempt_2,False,N/A,0,1
 cd5a52de-c49b-4de6-9547-0f889294631a,level_1,attempt_3,False,N/A,6,2
 cd5a52de-c49b-4de6-9547-0f889294631a,level_1,attempt_4,False,N/A,3,3
-cd5a52de-c49b-4de6-9547-0f889294631a,level_1,attempt_5,False,N/A,0,0
-cd5a52de-c49b-4de6-9547-0f889294631a,level_1,attempt_6,False,N/A,0,0
+cd5a52de-c49b-4de6-9547-0f889294631a,level_1,attempt_5,False,N/A,0,4
+cd5a52de-c49b-4de6-9547-0f889294631a,level_1,attempt_6,False,N/A,0,5
 ce4cffce-9ec9-478c-bfca-83be6b518104,level_1,attempt_1,False,N/A,4,0
 ce4e7363-186a-4f0e-9244-cbee937149b6,level_1,attempt_1,False,N/A,0,0
 d02b89dc-c010-409b-b27d-d9f98994a74a,level_1,attempt_1,False,N/A,3,0
@@ -87,8 +87,8 @@ e01a5af1-21c0-4131-8bd7-47899fd63f9a,level_1,attempt_2,False,N/A,4,1
 e01a5af1-21c0-4131-8bd7-47899fd63f9a,level_1,attempt_3,False,N/A,0,0
 e01a5af1-21c0-4131-8bd7-47899fd63f9a,level_1,attempt_4,False,N/A,1,3
 e01a5af1-21c0-4131-8bd7-47899fd63f9a,level_1,attempt_5,False,N/A,3,4
-e01a5af1-21c0-4131-8bd7-47899fd63f9a,level_1,attempt_6,False,N/A,0,0
-e01a5af1-21c0-4131-8bd7-47899fd63f9a,level_1,attempt_7,False,N/A,0,0
+e01a5af1-21c0-4131-8bd7-47899fd63f9a,level_1,attempt_6,False,N/A,0,5
+e01a5af1-21c0-4131-8bd7-47899fd63f9a,level_1,attempt_7,False,N/A,0,6
 e01a5af1-21c0-4131-8bd7-47899fd63f9a,level_1,attempt_8,False,N/A,5,7
 e242a01d-5a5e-4eea-a4d0-52b2d657b945,level_1,attempt_1,True,87.30587,0,0
 e6237141-a99d-45c6-9c26-788ff55ef99f,level_1,attempt_1,False,N/A,1,0

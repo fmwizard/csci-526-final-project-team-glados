@@ -1,7 +1,7 @@
 player_id,level,attempt,completed,completionTime,deaths,retries
 03261705-6b8d-462b-adf6-2eae44157115,level_-1,attempt_1,True,79.76744,1,0
 0904d744-daba-4472-9804-cbcbfa685d1b,level_-1,attempt_1,True,127.3582,1,0
-0904d744-daba-4472-9804-cbcbfa685d1b,level_-1,attempt_2,False,N/A,0,0
+0904d744-daba-4472-9804-cbcbfa685d1b,level_-1,attempt_2,False,N/A,0,1 # No Data in Details
 0b5dd22c-101a-4742-aa36-dba8d4744463,level_-1,attempt_1,True,41.27131,1,0
 10364c51-503e-4b3b-b086-726f200c615d,level_-1,attempt_1,True,41.63678,0,0
 13d34a6b-36b9-46ed-bf7b-71eca720c6b4,level_-1,attempt_1,True,67.59644,0,0
@@ -16,7 +16,7 @@ player_id,level,attempt,completed,completionTime,deaths,retries
 3d91da83-23b3-4f59-91df-0e5ccf6017e7,level_-1,attempt_2,True,83.02499,0,1
 3e18f8f4-b654-4327-b729-5ae4b0c91edd,level_-1,attempt_1,True,50.61312,0,0
 3ea5c411-e6bf-466f-9682-a22ba29d44d6,level_-1,attempt_1,True,195.9696,1,0
-3f00619f-3ad6-4632-a65f-f2486cae75c8,level_-1,attempt_1,False,N/A,0,0
+3f00619f-3ad6-4632-a65f-f2486cae75c8,level_-1,attempt_1,False,N/A,0,0 # No Data in Details
 42452701-737e-4881-ba8a-236ccb0c6378,level_-1,attempt_1,True,74.13377,3,0
 42702413-622f-4cba-9c52-2f987a35d205,level_-1,attempt_1,False,N/A,1,0
 48432053-6565-4445-8385-c821e2f19c64,level_-1,attempt_1,False,N/A,3,0

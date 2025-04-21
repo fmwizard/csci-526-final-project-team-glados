@@ -7,7 +7,7 @@ public class FirebaseManager : MonoBehaviour
 {
     private string databaseURL = "https://portalmario-cs526-default-rtdb.firebaseio.com/";
     public static FirebaseManager instance;
-    public bool allowLoggingInEditor = false; 
+    public bool allowLoggingInEditor = true; 
 
     void Awake()
     {
@@ -92,9 +92,12 @@ public class FirebaseManager : MonoBehaviour
     {
         string playerID = PlayerStats.playerID;
         int attemptNumber = PlayerStats.GetRetryCount(levelNumber);
-        string path = $"testCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
+        string path = $"testGoldCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
-        string json = $"{{\"completionTime\": \"N/A\", \"deaths\": 0, \"retries\": 0, \"completed\": false}}";
+        int deaths = PlayerStats.GetDeathCount(levelNumber);
+        int retries = PlayerStats.GetRetryCount(levelNumber) - 1;
+
+        string json = $"{{\"completionTime\": \"{Mathf.RoundToInt(Time.timeSinceLevelLoad)}\", \"deaths\": {deaths}, \"retries\": {retries}, \"completed\": false}}";
         SendDatabyPUT(path, json);
     }
 
@@ -102,12 +105,12 @@ public class FirebaseManager : MonoBehaviour
     {
         string playerID = PlayerStats.playerID;
         int attemptNumber = PlayerStats.GetRetryCount(levelNumber);
-        string path = $"testCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
+        string path = $"testGoldCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
         int deaths = PlayerStats.GetDeathCount(levelNumber);
         int retries = PlayerStats.GetRetryCount(levelNumber) - 1;
 
-        string json = $"{{\"completionTime\": \"N/A\", \"deaths\": {deaths}, \"retries\": {retries}, \"completed\": false}}";
+        string json = $"{{\"completionTime\": \"{Mathf.RoundToInt(Time.timeSinceLevelLoad)}\", \"deaths\": {deaths}, \"retries\": {retries}, \"completed\": false}}";
         SendDatabyPUT(path, json);
     }
 
@@ -115,25 +118,25 @@ public class FirebaseManager : MonoBehaviour
     {
         string playerID = PlayerStats.playerID;
         int attemptNumber = PlayerStats.GetRetryCount(levelNumber);
-        string path = $"testCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
+        string path = $"testGoldCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
         int deaths = PlayerStats.GetDeathCount(levelNumber);
         int retries = PlayerStats.GetRetryCount(levelNumber) - 1;
 
-        string json = $"{{\"completionTime\": \"N/A\", \"deaths\": {deaths}, \"retries\": {retries}, \"completed\": false}}";
+        string json = $"{{\"completionTime\": \"{Mathf.RoundToInt(Time.timeSinceLevelLoad)}\", \"deaths\": {deaths}, \"retries\": {retries}, \"completed\": false}}";
         SendDatabyPUT(path, json);
     }
 
-    public void UpdateLevelCompletion(int levelNumber, float completionTime, int deaths, int retries)
+    public void UpdateLevelCompletion(int levelNumber, float completionTime)
     {
         string playerID = PlayerStats.playerID;
         int attemptNumber = PlayerStats.GetRetryCount(levelNumber);
-        string path = $"testCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
+        string path = $"testGoldCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
-        int deathCount = PlayerStats.GetDeathCount(levelNumber);
-        int retryCount = PlayerStats.GetRetryCount(levelNumber) - 1;
+        int deaths = PlayerStats.GetDeathCount(levelNumber);
+        int retries = PlayerStats.GetRetryCount(levelNumber) - 1;
 
-        string json = $"{{\"completionTime\": \"{completionTime}\", \"deaths\": {deathCount}, \"retries\": {retryCount}, \"completed\": true}}";
+        string json = $"{{\"completionTime\": \"{Mathf.RoundToInt(completionTime)}\", \"deaths\": {deaths}, \"retries\": {retries}, \"completed\": true}}";
         SendDatabyPUT(path, json);
     }
 
@@ -141,7 +144,7 @@ public class FirebaseManager : MonoBehaviour
     {
         string playerID = PlayerStats.playerID;
         int attemptNumber = PlayerStats.GetRetryCount(levelNumber);
-        string path = $"test/{playerID}/level_{levelNumber}/attempt_{attemptNumber}/{key}";
+        string path = $"testGold/{playerID}/level_{levelNumber}/attempt_{attemptNumber}/{key}";
         string json = JsonUtility.ToJson(data);
         SendDatabyPOST(path, json);
 }

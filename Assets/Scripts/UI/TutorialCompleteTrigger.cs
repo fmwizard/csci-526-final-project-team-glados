@@ -14,12 +14,10 @@ public class TutorialCompleteTrigger : MonoBehaviour
             }
 
             float completionTime = timer != null ? timer.GetTime() : 0f;
-            int deaths = PlayerStats.GetDeathCount(-1);
-            int retries = PlayerStats.GetRetryCount(-1);
 
             if (FirebaseManager.instance != null)
             {
-                FirebaseManager.instance.UpdateLevelCompletion(-1, completionTime, deaths, retries);
+                FirebaseManager.instance.UpdateLevelCompletion(-1, completionTime);
             }
 
             SceneManager.LoadScene("TutorialComplete");
