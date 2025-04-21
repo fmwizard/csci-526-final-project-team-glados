@@ -8,7 +8,7 @@ public class PlayerRespawn : MonoBehaviour
     [SerializeField] private float fallThreshold = -10f;
     private Vector2 respawnPosition;
     private Vector2[] checkpoints;
-    private GameObject[] flags;
+    private GameObject[] checkpointAreas;
     private int nextCheckpointIndex = 0;
     private int frameCounter = 0;
     private int CheckpointUpdateInterval = 5;
@@ -22,27 +22,26 @@ public class PlayerRespawn : MonoBehaviour
         respawnPosition = transform.position;
         if (SceneManager.GetActiveScene().name == "tutorial")
         {
-            checkpoints = new Vector2[] { new Vector2(4f, -2f), new Vector2(14f, -2f), new Vector2(45f, -2f), new Vector2(72f, -2f) };
+            checkpoints = new Vector2[] { new Vector2(14f, -1.5f), new Vector2(45.5f, -1.5f), new Vector2(72f, -1.5f) };
         }
         else if (SceneManager.GetActiveScene().name == "allyTutorial")
         {
-            checkpoints = new Vector2[] { new Vector2(33f, -2f), new Vector2(60f, -2f) };
+            checkpoints = new Vector2[] { new Vector2(33f, -1.5f), new Vector2(60f, -1.5f) };
         }
         else if (SceneManager.GetActiveScene().name == "lvl1")
         {
-            checkpoints = new Vector2[] { new Vector2(4f, -2f), new Vector2(18f, 2f), new Vector2(43f, -2f) };
+            checkpoints = new Vector2[] { new Vector2(18f, 2.3f), new Vector2(43f, -1.5f) };
         }
         else if (SceneManager.GetActiveScene().name == "lvl2")
         {
-            checkpoints = new Vector2[] { new Vector2(8f, -2f), new Vector2(40f, -2f), new Vector2(42f, 7.7f), new Vector2(11f, 7.7f) };
+            checkpoints = new Vector2[] { new Vector2(8f, -1.5f), new Vector2(40f, -2.5f), new Vector2(42f, 8.7f), new Vector2(11f, 8.7f) };
         }
 
-        GameObject flagPrefab = Resources.Load<GameObject>("Sprites/Flag");
-        flags = new GameObject[checkpoints.Length];
+        GameObject checkpointPrefab = Resources.Load<GameObject>("Sprites/CheckpointArea");
+        checkpointAreas = new GameObject[checkpoints.Length];
         for (int i = 0; i < checkpoints.Length; i++)
         {
-            flags[i] = Instantiate(flagPrefab, checkpoints[i], Quaternion.identity);
-            Debug.Log("Actual flag world position: " + flags[i].transform.position);
+            checkpointAreas[i] = Instantiate(checkpointPrefab, checkpoints[i], Quaternion.identity);
         }
     }
 
@@ -103,10 +102,26 @@ public class PlayerRespawn : MonoBehaviour
         Vector2 nextCheckpoint = checkpoints[nextCheckpointIndex];
         int playerFloor = transform.position.y >= 7f ? 1 : 0;
         int nextCheckpointFloor = nextCheckpoint.y >= 7f ? 1 : 0;
-        if (Mathf.Abs(transform.position.x - nextCheckpoint.x) < 0.5f && playerFloor == nextCheckpointFloor)
+        bool reachCheckpoint = false;
+        if (nextCheckpointFloor == 0)
+        {
+            if (transform.position.x - nextCheckpoint.x > 0 && playerFloor == nextCheckpointFloor)
+            {
+                reachCheckpoint = true;
+            }
+        }
+        else
+        {
+            if (transform.position.x - nextCheckpoint.x < 0 && playerFloor == nextCheckpointFloor)
+            {
+                reachCheckpoint = true;
+            }
+        }
+
+        if (reachCheckpoint)
         {
             respawnPosition = nextCheckpoint;
-            Destroy(flags[nextCheckpointIndex]);
+            Destroy(checkpointAreas[nextCheckpointIndex]);
             nextCheckpointIndex++;
         }
     }
@@ -157,29 +172,52 @@ public class PlayerRespawn : MonoBehaviour
         }
 
 
-        EnemyController enemyController = FindObjectOfType<EnemyController>(true);
-        if (enemyController != null)
-        {
-            // Enemy enemy = enemyController.GetComponent<Enemy>();
-            // enemy.gameObject.SetActive(true);
-            // enemy.TakeDamage(9999f);
+        // EnemyController enemyController = FindObjectOfType<EnemyController>(true);
+        // if (enemyController != null)
+        // {
+        //     // Enemy enemy = enemyController.GetComponent<Enemy>();
+        //     // enemy.gameObject.SetActive(true);
+        //     // enemy.TakeDamage(9999f);
 
-            // return to cage
-            GameObject captured = portalManager.GetCageCapturedObject();
-            if (captured != null)
-            {
-                portalManager.SetCageCapturedObject(captured);
-                Destroy(captured);
-                portalManager.GetCageCapturedObject().SetActive(false);
-                portalManager.GetActiveCage().SetIsCaptured(true);
-            }
-        }
+        //     // return to cage
+        //     GameObject captured = portalManager.GetCageCapturedObject();
+        //     if (captured != null)
+        //     {
+        //         portalManager.SetCageCapturedObject(captured);
+        //         Destroy(captured);
+        //         portalManager.GetCageCapturedObject().SetActive(false);
+        //         portalManager.GetActiveCage().SetIsCaptured(true);
+        //     }
+        // }
+        // Instead of destroying the ally, just hide it and reset the cage
+
         
+        // Cage cage = portalManager.GetActiveCage();
+        // if (cage != null)
+        // {
+        //     cage.gameObject.SetActive(false);
+        // }
+
         Cage cage = portalManager.GetActiveCage();
+        if (cage != null && cage.capturedObject != null)
+        {
+            // Detach from world, re-parent under the cage
+            cage.capturedObject.transform.SetParent(cage.transform);
+            cage.capturedObject.transform.localPosition = Vector3.zero;
+
+            // Deactivate it so it's “in the cage” again
+            cage.capturedObject.SetActive(false);
+
+            // Mark the cage as holding something
+            cage.SetIsCaptured(true);
+        }
+
+        // Finally, hide the cage itself
         if (cage != null)
         {
             cage.gameObject.SetActive(false);
         }
+
 
         MainCamera cameraScript = Camera.main.GetComponent<MainCamera>();
         if (cameraScript != null)
