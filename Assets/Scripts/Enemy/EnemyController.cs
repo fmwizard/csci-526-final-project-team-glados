@@ -36,7 +36,8 @@ public class EnemyController : MonoBehaviour
         {
             groundCheck = transform;
         }
-        groundLayer = LayerMask.GetMask("Ground");
+        // set groundlayer with two layers
+        groundLayer = LayerMask.GetMask("Ground", "Default");
     }
 
     private void Update()
