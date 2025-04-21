@@ -105,6 +105,8 @@ public class PortalManager : MonoBehaviour
         RaycastHit2D hit = GetGunRaycastHit(portalPlacementMask);
         if (hit.collider != null)
         {
+            if (!IsValidCagePosition(hit.point))
+                return;
             if (hit.transform.CompareTag("NoPortalSurface"))
                 return;
 
@@ -132,6 +134,19 @@ public class PortalManager : MonoBehaviour
             activeCage.SetActive(true);
             
         }
+    }
+
+    private bool IsValidCagePosition(Vector2 position)
+    {
+
+        // Check if the cage is within main camera's view
+        Vector3 viewportPoint = mainCamera.WorldToViewportPoint(position);
+        if (viewportPoint.x < 0 || viewportPoint.x > 1 || viewportPoint.y < 0 || viewportPoint.y > 1 || viewportPoint.z < 0)
+        {
+            return false;
+        }
+
+        return true;
     }
     private void CreateMirror()
     {
