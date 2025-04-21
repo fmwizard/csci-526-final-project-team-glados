@@ -127,7 +127,7 @@ public class LaserController : MonoBehaviour
                 }
 
                 // just continue if we hit a portal
-                if (hit.collider.CompareTag("Portal") || hit.collider.CompareTag("Cage"))
+                if (hit.collider.CompareTag("Portal") || hit.collider.CompareTag("Cage") || hit.collider.CompareTag("HintZone"))
                 {
                     start = hit.point + direction * 0.05f; // Offset to prevent self-hits
                     remainingDistance -= hit.distance;

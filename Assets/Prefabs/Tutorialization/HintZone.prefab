@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4373423597481702177}
   m_Layer: 0
   m_Name: HintZone
-  m_TagString: Untagged
+  m_TagString: HintZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,3 +94,4 @@ MonoBehaviour:
   timeToShowHint: 10
   hintOffset: {x: 0, y: 3, z: 0}
   hintText: Enter hint here
+  maxTimesToShow: 2147483647
