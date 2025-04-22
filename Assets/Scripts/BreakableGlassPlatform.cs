@@ -15,10 +15,14 @@ public class BreakableGlassPlatform : MonoBehaviour
     private Vector3 originalPosition;
     private Quaternion originalRotation;
 
+    private PortalManager portalManager;
+
     void Awake()
     {
         originalPosition = transform.position;
         originalRotation = transform.rotation;
+
+        portalManager = FindObjectOfType<PortalManager>();
     }
 
     void Start()
@@ -51,6 +55,34 @@ public class BreakableGlassPlatform : MonoBehaviour
         platformCollider.enabled = false;
         isBroken = true;
         isBreaking = false;
+
+        // yield return new WaitForSeconds(0.05f); // Let objects settle
+
+        // Collider2D[] overlapping = Physics2D.OverlapBoxAll(transform.position, transform.localScale, 0f);
+        // foreach (var col in overlapping)
+        // {
+        //     bool isTagged = col.CompareTag("Portal") || col.CompareTag("Mirror") || col.CompareTag("Cage");
+        //     bool hasPortal = col.GetComponent<Portal>() != null;
+        //     bool isMirrorLayer = col.gameObject.layer == LayerMask.NameToLayer("Mirror");
+        //     bool isTrapLayer = col.gameObject.layer == LayerMask.NameToLayer("Trap");
+
+        //     if (isTagged || hasPortal || isMirrorLayer || isTrapLayer)
+        //     {
+        //         Destroy(col.gameObject);
+        //     }
+        // }
+        if (portalManager != null)
+        {
+            portalManager.RemovePortals();
+            portalManager.RemoveMirror();
+
+            var cage = portalManager.GetActiveCage();
+            if (cage != null)
+            {
+                Destroy(cage.gameObject);
+            }
+        }
+        
     }
 
     public void ResetPlatform()

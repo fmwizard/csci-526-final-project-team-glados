@@ -162,6 +162,9 @@ public class PortalManager : MonoBehaviour
             if (hit.transform.CompareTag("NoPortalSurface"))
                 return;
 
+            if (hit.transform.CompareTag("Trap") || hit.transform.gameObject.layer == LayerMask.NameToLayer("Trap"))
+                return;
+
             // Check if we can place a mirror here
             if (!IsValidMirrorPosition(hit.point))
                 return;
@@ -202,7 +205,8 @@ public class PortalManager : MonoBehaviour
         return true;
     }
 
-    private void RemoveMirror()
+    // private void RemoveMirror()
+    public void RemoveMirror()
     {
         if (activeMirror != null)
         {
