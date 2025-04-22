@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using UnityEditor;
 
@@ -26,3 +27,5 @@ public class FindMissingScripts : MonoBehaviour
         Debug.Log($"Search complete! Found {missingCount} GameObjects with missing scripts.");
     }
 }
+
+#endif
