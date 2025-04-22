@@ -1,12 +1,13 @@
-// Place this in Editor folder (e.g., Assets/Editor/ForceReserialize.cs)
+#if UNITY_EDITOR
 using UnityEditor;
+using UnityEngine;
 
-public class ForceReserialize
+public class ForceResearialize
 {
-    [MenuItem("Tools/Force Reserialize Scene")]
-    static void Reserialize()
+    [MenuItem("Tools/Force Reserialize All Scenes")]
+    public static void Reserialize()
     {
-        AssetDatabase.ForceReserializeAssets(new[] { "Assets/Scenes/allyTutorial.unity" });
-        UnityEngine.Debug.Log("Reserialization complete.");
+        // Your code here
     }
 }
+#endif
