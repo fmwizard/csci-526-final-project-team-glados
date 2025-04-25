@@ -72,7 +72,7 @@ public class PlayerManager : MonoBehaviour
             {
                 // FOR OLD VERSION OF POPUP
                 // popupText.SetActive(true);
-                HintPopupManager.Instance.ShowHint(player.transform, "Press Left Shift Button to switch control between player and ally.");
+                HintPopupManager.Instance.ShowHint(player.transform, "Left Shift = switch control between player and ally");
                 hasShownPopupText = true;
             }
 

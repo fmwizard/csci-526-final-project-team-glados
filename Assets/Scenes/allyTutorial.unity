@@ -1057,9 +1057,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: HowToCaptureZone
       objectReference: {fileID: 0}
+    - target: {fileID: 1813436621033439631, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4373423597481702177, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
       propertyPath: hintText
-      value: Press "C" below the enemy to capture
+      value: C = Capture
       objectReference: {fileID: 0}
     - target: {fileID: 4373423597481702177, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
       propertyPath: timeToShowHint
@@ -4943,9 +4947,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: ReleaseAllyZone
       objectReference: {fileID: 0}
+    - target: {fileID: 1813436621033439631, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4373423597481702177, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
       propertyPath: hintText
-      value: Press C again to release as your ally.
+      value: C = Release
       objectReference: {fileID: 0}
     - target: {fileID: 4373423597481702177, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
       propertyPath: timeToShowHint

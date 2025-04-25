@@ -129,7 +129,7 @@ public class HintPopupManager : MonoBehaviour
             hintRect.anchoredPosition = anchoredPos;
 
             // Wait until space is pressed
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.X))
             {
                 Destroy(currentHint);
                 currentHint = null;
