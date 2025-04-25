@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 11461015}
   - component: {fileID: 11461014}
   - component: {fileID: 11461013}
+  - component: {fileID: 11461020}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -282,7 +283,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuCanvas: {fileID: 1308800247}
-  controlsCountText: {fileID: 0}
 --- !u!114 &11461015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,6 +405,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11461011}
   m_CullTransparentMesh: 1
+--- !u!114 &11461020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11461011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &41728153
 GameObject:
   m_ObjectHideFlags: 0
