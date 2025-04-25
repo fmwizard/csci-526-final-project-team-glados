@@ -2,6 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
+from sklearn.cluster import KMeans
+from scipy.stats import ttest_ind
 
 file_paths = {
     "-1": "Analytics/Beta_Data/Beta_Overview/level_-1.csv",
@@ -42,6 +44,9 @@ df_all["completionTime"] = pd.to_numeric(df_all["completionTime"], errors='coerc
 df_all["completed"] = df_all["completed"].astype(bool)
 df_all["level_name"] = pd.Categorical(df_all["level_name"], categories=level_order, ordered=True)
 
+df_all["deaths"] = pd.to_numeric(df_all["deaths"], errors="coerce")
+df_all["retries"] = pd.to_numeric(df_all["retries"], errors="coerce")
+
 avg_deaths = df_all.groupby("level_name")["deaths"].mean().reindex(level_order)
 completion_rate = (
     df_all[df_all["completed"]].groupby("level_name")["player_id"].nunique() /
@@ -49,9 +54,9 @@ completion_rate = (
 ).reindex(level_order)
 
 fig, ax1 = plt.subplots(figsize=(10, 6))
-bar = ax1.bar(avg_deaths.index, avg_deaths.values, color='lightblue', label='Avg Deaths')
+ax1.bar(avg_deaths.index, avg_deaths.values, color='lightblue', label='Avg Deaths')
 ax2 = ax1.twinx()
-line = ax2.plot(completion_rate.index, completion_rate.values * 100, color='orange', marker='o', label='Completion Rate (%)')
+ax2.plot(completion_rate.index, completion_rate.values * 100, color='orange', marker='o', label='Completion Rate (%)')
 ax1.set_ylabel('Avg Deaths')
 ax2.set_ylabel('Completion Rate (%)')
 plt.title("Average Deaths & Completion Rate by Level")
@@ -93,7 +98,7 @@ plt.show()
 fig, axes = plt.subplots(2, 2, figsize=(12, 8))
 axes = axes.flatten()
 max_retry = df_all[df_all['completed']]["retries"].max()
-bins = list(range(0, max_retry + 2))
+bins = list(range(0, int(max_retry) + 2))
 
 for idx, level_name in enumerate(level_order):
     level_data = df_all[(df_all['completed']) & (df_all['level_name'] == level_name)]
@@ -117,10 +122,10 @@ plt.tight_layout()
 plt.show()
 
 expected_times = {
-    "Basic Tutorial": 40,
-    "Ally Tutorial": 50,
-    "First Level": 80,
-    "Second Level": 120
+    "Basic Tutorial": 60,
+    "Ally Tutorial": 80,
+    "First Level": 180,
+    "Second Level": 240
 }
 avg_times = completed_only.groupby("level_name")["completionTime"].mean().to_dict()
 
@@ -150,3 +155,53 @@ for i, level in enumerate(level_order):
 
 plt.tight_layout()
 plt.show()
+
+features = df_all.dropna(subset=["deaths", "retries", "completionTime"])[['deaths', 'retries', 'completionTime']]
+kmeans = KMeans(n_clusters=3, random_state=42).fit(features)
+df_all.loc[features.index, 'player_type'] = kmeans.labels_
+
+plt.figure(figsize=(10, 6))
+sns.scatterplot(data=df_all.loc[features.index], x="retries", y="completionTime", hue="player_type", palette="Set2")
+plt.title("Player Archetypes - Completion Time vs Retries")
+plt.xlabel("Retries")
+plt.ylabel("Completion Time (s)")
+plt.legend(title="Player Type")
+plt.tight_layout()
+plt.show()
+
+heatmap_data = df_all[df_all['completed']].pivot_table(index='retries', columns='level_name', values='completionTime', aggfunc='mean')
+plt.figure(figsize=(12, 8))
+sns.heatmap(heatmap_data, cmap='coolwarm', annot=True, fmt=".1f", linewidths=.5)
+plt.title("Average Completion Time by Retries per Level")
+plt.xlabel("Level")
+plt.ylabel("Retries")
+plt.tight_layout()
+plt.show()
+
+completed = df_all[df_all["completed"] & df_all["completionTime"].notna()]
+completed["expected"] = completed["level_name"].map(expected_times).astype(float)
+outliers = completed[completed["completionTime"] > 2 * completed["expected"]]
+
+if not outliers.empty:
+    table_data = outliers[["player_id", "level_name", "completionTime", "expected"]].copy()
+    table_data["completionTime"] = table_data["completionTime"].round(2)
+    table_data["expected"] = table_data["expected"].round(2)
+    table_data.columns = ["Player ID", "Level", "Completion Time", "Expected Time"]
+
+    fig, ax = plt.subplots(figsize=(12, len(table_data) * 0.3 + 1))
+    ax.axis('off')
+    ax.axis('tight')
+
+    table = ax.table(
+        cellText=table_data.values,
+        colLabels=table_data.columns,
+        cellLoc='center',
+        loc='center'
+    )
+    table.auto_set_font_size(False)
+    table.set_fontsize(9)
+    table.scale(1, 1.5)
+
+    plt.title("Outliers: Players Taking More Than 2x Expected Time", fontsize=14, pad=20)
+    plt.tight_layout()
+    plt.show()

@@ -64,6 +64,8 @@ def process_data(df: pd.DataFrame):
         else:
             df.loc[group.index, 'acceleration'] = 'Normal'
 
+    df['portal_combo'] = df.apply(lambda row: f"{row['fromX']},{row['fromY']}->{row['toX']},{row['toY']}", axis=1)
+    df['repetitive'] = df.groupby(['session', 'attempt', 'portal_combo'])['fromX'].transform('count') > 1
     return df
 
 def plot_portal_usage(df: pd.DataFrame):
@@ -94,10 +96,13 @@ def plot_teleportation_types_by_usage(df: pd.DataFrame):
 
     for i, level in enumerate(teleportation_percent.index):
         bottom = 0
-        for object_type in teleportation_percent.columns:
-            height = teleportation_percent.loc[level, object_type]
-            if height > 2:
-                ax.text(i, bottom + height / 2, f"{height:.1f}%", ha='center', va='center', fontsize=9)
+        for accel_type in teleportation_percent.columns:
+            height = teleportation_percent.loc[level, accel_type]
+            if height > 0:
+                if height < 10:
+                    ax.text(i, bottom + height + 2, f"{int(height)}", ha='center', va='bottom', fontsize=9)
+                else:
+                    ax.text(i, bottom + height / 2, f"{int(height)}", ha='center', va='center', fontsize=9)
             bottom += height
 
     plt.tight_layout()
@@ -120,7 +125,10 @@ def plot_teleportation_types_by_level_with_acceleration(df: pd.DataFrame):
         for accel_type in teleportation_counts.columns:
             height = teleportation_counts.loc[level, accel_type]
             if height > 0:
-                ax.text(i, bottom + height / 2, f"{int(height)}", ha='center', va='center', fontsize=10)
+                if height < 10:
+                    ax.text(i, bottom + height + 2, f"{int(height)}", ha='center', va='bottom', fontsize=9)
+                else:
+                    ax.text(i, bottom + height / 2, f"{int(height)}", ha='center', va='center', fontsize=9)
             bottom += height
 
     plt.tight_layout()
@@ -130,26 +138,47 @@ def plot_portal_heatmap(df: pd.DataFrame, level: int, img_path: str, extent: lis
     df_level = df[df["level"] == level]
     img = mpimg.imread(img_path)
 
-    fig, ax = plt.subplots(figsize=(14, 6))
-    ax.imshow(img, extent=extent, aspect='auto')
+    fig, ax = plt.subplots(figsize=(24, 12))
+    ax.imshow(img, extent=extent, aspect='auto', alpha=1)
 
-    sns.kdeplot(
-        x=df_level['fromX'],
-        y=df_level['fromY'],
-        ax=ax,
-        cmap="Blues",
-        fill=True,
-        bw_adjust=0.5,
-        thresh=0.2,
-        levels=15
-    )
-
-    cbar = plt.colorbar(ax.collections[0], ax=ax, shrink=0.75, pad=0.02)
-    cbar.set_label("Portal Entry Density")
+    hb = ax.hexbin(df_level['fromX'], df_level['fromY'], gridsize=30, cmap='magma', extent=extent, alpha=0.5, edgecolors='none', linewidth=0.1)
+    cbar = plt.colorbar(hb, ax=ax, pad=0.02)
+    cbar.set_label("Portal Entry Count")
 
     ax.set_title(f"Portal Entry Heatmap – {level_name_map[level]}")
     ax.set_xlim(extent[0], extent[1])
     ax.set_ylim(extent[2], extent[3])
+    plt.tight_layout()
+    plt.show()
+
+def plot_stuck_portals_summary(df: pd.DataFrame):
+    stuck_df = df[df['repetitive']]
+    stuck_counts = stuck_df.groupby("level_name")["portal_combo"].count()
+    total_counts = df.groupby("level_name")["portal_combo"].count()
+
+    ratio_df = pd.DataFrame({
+        "Stuck Uses": stuck_counts,
+        "Not Stuck Uses": total_counts - stuck_counts
+    }).fillna(0).reindex(level_order)
+
+    ratio_df_percent = ratio_df.div(ratio_df.sum(axis=1), axis=0) * 100
+
+    ax = ratio_df.plot(kind='bar', stacked=True, figsize=(10, 6), color=["firebrick", "royalblue"])
+    plt.title("Stuck vs Total Portal Usages per Level")
+    plt.ylabel("Count")
+    plt.xlabel("Level")
+    plt.xticks(rotation=45)
+    plt.legend(loc='upper right')
+
+    for i, level in enumerate(ratio_df.index):
+        bottom = 0
+        for column in ratio_df.columns:
+            count = ratio_df.loc[level, column]
+            percent = ratio_df_percent.loc[level, column]
+            if percent > 1: 
+                ax.text(i, bottom + count / 2, f"{percent:.1f}%", ha='center', va='center', fontsize=9, color='white')
+            bottom += count
+
     plt.tight_layout()
     plt.show()
 
@@ -162,7 +191,9 @@ if __name__ == "__main__":
     plot_teleportation_types_by_usage(df)
     plot_teleportation_types_by_level_with_acceleration(df)
 
-    plot_portal_heatmap(df, -1, 'Analytics/Metrics/LevelDesignSS/tutorial_screenshot.png', extent=[-11, 97, -6, 7])
+    plot_portal_heatmap(df, -1, 'Analytics/Metrics/LevelDesignSS/tutorial_screenshot.png', extent=[-11, 97, -7, 8])
     plot_portal_heatmap(df, 0, 'Analytics/Metrics/LevelDesignSS/allyTutorial_screenshot.png', extent=[-11, 87, -6, 5])
-    plot_portal_heatmap(df, 1, 'Analytics/Metrics/LevelDesignSS/lvl1_screenshot.png', extent=[-11, 91, -6, 7])
+    plot_portal_heatmap(df, 1, 'Analytics/Metrics/LevelDesignSS/lvl1_screenshot.png', extent=[-11, 91, -6.3, 7.3])
     plot_portal_heatmap(df, 2, 'Analytics/Metrics/LevelDesignSS/lvl2_screenshot.png', extent=[-18, 56, -6, 18])
+
+    plot_stuck_portals_summary(df)
