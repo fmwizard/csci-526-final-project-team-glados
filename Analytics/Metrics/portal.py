@@ -65,7 +65,8 @@ def process_data(df: pd.DataFrame):
             df.loc[group.index, 'acceleration'] = 'Normal'
 
     df['portal_combo'] = df.apply(lambda row: f"{row['fromX']},{row['fromY']}->{row['toX']},{row['toY']}", axis=1)
-    df['repetitive'] = df.groupby(['session', 'attempt', 'portal_combo'])['fromX'].transform('count') > 1
+    portal_counts = df.groupby(['session', 'attempt', 'portal_combo'])['fromX'].transform('count')
+    df['repetitive'] = (portal_counts > 1) & (df.apply(lambda row: abs(row['toX'] - row['fromX']) > 1, axis=1))
     return df
 
 def plot_portal_usage(df: pd.DataFrame):
