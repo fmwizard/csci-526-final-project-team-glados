@@ -9,6 +9,9 @@ public class PortalManager : MonoBehaviour
     [SerializeField] private GameObject mirrorPrefab;
     [SerializeField] private GameObject cagePrefab;
     [SerializeField] private LayerMask portalPlacementMask;
+
+    [SerializeField] private LayerMask portalClickMask;  
+
     [SerializeField] private LayerMask mirrorPlacementMask;
     [SerializeField] private float minPortalDistance = 1f;
 
@@ -254,61 +257,77 @@ public class PortalManager : MonoBehaviour
     //         }
     //     }
     // }
+
     private void CreatePortal(PortalType type)
     {
         if (Time.timeScale == 0f) return;
 
-        // --- STEP 1: see if we clicked on a portal collider at all ---
-        Vector2 start = player.intermediatePosition;
-        Vector2 end   = player.endingPosition;
-        Vector2 dir   = (end - start).normalized;
-        float   dist  = Vector2.Distance(start, end);
+        // --- A) Mouse → World on the correct Z‐plane ---
+        Vector3 screenPos = Input.mousePosition;
+        screenPos.z = -mainCamera.transform.position.z;
+        Vector2 mouseWorld = mainCamera.ScreenToWorldPoint(screenPos);
 
-        // cast against everything in the scene
-        RaycastHit2D[] allHits = Physics2D.RaycastAll(start, dir, dist);
-        foreach (var h in allHits)
+        // --- B) Exact collider click test ---
+        Collider2D click = Physics2D.OverlapPoint(mouseWorld, portalClickMask);
+        if (click != null)
         {
-            Portal p = h.collider.GetComponent<Portal>();
-            if (p != null)
+            Portal p = click.GetComponent<Portal>();
+            if (p != null && p.Type == type)
             {
-                // you clicked on a portal—destroy it and unlink any pair
-                activePortals.Remove(p);
-                Destroy(p.gameObject);
-                if (activePortals.Count == 1)
-                    activePortals[0].LinkedPortal = null;
+                RemovePortalOfType(type);
                 return;
             }
         }
 
-        // --- STEP 2: otherwise fall back to your regular placement logic ---
-        RaycastHit2D hit = Physics2D.Raycast(start, dir, dist, portalPlacementMask);
-        if (!hit.collider) return;
+        // --- C) Fallback: small‐radius distance check in case collider is tiny ---
+        const float clickRadius = 0.3f;
+        foreach (Portal p in activePortals)
+        {
+            if (p.Type == type &&
+                Vector2.Distance(mouseWorld, p.transform.position) <= clickRadius)
+            {
+                RemovePortalOfType(type);
+                return;
+            }
+        }
 
-        // forbid these surfaces
-        if (hit.transform.CompareTag("NoPortalSurface") ||
-            hit.transform.CompareTag("Trap") ||
-            hit.transform.gameObject.layer == LayerMask.NameToLayer("Trap"))
+        // --- D) (unchanged) your normal surface‐placement & instantiation logic below ---
+        RaycastHit2D hit = GetGunRaycastHit(portalPlacementMask);
+        if (hit.collider == null) return;
+        if (hit.transform.CompareTag("NoPortalSurface")) return;
+        if (hit.transform.CompareTag("Trap") ||
+            hit.transform.gameObject.layer == LayerMask.NameToLayer("Trap")) return;
+
+        RaycastHit2D belowHit = Physics2D.Raycast(
+            hit.point + Vector2.down * 0.1f,
+            Vector2.down, 0.2f,
+            portalPlacementMask
+        );
+        if (belowHit.collider != null &&
+            (belowHit.collider.CompareTag("Trap") ||
+            belowHit.collider.gameObject.layer == LayerMask.NameToLayer("Trap")))
             return;
 
-        // forbid trap just below
-        var below = Physics2D.Raycast(hit.point + Vector2.down * 0.1f, Vector2.down, 0.2f, portalPlacementMask);
-        if (below.collider != null) return;
+        if (!IsValidPortalPosition(hit.point)) return;
 
-        // replace any same-type portal
         RemovePortalOfType(type);
 
-        // spawn the new one
         Vector2 normal = hit.normal;
-        float   rot    = Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg + 90f;
-        GameObject obj = Instantiate(portalPrefab, hit.point, Quaternion.Euler(0,0,rot));
-        var portal = obj.GetComponent<Portal>();
+        float portalRotation = Mathf.Atan2(normal.y, normal.x) * Mathf.Rad2Deg + 90f;
+        GameObject obj = Instantiate(
+            portalPrefab,
+            hit.point,
+            Quaternion.Euler(0, 0, portalRotation)
+        );
+        Portal portal = obj.GetComponent<Portal>();
         portal.Initialize(type, normal);
         activePortals.Add(portal);
 
-        // link a pair when you have two
         if (activePortals.Count == 2)
             LinkPortals();
     }
+
+
 
 
 
