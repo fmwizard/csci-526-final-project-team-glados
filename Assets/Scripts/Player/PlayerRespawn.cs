@@ -58,7 +58,7 @@ public class PlayerRespawn : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         // Debug.Log("Collision detected with: " + other.gameObject.name);
-        if (other.CompareTag("Trap")) 
+        if (other.CompareTag("Trap") || other.CompareTag("Laser")) 
         {
             LogDeath("Trap");
             Respawn();

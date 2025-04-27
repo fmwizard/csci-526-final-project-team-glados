@@ -405,8 +405,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6248625744603253437, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
+      propertyPath: boxLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248625744603253437, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
       propertyPath: oscillationAngle
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248625744603253437, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
+      propertyPath: trapLayer.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248625744603253437, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248625744603253437, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7220727267893783284, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
       propertyPath: m_Name
@@ -4871,8 +4887,24 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6248625744603253437, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
+      propertyPath: boxLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248625744603253437, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
       propertyPath: oscillationAngle
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248625744603253437, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
+      propertyPath: trapLayer.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248625744603253437, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248625744603253437, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7220727267893783284, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
       propertyPath: m_Name
@@ -11523,6 +11555,9 @@ MonoBehaviour:
   portalPlacementMask:
     serializedVersion: 2
     m_Bits: 1216
+  portalClickMask:
+    serializedVersion: 2
+    m_Bits: 0
   mirrorPlacementMask:
     serializedVersion: 2
     m_Bits: 1472
@@ -11986,6 +12021,22 @@ PrefabInstance:
     - target: {fileID: 2274162764985662589, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 89.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248625744603253437, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
+      propertyPath: boxLayer.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248625744603253437, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
+      propertyPath: trapLayer.m_Bits
+      value: 8192
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248625744603253437, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
+      propertyPath: enemyLayer.m_Bits
+      value: 4608
+      objectReference: {fileID: 0}
+    - target: {fileID: 6248625744603253437, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 64
       objectReference: {fileID: 0}
     - target: {fileID: 7220727267893783284, guid: 1cdf1dbdcfbbc43a0be872541cd93059, type: 3}
       propertyPath: m_Name

@@ -16,7 +16,14 @@ public class LaserController : MonoBehaviour
     public float oscillationAngle = 45f;
 
     private PlayerRespawn playerRespawn;
+
+    [SerializeField] private string playerTag = "Player";
     [SerializeField] private LayerMask mirrorLayer;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask boxLayer;
+    [SerializeField] private LayerMask trapLayer;
+    [SerializeField] private LayerMask enemyLayer;
+
     
     // Store laser line segments for intersection checking
     private List<Vector3> laserPositions = new List<Vector3>();
@@ -82,7 +89,8 @@ public class LaserController : MonoBehaviour
 
         while (remainingDistance > 0)
         {
-            RaycastHit2D hit = Physics2D.Raycast(start, direction, remainingDistance);
+            int mask = groundLayer | mirrorLayer | boxLayer | trapLayer | enemyLayer | (1 << LayerMask.NameToLayer("Default"));
+            RaycastHit2D hit = Physics2D.Raycast(start, direction, remainingDistance, mask);
             
             if (hit)
             {
@@ -95,7 +103,7 @@ public class LaserController : MonoBehaviour
                     continue;
                 }
 
-                if (hit.collider.CompareTag("Player"))
+                if (hit.collider.CompareTag(playerTag))
                 {
                     if (FirebaseManager.instance != null)
                     {

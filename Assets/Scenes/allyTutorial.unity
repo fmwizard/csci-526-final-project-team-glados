@@ -2060,7 +2060,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5360846373630841249, guid: a3e7592c4bf15fc45a169eae45d86bbd, type: 3}
       propertyPath: groundCheckDistance
-      value: 1.01
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 9121630603672359944, guid: a3e7592c4bf15fc45a169eae45d86bbd, type: 3}
       propertyPath: m_Name
