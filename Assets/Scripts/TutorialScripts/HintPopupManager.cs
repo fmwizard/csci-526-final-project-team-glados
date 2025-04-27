@@ -43,47 +43,41 @@ public class HintPopupManager : MonoBehaviour
 
     public void ShowHintButton(Transform player, Action onDismiss = null)
     {
-        if (popupCanvas == null || hintPrefab == null)
+        if (popupCanvas == null || hintButtonPrefab == null)
         {
             Debug.LogWarning("Popup Canvas or hintPrefab not assigned");
             return;
         }
 
-        // Check to see if there is an active hint already and destroy
-        if(currentHint != null)
+        // 清理旧的提示
+        if (currentHint != null)
         {
             Destroy(currentHint);
             currentHint = null;
         }
-        
-        // Same for coroutine
-        if(hintCoroutine != null)
+        if (hintCoroutine != null)
         {
             StopCoroutine(hintCoroutine);
-            currentHint = null;
+            hintCoroutine = null;
         }
 
-        // Instantiate UI Hint
-        popupCanvas.transform.SetParent(player, false);
+        // 把 prefab 实例化到 Canvas 里
         currentHint = Instantiate(hintButtonPrefab, popupCanvas.transform);
+        hintButton = currentHint;
+        currentHint.SetActive(true);
 
-
-        // Convert world position to screen position for placement above player
-        Vector3 worldPos = player.position + hintOffset;
-        Vector2 anchoredPos;
-        RectTransformUtility.ScreenPointToLocalPointInRectangle(
-            popupCanvas.GetComponent<RectTransform>(),
-            Camera.main.WorldToScreenPoint(worldPos),
-            Camera.main,
-            out anchoredPos
-        );
-
-        // Apply to RectTransform
+        // 获取 RectTransform
         RectTransform hintRect = currentHint.GetComponent<RectTransform>();
-        hintRect.anchoredPosition = anchoredPos;
-        currentHint.SetActive(true); // enable hint since prefab is not active by default
 
-        hintCoroutine = StartCoroutine(HintButtonFollowsPlayer(player, onDismiss));
+        // 1) 设置锚点和枢轴都在右下角
+        hintRect.anchorMin = hintRect.anchorMax = new Vector2(1, 0);
+        hintRect.pivot = new Vector2(1, 0);
+
+        // 2) 设置距离右下角的偏移（正数往左/往上）
+        float offsetX = 20f;
+        float offsetY = 30f;
+        hintRect.anchoredPosition = new Vector2(-offsetX, offsetY);
+
     }
 
     public void HideHintButton()
