@@ -9,7 +9,10 @@ public class HintPopupManager : MonoBehaviour
     public static HintPopupManager Instance;
     private Canvas popupCanvas;
     public GameObject hintPrefab;
+    public GameObject hintButtonPrefab;
+    public GameObject hintButton;
     public Vector3 hintOffset = new Vector3(0, 3f, 0);
+    public bool hasPressedX = false;
 
     private GameObject currentHint;
     private Coroutine hintCoroutine;
@@ -35,6 +38,59 @@ public class HintPopupManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Popup Canvas not found in scene");
+        }
+    }
+
+    public void ShowHintButton(Transform player, Action onDismiss = null)
+    {
+        if (popupCanvas == null || hintPrefab == null)
+        {
+            Debug.LogWarning("Popup Canvas or hintPrefab not assigned");
+            return;
+        }
+
+        // Check to see if there is an active hint already and destroy
+        if(currentHint != null)
+        {
+            Destroy(currentHint);
+            currentHint = null;
+        }
+        
+        // Same for coroutine
+        if(hintCoroutine != null)
+        {
+            StopCoroutine(hintCoroutine);
+            currentHint = null;
+        }
+
+        // Instantiate UI Hint
+        popupCanvas.transform.SetParent(player, false);
+        currentHint = Instantiate(hintButtonPrefab, popupCanvas.transform);
+
+
+        // Convert world position to screen position for placement above player
+        Vector3 worldPos = player.position + hintOffset;
+        Vector2 anchoredPos;
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            popupCanvas.GetComponent<RectTransform>(),
+            Camera.main.WorldToScreenPoint(worldPos),
+            Camera.main,
+            out anchoredPos
+        );
+
+        // Apply to RectTransform
+        RectTransform hintRect = currentHint.GetComponent<RectTransform>();
+        hintRect.anchoredPosition = anchoredPos;
+        currentHint.SetActive(true); // enable hint since prefab is not active by default
+
+        hintCoroutine = StartCoroutine(HintButtonFollowsPlayer(player, onDismiss));
+    }
+
+    public void HideHintButton()
+    {
+        if (hintButton != null)
+        {
+            Destroy(hintButton);
         }
     }
 
@@ -108,6 +164,31 @@ public class HintPopupManager : MonoBehaviour
         hintCoroutine = StartCoroutine(HintFollowsPlayer(player, onDismiss));
     }
 
+    public IEnumerator HintButtonFollowsPlayer(Transform player, Action onDismiss)
+    {
+        RectTransform hintRect = currentHint.GetComponent<RectTransform>();
+        RectTransform canvasRect = popupCanvas.GetComponent<RectTransform>();
+
+        while (currentHint != null)
+        {
+            // World position above player
+            Vector3 worldPos = player.position + hintOffset;
+
+            // Convert to canvas local point
+            Vector2 anchoredPos;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                canvasRect,
+                Camera.main.WorldToScreenPoint(worldPos),
+                Camera.main,
+                out anchoredPos
+            );
+
+            hintRect.anchoredPosition = anchoredPos;
+
+
+            yield return null;
+        }
+    }
     public IEnumerator HintFollowsPlayer(Transform player, Action onDismiss)
     {
         RectTransform hintRect = currentHint.GetComponent<RectTransform>();

@@ -45,4 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hintPrefab: {fileID: 2223978967542786972, guid: ebaaf15295a384031b14bda3261a7996, type: 3}
+  hintButtonPrefab: {fileID: 2223978967542786972, guid: 76c83afe602ca644284b26ea28e81a72, type: 3}
+  hintButton: {fileID: 0}
   hintOffset: {x: 0, y: 3, z: 0}
+  hasPressedX: 0
