@@ -49,7 +49,6 @@ public class HintPopupManager : MonoBehaviour
             return;
         }
 
-        // 清理旧的提示
         if (currentHint != null)
         {
             Destroy(currentHint);
@@ -61,19 +60,15 @@ public class HintPopupManager : MonoBehaviour
             hintCoroutine = null;
         }
 
-        // 把 prefab 实例化到 Canvas 里
         currentHint = Instantiate(hintButtonPrefab, popupCanvas.transform);
         hintButton = currentHint;
         currentHint.SetActive(true);
 
-        // 获取 RectTransform
         RectTransform hintRect = currentHint.GetComponent<RectTransform>();
 
-        // 1) 设置锚点和枢轴都在右下角
         hintRect.anchorMin = hintRect.anchorMax = new Vector2(1, 0);
         hintRect.pivot = new Vector2(1, 0);
 
-        // 2) 设置距离右下角的偏移（正数往左/往上）
         float offsetX = 20f;
         float offsetY = 30f;
         hintRect.anchoredPosition = new Vector2(-offsetX, offsetY);
