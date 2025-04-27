@@ -86,7 +86,12 @@ public class Cage : MonoBehaviour
             }
             
             capturedObject = Instantiate(other.gameObject);
-            Destroy(other.gameObject);
+            AllyAnimation allyAnimation = other.gameObject.GetComponent<AllyAnimation>();
+            if (allyAnimation == null)
+            {
+                other.gameObject.AddComponent<AllyAnimation>();
+            }
+            other.gameObject.GetComponent<AllyAnimation>().StartShrink();
             if (capturedObject.CompareTag("Hostility") && capturedObject.layer != LayerMask.NameToLayer("Companion"))
             {
                 if (FirebaseManager.instance != null)
@@ -109,6 +114,8 @@ public class Cage : MonoBehaviour
                 // EnemyController newController = capturedObject.AddComponent<EnemyController>();
 
                 EnemyController newController = capturedObject.AddComponent<EnemyController>();
+                capturedObject.AddComponent<AllyAnimation>();
+
 
                 // — subscribe our handler so we get notified when *this* ally dies —
                 // if (currentAlly != null)
@@ -160,6 +167,7 @@ public class Cage : MonoBehaviour
         lastReleaseTime = Time.time;
         capturedObject.transform.position = transform.position + new Vector3(normal.x, normal.y, 0) * 1f;
         capturedObject.SetActive(true);
+        capturedObject.GetComponent<AllyAnimation>().StartGrow();
         isCaptured = false;
         enemyReleaseCount++;
         playerManager.SetCurrentEnemy(capturedObject.GetComponent<EnemyController>());
