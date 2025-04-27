@@ -55,7 +55,11 @@ public class PortalManager : MonoBehaviour
 
     private void HandleGunCreation()
     {
-        
+        if (player == null || !FindObjectOfType<PlayerManager>().controllingPlayer)
+        {
+            return;
+        }
+
         // Visual indicator in game view
         if (player.AimLineIntersectsWithLaser())
         {
