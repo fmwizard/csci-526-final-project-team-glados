@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using UnityEngine.UI;
 public class HintZone : MonoBehaviour
 {
-    public GameObject hint; 
+    public GameObject hint;
     public float timeToShowHint = 5f;
     public Vector3 hintOffset = new Vector3(0, 3f, 0);
     public string hintText = "Enter hint text in inspector";
@@ -13,11 +13,25 @@ public class HintZone : MonoBehaviour
 
     private float timeInside = 0f;
     private bool hintShown = false;
+    private bool hasExceededMaxTimes = false;
+    private bool hasPressedX = false;
+    private bool hasShownHintButton = false;
+    private bool hasCancelled = false;
     private GameObject currentHint;
     private PlayerController playerController;
     private Canvas popupCanvas;
     private Coroutine hintCoroutine;
+    private Transform playerTransform;
 
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.X) && hasExceededMaxTimes)
+        {
+            hasPressedX = true;
+            HintPopupManager.Instance.HideHintButton();
+        }
+        
+    }
     // private void Start()
     // {
     //     GameObject canvasObject = GameObject.Find("PopupCanvas");
@@ -30,6 +44,13 @@ public class HintZone : MonoBehaviour
     //         Debug.LogWarning("Popup Canvas not found in scene");
     //     }
     // }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerTransform = other.transform;
+        }
+    }
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player") && !hintShown)
@@ -38,12 +59,21 @@ public class HintZone : MonoBehaviour
 
             if (timeInside >= timeToShowHint)
             {
-                //hint.SetActive(true);
-                hintShown = true;
-                playerController = other.GetComponent<PlayerController>();
-                //ShowHint(other.transform);
-                HintPopupManager.Instance.ShowHint(other.transform, hintText, ResetHint, maxTimesToShow);
-            }
+                hasExceededMaxTimes = true;
+                if (!hasCancelled && hasPressedX)
+                {
+                    hintShown = true;
+                    playerController = other.GetComponent<PlayerController>();
+                    //ShowHint(other.transform);
+                    HintPopupManager.Instance.ShowHint(other.transform, hintText, ResetHint, maxTimesToShow);   
+                }
+                else if (!hasCancelled && !hasPressedX && !hasShownHintButton)
+                {
+                    // Show hint button
+                    HintPopupManager.Instance.ShowHintButton(other.transform, ResetHint);
+                    hasShownHintButton = true;
+                }
+           }
 
         }
     }
@@ -144,8 +174,13 @@ public class HintZone : MonoBehaviour
     
 
     private void ResetHint()
-    {
+    {        
+        //hasShownHintButton = false;
         timeInside = 0f;
         hintShown = false;
+        hasCancelled = false;
+        hasPressedX = false;
+        hasExceededMaxTimes = false;
+        HintPopupManager.Instance.HideHintButton();
     }
 }
