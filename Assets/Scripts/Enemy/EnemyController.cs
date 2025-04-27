@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 7f;
-    [SerializeField] private float groundCheckRadius = 1.5f;
+    [SerializeField] private float groundCheckRadius = 1.01f;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform groundCheck;
     private int initHitCount = 2;
@@ -37,7 +37,8 @@ public class EnemyController : MonoBehaviour
             groundCheck = transform;
         }
         // set groundlayer with two layers
-        groundLayer = LayerMask.GetMask("Ground", "Default");
+        // groundLayer = LayerMask.GetMask("Ground", "Default");
+        groundLayer = LayerMask.GetMask("Ground", "Trap");
     }
 
     private void Update()

@@ -265,10 +265,11 @@ MonoBehaviour:
   maxHealth: 1
   moveSpeed: 0
   patrolDistance: 5
-  groundCheckDistance: 2
+  groundCheckDistance: 1.01
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  fallThreshold: -10
   onDeath:
     m_PersistentCalls:
       m_Calls: []

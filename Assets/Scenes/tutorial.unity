@@ -309,8 +309,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 3761780792
-  m_fontColor: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 0.8784314}
+    rgba: 2520266808
+  m_fontColor: {r: 0.21960784, g: 0.21960784, b: 0.21960784, a: 0.5882353}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2638,7 +2638,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 8
   m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -7682,7 +7682,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 8
   m_Sprite: {fileID: 21300000, guid: d8cead742cf3545f39f821cd9a870cdc, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7058824}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -8503,6 +8503,9 @@ MonoBehaviour:
   portalPlacementMask:
     serializedVersion: 2
     m_Bits: 9408
+  portalClickMask:
+    serializedVersion: 2
+    m_Bits: 0
   mirrorPlacementMask:
     serializedVersion: 2
     m_Bits: 9664
@@ -8747,6 +8750,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1198567673}
     m_Modifications:
+    - target: {fileID: 5321517658692905437, guid: 2ef1cc69a2f62497d929180bb78e5330, type: 3}
+      propertyPath: m_Color.a
+      value: 0.5882353
+      objectReference: {fileID: 0}
     - target: {fileID: 5719071858221351254, guid: 2ef1cc69a2f62497d929180bb78e5330, type: 3}
       propertyPath: m_Name
       value: RightClickAnimation
