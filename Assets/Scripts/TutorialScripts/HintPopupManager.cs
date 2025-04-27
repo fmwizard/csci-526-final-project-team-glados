@@ -76,8 +76,8 @@ public class HintPopupManager : MonoBehaviour
         }
 
         // Instantiate UI Hint
+        popupCanvas.transform.SetParent(player, false);
         currentHint = Instantiate(hintPrefab, popupCanvas.transform);
-        currentHint.SetActive(true); // enable hint since prefab is not active by default
 
         // Set text dynamically
         TextMeshProUGUI hintTextComponent = currentHint.GetComponentInChildren<TextMeshProUGUI>();
@@ -103,6 +103,7 @@ public class HintPopupManager : MonoBehaviour
         // Apply to RectTransform
         RectTransform hintRect = currentHint.GetComponent<RectTransform>();
         hintRect.anchoredPosition = anchoredPos;
+        currentHint.SetActive(true); // enable hint since prefab is not active by default
 
         hintCoroutine = StartCoroutine(HintFollowsPlayer(player, onDismiss));
     }
@@ -129,7 +130,7 @@ public class HintPopupManager : MonoBehaviour
             hintRect.anchoredPosition = anchoredPos;
 
             // Wait until space is pressed
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.X))
             {
                 Destroy(currentHint);
                 currentHint = null;

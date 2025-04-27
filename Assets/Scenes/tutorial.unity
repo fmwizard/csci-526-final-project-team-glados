@@ -1435,6 +1435,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BridgeHintZone
       objectReference: {fileID: 0}
+    - target: {fileID: 1813436621033439631, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4373423597481702177, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
       propertyPath: hintText
       value: Try defeating them and you will see a path
@@ -8079,6 +8083,10 @@ PrefabInstance:
     - target: {fileID: 1813436621033439631, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
       propertyPath: m_Name
       value: AimLineHintZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813436621033439631, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4373423597481702177, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
       propertyPath: hintText

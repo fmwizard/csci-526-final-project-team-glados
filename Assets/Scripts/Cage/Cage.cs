@@ -102,9 +102,9 @@ public class Cage : MonoBehaviour
                 {
                     GameObject player = GameObject.FindGameObjectWithTag("Player");
                     // Maybe include safety to check if popupmanager exists
-                    HintPopupManager.Instance.ShowHint(player.transform, "Great! You've captured your first enemy.");
+                    //HintPopupManager.Instance.ShowHint(player.transform, "Great! You've captured your first enemy.");
                     hasCapturedFirstEnemy = true;
-                    Debug.Log("Attempted to show release hint");
+                    //Debug.Log("Attempted to show release hint");
                 }
                 // EnemyController newController = capturedObject.AddComponent<EnemyController>();
 

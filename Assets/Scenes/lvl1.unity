@@ -702,6 +702,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TallEnemyHintZone
       objectReference: {fileID: 0}
+    - target: {fileID: 1813436621033439631, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4373423597481702177, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
       propertyPath: hintText
       value: 'Note: A tall enemy can''t be captured.'
@@ -4877,12 +4881,12 @@ GameObject:
   - component: {fileID: 922048068}
   - component: {fileID: 922048067}
   m_Layer: 0
-  m_Name: Text (9)
+  m_Name: Patience
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &922048066
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5884,6 +5888,10 @@ PrefabInstance:
     - target: {fileID: 1813436621033439631, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
       propertyPath: m_Name
       value: RedEnemyHintZone
+      objectReference: {fileID: 0}
+    - target: {fileID: 1813436621033439631, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4373423597481702177, guid: 0ba25e1af07654a0d9da3c46073d44ff, type: 3}
       propertyPath: hintText
@@ -8453,7 +8461,7 @@ GameObject:
   - component: {fileID: 1568330372}
   - component: {fileID: 1568330371}
   m_Layer: 0
-  m_Name: Text (7)
+  m_Name: Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9669,12 +9677,12 @@ GameObject:
   - component: {fileID: 1888352341}
   - component: {fileID: 1888352340}
   m_Layer: 0
-  m_Name: Text (8)
+  m_Name: Accelerate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1888352339
 RectTransform:
   m_ObjectHideFlags: 0
