@@ -4,6 +4,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
+from matplotlib.colors import LinearSegmentedColormap
 
 sns.set_theme(style="whitegrid")
 
@@ -66,7 +67,7 @@ def process_data(df: pd.DataFrame):
 
     df['portal_combo'] = df.apply(lambda row: f"{row['fromX']},{row['fromY']}->{row['toX']},{row['toY']}", axis=1)
     portal_counts = df.groupby(['session', 'attempt', 'portal_combo'])['fromX'].transform('count')
-    df['repetitive'] = (portal_counts > 1) & (df.apply(lambda row: abs(row['toX'] - row['fromX']) > 1, axis=1))
+    df['repetitive'] = (portal_counts > 3) & (df.apply(lambda row: abs(row['toX'] - row['fromX']) > 0.75, axis=1))
     return df
 
 def plot_portal_usage(df: pd.DataFrame):
@@ -143,11 +144,25 @@ def plot_teleportation_types_by_level_with_acceleration(df: pd.DataFrame):
 def plot_portal_heatmap(df: pd.DataFrame, level: int, img_path: str, extent: list):
     df_level = df[df["level"] == level]
     img = mpimg.imread(img_path)
-    
+
     fig, ax = plt.subplots(figsize=(24, 12))
     ax.imshow(img, extent=extent, aspect='auto', alpha=1)
 
-    hb = ax.hexbin(df_level['fromX'], df_level['fromY'], gridsize=30, cmap='magma', extent=extent, alpha=0.5, edgecolors='none', linewidth=0)
+    colors = ["#C9A0DC", "#FF2400"]
+    cmap = LinearSegmentedColormap.from_list("custom_cmap", colors, N=256)
+
+    hb = ax.hexbin(
+        df_level['fromX'],
+        df_level['fromY'],
+        gridsize=30,
+        cmap=cmap,
+        extent=extent,
+        alpha=0.7,
+        edgecolors='none',
+        linewidth=0,
+        mincnt=1
+    )
+
     cbar = plt.colorbar(hb, ax=ax, pad=0.02)
     cbar.set_label("Portal Entry Count", fontsize=16)
 
@@ -156,6 +171,7 @@ def plot_portal_heatmap(df: pd.DataFrame, level: int, img_path: str, extent: lis
     ax.set_ylabel('posY', fontsize=16)
     ax.tick_params(axis='x', labelsize=14)
     ax.tick_params(axis='y', labelsize=14)
+
     plt.tight_layout()
     plt.show()
 
@@ -176,7 +192,7 @@ def plot_stuck_portals_summary(df: pd.DataFrame):
     ax = ratio_df.plot(
         kind='bar',
         stacked=True,
-        figsize=(16, 8),
+        figsize=(16, 12),
         color=pastel_colors,
         edgecolor='black'
     )
