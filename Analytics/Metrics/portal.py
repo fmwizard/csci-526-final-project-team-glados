@@ -5,7 +5,8 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
-# Level name map
+sns.set_theme(style="whitegrid")
+
 level_name_map = {
     -1: "Basic Tutorial",
     0: "Ally Tutorial",
@@ -30,7 +31,7 @@ def parse_level_data(directory: str):
                 attempt_num = int(attempt_key.split("_")[1])
                 portal_usage = attempt_values.get("portal_usage", {})
                 for _, usage in portal_usage.items():
-                    row = {
+                    rows.append({
                         "session": session_key,
                         "level": level_num,
                         "level_name": level_name_map[level_num],
@@ -42,8 +43,7 @@ def parse_level_data(directory: str):
                         "toX": usage["toX"],
                         "toY": usage["toY"],
                         "velocity": int(usage["velocity"])
-                    }
-                    rows.append(row)
+                    })
     df = pd.DataFrame(rows)
     df['level_name'] = pd.Categorical(df['level_name'], categories=level_order, ordered=True)
     df.reset_index(drop=True, inplace=True)
@@ -73,12 +73,15 @@ def plot_portal_usage(df: pd.DataFrame):
     usage_counts = df.groupby(['level_name', 'objectType'])['usage_index'].nunique().reset_index()
     pivot = usage_counts.pivot(index='level_name', columns='objectType', values='usage_index').fillna(0)
 
-    pivot.plot(kind='bar', figsize=(12, 6), colormap='Set2')
-    plt.xlabel('Level')
-    plt.ylabel('Unique Portal Usages')
-    plt.title('Portal Usage by Object Type per Level')
-    plt.xticks(rotation=0)
-    plt.legend(title='Object Type')
+    pastel_colors = sns.color_palette("pastel", len(pivot.columns))
+    ax = pivot.plot(kind='bar', figsize=(16, 8), color=pastel_colors, edgecolor='black')
+
+    plt.xlabel('Level', fontsize=16)
+    plt.ylabel('Unique Portal Usages', fontsize=16)
+    plt.title('Portal Usage by Object Type per Level', fontsize=22)
+    plt.xticks(rotation=0, fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.legend(title='Object Type', title_fontsize=16, fontsize=14, loc='upper right')
     plt.tight_layout()
     plt.show()
 
@@ -86,24 +89,25 @@ def plot_teleportation_types_by_usage(df: pd.DataFrame):
     teleportation_counts = df.groupby(['level_name', 'objectType'])['usage_index'].nunique().unstack(fill_value=0)
     teleportation_percent = teleportation_counts.div(teleportation_counts.sum(axis=1), axis=0) * 100
 
-    bright_colors = sns.color_palette("bright", len(teleportation_percent.columns))
-    ax = teleportation_percent.plot(kind='bar', stacked=True, figsize=(12, 6), color=bright_colors)
+    pastel_colors = sns.color_palette("pastel", len(teleportation_percent.columns))
+    ax = teleportation_percent.plot(kind='bar', stacked=True, figsize=(16, 8), color=pastel_colors, edgecolor='black')
 
-    plt.xlabel('Level')
-    plt.ylabel('Percentage of Portal Usage')
-    plt.title('Proportional Portal Usage by Object Type per Level')
-    plt.xticks(rotation=0)
-    plt.legend(title="Object Type", loc='upper right')
+    plt.xlabel('Level', fontsize=16)
+    plt.ylabel('Percentage of Portal Usage', fontsize=16)
+    plt.title('Proportional Portal Usage by Object Type per Level', fontsize=22)
+    plt.xticks(rotation=0, fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.legend(title="Object Type", title_fontsize=16, fontsize=14, loc='upper right')
 
     for i, level in enumerate(teleportation_percent.index):
         bottom = 0
-        for accel_type in teleportation_percent.columns:
-            height = teleportation_percent.loc[level, accel_type]
+        for obj_type in teleportation_percent.columns:
+            height = teleportation_percent.loc[level, obj_type]
             if height > 0:
                 if height < 10:
-                    ax.text(i, bottom + height + 2, f"{int(height)}", ha='center', va='bottom', fontsize=9)
+                    ax.text(i, bottom + height + 2, f"{int(height)}%", ha='center', va='bottom', fontsize=10)
                 else:
-                    ax.text(i, bottom + height / 2, f"{int(height)}", ha='center', va='center', fontsize=9)
+                    ax.text(i, bottom + height / 2, f"{int(height)}%", ha='center', va='center', fontsize=10)
             bottom += height
 
     plt.tight_layout()
@@ -112,14 +116,15 @@ def plot_teleportation_types_by_usage(df: pd.DataFrame):
 def plot_teleportation_types_by_level_with_acceleration(df: pd.DataFrame):
     teleportation_counts = df.groupby(['level_name', 'acceleration'])['usage_index'].nunique().unstack(fill_value=0)
 
-    bright_colors = sns.color_palette("bright", len(teleportation_counts.columns))
-    ax = teleportation_counts.plot(kind='bar', stacked=True, figsize=(12, 6), color=bright_colors)
+    pastel_colors = sns.color_palette("pastel", len(teleportation_counts.columns))
+    ax = teleportation_counts.plot(kind='bar', stacked=True, figsize=(16, 8), color=pastel_colors, edgecolor='black')
 
-    plt.xlabel('Level')
-    plt.ylabel('Teleportation Count')
-    plt.title('Teleportation Count (Normal vs Accelerated) per Level')
-    plt.xticks(rotation=0)
-    plt.legend(title="Teleportation Type", loc='upper right')
+    plt.xlabel('Level', fontsize=16)
+    plt.ylabel('Teleportation Count', fontsize=16)
+    plt.title('Teleportation Count (Normal vs Accelerated) per Level', fontsize=22)
+    plt.xticks(rotation=0, fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.legend(title="Teleportation Type", title_fontsize=16, fontsize=14, loc='upper right')
 
     for i, level in enumerate(teleportation_counts.index):
         bottom = 0
@@ -127,9 +132,9 @@ def plot_teleportation_types_by_level_with_acceleration(df: pd.DataFrame):
             height = teleportation_counts.loc[level, accel_type]
             if height > 0:
                 if height < 10:
-                    ax.text(i, bottom + height + 2, f"{int(height)}", ha='center', va='bottom', fontsize=9)
+                    ax.text(i, bottom + height + 2, f"{int(height)}", ha='center', va='bottom', fontsize=10)
                 else:
-                    ax.text(i, bottom + height / 2, f"{int(height)}", ha='center', va='center', fontsize=9)
+                    ax.text(i, bottom + height / 2, f"{int(height)}", ha='center', va='center', fontsize=10)
             bottom += height
 
     plt.tight_layout()
@@ -138,17 +143,19 @@ def plot_teleportation_types_by_level_with_acceleration(df: pd.DataFrame):
 def plot_portal_heatmap(df: pd.DataFrame, level: int, img_path: str, extent: list):
     df_level = df[df["level"] == level]
     img = mpimg.imread(img_path)
-
+    
     fig, ax = plt.subplots(figsize=(24, 12))
     ax.imshow(img, extent=extent, aspect='auto', alpha=1)
 
-    hb = ax.hexbin(df_level['fromX'], df_level['fromY'], gridsize=30, cmap='magma', extent=extent, alpha=0.5, edgecolors='none', linewidth=0.1)
+    hb = ax.hexbin(df_level['fromX'], df_level['fromY'], gridsize=30, cmap='magma', extent=extent, alpha=0.5, edgecolors='none', linewidth=0)
     cbar = plt.colorbar(hb, ax=ax, pad=0.02)
-    cbar.set_label("Portal Entry Count")
+    cbar.set_label("Portal Entry Count", fontsize=16)
 
-    ax.set_title(f"Portal Entry Heatmap – {level_name_map[level]}")
-    ax.set_xlim(extent[0], extent[1])
-    ax.set_ylim(extent[2], extent[3])
+    ax.set_title(f"Portal Entry Heatmap – {level_name_map[level]}", fontsize=22)
+    ax.set_xlabel('posX', fontsize=16)
+    ax.set_ylabel('posY', fontsize=16)
+    ax.tick_params(axis='x', labelsize=14)
+    ax.tick_params(axis='y', labelsize=14)
     plt.tight_layout()
     plt.show()
 
@@ -164,12 +171,27 @@ def plot_stuck_portals_summary(df: pd.DataFrame):
 
     ratio_df_percent = ratio_df.div(ratio_df.sum(axis=1), axis=0) * 100
 
-    ax = ratio_df.plot(kind='bar', stacked=True, figsize=(10, 6), color=["firebrick", "royalblue"])
-    plt.title("Stuck vs Total Portal Usages per Level")
-    plt.ylabel("Count")
-    plt.xlabel("Level")
-    plt.xticks(rotation=45)
-    plt.legend(loc='upper right')
+    pastel_colors = sns.color_palette("pastel", len(ratio_df.columns))
+
+    ax = ratio_df.plot(
+        kind='bar',
+        stacked=True,
+        figsize=(16, 8),
+        color=pastel_colors,
+        edgecolor='black'
+    )
+
+    plt.title("Stuck vs Total Portal Usages per Level", fontsize=22)
+    plt.ylabel("Count", fontsize=16)
+    plt.xlabel("Level", fontsize=16)
+    plt.xticks(rotation=45, fontsize=14)
+    plt.yticks(fontsize=14)
+    plt.legend(
+        loc='upper right',
+        fontsize=14,
+        title_fontsize=16,
+        title="Portal Status"
+    )
 
     for i, level in enumerate(ratio_df.index):
         bottom = 0
@@ -177,7 +199,7 @@ def plot_stuck_portals_summary(df: pd.DataFrame):
             count = ratio_df.loc[level, column]
             percent = ratio_df_percent.loc[level, column]
             if percent > 1: 
-                ax.text(i, bottom + count / 2, f"{percent:.1f}%", ha='center', va='center', fontsize=9, color='white')
+                ax.text(i, bottom + count / 2, f"{percent:.1f}%", ha='center', va='center', fontsize=10, color='black')
             bottom += count
 
     plt.tight_layout()
