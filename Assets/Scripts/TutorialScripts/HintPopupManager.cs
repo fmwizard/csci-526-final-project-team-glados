@@ -66,11 +66,11 @@ public class HintPopupManager : MonoBehaviour
 
         RectTransform hintRect = currentHint.GetComponent<RectTransform>();
 
-        hintRect.anchorMin = hintRect.anchorMax = new Vector2(1, 0);
+        hintRect.anchorMin = hintRect.anchorMax = new Vector2(0.5f, 0f);
         hintRect.pivot = new Vector2(1, 0);
 
-        float offsetX = 20f;
-        float offsetY = 30f;
+        float offsetX = 0f;
+        float offsetY = 25f;
         hintRect.anchoredPosition = new Vector2(-offsetX, offsetY);
 
     }

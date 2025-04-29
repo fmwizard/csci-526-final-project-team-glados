@@ -215,7 +215,7 @@ def plot_stuck_portals_summary(df: pd.DataFrame):
             count = ratio_df.loc[level, column]
             percent = ratio_df_percent.loc[level, column]
             if percent > 1: 
-                ax.text(i, bottom + count / 2, f"{percent:.1f}%", ha='center', va='center', fontsize=10, color='black')
+                ax.text(i, bottom + count / 2, f"{percent:.1f}%", ha='center', va='center', fontsize=13, color='black')
             bottom += count
 
     plt.tight_layout()
