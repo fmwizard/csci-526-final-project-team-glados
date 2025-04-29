@@ -75,7 +75,7 @@ public class MainMenuController : MonoBehaviour
 
     public void OnControlsButtonClicked()
     {
-        string path = $"test/{playerID}/MainMenu/controlsViewed";
+        string path = $"Gold/{playerID}/MainMenu/controlsViewed";
         string json = "{\"opened\": true}";
         if (FirebaseManager.instance != null)
         {
@@ -85,7 +85,7 @@ public class MainMenuController : MonoBehaviour
 
     private void LogMainMenuChoice(string choice)
     {
-        string path = $"test/{playerID}/MainMenu/selectedOption";
+        string path = $"Gold/{playerID}/MainMenu/selectedOption";
         string json = $"{{\"choice\": \"{choice}\", \"timestamp\": {Time.time}}}";
         if (FirebaseManager.instance != null)
         {

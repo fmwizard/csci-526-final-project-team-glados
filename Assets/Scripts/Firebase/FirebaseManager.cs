@@ -92,7 +92,7 @@ public class FirebaseManager : MonoBehaviour
     {
         string playerID = PlayerStats.playerID;
         int attemptNumber = PlayerStats.GetRetryCount(levelNumber);
-        string path = $"testGoldCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
+        string path = $"GoldCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
         int deaths = PlayerStats.GetDeathCount(levelNumber);
         int retries = PlayerStats.GetRetryCount(levelNumber) - 1;
@@ -105,7 +105,7 @@ public class FirebaseManager : MonoBehaviour
     {
         string playerID = PlayerStats.playerID;
         int attemptNumber = PlayerStats.GetRetryCount(levelNumber);
-        string path = $"testGoldCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
+        string path = $"GoldCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
         int deaths = PlayerStats.GetDeathCount(levelNumber);
         int retries = PlayerStats.GetRetryCount(levelNumber) - 1;
@@ -118,7 +118,7 @@ public class FirebaseManager : MonoBehaviour
     {
         string playerID = PlayerStats.playerID;
         int attemptNumber = PlayerStats.GetRetryCount(levelNumber);
-        string path = $"testGoldCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
+        string path = $"GoldCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
         int deaths = PlayerStats.GetDeathCount(levelNumber);
         int retries = PlayerStats.GetRetryCount(levelNumber) - 1;
@@ -131,7 +131,7 @@ public class FirebaseManager : MonoBehaviour
     {
         string playerID = PlayerStats.playerID;
         int attemptNumber = PlayerStats.GetRetryCount(levelNumber);
-        string path = $"testGoldCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
+        string path = $"GoldCompletion/{playerID}/level_{levelNumber}/attempt_{attemptNumber}";
 
         int deaths = PlayerStats.GetDeathCount(levelNumber);
         int retries = PlayerStats.GetRetryCount(levelNumber) - 1;
@@ -144,7 +144,7 @@ public class FirebaseManager : MonoBehaviour
     {
         string playerID = PlayerStats.playerID;
         int attemptNumber = PlayerStats.GetRetryCount(levelNumber);
-        string path = $"testGold/{playerID}/level_{levelNumber}/attempt_{attemptNumber}/{key}";
+        string path = $"Gold/{playerID}/level_{levelNumber}/attempt_{attemptNumber}/{key}";
         string json = JsonUtility.ToJson(data);
         SendDatabyPOST(path, json);
 }
